@@ -1,4 +1,3 @@
-import type { Tokenizer } from "@llamaindex/env/tokenizers";
 import {
   DEFAULT_CHUNK_OVERLAP_RATIO,
   DEFAULT_CONTEXT_WINDOW,
@@ -6,9 +5,14 @@ import {
   DEFAULT_PADDING,
   Settings,
 } from "../global";
+import type { TokenSizer } from "../global/settings/tokenizer";
 import type { LLMMetadata } from "../llms";
-import { TextSplitter, TokenTextSplitter, truncateText } from "../node-parser";
-import { BasePromptTemplate, PromptTemplate } from "../prompts";
+import {
+  type TextSplitter,
+  TokenTextSplitter,
+  truncateText,
+} from "../node-parser";
+import { type BasePromptTemplate, PromptTemplate } from "../prompts";
 
 /**
  * Get the empty prompt text given a prompt.
@@ -36,7 +40,7 @@ export type PromptHelperOptions = {
   numOutput?: number | undefined;
   chunkOverlapRatio?: number | undefined;
   chunkSizeLimit?: number | undefined;
-  tokenizer?: Tokenizer | undefined;
+  tokenSizer?: TokenSizer | undefined;
   separator?: string | undefined;
 };
 
@@ -48,7 +52,7 @@ export class PromptHelper {
   numOutput: number;
   chunkOverlapRatio: number;
   chunkSizeLimit: number | undefined;
-  tokenizer: Tokenizer;
+  tokenSizer: TokenSizer;
   separator: string;
 
   constructor(options: PromptHelperOptions = {}) {
@@ -57,14 +61,20 @@ export class PromptHelper {
       numOutput = DEFAULT_NUM_OUTPUTS,
       chunkOverlapRatio = DEFAULT_CHUNK_OVERLAP_RATIO,
       chunkSizeLimit,
-      tokenizer,
+      tokenSizer,
       separator = " ",
     } = options;
     this.contextWindow = contextWindow;
     this.numOutput = numOutput;
     this.chunkOverlapRatio = chunkOverlapRatio;
     this.chunkSizeLimit = chunkSizeLimit;
-    this.tokenizer = tokenizer ?? Settings.tokenizer;
+    const _tokenSizer = tokenSizer ?? Settings.tokenSizer;
+    if (!_tokenSizer) {
+      throw new Error(
+        "TokenSizer is not set. Please set a token sizer in the using Settings.tokenSizer.",
+      );
+    }
+    this.tokenSizer = _tokenSizer;
     this.separator = separator;
   }
 
@@ -93,7 +103,7 @@ export class PromptHelper {
     let numPromptTokens = 0;
 
     if (prompt instanceof PromptTemplate) {
-      numPromptTokens = this.tokenizer.encode(getEmptyPromptTxt(prompt)).length;
+      numPromptTokens = this.tokenSizer(getEmptyPromptTxt(prompt));
     }
 
     const availableContextSize = this.#getAvailableContextSize(numPromptTokens);
@@ -123,7 +133,7 @@ export class PromptHelper {
       separator: this.separator,
       chunkSize,
       chunkOverlap,
-      tokenizer: this.tokenizer,
+      tokenSizer: this.tokenSizer,
     });
   }
 
@@ -164,14 +174,14 @@ export class PromptHelper {
     options?: {
       chunkOverlapRatio?: number;
       chunkSizeLimit?: number;
-      tokenizer?: Tokenizer;
+      tokenSizer?: TokenSizer;
       separator?: string;
     },
   ) {
     const {
       chunkOverlapRatio = DEFAULT_CHUNK_OVERLAP_RATIO,
       chunkSizeLimit = undefined,
-      tokenizer = Settings.tokenizer,
+      tokenSizer = Settings.tokenSizer,
       separator = " ",
     } = options ?? {};
     return new PromptHelper({
@@ -180,7 +190,7 @@ export class PromptHelper {
       numOutput: DEFAULT_NUM_OUTPUTS,
       chunkOverlapRatio,
       chunkSizeLimit,
-      tokenizer,
+      tokenSizer: tokenSizer ?? undefined,
       separator,
     });
   }

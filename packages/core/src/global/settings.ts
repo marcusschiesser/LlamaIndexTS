@@ -1,5 +1,4 @@
 import { AsyncLocalStorage, getEnv } from "@llamaindex/env";
-import type { Tokenizer } from "@llamaindex/env/tokenizers";
 import { BaseEmbedding } from "../embeddings";
 import type { TextEmbedFunc } from "../embeddings/base";
 import type { LLM } from "../llms";
@@ -18,9 +17,10 @@ import {
 
 import { getLLM, setLLM, withLLM } from "./settings/llm";
 import {
-  getTokenizer,
-  setTokenizer,
-  withTokenizer,
+  getTokenSizer,
+  setTokenSizer,
+  type TokenSizer,
+  withTokenSizer,
 } from "./settings/tokenizer";
 
 let _nodeParser: NodeParser | null = null;
@@ -43,14 +43,14 @@ export const Settings = {
   get embedModel() {
     return new BaseEmbedding();
   },
-  get tokenizer() {
-    return getTokenizer();
+  get tokenSizer() {
+    return getTokenSizer();
   },
-  set tokenizer(tokenizer) {
-    setTokenizer(tokenizer);
+  set tokenSizer(tokenSizer) {
+    setTokenSizer(tokenSizer);
   },
-  withTokenizer<Result>(tokenizer: Tokenizer, fn: () => Result): Result {
-    return withTokenizer(tokenizer, fn);
+  withTokenSizer<Result>(tokenSizer: TokenSizer, fn: () => Result): Result {
+    return withTokenSizer(tokenSizer, fn);
   },
   get chunkSize(): number | undefined {
     return getChunkSize();

@@ -1,7 +1,7 @@
 import { consoleLogger, type Logger } from "@llamaindex/env";
-import type { Tokenizer } from "@llamaindex/env/tokenizers";
 import { Settings } from "../global";
-import { sentenceSplitterSchema, type SentenceSplitterParams } from "../schema";
+import type { TokenSizer } from "../global/settings/tokenizer";
+import { type SentenceSplitterParams, sentenceSplitterSchema } from "../schema";
 import { MetadataAwareTextSplitter } from "./base";
 import type { PartialWithUndefined, SplitterParams } from "./type";
 import {
@@ -19,11 +19,11 @@ type _Split = [string, boolean, number]; // [text, isSentence, tokenSize]
  */
 export class SentenceSplitter extends MetadataAwareTextSplitter {
   /**
-   * The token chunk size for each chunk.
+   * The chunk size for each chunk. If no tokenSizer is set, this is the number of characters in the chunk. If a tokenSizer is set, this is the number of tokens in the chunk.
    */
   chunkSize: number = 1024;
   /**
-   * The token overlap of each chunk when splitting.
+   * The chunk overlap of each chunk when splitting. If no tokenSizer is set, this is the number of characters in the overlap. If a tokenSizer is set, this is the number of tokens in the overlap.
    */
   chunkOverlap: number = 200;
   /**
@@ -47,7 +47,7 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
   #chunkingTokenizerFn = splitBySentenceTokenizer();
   #splitFns: Set<TextSplitterFn> = new Set();
   #subSentenceSplitFns: Set<TextSplitterFn> = new Set();
-  #tokenizer: Tokenizer;
+  #tokenSizer: TokenSizer;
   #logger: Logger;
 
   constructor(
@@ -67,7 +67,9 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
     this.#chunkingTokenizerFn = splitBySentenceTokenizer(
       this.extraAbbreviations,
     );
-    this.#tokenizer = params?.tokenizer ?? Settings.tokenizer;
+    // if tokenizer is not set, treat one character as one token
+    this.#tokenSizer =
+      params?.tokenSizer ?? Settings.tokenSizer ?? ((text) => text.length);
     this.#logger = params?.logger ?? consoleLogger;
     this.#splitFns.add(splitBySep(this.paragraphSeparator));
     this.#splitFns.add(this.#chunkingTokenizerFn);
@@ -78,7 +80,7 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
   }
 
   splitTextMetadataAware(text: string, metadata: string): string[] {
-    const metadataLength = this.tokenSize(metadata);
+    const metadataLength = this.#tokenSizer(metadata);
     const effectiveChunkSize = this.chunkSize - metadataLength;
     if (effectiveChunkSize <= 0) {
       throw new Error(
@@ -118,7 +120,7 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
     chunkSize: number,
     tokenSize?: number,
   ): Generator<_Split> {
-    const _tokenSize = tokenSize ?? this.tokenSize(text);
+    const _tokenSize = tokenSize ?? this.#tokenSizer(text);
     if (_tokenSize <= chunkSize) {
       yield [text, true, _tokenSize];
       return;
@@ -126,7 +128,7 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
     const [textSplitsByFns, isSentence] = this.#getSplitsByFns(text);
 
     for (const textSplit of textSplitsByFns) {
-      const textSplitTokenSize = this.tokenSize(textSplit);
+      const textSplitTokenSize = this.#tokenSizer(textSplit);
       if (textSplitTokenSize <= chunkSize) {
         yield [textSplit, isSentence, textSplitTokenSize];
       } else {
@@ -224,6 +226,4 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
     }
     return newChunks;
   }
-
-  tokenSize = (text: string) => this.#tokenizer.encode(text).length;
 }

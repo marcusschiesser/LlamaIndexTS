@@ -50,9 +50,14 @@ export abstract class BaseMemory<
       return 0;
     }
 
-    const tokenizer = Settings.tokenizer;
+    const tokenSizer = Settings.tokenSizer;
+    if (!tokenSizer) {
+      throw new Error(
+        "TokenSizer is not set. Please set a token sizer in the using Settings.tokenSizer.",
+      );
+    }
     const str = messages.map((m) => extractText(m.content)).join(" ");
-    return tokenizer.encode(str).length;
+    return tokenSizer(str);
   }
 }
 

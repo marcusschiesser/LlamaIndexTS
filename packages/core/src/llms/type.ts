@@ -1,7 +1,7 @@
 import type { Logger } from "@llamaindex/env";
-import type { Tokenizers } from "@llamaindex/env/tokenizers";
 import type { JSONSchemaType } from "ajv";
 import type { JSONObject, JSONValue } from "../global";
+import type { TokenSizer } from "../global/settings/tokenizer";
 import type { ModalityType } from "../schema";
 import type { ZodSchema } from "../zod";
 
@@ -133,7 +133,7 @@ export type LLMMetadata = {
   topP: number;
   maxTokens?: number | undefined;
   contextWindow: number;
-  tokenizer: Tokenizers | undefined;
+  tokenSizer: TokenSizer | undefined;
   structuredOutput: boolean;
 };
 

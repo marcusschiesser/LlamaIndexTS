@@ -1,9 +1,9 @@
 import { consoleLogger, type Logger } from "@llamaindex/env";
-import type { Tokenizer } from "@llamaindex/env/tokenizers";
 import { DEFAULT_CHUNK_OVERLAP, DEFAULT_CHUNK_SIZE, Settings } from "../global";
+import type { TokenSizer } from "../global/settings/tokenizer";
 import {
-  tokenTextSplitterSchema,
   type TokenTextSplitterParams,
+  tokenTextSplitterSchema,
 } from "../schema";
 import { MetadataAwareTextSplitter } from "./base";
 import type { PartialWithUndefined, SplitterParams } from "./type";
@@ -16,7 +16,7 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
   chunkOverlap: number = DEFAULT_CHUNK_OVERLAP;
   separator: string = " ";
   backupSeparators: string[] = ["\n"];
-  #tokenizer: Tokenizer;
+  #tokenSizer: TokenSizer;
   #splitFns: Array<(text: string) => string[]> = [];
   #logger: Logger;
 
@@ -40,7 +40,13 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
       );
     }
 
-    this.#tokenizer = params?.tokenizer ?? Settings.tokenizer;
+    const tokenSizer = params?.tokenSizer ?? Settings.tokenSizer;
+    if (!tokenSizer) {
+      throw new Error(
+        "TokenSizer is not set. Please set a token sizer in the using Settings.tokenSizer.",
+      );
+    }
+    this.#tokenSizer = tokenSizer;
     this.#logger = params?.logger ?? consoleLogger;
 
     const allSeparators = [this.separator, ...this.backupSeparators];
@@ -56,7 +62,7 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
    */
   splitTextMetadataAware(text: string, metadata: string): string[] {
     const metadataLength =
-      this.tokenSize(metadata) + DEFAULT_METADATA_FORMAT_LEN;
+      this.#tokenSizer(metadata) + DEFAULT_METADATA_FORMAT_LEN;
     const effectiveChunkSize = this.chunkSize - metadataLength;
 
     if (effectiveChunkSize <= 0) {
@@ -110,7 +116,7 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
    * @returns An array of text splits.
    */
   private _split(text: string, chunkSize: number): string[] {
-    if (this.tokenSize(text) <= chunkSize) {
+    if (this.#tokenSizer(text) <= chunkSize) {
       return [text];
     }
 
@@ -119,7 +125,7 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
       if (splits.length > 1) {
         const newSplits: string[] = [];
         for (const split of splits) {
-          const splitLen = this.tokenSize(split);
+          const splitLen = this.#tokenSizer(split);
           if (splitLen <= chunkSize) {
             newSplits.push(split);
           } else {
@@ -145,7 +151,7 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
     let currentLength = 0;
 
     for (const split of splits) {
-      const splitLength = this.tokenSize(split);
+      const splitLength = this.#tokenSizer(split);
 
       if (splitLength > chunkSize) {
         this.#logger.warn(
@@ -173,12 +179,12 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
           const overlapSplit = currentChunk.shift();
           if (!overlapSplit) break;
           overlapSplits.push(overlapSplit);
-          overlapLength += this.tokenSize(overlapSplit);
+          overlapLength += this.#tokenSizer(overlapSplit);
         }
 
         for (const overlapSplit of overlapSplits.reverse()) {
           currentChunk.push(overlapSplit);
-          currentLength += this.tokenSize(overlapSplit);
+          currentLength += this.#tokenSizer(overlapSplit);
           if (currentLength >= overlapTokens) break;
         }
       }
@@ -193,14 +199,5 @@ export class TokenTextSplitter extends MetadataAwareTextSplitter {
     }
 
     return chunks;
-  }
-
-  /**
-   * Calculate the number of tokens in the text using the tokenizer.
-   * @param text The text to tokenize.
-   * @returns The number of tokens.
-   */
-  private tokenSize(text: string): number {
-    return this.#tokenizer.encode(text).length;
   }
 }
