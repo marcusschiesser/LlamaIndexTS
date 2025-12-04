@@ -1,7 +1,8 @@
-import { getEnv } from "@llamaindex/env";
+import { AsyncLocalStorage, getEnv } from "@llamaindex/env";
 import type { Tokenizer } from "@llamaindex/env/tokenizers";
 import type { BaseEmbedding } from "../embeddings";
 import type { LLM } from "../llms";
+import { type NodeParser, SentenceSplitter } from "../node-parser";
 import {
   type CallbackManager,
   getCallbackManager,
@@ -24,6 +25,11 @@ import {
   setTokenizer,
   withTokenizer,
 } from "./settings/tokenizer";
+
+let _nodeParser: NodeParser | null = null;
+let _chunkOverlap: number;
+const _nodeParserAsyncLocalStorage = new AsyncLocalStorage<NodeParser>();
+const _chunkOverlapAsyncLocalStorage = new AsyncLocalStorage<number>();
 
 export const Settings = {
   get llm() {
@@ -76,6 +82,35 @@ export const Settings = {
     fn: () => Result,
   ): Result {
     return withCallbackManager(callbackManager, fn);
+  },
+
+  get nodeParser(): NodeParser {
+    if (_nodeParser === null) {
+      _nodeParser = new SentenceSplitter({
+        chunkSize: getChunkSize(),
+        chunkOverlap: _chunkOverlap,
+      });
+    }
+
+    return _nodeParserAsyncLocalStorage.getStore() ?? this.nodeParser;
+  },
+
+  set nodeParser(nodeParser: NodeParser) {
+    _nodeParser = nodeParser;
+  },
+
+  get chunkOverlap(): number | undefined {
+    return _chunkOverlapAsyncLocalStorage.getStore() ?? _chunkOverlap;
+  },
+
+  set chunkOverlap(chunkOverlap: number | undefined) {
+    if (typeof chunkOverlap === "number") {
+      _chunkOverlap = chunkOverlap;
+    }
+  },
+
+  withChunkOverlap<Result>(chunkOverlap: number, fn: () => Result): Result {
+    return _chunkOverlapAsyncLocalStorage.run(chunkOverlap, fn);
   },
 
   get debug() {
