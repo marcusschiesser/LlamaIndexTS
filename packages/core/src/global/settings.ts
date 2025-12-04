@@ -1,6 +1,7 @@
 import { AsyncLocalStorage, getEnv } from "@llamaindex/env";
 import type { Tokenizer } from "@llamaindex/env/tokenizers";
-import type { BaseEmbedding } from "../embeddings";
+import { BaseEmbedding } from "../embeddings";
+import type { TextEmbedFunc } from "../embeddings/base";
 import type { LLM } from "../llms";
 import { type NodeParser, SentenceSplitter } from "../node-parser";
 import {
@@ -14,11 +15,7 @@ import {
   setChunkSize,
   withChunkSize,
 } from "./settings/chunk-size";
-import {
-  getEmbeddedModel,
-  setEmbeddedModel,
-  withEmbeddedModel,
-} from "./settings/embedModel";
+
 import { getLLM, setLLM, withLLM } from "./settings/llm";
 import {
   getTokenizer,
@@ -27,9 +24,11 @@ import {
 } from "./settings/tokenizer";
 
 let _nodeParser: NodeParser | null = null;
-let _chunkOverlap: number;
 const _nodeParserAsyncLocalStorage = new AsyncLocalStorage<NodeParser>();
+let _chunkOverlap: number;
 const _chunkOverlapAsyncLocalStorage = new AsyncLocalStorage<number>();
+let _embedFunc: TextEmbedFunc | null = null;
+const _embedFuncAsyncLocalStorage = new AsyncLocalStorage<TextEmbedFunc>();
 
 export const Settings = {
   get llm() {
@@ -42,13 +41,7 @@ export const Settings = {
     return withLLM(llm, fn);
   },
   get embedModel() {
-    return getEmbeddedModel();
-  },
-  set embedModel(embedModel) {
-    setEmbeddedModel(embedModel);
-  },
-  withEmbedModel<Result>(embedModel: BaseEmbedding, fn: () => Result): Result {
-    return withEmbeddedModel(embedModel, fn);
+    return new BaseEmbedding();
   },
   get tokenizer() {
     return getTokenizer();
@@ -92,7 +85,7 @@ export const Settings = {
       });
     }
 
-    return _nodeParserAsyncLocalStorage.getStore() ?? this.nodeParser;
+    return _nodeParserAsyncLocalStorage.getStore() ?? _nodeParser;
   },
 
   set nodeParser(nodeParser: NodeParser) {
@@ -111,6 +104,18 @@ export const Settings = {
 
   withChunkOverlap<Result>(chunkOverlap: number, fn: () => Result): Result {
     return _chunkOverlapAsyncLocalStorage.run(chunkOverlap, fn);
+  },
+
+  get embedFunc(): TextEmbedFunc | null {
+    return _embedFuncAsyncLocalStorage.getStore() ?? _embedFunc;
+  },
+
+  set embedFunc(embedFunc: TextEmbedFunc) {
+    _embedFunc = embedFunc;
+  },
+
+  withEmbedFunc<Result>(embedFunc: TextEmbedFunc, fn: () => Result): Result {
+    return _embedFuncAsyncLocalStorage.run(embedFunc, fn);
   },
 
   get debug() {
