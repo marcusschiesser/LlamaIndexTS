@@ -332,9 +332,10 @@
     "natural": "^8.0.1"
   },
   "dependencies": {
-    "@llamaindex/env": "workspace:*",
     "@finom/zod-to-json-schema": "3.24.11",
+    "@llamaindex/env": "workspace:*",
     "@types/node": "^24.0.13",
+    "lodash": "^4.17.21",
     "magic-bytes.js": "^1.10.0",
     "zod": "^4.1.5"
   }

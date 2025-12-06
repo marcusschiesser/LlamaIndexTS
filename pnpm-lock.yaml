@@ -580,6 +580,9 @@ importers:
       '@types/node':
         specifier: ^24.0.13
         version: 24.0.13
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       magic-bytes.js:
         specifier: ^1.10.0
         version: 1.10.0

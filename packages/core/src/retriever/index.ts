@@ -1,9 +1,18 @@
 import { randomUUID } from "@llamaindex/env";
 import { Settings } from "../global";
 import type { MessageContent } from "../llms";
-import { PromptMixin } from "../prompts";
-import type { QueryBundle, QueryType } from "../query-engine";
-import { BaseNode, IndexNode, type NodeWithScore, ObjectType } from "../schema";
+import {
+  BaseNode,
+  type IndexNode,
+  type NodeWithScore,
+  ObjectType,
+} from "../schema";
+
+export type QueryBundle = {
+  query: MessageContent;
+};
+
+export type QueryType = string | QueryBundle;
 
 export type RetrieveParams = {
   query: MessageContent;
@@ -22,21 +31,10 @@ export type RetrieveEndEvent = {
   nodes: NodeWithScore[];
 };
 
-export abstract class BaseRetriever extends PromptMixin {
+export abstract class BaseRetriever {
   objectMap: Map<string, unknown> = new Map();
 
-  protected _updatePrompts() {}
-  protected _getPrompts() {
-    return {};
-  }
-
-  protected _getPromptModules() {
-    return {};
-  }
-
-  protected constructor() {
-    super();
-  }
+  protected constructor() {}
 
   public async retrieve(params: QueryType): Promise<NodeWithScore[]> {
     const cb = Settings.callbackManager;

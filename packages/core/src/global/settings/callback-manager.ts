@@ -1,45 +1,7 @@
 import { AsyncLocalStorage, CustomEvent } from "@llamaindex/env";
-import type { AgentEndEvent, AgentStartEvent } from "../../agent";
-import type {
-  ChatMessage,
-  ChatResponse,
-  ChatResponseChunk,
-  ToolCall,
-  ToolOutput,
-} from "../../llms";
-import type { QueryEndEvent, QueryStartEvent } from "../../query-engine";
-import type {
-  SynthesizeEndEvent,
-  SynthesizeStartEvent,
-} from "../../response-synthesizers";
 import type { RetrieveEndEvent, RetrieveStartEvent } from "../../retriever";
-import { TextNode } from "../../schema";
-import type { UUID } from "../type";
-import { EventCaller, getEventCaller } from "./event-caller";
-
-export type LLMStartEvent = {
-  id: UUID;
-  messages: ChatMessage[];
-};
-
-export type LLMToolCallEvent = {
-  toolCall: ToolCall;
-};
-
-export type LLMToolResultEvent = {
-  toolCall: ToolCall;
-  toolResult: ToolOutput;
-};
-
-export type LLMEndEvent = {
-  id: UUID;
-  response: ChatResponse;
-};
-
-export type LLMStreamEvent = {
-  id: UUID;
-  chunk: ChatResponseChunk;
-};
+import type { TextNode } from "../../schema";
+import { type EventCaller, getEventCaller } from "./event-caller";
 
 export type ChunkingStartEvent = {
   text: string[];
@@ -58,23 +20,12 @@ export type NodeParsingEndEvent = {
 };
 
 export interface LlamaIndexEventMaps {
-  "llm-start": LLMStartEvent;
-  "llm-end": LLMEndEvent;
-  "llm-tool-call": LLMToolCallEvent;
-  "llm-tool-result": LLMToolResultEvent;
-  "llm-stream": LLMStreamEvent;
   "chunking-start": ChunkingStartEvent;
   "chunking-end": ChunkingEndEvent;
   "node-parsing-start": NodeParsingStartEvent;
   "node-parsing-end": NodeParsingEndEvent;
-  "query-start": QueryStartEvent;
-  "query-end": QueryEndEvent;
-  "synthesize-start": SynthesizeStartEvent;
-  "synthesize-end": SynthesizeEndEvent;
   "retrieve-start": RetrieveStartEvent;
   "retrieve-end": RetrieveEndEvent;
-  "agent-start": AgentStartEvent;
-  "agent-end": AgentEndEvent;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

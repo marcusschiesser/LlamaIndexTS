@@ -1,4 +1,5 @@
 import { type Logger, path } from "@llamaindex/env";
+import _ from "lodash";
 import { KVDocumentStore } from ".";
 import {
   DEFAULT_DOC_STORE_PERSIST_FILENAME,
@@ -6,7 +7,6 @@ import {
   DEFAULT_PERSIST_DIR,
 } from "../../global";
 import { BaseInMemoryKVStore, SimpleKVStore } from "../kv-store";
-import _ from "../lodash";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SaveDict = Record<string, any>;

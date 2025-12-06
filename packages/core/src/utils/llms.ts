@@ -6,7 +6,7 @@ import type {
   MessageContentTextDetail,
   ToolMetadata,
 } from "../llms";
-import type { QueryType } from "../query-engine";
+import type { QueryType } from "../retriever";
 import type { ImageType } from "../schema";
 import { blobToDataUrl } from "./encoding";
 

@@ -1,4 +1,3 @@
-import type { ContextChatEngineOptions } from "../../chat-engine/index.js";
 import { IndexDict, IndexStructType } from "../../data-structs/index.js";
 import type { BaseEmbedding } from "../../embeddings/index.js";
 import { DEFAULT_SIMILARITY_TOP_K } from "../../embeddings/utils.js";
@@ -12,7 +11,7 @@ import {
   DocStoreStrategy,
 } from "../../ingestion/strategies/index.js";
 import type { MessageContent } from "../../llms/index.js";
-import type { QueryBundle } from "../../query-engine/index.js";
+import type { QueryBundle } from "../../retriever/index.js";
 import { BaseRetriever } from "../../retriever/index.js";
 import {
   type BaseNode,
@@ -60,7 +59,7 @@ export type VectorIndexChatEngineOptions = {
   similarityTopK?: number;
   preFilters?: MetadataFilters;
   customParams?: unknown;
-} & Omit<ContextChatEngineOptions, "retriever">;
+};
 
 /**
  * The VectorStoreIndex, an index that stores the nodes only according to their vector embeddings.

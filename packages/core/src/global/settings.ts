@@ -1,7 +1,6 @@
 import { AsyncLocalStorage, getEnv } from "@llamaindex/env";
 import { BaseEmbedding } from "../embeddings";
 import type { TextEmbedFunc } from "../embeddings/base";
-import type { LLM } from "../llms";
 import { type NodeParser, SentenceSplitter } from "../node-parser";
 import {
   type CallbackManager,
@@ -14,8 +13,6 @@ import {
   setChunkSize,
   withChunkSize,
 } from "./settings/chunk-size";
-
-import { getLLM, setLLM, withLLM } from "./settings/llm";
 import {
   getTokenSizer,
   setTokenSizer,
@@ -31,15 +28,6 @@ let _embedFunc: TextEmbedFunc | null = null;
 const _embedFuncAsyncLocalStorage = new AsyncLocalStorage<TextEmbedFunc>();
 
 export const Settings = {
-  get llm() {
-    return getLLM();
-  },
-  set llm(llm) {
-    setLLM(llm);
-  },
-  withLLM<Result>(llm: LLM, fn: () => Result): Result {
-    return withLLM(llm, fn);
-  },
   get embedModel() {
     return new BaseEmbedding();
   },
