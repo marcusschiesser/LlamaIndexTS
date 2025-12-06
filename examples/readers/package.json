@@ -19,8 +19,7 @@
   "dependencies": {
     "@llamaindex/excel": "workspace:*",
     "@llamaindex/readers": "workspace:* || ^1.0.25",
-    "@notionhq/client": "^4.0.0",
-    "llamaindex": "workspace:* || ^0.8.37"
+    "@notionhq/client": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.13",

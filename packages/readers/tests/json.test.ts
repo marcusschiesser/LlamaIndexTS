@@ -1,9 +1,11 @@
+import { beforeEach, describe, expect, it } from "vitest";
+// Note: Settings import must come first to ensure correct module initialization order
+import "@llamaindex/core/global";
 import {
   JSONParseError,
   JSONReader,
   JSONReaderError,
 } from "@llamaindex/readers/json";
-import { beforeEach, describe, expect, it } from "vitest";
 
 const content = new TextEncoder().encode(
   '{"a": {"1": {"key1": "value1"}, "2": {"key2": "value2"}}, "b": {"c": "d"}}',

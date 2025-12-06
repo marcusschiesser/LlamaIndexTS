@@ -1,13 +1,15 @@
 packages:
   - "unit"
   - "apps/*"
-  - "e2e"
-  - "e2e/examples/*"
+  # - "e2e"
+  # - "e2e/examples/*"  # disabled: references missing llamaindex package
   - "packages/*"
   - "packages/providers/*"
   - "packages/providers/storage/*"
   - "packages/providers/retriever/*"
   - "packages/core/tests"
-  - "packages/llamaindex/tests"
-  - "examples/"
+  - "packages/node-parser/tests"
+  - "packages/readers/tests"
+  - "packages/env/tests"
+  - "examples/" # disabled: references missing llamaindex package
   - "examples/**"

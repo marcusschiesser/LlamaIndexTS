@@ -1,0 +1,17 @@
+{
+  "name": "@llamaindex/node-parser-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@llamaindex/core": "workspace:*",
+    "@llamaindex/env": "workspace:*",
+    "@llamaindex/node-parser": "workspace:*",
+    "tree-sitter": "^0.22.1",
+    "tree-sitter-javascript": "^0.23.1",
+    "tree-sitter-typescript": "^0.23.2",
+    "vitest": "^2.1.5"
+  }
+}

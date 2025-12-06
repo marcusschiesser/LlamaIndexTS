@@ -1,6 +1,8 @@
+import { describe, expect, test } from "vitest";
+// Note: Settings import must come first to ensure correct module initialization order
+import "@llamaindex/core/global";
 import { Document } from "@llamaindex/core/schema";
 import { HTMLNodeParser } from "@llamaindex/node-parser/html";
-import { describe, expect, test } from "vitest";
 
 describe("HTMLNodeParser", () => {
   test("basic split", async () => {
