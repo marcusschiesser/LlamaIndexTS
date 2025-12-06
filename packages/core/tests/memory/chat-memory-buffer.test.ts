@@ -1,6 +1,7 @@
 import { Settings } from "@llamaindex/core/global";
 import type { ChatMessage } from "@llamaindex/core/llms";
 import { ChatMemoryBuffer } from "@llamaindex/core/memory";
+import { tokenizers } from "@llamaindex/env/tokenizers";
 import { beforeEach, describe, expect, test } from "vitest";
 
 describe("ChatMemoryBuffer", () => {
@@ -11,6 +12,10 @@ describe("ChatMemoryBuffer", () => {
       metadata: {
         contextWindow: 1000,
       },
+    };
+    // Set tokenSizer
+    Settings.tokenSizer = (text: string) => {
+      return tokenizers.tokenizer().encode(text).length;
     };
   });
 
