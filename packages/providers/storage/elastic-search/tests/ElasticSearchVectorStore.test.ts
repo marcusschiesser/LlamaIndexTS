@@ -1,12 +1,10 @@
 import type { Client } from "@elastic/elasticsearch";
-import { Settings } from "@llamaindex/core/global";
 import {
   Document,
   NodeRelationship,
   ObjectType,
 } from "@llamaindex/core/schema";
 import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { ElasticSearchVectorStore } from "../src";
 import { getElasticSearchClient } from "../src/utils";
@@ -51,10 +49,6 @@ describe("ElasticSearchVectorStore", async () => {
   let esClient: Client;
 
   beforeAll(async () => {
-    Settings.embedModel = new OpenAIEmbedding({
-      model: "text-embedding-3-small",
-    });
-
     esClient = getElasticSearchClient({
       esCloudId: ELASTICSEARCH_CLOUD_ID,
       esApiKey: ELASTICSEARCH_API_KEY,

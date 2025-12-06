@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "vitest": "^3.0.9",
-    "@llamaindex/openai": "workspace:*",
     "@llamaindex/core": "workspace:*",
     "@llamaindex/env": "workspace:*"
   },

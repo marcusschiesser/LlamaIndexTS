@@ -41,7 +41,6 @@
   "devDependencies": {
     "@llamaindex/core": "workspace:*",
     "@llamaindex/env": "workspace:*",
-    "@llamaindex/openai": "workspace:*",
     "vitest": "^2.1.9"
   },
   "peerDependencies": {

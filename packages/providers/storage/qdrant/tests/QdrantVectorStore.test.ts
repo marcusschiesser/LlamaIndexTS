@@ -7,10 +7,6 @@ import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
 import { QdrantClient } from "@qdrant/js-client-rest";
 import { TestableQdrantVectorStore } from "../mocks/TestableQdrantVectorStore.js";
 
-import { Settings } from "@llamaindex/core/global";
-import { OpenAIEmbedding } from "@llamaindex/openai";
-
-Settings.embedModel = new OpenAIEmbedding();
 vi.mock("@qdrant/js-client-rest");
 
 describe("QdrantVectorStore", () => {

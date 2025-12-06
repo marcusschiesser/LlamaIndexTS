@@ -39,7 +39,6 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@llamaindex/openai": "workspace:*",
     "vitest": "^2.1.5",
     "@llamaindex/core": "workspace:*",
     "@llamaindex/env": "workspace:*"

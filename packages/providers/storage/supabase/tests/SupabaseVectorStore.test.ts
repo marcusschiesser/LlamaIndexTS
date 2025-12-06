@@ -1,21 +1,11 @@
-import { Settings } from "@llamaindex/core/global";
 import { Document } from "@llamaindex/core/schema";
 import {
   FilterOperator,
   MetadataFilters,
   VectorStoreQueryMode,
 } from "@llamaindex/core/vector-store";
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import { createClient } from "@supabase/supabase-js";
-import {
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SupabaseVectorStore } from "../src";
 
 async function isSupabaseAvailable(): Promise<boolean> {
@@ -32,11 +22,6 @@ describe("SupabaseVectorStore", async () => {
     );
     return;
   }
-  beforeAll(async () => {
-    Settings.embedModel = new OpenAIEmbedding({
-      model: "text-embedding-3-small",
-    });
-  });
   it("should be able to create a vector store", async () => {
     const vectorStore = new SupabaseVectorStore({
       supabaseUrl: process.env.SUPABASE_URL!,

@@ -46,7 +46,22 @@
   "pnpm": {
     "overrides": {
       "@notionhq/client": "4.0.0"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@swc/core",
+      "bufferutil",
+      "canvas",
+      "esbuild",
+      "mongodb-memory-server",
+      "msw",
+      "onnxruntime-node",
+      "protobufjs",
+      "sharp",
+      "tree-sitter",
+      "tree-sitter-javascript",
+      "tree-sitter-typescript",
+      "unrs-resolver"
+    ]
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
