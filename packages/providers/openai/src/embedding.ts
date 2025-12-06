@@ -110,9 +110,6 @@ export class OpenAIEmbedding extends BaseEmbedding {
    * @param options
    */
   private async getOpenAIEmbedding(input: string[]): Promise<number[][]> {
-    // TODO: ensure this for every sub class by calling it in the base class
-    input = this.truncateMaxTokens(input);
-
     const { data } = await (
       await this.session
     ).embeddings.create(
