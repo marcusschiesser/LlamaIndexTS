@@ -55,7 +55,6 @@
     "@llamaindex/vllm": "^0.0.64",
     "@llamaindex/voyage-ai": "^1.0.28",
     "@llamaindex/weaviate": "^0.0.37",
-    "@llamaindex/workflow": "^1.1.24",
     "@llamaindex/xai": "^0.0.25",
     "@notionhq/client": "^4.0.0",
     "@pinecone-database/pinecone": "^4.0.0",

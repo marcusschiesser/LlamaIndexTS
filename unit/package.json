@@ -19,7 +19,6 @@
     "@llamaindex/node-parser": "workspace:*",
     "@llamaindex/openai": "workspace:*",
     "@llamaindex/readers": "workspace:*",
-    "@llamaindex/workflow": "workspace:*",
     "llamaindex": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

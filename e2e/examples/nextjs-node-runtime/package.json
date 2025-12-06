@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@llamaindex/huggingface": "workspace:*",
     "@llamaindex/readers": "workspace:*",
     "llamaindex": "workspace:*",
     "next": "^15.4.7",

@@ -11,11 +11,8 @@
   "devDependencies": {
     "@faker-js/faker": "^9.2.0",
     "@huggingface/transformers": "^3.5.0",
-    "@llamaindex/anthropic": "workspace:*",
-    "@llamaindex/clip": "workspace:*",
     "@llamaindex/core": "workspace:*",
     "@llamaindex/env": "workspace:*",
-    "@llamaindex/ollama": "workspace:*",
     "@llamaindex/openai": "workspace:*",
     "@llamaindex/pinecone": "workspace:*",
     "@llamaindex/postgres": "workspace:*",
