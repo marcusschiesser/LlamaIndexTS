@@ -1,6 +1,6 @@
-import type { BaseNodePostprocessor } from "@llamaindex/core/postprocessor";
-import type { NodeWithScore } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
+import type { NodeWithScore } from "../schema";
+import { MetadataMode } from "../schema";
+import type { BaseNodePostprocessor } from "./type";
 
 export class MetadataReplacementPostProcessor implements BaseNodePostprocessor {
   targetMetadataKey: string;
