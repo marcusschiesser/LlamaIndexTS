@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 
-import { openai, OpenAIEmbedding } from "@llamaindex/openai";
+import { openai } from "@llamaindex/openai";
 import {
   Document,
   MetadataMode,
@@ -9,20 +10,23 @@ import {
   VectorStoreIndex,
 } from "llamaindex";
 
+import { useOpenAIEmbedding } from "../utils/embedding";
+
 Settings.llm = openai({
   apiKey: process.env.OPENAI_API_KEY,
   model: "gpt-4o",
 });
-Settings.embedModel = new OpenAIEmbedding();
+useOpenAIEmbedding();
 
 async function main() {
   // Load essay from abramov.txt in Node
-  const path = "node_modules/llamaindex/examples/abramov.txt";
-
-  const essay = await fs.readFile(path, "utf-8");
+  const filePath = fileURLToPath(
+    new URL("../data/abramov.txt", import.meta.url),
+  );
+  const essay = await fs.readFile(filePath, "utf-8");
 
   // Create Document object with essay
-  const document = new Document({ text: essay, id_: path });
+  const document = new Document({ text: essay, id_: filePath });
 
   // Split text and create embeddings. Store them in a VectorStoreIndex
   const index = await VectorStoreIndex.fromDocuments([document]);

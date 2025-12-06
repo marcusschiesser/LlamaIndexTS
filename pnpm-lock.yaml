@@ -510,6 +510,9 @@ importers:
       mongodb:
         specifier: 6.21.0
         version: 6.21.0(@aws-sdk/credential-providers@3.940.0)(socks@2.8.4)
+      openai:
+        specifier: ^6.10.0
+        version: 6.10.0(ws@8.18.1(bufferutil@4.0.9))(zod@4.1.5)
       postgres:
         specifier: ^3.4.4
         version: 3.4.5
@@ -7952,6 +7955,7 @@ packages:
   next@15.4.7:
     resolution: {integrity: sha512-OcqRugwF7n7mC8OSYjvsZhhG1AYSvulor1EIUsIkbbEbf1qoE5EbH36Swj8WhF4cHqmDgkiam3z1c1W0J1Wifg==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
+    deprecated: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/CVE-2025-66478 for more details.
     hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
@@ -8172,6 +8176,18 @@ packages:
     peerDependencies:
       ws: ^8.18.0
       zod: ^3.23.8
+    peerDependenciesMeta:
+      ws:
+        optional: true
+      zod:
+        optional: true
+
+  openai@6.10.0:
+    resolution: {integrity: sha512-ITxOGo7rO3XRMiKA5l7tQ43iNNu+iXGFAcf2t+aWVzzqRaS0i7m1K2BhxNdaveB+5eENhO0VY1FkiZzhBk4v3A==}
+    hasBin: true
+    peerDependencies:
+      ws: ^8.18.0
+      zod: ^3.25 || ^4.0
     peerDependenciesMeta:
       ws:
         optional: true
@@ -18982,6 +18998,11 @@ snapshots:
       - encoding
 
   openai@5.12.0(ws@8.18.1(bufferutil@4.0.9))(zod@4.1.5):
+    optionalDependencies:
+      ws: 8.18.1(bufferutil@4.0.9)
+      zod: 4.1.5
+
+  openai@6.10.0(ws@8.18.1(bufferutil@4.0.9))(zod@4.1.5):
     optionalDependencies:
       ws: 8.18.1(bufferutil@4.0.9)
       zod: 4.1.5

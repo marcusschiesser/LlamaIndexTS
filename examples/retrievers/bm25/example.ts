@@ -1,9 +1,10 @@
 import { Bm25Retriever } from "@llamaindex/bm25-retriever";
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import { PDFReader } from "@llamaindex/readers/pdf";
-import { MetadataMode, Settings, VectorStoreIndex } from "llamaindex";
+import { MetadataMode, VectorStoreIndex } from "llamaindex";
 
-Settings.embedModel = new OpenAIEmbedding();
+import { useOpenAIEmbedding } from "../../utils/embedding";
+
+useOpenAIEmbedding();
 
 async function main() {
   // Load PDF

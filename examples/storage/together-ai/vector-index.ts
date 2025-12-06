@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 
 import { TogetherEmbedding, TogetherLLM } from "@llamaindex/together";
 import { Document, Settings, VectorStoreIndex } from "llamaindex";
@@ -16,10 +17,12 @@ async function main() {
   if (!apiKey) {
     throw new Error("Missing TOGETHER_API_KEY");
   }
-  const path = require.resolve("llamaindex/examples/abramov.txt");
-  const essay = await fs.readFile(path, "utf-8");
+  const filePath = fileURLToPath(
+    new URL("../../data/abramov.txt", import.meta.url),
+  );
+  const essay = await fs.readFile(filePath, "utf-8");
 
-  const document = new Document({ text: essay, id_: path });
+  const document = new Document({ text: essay, id_: filePath });
 
   const index = await VectorStoreIndex.fromDocuments([document]);
 

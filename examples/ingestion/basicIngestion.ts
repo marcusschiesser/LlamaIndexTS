@@ -6,15 +6,17 @@ import {
   VectorStoreIndex,
 } from "llamaindex";
 import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 
 async function main() {
   // Load essay from abramov.txt in Node
-  const path = "../node_modules/llamaindex/examples/abramov.txt";
-
-  const essay = await fs.readFile(path, "utf-8");
+  const filePath = fileURLToPath(
+    new URL("../data/abramov.txt", import.meta.url),
+  );
+  const essay = await fs.readFile(filePath, "utf-8");
 
   // Create Document object with essay
-  const document = new Document({ text: essay, id_: path });
+  const document = new Document({ text: essay, id_: filePath });
   const pipeline = new IngestionPipeline({
     transformations: [
       new SentenceSplitter({ chunkSize: 1024, chunkOverlap: 20 }),

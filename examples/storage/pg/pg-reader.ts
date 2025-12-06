@@ -1,6 +1,7 @@
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import { PGVectorStore, SimplePostgresReader } from "@llamaindex/postgres";
-import { Document, Settings } from "llamaindex";
+import { Document } from "llamaindex";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 const containerName = "llamaindex-postgres-example";
 const dbConfig = {
@@ -10,7 +11,7 @@ const dbConfig = {
   user: "postgres",
   password: "postgres",
 };
-Settings.embedModel = new OpenAIEmbedding();
+useOpenAIEmbedding();
 async function main() {
   try {
     // Initialize PGVectorStore and add a document

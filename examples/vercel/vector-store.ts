@@ -1,18 +1,21 @@
 import { openai } from "@ai-sdk/openai";
-import { Settings } from "@llamaindex/core/global";
 import { VectorStoreIndex } from "@llamaindex/core/indices";
 import { Document, MetadataMode } from "@llamaindex/core/schema";
 import { z } from "@llamaindex/core/zod";
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import { stepCountIs, streamText, type Tool, tool } from "ai";
 import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+
+import { useOpenAIEmbedding } from "../utils/embedding";
 
 async function main() {
-  Settings.embedModel = new OpenAIEmbedding();
+  useOpenAIEmbedding();
 
-  const path = "node_modules/llamaindex/examples/abramov.txt";
-  const essay = await fs.readFile(path, "utf-8");
-  const document = new Document({ text: essay, id_: path });
+  const filePath = fileURLToPath(
+    new URL("../data/abramov.txt", import.meta.url),
+  );
+  const essay = await fs.readFile(filePath, "utf-8");
+  const document = new Document({ text: essay, id_: filePath });
 
   const index = await VectorStoreIndex.fromDocuments([document]);
   console.log("Successfully created index");

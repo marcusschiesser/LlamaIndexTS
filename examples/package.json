@@ -67,6 +67,7 @@
     "llama-cloud-services": "^0.3.5",
     "llamaindex": "^0.12.1",
     "mongodb": "6.21.0",
+    "openai": "^6.10.0",
     "postgres": "^3.4.4",
     "wikipedia": "^2.1.2",
     "zod": "^4.1.5"
