@@ -1,10 +1,10 @@
 import { openai } from "@ai-sdk/openai";
 import { VectorStoreIndex } from "@llamaindex/core/indices";
 import { Document, MetadataMode } from "@llamaindex/core/schema";
-import { z } from "@llamaindex/core/zod";
 import { stepCountIs, streamText, type Tool, tool } from "ai";
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
+import { z } from "zod";
 
 import { useOpenAIEmbedding } from "../utils/embedding";
 
