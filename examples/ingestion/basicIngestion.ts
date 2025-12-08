@@ -1,12 +1,17 @@
 import {
+  BaseEmbedding,
   Document,
   IngestionPipeline,
   SentenceSplitter,
   VectorStoreIndex,
 } from "@vectorstores/core";
-import { OpenAIEmbedding } from "@vectorstores/openai";
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
+
+import { getOpenAIEmbedding } from "../utils/embedding";
+
+// Update embed model
+const embedFunc = getOpenAIEmbedding("text-embedding-3-small");
 
 async function main() {
   // Load essay from abramov.txt in Node
@@ -20,7 +25,7 @@ async function main() {
   const pipeline = new IngestionPipeline({
     transformations: [
       new SentenceSplitter({ chunkSize: 1024, chunkOverlap: 20 }),
-      new OpenAIEmbedding(),
+      new BaseEmbedding({ embedFunc }),
     ],
   });
   console.time("Pipeline Run Time");

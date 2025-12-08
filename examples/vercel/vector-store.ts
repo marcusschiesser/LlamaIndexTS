@@ -1,6 +1,5 @@
 import { openai } from "@ai-sdk/openai";
-import { VectorStoreIndex } from "@vectorstores/core/indices";
-import { Document, MetadataMode } from "@vectorstores/core/schema";
+import { Document, MetadataMode, VectorStoreIndex } from "@vectorstores/core";
 import { stepCountIs, streamText, type Tool, tool } from "ai";
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";

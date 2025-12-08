@@ -1,4 +1,4 @@
-import { Settings } from "@vectorstores/core";
+import { Settings, TextEmbedFunc } from "@vectorstores/core";
 import { OpenAI } from "openai";
 
 const openai = new OpenAI();
@@ -10,7 +10,13 @@ const openai = new OpenAI();
 export function useOpenAIEmbedding(
   model: string = "text-embedding-3-small",
 ): void {
-  Settings.embedFunc = async (input) => {
+  Settings.embedFunc = getOpenAIEmbedding(model);
+}
+
+export function getOpenAIEmbedding(
+  model: string = "text-embedding-3-small",
+): TextEmbedFunc {
+  return async (input) => {
     const { data } = await openai.embeddings.create({
       model,
       input,
