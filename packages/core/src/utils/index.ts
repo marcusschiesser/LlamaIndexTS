@@ -95,16 +95,13 @@ export function assertIsJSONValue(value: unknown): asserts value is JSONValue {
   throw new Error(`Value is not a valid JSONValue: ${String(value)}`);
 }
 
+export * from "./encoding";
 export {
   extractDataUrlComponents,
   extractImage,
   extractSingleText,
   extractText,
   imageToDataUrl,
-  messagesToHistory,
-  toToolDescriptions,
 } from "./llms";
-
-export * from "./encoding";
 export { objectEntries } from "./object-entries";
 export * from "./stream";

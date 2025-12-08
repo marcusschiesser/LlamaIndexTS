@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 // Note: Settings import must come first to ensure correct module initialization order
-import "@llamaindex/core/global";
-import { Document } from "@llamaindex/core/schema";
+import "@llamaindex/core";
+import { Document } from "@llamaindex/core";
 import { HTMLNodeParser } from "@llamaindex/node-parser/html";
 
 describe("HTMLNodeParser", () => {

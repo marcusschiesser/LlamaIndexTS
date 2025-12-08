@@ -1,5 +1,4 @@
-import { SentenceSplitter } from "@llamaindex/core/node-parser";
-import { Document } from "@llamaindex/core/schema";
+import { Document, SentenceSplitter } from "@llamaindex/core";
 import { getEncoding } from "js-tiktoken";
 import { beforeEach, describe, expect, test } from "vitest";
 

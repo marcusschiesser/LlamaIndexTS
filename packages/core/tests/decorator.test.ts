@@ -1,5 +1,4 @@
-import { Settings } from "@llamaindex/core/global";
-import { TextNode } from "@llamaindex/core/schema";
+import { Settings, TextNode } from "@llamaindex/core";
 import { env } from "process";
 import { afterEach, describe, expect, test, vi } from "vitest";
 describe("chunkSizeCheck", () => {

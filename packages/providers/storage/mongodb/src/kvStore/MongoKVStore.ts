@@ -1,5 +1,5 @@
-import type { StoredValue } from "@llamaindex/core/schema";
-import { BaseKVStore } from "@llamaindex/core/storage/kv-store";
+import type { StoredValue } from "@llamaindex/core";
+import { BaseKVStore } from "@llamaindex/core";
 import type { Collection, MongoClient } from "mongodb";
 
 const DEFAULT_DB_NAME = "KVStoreDB";

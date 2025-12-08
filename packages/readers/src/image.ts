@@ -1,4 +1,4 @@
-import { FileReader, ImageDocument } from "@llamaindex/core/schema";
+import { FileReader, ImageDocument } from "@llamaindex/core";
 
 /**
  * Reads the content of an image file into a Document object (which stores the image file as a Blob).

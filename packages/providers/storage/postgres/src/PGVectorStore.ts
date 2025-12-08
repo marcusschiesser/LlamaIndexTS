@@ -2,22 +2,23 @@ import type pg from "pg";
 
 import {
   BaseVectorStore,
+  DEFAULT_COLLECTION,
+  Document,
   FilterCondition,
   FilterOperator,
+  MetadataMode,
+  type BaseEmbedding,
+  type BaseNode,
   type IsomorphicDB,
+  type Metadata,
   type MetadataFilter,
   type MetadataFilterValue,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import type { VercelPool } from "@vercel/postgres";
 import type { Sql } from "postgres";
-
-import type { BaseEmbedding } from "@llamaindex/core/embeddings";
-import { DEFAULT_COLLECTION } from "@llamaindex/core/global";
-import type { BaseNode, Metadata } from "@llamaindex/core/schema";
-import { Document, MetadataMode } from "@llamaindex/core/schema";
 
 // todo: create adapter for postgres client
 function fromVercelPool(client: VercelPool): IsomorphicDB {

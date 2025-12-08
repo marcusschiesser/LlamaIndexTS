@@ -1,4 +1,4 @@
-import { type BaseReader, Document } from "@llamaindex/core/schema";
+import { type BaseReader, Document } from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 import type {
   AssemblyAI,

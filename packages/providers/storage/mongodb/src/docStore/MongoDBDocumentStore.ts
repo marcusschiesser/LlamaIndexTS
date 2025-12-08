@@ -1,4 +1,4 @@
-import { KVDocumentStore } from "@llamaindex/core/storage/doc-store";
+import { KVDocumentStore } from "@llamaindex/core";
 import { MongoClient } from "mongodb";
 import pkg from "../../package.json";
 import { MongoKVStore } from "../kvStore/MongoKVStore";

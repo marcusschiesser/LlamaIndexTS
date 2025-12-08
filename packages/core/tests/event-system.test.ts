@@ -1,7 +1,7 @@
-import { CallbackManager, Settings } from "@llamaindex/core/global";
+import { CallbackManager, Settings } from "@llamaindex/core";
 import { beforeEach, describe, expect, expectTypeOf, test, vi } from "vitest";
 
-declare module "@llamaindex/core/global" {
+declare module "@llamaindex/core" {
   interface LlamaIndexEventMaps {
     test: {
       value: number;

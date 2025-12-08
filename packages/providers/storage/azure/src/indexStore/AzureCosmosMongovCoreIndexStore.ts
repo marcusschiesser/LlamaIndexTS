@@ -1,4 +1,4 @@
-import { KVIndexStore } from "@llamaindex/core/storage/index-store";
+import { KVIndexStore } from "@llamaindex/core";
 import { MongoClient } from "mongodb";
 import { AzureCosmosVCoreKVStore } from "../kvStore/AzureCosmosMongovCoreKVStore.js";
 

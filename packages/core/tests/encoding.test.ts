@@ -4,7 +4,7 @@ import {
   blobToDataUrl,
   getMimeTypeFromDataUrl,
   uint8ArrayToBase64,
-} from "@llamaindex/core/utils";
+} from "@llamaindex/core";
 import { describe, expect, it } from "vitest";
 
 const testString = "LlamaIndex";

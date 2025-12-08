@@ -1,5 +1,8 @@
-import { SentenceWindowNodeParser } from "@llamaindex/core/node-parser";
-import { Document, MetadataMode } from "@llamaindex/core/schema";
+import {
+  Document,
+  MetadataMode,
+  SentenceWindowNodeParser,
+} from "@llamaindex/core";
 import { describe, expect, test } from "vitest";
 
 describe("Tests for the SentenceWindowNodeParser class", () => {

@@ -1,9 +1,9 @@
-import { Document } from "@llamaindex/core/schema";
 import {
+  Document,
   FilterOperator,
   MetadataFilters,
   VectorStoreQueryMode,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { createClient } from "@supabase/supabase-js";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SupabaseVectorStore } from "../src";

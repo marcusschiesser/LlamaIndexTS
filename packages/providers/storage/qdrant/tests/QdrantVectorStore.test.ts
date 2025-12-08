@@ -1,9 +1,9 @@
-import type { BaseNode } from "@llamaindex/core/schema";
-import { TextNode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@llamaindex/core";
+import { TextNode } from "@llamaindex/core";
 import type { Mocked } from "vitest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
+import { VectorStoreQueryMode } from "@llamaindex/core";
 import { QdrantClient } from "@qdrant/js-client-rest";
 import { TestableQdrantVectorStore } from "../mocks/TestableQdrantVectorStore.js";
 

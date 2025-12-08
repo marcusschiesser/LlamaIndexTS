@@ -1,4 +1,4 @@
-import { Document, FileReader } from "@llamaindex/core/schema";
+import { Document, FileReader } from "@llamaindex/core";
 import type { Options, parse } from "csv-parse";
 
 /**

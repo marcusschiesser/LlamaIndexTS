@@ -1,5 +1,4 @@
-import type { BaseReader, FileReader } from "@llamaindex/core/schema";
-import { Document } from "@llamaindex/core/schema";
+import { Document, type BaseReader, type FileReader } from "@llamaindex/core";
 import { path } from "@llamaindex/env";
 import pLimit from "p-limit";
 import { TextFileReader } from "../text";

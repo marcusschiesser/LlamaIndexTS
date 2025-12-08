@@ -1,6 +1,10 @@
 import { parseChunked } from "@discoveryjs/json-ext";
-import type { JSONObject, JSONValue } from "@llamaindex/core/global";
-import { Document, FileReader } from "@llamaindex/core/schema";
+import {
+  Document,
+  FileReader,
+  type JSONObject,
+  type JSONValue,
+} from "@llamaindex/core";
 import { consoleLogger, type Logger } from "@llamaindex/env";
 
 // Possible improvements:

@@ -1,4 +1,4 @@
-import { BaseNode, MetadataMode, type Metadata } from "@llamaindex/core/schema";
+import { BaseNode, MetadataMode, type Metadata } from "@llamaindex/core";
 import weaviate, {
   Filters,
   type Collection,
@@ -20,7 +20,7 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 import type { BaseHybridOptions } from "weaviate-client";
 import { sanitizeMetadata } from "./sanitize";

@@ -6,13 +6,13 @@ import {
   type FindOptions,
   type SomeDoc,
 } from "@datastax/astra-db-ts";
-import type { BaseNode } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@llamaindex/core";
 import {
   BaseVectorStore,
   FilterCondition,
   FilterOperator,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
   parseArrayValue,
   type MetadataFilter,
@@ -20,7 +20,7 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 
 export class AstraDBVectorStore extends BaseVectorStore {

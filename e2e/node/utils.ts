@@ -3,7 +3,7 @@ import {
   type LLMEndEvent,
   type LLMStartEvent,
   type LLMStreamEvent,
-} from "@llamaindex/core/global";
+} from "@llamaindex/core";
 import { CustomEvent } from "@llamaindex/env";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 // Note: Settings import must come first to ensure correct module initialization order
-import "@llamaindex/core/global";
+import "@llamaindex/core";
 import { MarkdownReader } from "@llamaindex/readers/markdown";
 
 describe("MarkdownReader", () => {

@@ -21,15 +21,20 @@ From the workspace root:
 
 ## Architecture
 
-### Modular Export System
+### Export System
 
-This package uses a sophisticated modular export system where functionality is organized into sub-modules that can be imported independently:
+This package exports all functionality from a single entry point. Import everything from `@llamaindex/core`:
 
 ```typescript
-import { BaseLLM } from "@llamaindex/core/llms";
-import { BaseEmbedding } from "@llamaindex/core/embeddings";
-import { BaseNode } from "@llamaindex/core/schema";
-import { Settings } from "@llamaindex/core/global";
+import {
+  BaseEmbedding,
+  BaseNode,
+  BaseRetriever,
+  BaseVectorStore,
+  Document,
+  Settings,
+  // ... and more
+} from "@llamaindex/core";
 ```
 
 ### Package Structure

@@ -1,9 +1,9 @@
-import { NodeParser } from "@llamaindex/core/node-parser";
 import {
   buildNodeFromSplits,
   MetadataMode,
+  NodeParser,
   TextNode,
-} from "@llamaindex/core/schema";
+} from "@llamaindex/core";
 import { htmlToText, type HtmlToTextOptions } from "html-to-text";
 
 export type HTMLNodeParserParam = {

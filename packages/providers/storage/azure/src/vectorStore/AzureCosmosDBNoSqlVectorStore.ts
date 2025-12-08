@@ -11,11 +11,12 @@ import {
   type VectorIndex,
 } from "@azure/cosmos";
 import { DefaultAzureCredential, type TokenCredential } from "@azure/identity";
-import { BaseNode, MetadataMode } from "@llamaindex/core/schema";
 import {
+  BaseNode,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 
 import {
@@ -23,7 +24,7 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 
 /** Azure Cosmos DB for NoSQL database creation options. */
 export type AzureCosmosDBNoSqlCreateDatabaseOptions = Partial<

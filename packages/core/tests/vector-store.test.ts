@@ -1,11 +1,12 @@
 import { beforeEach, describe, expect, test } from "vitest";
 // Note: global import must come first to ensure correct module initialization order
-import "@llamaindex/core/global";
-import { Document, MetadataMode } from "@llamaindex/core/schema";
+import "@llamaindex/core";
 import {
+  Document,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 
 describe("Testing VectorStore utils", () => {
   let node: Document;

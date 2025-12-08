@@ -1,17 +1,15 @@
 import { Client, type estypes } from "@elastic/elasticsearch";
 import {
-  MetadataMode,
-  type BaseNode,
-  type StoredValue,
-} from "@llamaindex/core/schema";
-import {
   BaseVectorStore,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
+  type BaseNode,
   type MetadataFilters,
+  type StoredValue,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getElasticSearchClient } from "./utils";
 
 type ElasticSearchParams = {

@@ -1,4 +1,4 @@
-import { Document, MetadataMode } from "@llamaindex/core/schema";
+import { Document, MetadataMode } from "@llamaindex/core";
 import { MongoClient, type DriverInfo } from "mongodb";
 import {
   afterAll,

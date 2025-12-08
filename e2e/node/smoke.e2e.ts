@@ -10,11 +10,11 @@ await test("cjs/esm dual module check", async (t) => {
   const esmImports = `import fs from 'node:fs/promises'
 import { Document, MetadataMode, VectorStoreIndex } from 'llamaindex'
 import { OpenAIEmbedding } from '@llamaindex/openai'
-import { Settings } from '@llamaindex/core/global'`;
+import { Settings } from '@llamaindex/core'`;
   const cjsRequire = `const fs = require('fs').promises
 const { Document, MetadataMode, VectorStoreIndex } = require('llamaindex')
 const { OpenAIEmbedding } = require('@llamaindex/openai')
-const { Settings } = require('@llamaindex/core/global')`;
+const { Settings } = require('@llamaindex/core')`;
   const mainCode = `
 Settings.embedModel = new OpenAIEmbedding({
   model: 'text-embedding-3-small',

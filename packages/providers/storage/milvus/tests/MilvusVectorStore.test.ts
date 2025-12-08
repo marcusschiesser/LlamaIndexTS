@@ -1,9 +1,9 @@
-import type { BaseNode } from "@llamaindex/core/schema";
-import { TextNode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@llamaindex/core";
 import {
+  TextNode,
   VectorStoreQueryMode,
   type MetadataFilters,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { TestableMilvusVectorStore } from "../mocks/TestableMilvusVectorStore";
 import { MilvusVectorStore } from "../src/MilvusVectorStore";

@@ -1,6 +1,5 @@
-import { DEFAULT_COLLECTION } from "@llamaindex/core/global";
-import type { StoredValue } from "@llamaindex/core/schema";
-import { BaseKVStore } from "@llamaindex/core/storage/kv-store";
+import type { StoredValue } from "@llamaindex/core";
+import { BaseKVStore, DEFAULT_COLLECTION } from "@llamaindex/core";
 import type pg from "pg";
 
 export type DataType = Record<string, Record<string, StoredValue>>;

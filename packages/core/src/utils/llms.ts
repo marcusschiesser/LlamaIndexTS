@@ -1,10 +1,8 @@
 import { fs } from "@llamaindex/env";
 import type {
-  ChatMessage,
   MessageContent,
   MessageContentDetail,
   MessageContentTextDetail,
-  ToolMetadata,
 } from "../llms";
 import type { QueryType } from "../retriever";
 import type { ImageType } from "../schema";
@@ -88,27 +86,6 @@ export const extractDataUrlComponents = (
     base64,
   };
 };
-
-export function messagesToHistory(messages: ChatMessage[]): string {
-  return messages.reduce((acc, message) => {
-    acc += acc ? "\n" : "";
-    if (message.role === "user") {
-      acc += `Human: ${message.content}`;
-    } else {
-      acc += `Assistant: ${message.content}`;
-    }
-    return acc;
-  }, "");
-}
-
-export function toToolDescriptions(tools: ToolMetadata[]): string {
-  const toolsObj = tools.reduce<Record<string, string>>((acc, tool) => {
-    acc[tool.name] = tool.description;
-    return acc;
-  }, {});
-
-  return JSON.stringify(toolsObj, null, 4);
-}
 
 export async function imageToDataUrl(
   input: ImageType | Uint8Array,

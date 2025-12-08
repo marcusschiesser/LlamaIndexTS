@@ -1,8 +1,4 @@
-import {
-  BaseEmbedding,
-  similarity,
-  SimilarityType,
-} from "@llamaindex/core/embeddings";
+import { BaseEmbedding, similarity, SimilarityType } from "@llamaindex/core";
 import { describe, expect, test } from "vitest";
 
 describe("BaseEmbedding", () => {

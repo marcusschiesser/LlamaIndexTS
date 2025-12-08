@@ -4,8 +4,8 @@ import type {
   ChatMessage,
   MessageContent,
   MessageType,
-} from "@llamaindex/core/llms";
-import { BaseChatStore } from "@llamaindex/core/storage/chat-store";
+} from "@llamaindex/core";
+import { BaseChatStore } from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 
 const USER_AGENT_SUFFIX = "llamaindex-cdbnosql-chatstore-javascript";

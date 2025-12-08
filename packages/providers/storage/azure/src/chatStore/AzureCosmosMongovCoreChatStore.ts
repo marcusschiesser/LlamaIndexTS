@@ -3,8 +3,8 @@ import type {
   ChatMessage,
   MessageContent,
   MessageType,
-} from "@llamaindex/core/llms";
-import { BaseChatStore } from "@llamaindex/core/storage/chat-store";
+} from "@llamaindex/core";
+import { BaseChatStore } from "@llamaindex/core";
 import type { Collection } from "mongodb";
 import { MongoClient } from "mongodb";
 import pkg from "../../package.json";

@@ -1,13 +1,14 @@
-import { MetadataMode, type BaseNode } from "@llamaindex/core/schema";
 import {
   BaseVectorStore,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
+  type BaseNode,
   type MetadataFilters,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 

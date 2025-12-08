@@ -1,4 +1,4 @@
-import { type BaseReader, Document } from "@llamaindex/core/schema";
+import { type BaseReader, Document } from "@llamaindex/core";
 import pg from "pg";
 
 export type PostgresReaderConfig = {

@@ -1,13 +1,13 @@
-import type { BaseNode } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@llamaindex/core";
 import {
   BaseVectorStore,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 import { Collection, Db, MongoClient } from "mongodb";
 import pkg from "../../package.json";

@@ -1,5 +1,4 @@
-import { Settings } from "@llamaindex/core/global";
-import { TextSplitter } from "@llamaindex/core/node-parser";
+import { Settings, TextSplitter } from "@llamaindex/core";
 import type NodeParser from "tree-sitter";
 import type { SyntaxNode as NodeSyntaxNode } from "tree-sitter";
 import type WebParser from "web-tree-sitter";

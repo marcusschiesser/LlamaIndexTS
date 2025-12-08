@@ -26,19 +26,20 @@ import {
   DefaultAzureCredential,
   ManagedIdentityCredential,
 } from "@azure/identity";
-import { type BaseNode, MetadataMode } from "@llamaindex/core/schema";
 import {
+  type BaseNode,
   BaseVectorStore,
   FilterCondition,
   FilterOperator,
   metadataDictToNode,
   type MetadataFilters,
+  MetadataMode,
   nodeToMetadata,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   VectorStoreQueryMode,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { consoleLogger, getEnv } from "@llamaindex/env";
 import {
   AzureAISearchVectorStoreConfig,

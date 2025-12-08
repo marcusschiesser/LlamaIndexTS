@@ -2,7 +2,7 @@ import {
   DefaultAzureCredential,
   getBearerTokenProvider,
 } from "@azure/identity";
-import type { BaseTool, ToolMetadata } from "@llamaindex/core/llms";
+import type { BaseTool, ToolMetadata } from "@llamaindex/core";
 import {
   Readable,
   createWriteStream,

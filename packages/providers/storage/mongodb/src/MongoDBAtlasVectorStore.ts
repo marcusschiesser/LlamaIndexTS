@@ -1,18 +1,18 @@
-import type { BaseEmbedding } from "@llamaindex/core/embeddings";
-import type { BaseNode } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
 import {
   BaseVectorStore,
   FilterCondition,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
+  type BaseEmbedding,
+  type BaseNode,
   type FilterOperator,
   type MetadataFilter,
   type MetadataFilters,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 import { getEnv } from "@llamaindex/env";
 import type { BulkWriteOptions, Collection } from "mongodb";
 import { MongoClient } from "mongodb";

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 // Note: Settings import must come first to ensure correct module initialization order
-import "@llamaindex/core/global";
+import "@llamaindex/core";
 import { PDFReader } from "@llamaindex/readers/pdf";
 
 describe("pdf reader", () => {

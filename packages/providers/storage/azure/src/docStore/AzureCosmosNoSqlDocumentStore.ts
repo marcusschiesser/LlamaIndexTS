@@ -1,4 +1,4 @@
-import { KVDocumentStore } from "@llamaindex/core/storage/doc-store";
+import { KVDocumentStore } from "@llamaindex/core";
 import {
   AzureCosmosNoSqlKVStore,
   type AadTokenOptions,

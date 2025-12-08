@@ -6,10 +6,10 @@ import {
 import {
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 
-import type { TextNode } from "@llamaindex/core/schema";
-import { metadataDictToNode } from "@llamaindex/core/vector-store";
+import type { TextNode } from "@llamaindex/core";
+import { metadataDictToNode } from "@llamaindex/core";
 import { consoleLogger } from "@llamaindex/env";
 import {
   AzureAISearchVectorStoreConfig,

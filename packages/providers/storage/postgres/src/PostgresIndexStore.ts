@@ -1,5 +1,4 @@
-import { DEFAULT_NAMESPACE } from "@llamaindex/core/global";
-import { KVIndexStore } from "@llamaindex/core/storage/index-store";
+import { DEFAULT_NAMESPACE, KVIndexStore } from "@llamaindex/core";
 import { PostgresKVStore, type PostgresKVStoreConfig } from "./PostgresKVStore";
 
 const DEFAULT_TABLE_NAME = "llamaindex_index_store";

@@ -1,11 +1,11 @@
 import type { Client } from "@elastic/elasticsearch";
-import { Settings } from "@llamaindex/core/global";
 import {
   Document,
   NodeRelationship,
   ObjectType,
-} from "@llamaindex/core/schema";
-import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
+  Settings,
+  VectorStoreQueryMode,
+} from "@llamaindex/core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { ElasticSearchVectorStore } from "../src";
 import { getElasticSearchClient } from "../src/utils";

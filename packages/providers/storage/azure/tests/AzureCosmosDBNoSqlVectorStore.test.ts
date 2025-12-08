@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { BaseNode } from "@llamaindex/core/schema";
-import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
+import type { BaseNode } from "@llamaindex/core";
+import { VectorStoreQueryMode } from "@llamaindex/core";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { TestableAzureCosmosDBNoSqlVectorStore } from "../mocks/TestableAzureCosmosDBNoSqlVectorStore.js";
 import { createMockClient } from "../utility/mockCosmosClient.js"; // Import the mock client

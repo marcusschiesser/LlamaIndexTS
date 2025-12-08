@@ -7,7 +7,7 @@ import {
   type VectorQuery,
   type WhereFilterOp,
 } from "@google-cloud/firestore";
-import type { BaseNode, Metadata } from "@llamaindex/core/schema";
+import type { BaseNode, Metadata } from "@llamaindex/core";
 import {
   BaseVectorStore,
   FilterOperator,
@@ -18,7 +18,7 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@llamaindex/core";
 
 enum DistanceMeasure {
   COSINE = "COSINE",
