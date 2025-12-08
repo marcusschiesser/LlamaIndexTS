@@ -1,11 +1,6 @@
 name: Publish Preview
 on: [pull_request]
 
-env:
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-  TURBO_REMOTE_ONLY: true
-
 jobs:
   pre_release:
     name: Pre Release
@@ -25,6 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Cache Turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
 
       - name: Build
         run: pnpm run build

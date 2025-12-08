@@ -8,11 +8,6 @@ on:
     branches:
       - main
 
-env:
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-  TURBO_REMOTE_ONLY: true
-
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -26,6 +21,13 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
+      - name: Cache Turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
       - name: Run lint
         run: pnpm run lint
       - name: Run Prettier
