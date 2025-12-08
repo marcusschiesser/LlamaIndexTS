@@ -1,7 +1,6 @@
 import { AsyncLocalStorage, getEnv } from "@llamaindex/env";
-import { BaseEmbedding } from "../embeddings";
 import type { TextEmbedFunc } from "../embeddings/base";
-import { type NodeParser, SentenceSplitter } from "../node-parser";
+import type { NodeParser } from "../node-parser";
 import {
   type CallbackManager,
   getCallbackManager,
@@ -28,9 +27,6 @@ let _embedFunc: TextEmbedFunc | null = null;
 const _embedFuncAsyncLocalStorage = new AsyncLocalStorage<TextEmbedFunc>();
 
 export const Settings = {
-  get embedModel() {
-    return new BaseEmbedding();
-  },
   get tokenSizer() {
     return getTokenSizer();
   },
@@ -65,14 +61,7 @@ export const Settings = {
     return withCallbackManager(callbackManager, fn);
   },
 
-  get nodeParser(): NodeParser {
-    if (_nodeParser === null) {
-      _nodeParser = new SentenceSplitter({
-        chunkSize: getChunkSize(),
-        chunkOverlap: _chunkOverlap,
-      });
-    }
-
+  get nodeParser(): NodeParser | null {
     return _nodeParserAsyncLocalStorage.getStore() ?? _nodeParser;
   },
 

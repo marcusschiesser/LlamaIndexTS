@@ -1,4 +1,5 @@
-import { DEFAULT_NAMESPACE, Settings } from "../global/index.js";
+import { BaseEmbedding } from "../embeddings/index.js";
+import { DEFAULT_NAMESPACE } from "../global/index.js";
 import { ModalityType, ObjectType } from "../schema/index.js";
 import type {
   BaseVectorStore,
@@ -38,7 +39,7 @@ export async function storageContextFromDefaults({
       vectorStores[ModalityType.TEXT] = vectorStore ?? new SimpleVectorStore();
     }
   } else {
-    const embedModel = Settings.embedModel;
+    const embedModel = new BaseEmbedding();
     docStore =
       docStore ||
       (await SimpleDocumentStore.fromPersistDir(persistDir, DEFAULT_NAMESPACE));

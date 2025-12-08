@@ -11,8 +11,29 @@ export type TextEmbedFunc = EmbedFunc<string>;
 
 export class BaseEmbedding extends TransformComponent<Promise<BaseNode[]>> {
   embedBatchSize = DEFAULT_EMBED_BATCH_SIZE;
+  private _embedFunc: TextEmbedFunc | undefined;
 
-  public constructor(transformFn?: (nodes: BaseNode[]) => Promise<BaseNode[]>) {
+  public constructor(
+    optionsOrTransformFn?:
+      | {
+          transformFn?: (nodes: BaseNode[]) => Promise<BaseNode[]>;
+          embedFunc?: TextEmbedFunc;
+        }
+      | ((nodes: BaseNode[]) => Promise<BaseNode[]>),
+  ) {
+    // Support both old signature (transformFn) and new signature (options object)
+    let transformFn: ((nodes: BaseNode[]) => Promise<BaseNode[]>) | undefined;
+    let embedFunc: TextEmbedFunc | undefined;
+
+    if (typeof optionsOrTransformFn === "function") {
+      // Old signature: constructor(transformFn)
+      transformFn = optionsOrTransformFn;
+    } else if (optionsOrTransformFn) {
+      // New signature: constructor({ transformFn?, embedFunc? })
+      transformFn = optionsOrTransformFn.transformFn;
+      embedFunc = optionsOrTransformFn.embedFunc;
+    }
+
     if (transformFn) {
       super(transformFn);
     } else {
@@ -28,6 +49,7 @@ export class BaseEmbedding extends TransformComponent<Promise<BaseNode[]>> {
         return nodes;
       });
     }
+    this._embedFunc = embedFunc;
   }
 
   similarity(
@@ -60,12 +82,13 @@ export class BaseEmbedding extends TransformComponent<Promise<BaseNode[]>> {
    * @param texts
    */
   getTextEmbeddings = async (texts: string[]): Promise<Array<number[]>> => {
-    if (!Settings.embedFunc) {
+    const embedFunc = this._embedFunc ?? Settings.embedFunc;
+    if (!embedFunc) {
       throw new Error(
-        "Can't run embeddings without specifying an embed functions using Settings.embedFunc",
+        "Can't run embeddings without specifying an embed function. Either pass embedFunc to BaseEmbedding constructor or set Settings.embedFunc",
       );
     }
-    return await Settings.embedFunc(texts);
+    return await embedFunc(texts);
   };
 
   /**

@@ -1,5 +1,4 @@
-import type { BaseEmbedding } from "../embeddings";
-import { Settings } from "../global";
+import { BaseEmbedding, type TextEmbedFunc } from "../embeddings";
 import type { BaseNode, ModalityType } from "../schema";
 
 /**
@@ -101,9 +100,11 @@ export type VectorStoreByType = {
 };
 
 export type VectorStoreBaseParams = {
-  // @deprecated: use embedModel instead
+  // @deprecated: use embedFunc instead
   embeddingModel?: BaseEmbedding | undefined;
+  // @deprecated: use embedFunc instead
   embedModel?: BaseEmbedding | undefined;
+  embedFunc?: TextEmbedFunc | undefined;
 };
 
 export abstract class BaseVectorStore<Client = unknown, T = unknown> {
@@ -119,8 +120,12 @@ export abstract class BaseVectorStore<Client = unknown, T = unknown> {
   ): Promise<VectorStoreQueryResult>;
 
   protected constructor(params?: VectorStoreBaseParams) {
-    this.embedModel =
-      params?.embedModel ?? params?.embeddingModel ?? Settings.embedModel;
+    if (params?.embedFunc) {
+      this.embedModel = new BaseEmbedding({ embedFunc: params.embedFunc });
+    } else {
+      this.embedModel =
+        params?.embedModel ?? params?.embeddingModel ?? new BaseEmbedding();
+    }
   }
 }
 

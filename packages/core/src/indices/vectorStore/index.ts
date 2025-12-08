@@ -1,5 +1,5 @@
 import { IndexDict, IndexStructType } from "../../data-structs/index.js";
-import type { BaseEmbedding } from "../../embeddings/index.js";
+import { BaseEmbedding, type TextEmbedFunc } from "../../embeddings/index.js";
 import { DEFAULT_SIMILARITY_TOP_K } from "../../embeddings/utils.js";
 import { Settings } from "../../global/index.js";
 import {
@@ -11,6 +11,7 @@ import {
   DocStoreStrategy,
 } from "../../ingestion/strategies/index.js";
 import type { MessageContent } from "../../llms/index.js";
+import { SentenceSplitter } from "../../node-parser/index.js";
 import type { QueryBundle } from "../../retriever/index.js";
 import { BaseRetriever } from "../../retriever/index.js";
 import {
@@ -47,11 +48,17 @@ export interface VectorIndexOptions extends IndexStructOptions {
   vectorStores?: VectorStoreByType | undefined;
   logProgress?: boolean | undefined;
   progressCallback?: ((progress: number, total: number) => void) | undefined;
+  // @deprecated: use embedFunc instead
+  embedModel?: BaseEmbedding | undefined;
+  embedFunc?: TextEmbedFunc | undefined;
 }
 
 export interface VectorIndexConstructorProps extends BaseIndexInit<IndexDict> {
   indexStore: BaseIndexStore;
   vectorStores?: VectorStoreByType | undefined;
+  // @deprecated: use embedFunc instead
+  embedModel?: BaseEmbedding | undefined;
+  embedFunc?: TextEmbedFunc | undefined;
 }
 
 export type VectorIndexChatEngineOptions = {
@@ -66,6 +73,7 @@ export type VectorIndexChatEngineOptions = {
  */
 export class VectorStoreIndex extends BaseIndex<IndexDict> {
   indexStore: BaseIndexStore;
+  /** @deprecated: use embedFunc instead */
   embedModel?: BaseEmbedding | undefined;
   vectorStores: VectorStoreByType;
 
@@ -73,7 +81,11 @@ export class VectorStoreIndex extends BaseIndex<IndexDict> {
     super(init);
     this.indexStore = init.indexStore;
     this.vectorStores = init.vectorStores ?? init.storageContext.vectorStores;
-    this.embedModel = Settings.embedModel;
+    if (init.embedFunc) {
+      this.embedModel = new BaseEmbedding({ embedFunc: init.embedFunc });
+    } else {
+      this.embedModel = init.embedModel ?? new BaseEmbedding();
+    }
   }
 
   /**
@@ -108,6 +120,8 @@ export class VectorStoreIndex extends BaseIndex<IndexDict> {
       indexStruct,
       indexStore,
       vectorStores: options.vectorStores,
+      embedModel: options.embedModel,
+      embedFunc: options.embedFunc,
     });
 
     if (options.nodes) {
@@ -237,9 +251,15 @@ export class VectorStoreIndex extends BaseIndex<IndexDict> {
       docStore,
       vectorStores,
     );
+    const nodeParser =
+      Settings.nodeParser ??
+      new SentenceSplitter({
+        chunkSize: Settings.chunkSize,
+        chunkOverlap: Settings.chunkOverlap,
+      });
     args.nodes = await runTransformations(
       documents,
-      [Settings.nodeParser],
+      [nodeParser],
       {},
       { docStoreStrategy },
     );

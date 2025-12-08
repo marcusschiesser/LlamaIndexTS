@@ -1,5 +1,6 @@
 import { Settings } from "../global/settings.js";
 import { runTransformations } from "../ingestion/IngestionPipeline.js";
+import { SentenceSplitter } from "../node-parser/index.js";
 import type { BaseRetriever } from "../retriever/index.js";
 import type { BaseNode, Document } from "../schema/node.js";
 import type { BaseDocumentStore } from "../storage/doc-store/base-document-store.js";
@@ -42,7 +43,13 @@ export abstract class BaseIndex<T> {
    * @param document
    */
   async insert(document: Document) {
-    const nodes = await runTransformations([document], [Settings.nodeParser]);
+    const nodeParser =
+      Settings.nodeParser ??
+      new SentenceSplitter({
+        chunkSize: Settings.chunkSize,
+        chunkOverlap: Settings.chunkOverlap,
+      });
+    const nodes = await runTransformations([document], [nodeParser]);
     await this.insertNodes(nodes);
     await this.docStore.setDocumentHash(document.id_, document.hash);
   }

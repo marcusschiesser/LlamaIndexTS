@@ -1,4 +1,4 @@
-export { BaseEmbedding, batchEmbeddings } from "./base";
+export { BaseEmbedding, batchEmbeddings, type TextEmbedFunc } from "./base";
 export { MultiModalEmbedding } from "./muti-model";
 export {
   DEFAULT_SIMILARITY_TOP_K,
