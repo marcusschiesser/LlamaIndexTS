@@ -113,7 +113,7 @@
   "scripts": {
     "dev": "bunchee --watch",
     "build": "bunchee",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@huggingface/transformers": "^3.5.0",

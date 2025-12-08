@@ -36,7 +36,7 @@
   "scripts": {
     "build": "bunchee",
     "dev": "bunchee --watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@types/pg": "^8.11.8",

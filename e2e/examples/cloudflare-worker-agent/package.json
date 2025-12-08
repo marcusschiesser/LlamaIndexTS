@@ -8,7 +8,7 @@
     "dev": "wrangler dev",
     "build": "wrangler deploy --dry-run --outdir dist",
     "start": "wrangler dev",
-    "test": "vitest",
+    "test": "vitest run",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {

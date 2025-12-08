@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@llamaindex/core": "workspace:*",
