@@ -10,7 +10,6 @@ This project uses pnpm as the package manager and Turbo for build orchestration:
 - `pnpm build` - Build all packages using Turbo
 - `pnpm dev` - Start development mode for all packages
 - `pnpm test` - Run all unit tests
-- `pnpm e2e` - Run end-to-end tests
 - `pnpm lint` - Run ESLint across all packages
 - `pnpm type-check` - Run TypeScript type checking across workspace
 - `pnpm format` - Check code formatting with Prettier
@@ -77,7 +76,6 @@ vectorstores is a TypeScript data framework for LLM applications organized as a 
 ### Testing Structure
 
 - Unit tests in each package's `tests/` directory
-- E2E tests in `e2e/` directory with runtime-specific examples
 - Tests depend on build artifacts, so always run `pnpm build` before testing
 
 ### Multi-Runtime Support

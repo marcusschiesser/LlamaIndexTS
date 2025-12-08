@@ -110,16 +110,6 @@ pnpm test
 
 Unit tests are located in the `tests` folder of each package. They are using their own package (e.g. `@vectorstores/core-tests` for `@vectorstores/core`). The tests are importing the package under test and the test package is not published.
 
-#### E2E tests
-
-To run all E2E tests, call:
-
-```shell
-pnpm e2e
-```
-
-All E2E tests are in the `e2e` folder.
-
 ### Docs
 
 See the [docs](./apps/next/README.md) for more information.

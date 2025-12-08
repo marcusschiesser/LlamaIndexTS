@@ -9,7 +9,6 @@
     "format:write": "prettier --ignore-unknown --write .",
     "lint": "turbo run lint",
     "prepare": "husky",
-    "e2e": "turbo run e2e",
     "test": "turbo run test",
     "type-check": "tsc -b --diagnostics",
     "circular-check": "madge --circular ./packages/**/**/dist/index.js",

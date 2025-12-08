@@ -19,9 +19,6 @@
       "dependsOn": ["^build"]
     },
     "circular-check": {},
-    "e2e": {
-      "dependsOn": ["^build"]
-    },
     "dev": {
       "cache": false,
       "persistent": true
