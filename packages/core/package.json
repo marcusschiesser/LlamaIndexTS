@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@edge-runtime/vm": "^4.0.4",
+    "@types/lodash": "^4.17.21",
+    "@types/node": "^24.0.13",
     "happy-dom": "^15.11.6",
     "js-tiktoken": "^1.0.14"
   },

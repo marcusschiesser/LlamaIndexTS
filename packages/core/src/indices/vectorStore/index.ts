@@ -254,8 +254,12 @@ export class VectorStoreIndex extends BaseIndex<IndexDict> {
     const nodeParser =
       Settings.nodeParser ??
       new SentenceSplitter({
-        chunkSize: Settings.chunkSize,
-        chunkOverlap: Settings.chunkOverlap,
+        ...(Settings.chunkSize !== undefined && {
+          chunkSize: Settings.chunkSize,
+        }),
+        ...(Settings.chunkOverlap !== undefined && {
+          chunkOverlap: Settings.chunkOverlap,
+        }),
       });
     args.nodes = await runTransformations(
       documents,

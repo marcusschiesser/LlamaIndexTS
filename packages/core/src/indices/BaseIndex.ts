@@ -46,8 +46,12 @@ export abstract class BaseIndex<T> {
     const nodeParser =
       Settings.nodeParser ??
       new SentenceSplitter({
-        chunkSize: Settings.chunkSize,
-        chunkOverlap: Settings.chunkOverlap,
+        ...(Settings.chunkSize !== undefined && {
+          chunkSize: Settings.chunkSize,
+        }),
+        ...(Settings.chunkOverlap !== undefined && {
+          chunkOverlap: Settings.chunkOverlap,
+        }),
       });
     const nodes = await runTransformations([document], [nodeParser]);
     await this.insertNodes(nodes);

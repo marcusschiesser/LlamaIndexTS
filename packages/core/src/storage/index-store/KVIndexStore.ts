@@ -1,8 +1,8 @@
+import _ from "lodash";
 import { BaseIndexStore } from ".";
 import { type IndexStruct, jsonToIndexStruct } from "../../data-structs";
 import { DEFAULT_NAMESPACE } from "../../global";
 import type { BaseKVStore } from "../kv-store";
-import _ from "../lodash";
 
 export class KVIndexStore extends BaseIndexStore {
   private _kvStore: BaseKVStore;
@@ -42,6 +42,7 @@ export class KVIndexStore extends BaseIndexStore {
 
   async getIndexStructs(): Promise<IndexStruct[]> {
     const jsons = await this._kvStore.getAll(this._collection);
-    return _.values(jsons).map((json) => jsonToIndexStruct(json));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return _.values(jsons).map((json: any) => jsonToIndexStruct(json));
   }
 }

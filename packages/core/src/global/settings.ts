@@ -31,7 +31,7 @@ export const Settings = {
     return getTokenSizer();
   },
   set tokenSizer(tokenSizer) {
-    setTokenSizer(tokenSizer);
+    setTokenSizer(tokenSizer ?? undefined);
   },
   withTokenSizer<Result>(tokenSizer: TokenSizer, fn: () => Result): Result {
     return withTokenSizer(tokenSizer, fn);

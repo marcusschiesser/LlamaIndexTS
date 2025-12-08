@@ -44,44 +44,12 @@
     {
       "path": "./packages/core/tests/tsconfig.json"
     },
-    {
-      "path": "./e2e/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/cloudflare-worker-agent/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/cloudflare-hono/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/nextjs-agent/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/nextjs-edge-runtime/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/nextjs-node-runtime/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/waku-query-engine/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/vite-import-vectorstores/tsconfig.json"
-    },
+
     {
       "path": "./packages/env/tsconfig.json"
     },
     {
       "path": "./packages/env/tests/tsconfig.json"
-    },
-    {
-      "path": "./examples"
-    },
-    {
-      "path": "./examples/readers"
-    },
-    {
-      "path": "./examples/storage/pg/tsconfig.json"
     },
     {
       "path": "./packages/readers/tsconfig.json"
