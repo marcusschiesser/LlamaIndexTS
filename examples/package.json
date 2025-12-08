@@ -2,6 +2,7 @@
   "name": "@vectorstores/examples",
   "version": "0.4.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "eslint .",
     "start": "echo 'To get started, run `npx tsx <path to example>`'"
