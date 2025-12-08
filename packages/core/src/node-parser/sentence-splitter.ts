@@ -1,9 +1,12 @@
 import { consoleLogger, type Logger } from "@llamaindex/env";
 import { Settings } from "../global";
 import type { TokenSizer } from "../global/settings/tokenizer";
-import { type SentenceSplitterParams, sentenceSplitterSchema } from "../schema";
+import {
+  parseSentenceSplitterParams,
+  type SentenceSplitterInput,
+} from "../schema";
 import { MetadataAwareTextSplitter } from "./base";
-import type { PartialWithUndefined, SplitterParams } from "./type";
+import type { SplitterParams } from "./type";
 import {
   splitByChar,
   splitByRegex,
@@ -51,19 +54,16 @@ export class SentenceSplitter extends MetadataAwareTextSplitter {
   #logger: Logger;
 
   constructor(
-    params?: PartialWithUndefined<SentenceSplitterParams> &
-      SplitterParams & { logger?: Logger },
+    params?: SentenceSplitterInput & SplitterParams & { logger?: Logger },
   ) {
     super();
-    if (params) {
-      const parsedParams = sentenceSplitterSchema.parse(params);
-      this.chunkSize = parsedParams.chunkSize;
-      this.chunkOverlap = parsedParams.chunkOverlap;
-      this.separator = parsedParams.separator;
-      this.paragraphSeparator = parsedParams.paragraphSeparator;
-      this.secondaryChunkingRegex = parsedParams.secondaryChunkingRegex;
-      this.extraAbbreviations = parsedParams.extraAbbreviations;
-    }
+    const parsedParams = parseSentenceSplitterParams(params);
+    this.chunkSize = parsedParams.chunkSize;
+    this.chunkOverlap = parsedParams.chunkOverlap;
+    this.separator = parsedParams.separator;
+    this.paragraphSeparator = parsedParams.paragraphSeparator;
+    this.secondaryChunkingRegex = parsedParams.secondaryChunkingRegex;
+    this.extraAbbreviations = parsedParams.extraAbbreviations;
     this.#chunkingTokenizerFn = splitBySentenceTokenizer(
       this.extraAbbreviations,
     );

@@ -1,38 +1,35 @@
 import { consoleLogger, type Logger } from "@llamaindex/env";
-import { DEFAULT_CHUNK_OVERLAP, DEFAULT_CHUNK_SIZE, Settings } from "../global";
+import { Settings } from "../global";
 import type { TokenSizer } from "../global/settings/tokenizer";
 import {
-  type TokenTextSplitterParams,
-  tokenTextSplitterSchema,
+  parseTokenTextSplitterParams,
+  type TokenTextSplitterInput,
 } from "../schema";
 import { MetadataAwareTextSplitter } from "./base";
-import type { PartialWithUndefined, SplitterParams } from "./type";
+import type { SplitterParams } from "./type";
 import { splitByChar, splitBySep } from "./utils";
 
 const DEFAULT_METADATA_FORMAT_LEN = 2;
 
 export class TokenTextSplitter extends MetadataAwareTextSplitter {
-  chunkSize: number = DEFAULT_CHUNK_SIZE;
-  chunkOverlap: number = DEFAULT_CHUNK_OVERLAP;
-  separator: string = " ";
-  backupSeparators: string[] = ["\n"];
+  chunkSize: number;
+  chunkOverlap: number;
+  separator: string;
+  backupSeparators: string[];
   #tokenSizer: TokenSizer;
   #splitFns: Array<(text: string) => string[]> = [];
   #logger: Logger;
 
   constructor(
-    params?: SplitterParams &
-      PartialWithUndefined<TokenTextSplitterParams> & { logger?: Logger },
+    params?: SplitterParams & TokenTextSplitterInput & { logger?: Logger },
   ) {
     super();
 
-    if (params) {
-      const parsedParams = tokenTextSplitterSchema.parse(params);
-      this.chunkSize = parsedParams.chunkSize;
-      this.chunkOverlap = parsedParams.chunkOverlap;
-      this.separator = parsedParams.separator;
-      this.backupSeparators = parsedParams.backupSeparators;
-    }
+    const parsedParams = parseTokenTextSplitterParams(params);
+    this.chunkSize = parsedParams.chunkSize;
+    this.chunkOverlap = parsedParams.chunkOverlap;
+    this.separator = parsedParams.separator;
+    this.backupSeparators = parsedParams.backupSeparators;
 
     if (this.chunkOverlap > this.chunkSize) {
       throw new Error(

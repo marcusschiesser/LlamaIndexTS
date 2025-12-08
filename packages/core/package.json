@@ -36,7 +36,6 @@
   "dependencies": {
     "@llamaindex/env": "workspace:*",
     "lodash": "^4.17.21",
-    "magic-bytes.js": "^1.10.0",
-    "zod": "^4.1.5"
+    "magic-bytes.js": "^1.10.0"
   }
 }
