@@ -1,6 +1,5 @@
 export * from "./readers/index.js";
 export * from "./storage.js";
-export * from "./tools/AzureDynamicSessionTool.node.js";
 export * from "./vectorStore/AzureAISearchVectorStore.js";
 export * from "./vectorStore/AzureAISearchVectorStoreConfig.js";
 export * from "./vectorStore/AzureCosmosDBMongoVectorStore.js";
