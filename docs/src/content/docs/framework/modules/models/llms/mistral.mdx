@@ -5,14 +5,14 @@ title: Mistral
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/mistral
+npm i llamaindex @vectorstores/mistral
 ```
 
 ## Usage
 
 ```ts
-import { MistralAI } from "@llamaindex/mistral";
-import { Settings } from "llamaindex";
+import { MistralAI } from "@vectorstores/mistral";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = new MistralAI({
   model: "mistral-tiny",
@@ -25,7 +25,7 @@ Settings.llm = new MistralAI({
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 
@@ -47,8 +47,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { MistralAI } from "@llamaindex/mistral";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { MistralAI } from "@vectorstores/mistral";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 // Use the MistralAI LLM
 Settings.llm = new MistralAI({ model: "mistral-tiny" });

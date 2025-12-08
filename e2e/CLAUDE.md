@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the LlamaIndexTS e2e testing package.
+This file provides guidance to Claude Code (claude.ai/code) when working with the vectorstores e2e testing package.
 
 ## Package Overview
 
-The `@llamaindex/e2e` package contains end-to-end tests and examples for LlamaIndexTS, ensuring the library works correctly across different runtime environments and use cases. It validates integration between core packages, providers, and real-world usage scenarios.
+The `@vectorstores/e2e` package contains end-to-end tests and examples for vectorstores, ensuring the library works correctly across different runtime environments and use cases. It validates integration between core packages, providers, and real-world usage scenarios.
 
 ## Development Commands
 
@@ -59,7 +59,7 @@ Runtime-specific example applications that serve as integration tests:
 **Client-Side:**
 
 - `llama-parse-browser/` - Browser-based LlamaParse integration
-- `vite-import-llamaindex/` - Vite bundler compatibility test
+- `vite-import-vectorstores/` - Vite bundler compatibility test
 
 **Alternative Frameworks:**
 
@@ -93,22 +93,22 @@ Tests validate multiple JavaScript runtime conditions:
 
 ## Dependencies
 
-The package includes comprehensive workspace dependencies for testing all major LlamaIndexTS features:
+The package includes comprehensive workspace dependencies for testing all major vectorstores features:
 
 **Core Dependencies:**
 
-- `@llamaindex/core` - Base abstractions
-- `@llamaindex/env` - Runtime environment compatibility
-- `llamaindex` - Main package
+- `@vectorstores/core` - Base abstractions
+- `@vectorstores/env` - Runtime environment compatibility
+- `@vectorstores/core` - Main package
 
 **Provider Dependencies:**
 
-- `@llamaindex/openai` - OpenAI integration
-- `@llamaindex/anthropic` - Anthropic Claude integration
-- `@llamaindex/ollama` - Ollama local LLM support
-- `@llamaindex/clip` - CLIP embedding models
-- `@llamaindex/pinecone` - Pinecone vector store
-- `@llamaindex/postgres` - PostgreSQL with pgvector
+- `@vectorstores/openai` - OpenAI integration
+- `@vectorstores/anthropic` - Anthropic Claude integration
+- `@vectorstores/ollama` - Ollama local LLM support
+- `@vectorstores/clip` - CLIP embedding models
+- `@vectorstores/pinecone` - Pinecone vector store
+- `@vectorstores/postgres` - PostgreSQL with pgvector
 
 **Testing Utilities:**
 

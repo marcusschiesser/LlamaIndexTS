@@ -1,9 +1,9 @@
 ---
 title: Troubleshooting
-description: Common issues and solutions when installing and deploying LlamaIndex.TS applications.
+description: Common issues and solutions when installing and deploying vectorstores applications.
 ---
 
-This guide addresses common issues you might encounter when installing and deploying LlamaIndex.TS applications across different environments.
+This guide addresses common issues you might encounter when installing and deploying vectorstores applications across different environments.
 
 ## Installation Issues
 
@@ -59,8 +59,8 @@ yarn install
 **Problem:** Some packages don't work in certain environments
 
 **Common incompatibilities:**
-- `@llamaindex/readers` - May not work in serverless environments
-- `@llamaindex/huggingface` - Limited browser/edge compatibility
+- `@vectorstores/readers` - May not work in serverless environments
+- `@vectorstores/huggingface` - Limited browser/edge compatibility
 - File system readers - Don't work in browser/edge environments
 
 **Solution:** Use environment-specific alternatives:
@@ -156,7 +156,7 @@ LlamaIndex will automatically use this for 60x faster tokenization.
 ```typescript
 // Lazy load LlamaIndex components
 const initializeLlamaIndex = async () => {
-  const { VectorStoreIndex, SimpleDirectoryReader } = await import("llamaindex");
+  const { VectorStoreIndex, SimpleDirectoryReader } = await import("@vectorstores/core");
   return { VectorStoreIndex, SimpleDirectoryReader };
 };
 
@@ -242,12 +242,12 @@ node --version
 
 **Problem:** Module not available in Cloudflare Workers
 
-**Solution:** Use `@llamaindex/env` for environment compatibility:
+**Solution:** Use `@vectorstores/env` for environment compatibility:
 
 ```typescript
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const { setEnvs } = await import("@llamaindex/env");
+    const { setEnvs } = await import("@vectorstores/env");
     setEnvs(env);
     
     // Your LlamaIndex code here
@@ -270,7 +270,7 @@ export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
   // Use edge-compatible code only
-  const { setEnvs } = await import("@llamaindex/env");
+  const { setEnvs } = await import("@vectorstores/env");
   setEnvs(process.env);
   
   // Avoid file system operations
@@ -441,7 +441,7 @@ process.env.DEBUG = "llamaindex:vector-store";
 
 ```bash
 npm list llamaindex
-npm list @llamaindex/openai
+npm list @vectorstores/openai
 ```
 
 ### Test in Isolation
@@ -483,7 +483,7 @@ Include:
 
 ### Useful Resources
 
-- [GitHub Issues](https://github.com/run-llama/LlamaIndexTS/issues)
+- [GitHub Issues](https://github.com/run-llama/vectorstores/issues)
 - [Discord Community](https://discord.gg/dGcwcsnxhU)
 - [Documentation](https://docs.llamaindex.ai/)
 

@@ -1,4 +1,4 @@
-import { randomUUID } from "@llamaindex/env";
+import { randomUUID } from "@vectorstores/env";
 import type { UUID } from "../global";
 import { BaseNode } from "../schema";
 import { IndexStructType } from "./struct-type";

@@ -2,7 +2,7 @@
 title: Migrating from v0.8 to v0.9
 ---
 
-Version 0.9 of LlamaIndex.TS introduces significant architectural changes to improve package size and runtime compatibility. The main goals of this release are:
+Version 0.9 of vectorstores introduces significant architectural changes to improve package size and runtime compatibility. The main goals of this release are:
 
 1. Reduce the package size of the main `llamaindex` package by moving dependencies into provider packages, making it more suitable for serverless environments
 2. Enable consistent code across different environments by using unified imports (no separate imports for Node.js and Edge runtimes)
@@ -21,18 +21,18 @@ You'll need to update your imports to get classes directly from their respective
 
 Previously:
 ```typescript
-import { OpenAI } from "llamaindex";
+import { OpenAI } from "@vectorstores/core";
 ```
 
 Now:
 ```typescript
-import { OpenAI } from "@llamaindex/openai";
+import { OpenAI } from "@vectorstores/openai";
 ```
 
-> Note: This examples requires installing the `@llamaindex/openai` package: 
+> Note: This examples requires installing the `@vectorstores/openai` package: 
 
 ```package-install
-npm i @llamaindex/openai
+npm i @vectorstores/openai
 ```
 
 For more details on available AI model providers and their configuration, see the [LLMs documentation](/typescript/framework/modules/models/llms) and the [Embedding Models documentation](/typescript/framework/modules/models/embeddings).
@@ -41,12 +41,12 @@ For more details on available AI model providers and their configuration, see th
 
 Previously:
 ```typescript
-import { PineconeVectorStore } from "llamaindex";
+import { PineconeVectorStore } from "@vectorstores/core";
 ```
 
 Now:
 ```typescript
-import { PineconeVectorStore } from "@llamaindex/pinecone";
+import { PineconeVectorStore } from "@vectorstores/pinecone";
 ```
 
 For more information about available storage options, refer to the [Data Stores documentation](/typescript/framework/modules/data/stores).
@@ -55,21 +55,21 @@ For more information about available storage options, refer to the [Data Stores 
 
 Previously:
 ```typescript
-import { SimpleDirectoryReader } from "llamaindex";
+import { SimpleDirectoryReader } from "@vectorstores/core";
 ```
 
 Now:
 ```typescript
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 ```
 
 For more details about available data loaders and their usage, check the [Loading Data](/typescript/framework/modules/data/readers).
 
-### 4. Prefer using `llamaindex` instead of `@llamaindex/core`
+### 4. Prefer using `llamaindex` instead of `@vectorstores/core`
 
-`llamaindex` is now re-exporting most of `@llamaindex/core`. To simplify imports, just use `import { ... } from "llamaindex"` instead of `import { ... } from "@llamaindex/core"`. This is possible because `llamaindex` is now a smaller package.
+`llamaindex` is now re-exporting most of `@vectorstores/core`. To simplify imports, just use `import { ... } from "@vectorstores/core"` instead of `import { ... } from "@vectorstores/core"`. This is possible because `llamaindex` is now a smaller package.
 
-We might change imports internally in `@llamaindex/core` in the future. Let us know if you're missing something. 
+We might change imports internally in `@vectorstores/core` in the future. Let us know if you're missing something. 
 
 ## Benefits of the Changes
 
@@ -80,6 +80,6 @@ We might change imports internally in `@llamaindex/core` in the future. Let us k
 ## Need Help?
 
 If you encounter any issues during migration, please:
-1. Check our [GitHub repository](https://github.com/run-llama/LlamaIndexTS) for the latest updates
+1. Check our [GitHub repository](https://github.com/run-llama/vectorstores) for the latest updates
 2. Join our [Discord community](https://discord.gg/dGcwcsnxhU) for support
 3. Open an issue on GitHub if you find a bug or have a feature request

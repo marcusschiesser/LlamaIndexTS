@@ -3,7 +3,7 @@ import {
   MetadataMode,
   NodeParser,
   TextNode,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { htmlToText, type HtmlToTextOptions } from "html-to-text";
 
 export type HTMLNodeParserParam = {

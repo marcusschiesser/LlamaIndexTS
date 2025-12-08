@@ -1,4 +1,4 @@
-import { JSONReader } from "@llamaindex/readers/json";
+import { JSONReader } from "@vectorstores/readers/json";
 
 async function main() {
   // Data

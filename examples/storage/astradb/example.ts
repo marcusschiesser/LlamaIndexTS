@@ -1,10 +1,10 @@
-import { AstraDBVectorStore } from "@llamaindex/astra";
+import { AstraDBVectorStore } from "@vectorstores/astra";
 import {
   Document,
   MetadataFilters,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 const collectionName = "test_collection";
 

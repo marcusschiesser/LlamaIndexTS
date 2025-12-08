@@ -1,4 +1,4 @@
-import { Settings, TextNode } from "@llamaindex/core";
+import { Settings, TextNode } from "@vectorstores/core";
 import { env } from "process";
 import { afterEach, describe, expect, test, vi } from "vitest";
 describe("chunkSizeCheck", () => {

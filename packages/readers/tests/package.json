@@ -1,14 +1,14 @@
 {
-  "name": "@llamaindex/readers-tests",
+  "name": "@vectorstores/readers-tests",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "vitest run"
   },
   "devDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*",
-    "@llamaindex/readers": "workspace:*",
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*",
+    "@vectorstores/readers": "workspace:*",
     "vitest": "^2.1.5"
   }
 }

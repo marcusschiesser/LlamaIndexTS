@@ -1,6 +1,6 @@
-import { extractText } from "@llamaindex/core/utils";
-import { OpenAI } from "@llamaindex/openai";
-import { ReActAgent, Settings, type LLM } from "llamaindex";
+import { ReActAgent, Settings, type LLM } from "@vectorstores/core";
+import { extractText } from "@vectorstores/core/utils";
+import { OpenAI } from "@vectorstores/openai";
 import { ok } from "node:assert";
 import { beforeEach, test } from "node:test";
 import { getWeatherTool } from "./fixtures/tools.js";

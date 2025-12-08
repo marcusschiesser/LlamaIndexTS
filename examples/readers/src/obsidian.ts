@@ -1,4 +1,4 @@
-import { ObsidianReader } from "@llamaindex/readers/obsidian";
+import { ObsidianReader } from "@vectorstores/readers/obsidian";
 
 const obsidianReader = new ObsidianReader(
   "/Users/jingyi/Documents/jingyi-vault",

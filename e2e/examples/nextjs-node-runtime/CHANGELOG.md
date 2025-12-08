@@ -1,4 +1,4 @@
-# @llamaindex/next-node-runtime
+# @vectorstores/next-node-runtime
 
 ## 0.1.64
 
@@ -6,13 +6,13 @@
 
 - Updated dependencies [3af5617]
   - llamaindex@0.12.1
-  - @llamaindex/huggingface@0.1.32
+  - @vectorstores/huggingface@0.1.32
 
 ## 0.1.63
 
 ### Patch Changes
 
-- @llamaindex/huggingface@0.1.31
+- @vectorstores/huggingface@0.1.31
 
 ## 0.1.62
 
@@ -20,8 +20,8 @@
 
 - Updated dependencies [d493015]
   - llamaindex@0.12.0
-  - @llamaindex/huggingface@0.1.30
-  - @llamaindex/readers@3.1.21
+  - @vectorstores/huggingface@0.1.30
+  - @vectorstores/readers@3.1.21
 
 ## 0.1.61
 
@@ -29,35 +29,35 @@
 
 - Updated dependencies [8929dcf]
   - llamaindex@0.11.29
-  - @llamaindex/huggingface@0.1.29
-  - @llamaindex/readers@3.1.20
+  - @vectorstores/huggingface@0.1.29
+  - @vectorstores/readers@3.1.20
 
 ## 0.1.60
 
 ### Patch Changes
 
 - llamaindex@0.11.28
-- @llamaindex/huggingface@0.1.28
+- @vectorstores/huggingface@0.1.28
 
 ## 0.1.59
 
 ### Patch Changes
 
 - llamaindex@0.11.27
-- @llamaindex/huggingface@0.1.27
-- @llamaindex/readers@3.1.19
+- @vectorstores/huggingface@0.1.27
+- @vectorstores/readers@3.1.19
 
 ## 0.1.58
 
 ### Patch Changes
 
-- @llamaindex/huggingface@0.1.26
+- @vectorstores/huggingface@0.1.26
 
 ## 0.1.57
 
 ### Patch Changes
 
-- @llamaindex/huggingface@0.1.25
+- @vectorstores/huggingface@0.1.25
 
 ## 0.1.56
 
@@ -77,16 +77,16 @@
 ### Patch Changes
 
 - llamaindex@0.11.24
-- @llamaindex/huggingface@0.1.24
-- @llamaindex/readers@3.1.18
+- @vectorstores/huggingface@0.1.24
+- @vectorstores/readers@3.1.18
 
 ## 0.1.53
 
 ### Patch Changes
 
 - llamaindex@0.11.23
-- @llamaindex/huggingface@0.1.23
-- @llamaindex/readers@3.1.17
+- @vectorstores/huggingface@0.1.23
+- @vectorstores/readers@3.1.17
 
 ## 0.1.52
 
@@ -99,30 +99,30 @@
 ### Patch Changes
 
 - llamaindex@0.11.21
-- @llamaindex/huggingface@0.1.22
-- @llamaindex/readers@3.1.16
+- @vectorstores/huggingface@0.1.22
+- @vectorstores/readers@3.1.16
 
 ## 0.1.50
 
 ### Patch Changes
 
 - llamaindex@0.11.20
-- @llamaindex/huggingface@0.1.21
-- @llamaindex/readers@3.1.15
+- @vectorstores/huggingface@0.1.21
+- @vectorstores/readers@3.1.15
 
 ## 0.1.49
 
 ### Patch Changes
 
-- @llamaindex/huggingface@0.1.20
+- @vectorstores/huggingface@0.1.20
 
 ## 0.1.48
 
 ### Patch Changes
 
 - llamaindex@0.11.19
-- @llamaindex/huggingface@0.1.19
-- @llamaindex/readers@3.1.14
+- @vectorstores/huggingface@0.1.19
+- @vectorstores/readers@3.1.14
 
 ## 0.1.47
 
@@ -153,8 +153,8 @@
 ### Patch Changes
 
 - llamaindex@0.11.14
-- @llamaindex/huggingface@0.1.18
-- @llamaindex/readers@3.1.13
+- @vectorstores/huggingface@0.1.18
+- @vectorstores/readers@3.1.13
 
 ## 0.1.42
 
@@ -168,8 +168,8 @@
 
 - Updated dependencies [515a8b9]
   - llamaindex@0.11.12
-  - @llamaindex/huggingface@0.1.17
-  - @llamaindex/readers@3.1.12
+  - @vectorstores/huggingface@0.1.17
+  - @vectorstores/readers@3.1.12
 
 ## 0.1.40
 
@@ -177,8 +177,8 @@
 
 - Updated dependencies [7039e1a]
   - llamaindex@0.11.11
-  - @llamaindex/huggingface@0.1.16
-  - @llamaindex/readers@3.1.11
+  - @vectorstores/huggingface@0.1.16
+  - @vectorstores/readers@3.1.11
 
 ## 0.1.39
 
@@ -191,23 +191,23 @@
 ### Patch Changes
 
 - Updated dependencies [c5846bd]
-  - @llamaindex/readers@3.1.10
+  - @vectorstores/readers@3.1.10
 
 ## 0.1.37
 
 ### Patch Changes
 
 - llamaindex@0.11.9
-- @llamaindex/huggingface@0.1.15
-- @llamaindex/readers@3.1.9
+- @vectorstores/huggingface@0.1.15
+- @vectorstores/readers@3.1.9
 
 ## 0.1.36
 
 ### Patch Changes
 
 - llamaindex@0.11.8
-- @llamaindex/huggingface@0.1.14
-- @llamaindex/readers@3.1.8
+- @vectorstores/huggingface@0.1.14
+- @vectorstores/readers@3.1.8
 
 ## 0.1.35
 
@@ -227,16 +227,16 @@
 ### Patch Changes
 
 - llamaindex@0.11.5
-- @llamaindex/huggingface@0.1.13
-- @llamaindex/readers@3.1.7
+- @vectorstores/huggingface@0.1.13
+- @vectorstores/readers@3.1.7
 
 ## 0.1.32
 
 ### Patch Changes
 
-- @llamaindex/huggingface@0.1.12
+- @vectorstores/huggingface@0.1.12
 - llamaindex@0.11.4
-- @llamaindex/readers@3.1.6
+- @vectorstores/readers@3.1.6
 
 ## 0.1.31
 
@@ -248,9 +248,9 @@
 
 ### Patch Changes
 
-- @llamaindex/huggingface@0.1.11
+- @vectorstores/huggingface@0.1.11
 - llamaindex@0.11.2
-- @llamaindex/readers@3.1.5
+- @vectorstores/readers@3.1.5
 
 ## 0.1.29
 
@@ -265,25 +265,25 @@
 - Updated dependencies [b0cd530]
 - Updated dependencies [361a685]
   - llamaindex@0.11.0
-  - @llamaindex/huggingface@0.1.10
-  - @llamaindex/readers@3.1.4
+  - @vectorstores/huggingface@0.1.10
+  - @vectorstores/readers@3.1.4
 
 ## 0.1.27
 
 ### Patch Changes
 
 - Updated dependencies [76c9a80]
-  - @llamaindex/huggingface@0.1.9
+  - @vectorstores/huggingface@0.1.9
   - llamaindex@0.10.6
-  - @llamaindex/readers@3.1.3
+  - @vectorstores/readers@3.1.3
 
 ## 0.1.26
 
 ### Patch Changes
 
 - llamaindex@0.10.5
-- @llamaindex/huggingface@0.1.8
-- @llamaindex/readers@3.1.2
+- @vectorstores/huggingface@0.1.8
+- @vectorstores/readers@3.1.2
 
 ## 0.1.25
 
@@ -300,29 +300,29 @@
 
 - Updated dependencies [3ee8c83]
   - llamaindex@0.10.3
-  - @llamaindex/huggingface@0.1.7
-  - @llamaindex/readers@3.1.1
+  - @vectorstores/huggingface@0.1.7
+  - @vectorstores/readers@3.1.1
 
 ## 0.1.23
 
 ### Patch Changes
 
 - Updated dependencies [1e59695]
-  - @llamaindex/readers@3.1.0
+  - @vectorstores/readers@3.1.0
 
 ## 0.1.22
 
 ### Patch Changes
 
 - llamaindex@0.10.2
-- @llamaindex/huggingface@0.1.6
+- @vectorstores/huggingface@0.1.6
 
 ## 0.1.21
 
 ### Patch Changes
 
 - llamaindex@0.10.1
-- @llamaindex/huggingface@0.1.5
+- @vectorstores/huggingface@0.1.5
 
 ## 0.1.20
 
@@ -336,14 +336,14 @@
 ### Patch Changes
 
 - llamaindex@0.9.19
-- @llamaindex/huggingface@0.1.4
+- @vectorstores/huggingface@0.1.4
 
 ## 0.1.18
 
 ### Patch Changes
 
 - llamaindex@0.9.18
-- @llamaindex/huggingface@0.1.3
+- @vectorstores/huggingface@0.1.3
 
 ## 0.1.17
 
@@ -365,8 +365,8 @@
 ### Patch Changes
 
 - llamaindex@0.9.15
-- @llamaindex/huggingface@0.1.2
-- @llamaindex/readers@3.0.2
+- @vectorstores/huggingface@0.1.2
+- @vectorstores/readers@3.0.2
 
 ## 0.1.14
 
@@ -374,8 +374,8 @@
 
 - Updated dependencies [9d951b2]
   - llamaindex@0.9.14
-  - @llamaindex/huggingface@0.1.1
-  - @llamaindex/readers@3.0.1
+  - @vectorstores/huggingface@0.1.1
+  - @vectorstores/readers@3.0.1
 
 ## 0.1.13
 
@@ -391,8 +391,8 @@
 - Updated dependencies [21bebfc]
 - Updated dependencies [91a18e7]
 - Updated dependencies [5189b44]
-  - @llamaindex/readers@3.0.0
-  - @llamaindex/huggingface@0.1.0
+  - @vectorstores/readers@3.0.0
+  - @vectorstores/huggingface@0.1.0
   - llamaindex@0.9.12
 
 ## 0.1.11
@@ -400,7 +400,7 @@
 ### Patch Changes
 
 - llamaindex@0.9.11
-- @llamaindex/huggingface@0.0.45
+- @vectorstores/huggingface@0.0.45
 
 ## 0.1.10
 
@@ -410,17 +410,17 @@
 - Updated dependencies [c1b5be5]
 - Updated dependencies [40ee761]
 - Updated dependencies [40ee761]
-  - @llamaindex/huggingface@0.0.44
+  - @vectorstores/huggingface@0.0.44
   - llamaindex@0.9.10
-  - @llamaindex/readers@2.0.8
+  - @vectorstores/readers@2.0.8
 
 ## 0.1.9
 
 ### Patch Changes
 
 - llamaindex@0.9.9
-- @llamaindex/huggingface@0.0.43
-- @llamaindex/readers@2.0.7
+- @vectorstores/huggingface@0.0.43
+- @vectorstores/readers@2.0.7
 
 ## 0.1.8
 
@@ -435,24 +435,24 @@
 
 - Updated dependencies [beb922b]
   - llamaindex@0.9.7
-  - @llamaindex/huggingface@0.0.42
-  - @llamaindex/readers@2.0.6
+  - @vectorstores/huggingface@0.0.42
+  - @vectorstores/readers@2.0.6
 
 ## 0.1.6
 
 ### Patch Changes
 
 - llamaindex@0.9.6
-- @llamaindex/huggingface@0.0.41
-- @llamaindex/readers@2.0.5
+- @vectorstores/huggingface@0.0.41
+- @vectorstores/readers@2.0.5
 
 ## 0.1.5
 
 ### Patch Changes
 
 - llamaindex@0.9.5
-- @llamaindex/huggingface@0.0.40
-- @llamaindex/readers@2.0.4
+- @vectorstores/huggingface@0.0.40
+- @vectorstores/readers@2.0.4
 
 ## 0.1.4
 
@@ -460,16 +460,16 @@
 
 - Updated dependencies [cb021e7]
   - llamaindex@0.9.4
-  - @llamaindex/huggingface@0.0.39
-  - @llamaindex/readers@2.0.3
+  - @vectorstores/huggingface@0.0.39
+  - @vectorstores/readers@2.0.3
 
 ## 0.1.3
 
 ### Patch Changes
 
 - llamaindex@0.9.3
-- @llamaindex/huggingface@0.0.38
-- @llamaindex/readers@2.0.2
+- @vectorstores/huggingface@0.0.38
+- @vectorstores/readers@2.0.2
 
 ## 0.1.2
 
@@ -484,8 +484,8 @@
 
 - Updated dependencies [6d37d44]
   - llamaindex@0.9.1
-  - @llamaindex/huggingface@0.0.37
-  - @llamaindex/readers@2.0.1
+  - @vectorstores/huggingface@0.0.37
+  - @vectorstores/readers@2.0.1
 
 ## 0.1.0
 
@@ -500,8 +500,8 @@
 - Updated dependencies [b490376]
 - Updated dependencies [f4588bc]
   - llamaindex@0.9.0
-  - @llamaindex/huggingface@0.0.36
-  - @llamaindex/readers@2.0.0
+  - @vectorstores/huggingface@0.0.36
+  - @vectorstores/readers@2.0.0
 
 ## 0.0.114
 

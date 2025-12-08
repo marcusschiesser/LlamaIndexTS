@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 // Note: Settings import must come first to ensure correct module initialization order
-import "@llamaindex/core";
-import { Document, ImageDocument } from "@llamaindex/core";
+import "@vectorstores/core";
+import { Document, ImageDocument } from "@vectorstores/core";
 
 describe("Document", () => {
   test("initializes", () => {

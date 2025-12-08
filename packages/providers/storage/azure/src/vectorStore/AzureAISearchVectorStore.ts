@@ -39,8 +39,8 @@ import {
   type VectorStoreQuery,
   VectorStoreQueryMode,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
-import { consoleLogger, getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { consoleLogger, getEnv } from "@vectorstores/env";
 import {
   AzureAISearchVectorStoreConfig,
   type R,
@@ -187,7 +187,7 @@ const azureADTokenProvider = getBearerTokenProvider(
 );
 
 // IMPORTANT: You need to deploy your own embedding model as well as your own chat completion model
-// NOTE: You can use whatever embedding model and language model that is supported in LlamaIndex
+// NOTE: You can use whatever embedding model and language model that is supported by vectorstores
 const azure = {
   azureADTokenProvider,
   deployment: process.env.AZURE_DEPLOYMENT_NAME,
@@ -212,7 +212,7 @@ Settings.embedModel = new OpenAIEmbedding({
 // AZURE_API_VERSION=2024-09-01-preview
 
 // Define index name
-const indexName = "llamaindex-vector-store";
+const indexName = "vectorstores-vector-store";
 
 // ---------------------------------------------------------
 // 3a- Create Index (if it does not exist)
@@ -261,7 +261,7 @@ const vectorStore = new AzureAISearchVectorStore({
 // ---------------------------------------------------------
 // 3a- Loading documents
 // Load the documents stored in the data/paul_graham/ using the SimpleDirectoryReader
-// NOTE: You can use whatever reader that is supported in LlamaIndex
+// NOTE: You can use whatever reader that is supported by vectorstores
 
 // Load documents using a directory reader
 const documents = await new SimpleDirectoryReader().loadData(

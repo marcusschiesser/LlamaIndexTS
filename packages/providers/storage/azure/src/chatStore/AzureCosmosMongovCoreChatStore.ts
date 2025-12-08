@@ -3,8 +3,8 @@ import type {
   ChatMessage,
   MessageContent,
   MessageType,
-} from "@llamaindex/core";
-import { BaseChatStore } from "@llamaindex/core";
+} from "@vectorstores/core";
+import { BaseChatStore } from "@vectorstores/core";
 import type { Collection } from "mongodb";
 import { MongoClient } from "mongodb";
 import pkg from "../../package.json";
@@ -43,7 +43,7 @@ export class AzureCosmosVCoreChatStore<
       );
     }
     mongoClient.appendMetadata({
-      name: "LLAMAINDEX_AZURE_COSMOS_VCORE_CHAT_STORE",
+      name: "VECTORSTORES_AZURE_COSMOS_VCORE_CHAT_STORE",
       version: pkg.version,
     });
     this.mongoClient = mongoClient;
@@ -69,7 +69,7 @@ export class AzureCosmosVCoreChatStore<
     collectionName: string = DEFAULT_CHAT_Collection,
   ): AzureCosmosVCoreChatStore {
     const mongoClient = new MongoClient(connectionString, {
-      appName: "LLAMAINDEX_JS",
+      appName: "VECTORSTORES_JS",
     });
     return new AzureCosmosVCoreChatStore({
       mongoClient,

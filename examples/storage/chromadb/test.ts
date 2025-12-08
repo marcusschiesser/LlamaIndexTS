@@ -1,6 +1,9 @@
-import { ChromaVectorStore } from "@llamaindex/chroma";
-import { CSVReader } from "@llamaindex/readers/csv";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
+import { ChromaVectorStore } from "@vectorstores/chroma";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { CSVReader } from "@vectorstores/readers/csv";
 
 const collectionName = "movie_reviews";
 

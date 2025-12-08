@@ -5,7 +5,7 @@ import {
   SimpleDocumentStore,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 async function getDataSource() {
   const docs = [

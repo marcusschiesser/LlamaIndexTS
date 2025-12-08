@@ -13,7 +13,7 @@ import {
   SentenceWindowNodeParser,
   Settings,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 import essay from "../data/essay";
 

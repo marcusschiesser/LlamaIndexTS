@@ -8,8 +8,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
-      name: "LlamaIndexImportTest",
-      fileName: "LlamaIndexImportTest",
+      name: "VectorstoresImportTest",
+      fileName: "VectorstoresImportTest",
       formats: ["es", "cjs"],
     },
   },

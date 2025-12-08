@@ -1,8 +1,5 @@
 /**
  * @todo refactor this module, most of the part is broken
- *  reference
- *    - https://github.com/run-llama/LlamaIndexTS/pull/531
- *    - https://github.com/run-llama/LlamaIndexTS/pull/416
  */
 import type { MessageContent } from "../llms";
 import { BaseRetriever } from "../retriever";

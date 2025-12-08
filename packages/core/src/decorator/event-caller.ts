@@ -1,4 +1,4 @@
-import { AsyncLocalStorage } from "@llamaindex/env";
+import { AsyncLocalStorage } from "@vectorstores/env";
 import { withEventCaller } from "../global";
 import { isAsyncIterable, isIterable } from "../utils";
 

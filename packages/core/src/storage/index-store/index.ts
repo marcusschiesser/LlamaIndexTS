@@ -1,4 +1,4 @@
-import { type Logger, path } from "@llamaindex/env";
+import { type Logger, path } from "@vectorstores/env";
 import { type IndexStruct, jsonToIndexStruct } from "../../data-structs";
 import {
   DEFAULT_INDEX_STORE_PERSIST_FILENAME,

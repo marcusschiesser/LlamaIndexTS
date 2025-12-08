@@ -10,16 +10,16 @@ import {
   AzureCosmosNoSqlIndexStore,
   AzureOpenAI,
   AzureOpenAIEmbedding,
-} from "@llamaindex/azure";
+} from "@vectorstores/azure";
 import {
   Document,
   Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 /**
- * This example demonstrates how to use Azure CosmosDB with LlamaIndex.
+ * This example demonstrates how to use Azure CosmosDB with vectorstores.
  * It uses Azure CosmosDB as IndexStore, DocumentStore, and VectorStore.
  *
  * To run this example, create an .env file under /examples and set the following environment variables:

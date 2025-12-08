@@ -1,10 +1,10 @@
-import { OpenAI } from "@llamaindex/openai";
 import {
   extractText,
   getResponseSynthesizer,
   Settings,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
 import { getStorageContext } from "./storage";
 
 // Update chunk size and overlap

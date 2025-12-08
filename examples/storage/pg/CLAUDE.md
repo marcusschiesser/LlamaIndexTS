@@ -1,6 +1,6 @@
 # CLAUDE.md - PostgreSQL Vector Store Examples
 
-This directory demonstrates PostgreSQL vector storage integration with LlamaIndex.TS using the `@llamaindex/postgres` package and pgvector extension for similarity search and RAG applications.
+This directory demonstrates PostgreSQL vector storage integration with vectorstores using the `@vectorstores/postgres` package and pgvector extension for similarity search and RAG applications.
 
 ## Overview
 
@@ -124,7 +124,7 @@ const vectorStore = new PGVectorStore({
     password: "postgres",
   },
   dimensions: 3,
-  tableName: "llamaindex_vector",
+  tableName: "vectorstores_vector",
 });
 ```
 
@@ -210,10 +210,10 @@ All examples include error handling for common issues:
 
 Key packages used across examples:
 
-- `@llamaindex/postgres` - PostgreSQL vector store implementation
-- `@llamaindex/readers/directory` - File system document reader
-- `@llamaindex/openai` - OpenAI embeddings (implicit via Settings)
-- `llamaindex` - Core LlamaIndex functionality
+- `@vectorstores/postgres` - PostgreSQL vector store implementation
+- `@vectorstores/readers/directory` - File system document reader
+- `@vectorstores/openai` - OpenAI embeddings (implicit via Settings)
+- `@vectorstores/core` - Core vectorstores functionality
 - Provider-specific SDKs: `@vercel/postgres`, `postgres` (for Neon)
 
 ## Integration Notes

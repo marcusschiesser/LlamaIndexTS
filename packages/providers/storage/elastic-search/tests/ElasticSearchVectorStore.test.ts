@@ -5,7 +5,7 @@ import {
   ObjectType,
   Settings,
   VectorStoreQueryMode,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { ElasticSearchVectorStore } from "../src";
 import { getElasticSearchClient } from "../src/utils";

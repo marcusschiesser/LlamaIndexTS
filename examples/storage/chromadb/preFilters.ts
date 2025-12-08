@@ -1,10 +1,10 @@
-import { ChromaVectorStore } from "@llamaindex/chroma";
+import { ChromaVectorStore } from "@vectorstores/chroma";
 import {
   Document,
   MetadataFilters,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 const collectionName = "dogs_with_color";
 

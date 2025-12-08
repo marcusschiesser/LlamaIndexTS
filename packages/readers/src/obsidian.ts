@@ -1,4 +1,4 @@
-import { type BaseReader, Document } from "@llamaindex/core";
+import { type BaseReader, Document } from "@vectorstores/core";
 import * as fs from "node:fs";
 import path from "node:path";
 import { MarkdownReader } from "./markdown";

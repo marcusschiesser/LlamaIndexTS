@@ -5,16 +5,18 @@ import {
   VectorIndexType,
 } from "@azure/cosmos";
 import { DefaultAzureCredential } from "@azure/identity";
-import * as dotenv from "dotenv";
 import {
   type AzureCosmosDBNoSQLConfig,
   AzureCosmosDBNoSqlVectorStore,
   type AzureCosmosQueryOptions,
+} from "@vectorstores/azure";
+import {
   Document,
   Settings,
   VectorStoreQueryMode,
   type VectorStoreQueryResult,
-} from "llamaindex";
+} from "@vectorstores/core";
+import * as dotenv from "dotenv";
 import { beforeAll, describe, expect, it } from "vitest";
 
 dotenv.config();
@@ -32,7 +34,7 @@ dotenv.config();
  * - AZURE_COSMOSDB_NOSQL_CONNECTION_STRING or AZURE_COSMOSDB_NOSQL_ENDPOINT
  */
 
-const DATABASE_NAME = "llamaIndexTestDatabase";
+const DATABASE_NAME = "vectorstoresTestDatabase";
 const CONTAINER_NAME = "testContainer";
 let client: CosmosClient;
 

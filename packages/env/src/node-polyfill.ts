@@ -1,5 +1,5 @@
 /**
- * Polyfill implementation for `@llamaindex/env`.
+ * Polyfill implementation for `@vectorstores/env`.
  *
  * The code should be compatible with any JS runtime.
  *

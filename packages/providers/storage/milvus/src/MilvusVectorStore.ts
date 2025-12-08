@@ -12,8 +12,8 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import {
   DataType,
   MilvusClient,

@@ -37,14 +37,14 @@ import {
   agent,
   agentStreamEvent,
   openai,
-} from "@llamaindex/workflow";
+} from "@vectorstores/workflow";
 import {
   tool,
   Settings,
-} from "llamaindex";
+} from "@vectorstores/core";
 import {
   openai,
-} from "@llamaindex/openai";
+} from "@vectorstores/openai";
 import { z } from "zod";
 ```
 
@@ -219,6 +219,6 @@ We're seeing several workflow events being logged:
 
 Great! We've built an agent that can understand requests and use tools to fulfill them. Next you can:
 
-- [See the full code](https://github.com/run-llama/LlamaIndexTS/blob/main/examples/agentworkflow/blog-writer.ts)
+- [See the full code](https://github.com/run-llama/vectorstores/blob/main/examples/agentworkflow/blog-writer.ts)
 - [Switch to a local LLM](3_local_model)
 - Move on to [add Retrieval-Augmented Generation to your agent](4_agentic_rag)

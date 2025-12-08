@@ -2,17 +2,17 @@
 title: VoyageAI
 ---
 
-To use VoyageAI embeddings, you need to import `VoyageAIEmbedding` from `@llamaindex/voyage-ai`.
+To use VoyageAI embeddings, you need to import `VoyageAIEmbedding` from `@vectorstores/voyage-ai`.
 
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/voyage-ai
+npm i llamaindex @vectorstores/voyage-ai
 ```
 
 ```ts
-import { VoyageAIEmbedding } from "@llamaindex/voyage-ai";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { VoyageAIEmbedding } from "@vectorstores/voyage-ai";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
 Settings.embedModel = new VoyageAIEmbedding();
 

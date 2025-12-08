@@ -1,6 +1,6 @@
-import { Bm25Retriever } from "@llamaindex/bm25-retriever";
-import { PDFReader } from "@llamaindex/readers/pdf";
-import { MetadataMode, VectorStoreIndex } from "llamaindex";
+import { Bm25Retriever } from "@vectorstores/bm25-retriever";
+import { MetadataMode, VectorStoreIndex } from "@vectorstores/core";
+import { PDFReader } from "@vectorstores/readers/pdf";
 
 import { useOpenAIEmbedding } from "../../utils/embedding";
 

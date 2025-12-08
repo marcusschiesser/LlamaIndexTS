@@ -1,4 +1,4 @@
-import type { BaseNode } from "@llamaindex/core";
+import type { BaseNode } from "@vectorstores/core";
 import {
   BaseVectorStore,
   FilterCondition,
@@ -11,7 +11,7 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import {
   ChromaClient,
   type ChromaClientParams,

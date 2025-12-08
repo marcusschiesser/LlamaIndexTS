@@ -15,7 +15,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <head>
         <meta property="description" content={data.description} />
         <link rel="icon" type="image/png" href={data.icon} />
-        <title>LlamaIndex Waku Example</title>
+        <title>vectorstores Waku Example</title>
       </head>
       <body>
         <div className="font-['Nunito']">

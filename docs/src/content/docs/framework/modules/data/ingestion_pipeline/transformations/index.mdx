@@ -15,7 +15,7 @@ Currently, the following components are Transformation objects:
 While transformations are best used with with an IngestionPipeline, they can also be used directly.
 
 ```ts
-import { SentenceSplitter, TitleExtractor, Document } from "llamaindex";
+import { SentenceSplitter, TitleExtractor, Document } from "@vectorstores/core";
 
 async function main() {
   let nodes = new SentenceSplitter().getNodesFromDocuments([
@@ -41,7 +41,7 @@ You can implement any transformation yourself by implementing the `TransformComp
 The following custom transformation will remove any special characters or punctuation in text.
 
 ```ts
-import { TransformComponent, TextNode } from "llamaindex";
+import { TransformComponent, TextNode } from "@vectorstores/core";
 
 export class RemoveSpecialCharacters extends TransformComponent {
   async transform(nodes: TextNode[]): Promise<TextNode[]> {
@@ -57,7 +57,7 @@ export class RemoveSpecialCharacters extends TransformComponent {
 These can then be used directly or in any IngestionPipeline.
 
 ```ts
-import { IngestionPipeline, Document } from "llamaindex";
+import { IngestionPipeline, Document } from "@vectorstores/core";
 
 async function main() {
   const pipeline = new IngestionPipeline({

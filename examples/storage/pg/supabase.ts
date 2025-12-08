@@ -1,7 +1,10 @@
-import { PGVectorStore } from "@llamaindex/postgres";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { PGVectorStore } from "@vectorstores/postgres";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import dotenv from "dotenv";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
 
 dotenv.config();
 

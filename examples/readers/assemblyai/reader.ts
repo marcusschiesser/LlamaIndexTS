@@ -1,9 +1,9 @@
 import {
   AudioTranscriptReader,
   TranscribeParams,
-} from "@llamaindex/assemblyai";
+} from "@vectorstores/assemblyai";
+import { VectorStoreIndex } from "@vectorstores/core";
 import { program } from "commander";
-import { VectorStoreIndex } from "llamaindex";
 import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 

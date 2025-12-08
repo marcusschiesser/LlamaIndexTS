@@ -2,7 +2,7 @@ import {
   DefaultAzureCredential,
   getBearerTokenProvider,
 } from "@azure/identity";
-import type { BaseTool, ToolMetadata } from "@llamaindex/core";
+import type { BaseTool, ToolMetadata } from "@vectorstores/core";
 import {
   Readable,
   createWriteStream,
@@ -11,7 +11,7 @@ import {
   getEnv,
   path,
   randomUUID,
-} from "@llamaindex/env";
+} from "@vectorstores/env";
 
 export type InterpreterParameter = {
   code: string;
@@ -108,7 +108,7 @@ let _userAgent = "";
 /**
  * A utility function to generate the user agent in the format:
  *
- * `llamaIndex-azure-dynamic-sessions (Language=TypeScript; node.js/v14.17.0; darwin/x64)`
+ * `vectorstores-azure-dynamic-sessions (Language=TypeScript; node.js/v14.17.0; darwin/x64)`
  * @returns The user agent string.
  */
 async function getuserAgentSuffix(): Promise<string> {
@@ -125,7 +125,7 @@ async function getuserAgentSuffix(): Promise<string> {
       _userAgent = `${json.name}/${json.version}`;
     }
   } catch (e) {
-    _userAgent = `llamaIndex-azure-dynamic-sessions`;
+    _userAgent = `vectorstores-azure-dynamic-sessions`;
   }
   return `${_userAgent} (Language=TypeScript; node.js/${process.version}; ${process.platform}; ${process.arch})`;
 }

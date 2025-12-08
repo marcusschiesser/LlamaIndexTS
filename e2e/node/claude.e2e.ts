@@ -1,7 +1,7 @@
-import { Anthropic, AnthropicAgent } from "@llamaindex/anthropic";
-import { extractText } from "@llamaindex/core/utils";
+import { Anthropic, AnthropicAgent } from "@vectorstores/anthropic";
+import { FunctionTool, Settings, type LLM } from "@vectorstores/core";
+import { extractText } from "@vectorstores/core/utils";
 import { consola } from "consola";
-import { FunctionTool, Settings, type LLM } from "llamaindex";
 import { ok } from "node:assert";
 import { beforeEach, test } from "node:test";
 import { getWeatherTool, sumNumbersTool } from "./fixtures/tools.js";

@@ -16,7 +16,7 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import type { VercelPool } from "@vercel/postgres";
 import type { Sql } from "postgres";
 
@@ -110,7 +110,7 @@ function fromPG(client: pg.Client | pg.PoolClient): IsomorphicDB {
 }
 
 export const PGVECTOR_SCHEMA = "public";
-export const PGVECTOR_TABLE = "llamaindex_embedding";
+export const PGVECTOR_TABLE = "vectorstores_embedding";
 export const DEFAULT_DIMENSIONS = 1536;
 
 type PGVectorStoreBaseConfig = {
@@ -151,7 +151,7 @@ export type PGVectorStoreConfig = VectorStoreBaseParams &
 
 /**
  * Provides support for writing and querying vector data in Postgres.
- * Note: Can't be used with data created using the Python version of the vector store (https://docs.llamaindex.ai/en/stable/examples/vector_stores/postgres/)
+ * Note: Can't be used with data created using other Python vector store implementations
  */
 export class PGVectorStore extends BaseVectorStore {
   storesText: boolean = true;

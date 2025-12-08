@@ -1,4 +1,4 @@
-# @llamaindex/env
+# @vectorstores/env
 
 ## 0.1.30
 
@@ -110,7 +110,7 @@
 
 ### Patch Changes
 
-- df441e2: fix: consoleLogger is missing from `@llamaindex/env`
+- df441e2: fix: consoleLogger is missing from `@vectorstores/env`
 
 ## 0.1.12
 
@@ -196,7 +196,7 @@
 
 ### Patch Changes
 
-- 5596e31: feat: improve `@llamaindex/env`
+- 5596e31: feat: improve `@vectorstores/env`
 
 ## 0.1.0
 

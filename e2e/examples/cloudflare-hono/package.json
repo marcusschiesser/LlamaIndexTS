@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/cloudflare-hono",
+  "name": "@vectorstores/cloudflare-hono",
   "version": "0.1.0",
   "private": true,
   "scripts": {

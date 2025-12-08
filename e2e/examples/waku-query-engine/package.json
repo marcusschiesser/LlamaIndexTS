@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/waku-query-engine-test",
+  "name": "@vectorstores/waku-query-engine-test",
   "version": "0.0.192",
   "type": "module",
   "private": true,
@@ -9,8 +9,8 @@
     "start": "waku start"
   },
   "dependencies": {
-    "@llamaindex/env": "workspace:*",
-    "llamaindex": "workspace:*",
+    "@vectorstores/env": "workspace:*",
+    "@vectorstores/core": "workspace:*",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-server-dom-webpack": "19.0.0",

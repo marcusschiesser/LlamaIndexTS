@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/cloudflare-worker-agent-test",
+  "name": "@vectorstores/cloudflare-worker-agent-test",
   "version": "0.0.192",
   "type": "module",
   "private": true,
@@ -21,6 +21,6 @@
     "wrangler": "^3.87.0"
   },
   "dependencies": {
-    "llamaindex": "workspace:*"
+    "@vectorstores/core": "workspace:*"
   }
 }

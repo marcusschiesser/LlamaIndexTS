@@ -14,9 +14,7 @@ import {
   type FilterableMetadataFieldKeysType,
   IndexManagement,
   MetadataIndexFieldType,
-} from "@llamaindex/azure";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
-import dotenv from "dotenv";
+} from "@vectorstores/azure";
 import {
   DocStoreStrategy,
   Document,
@@ -29,7 +27,9 @@ import {
   TextNode,
   VectorStoreIndex,
   VectorStoreQueryMode,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -58,7 +58,7 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   });
 }
 
-// Based on https://docs.llamaindex.ai/en/stable/examples/vector_stores/AzureAISearchIndexDemo/
+// Based on Azure AI Search Index Demo example
 (async () => {
   // ---------------------------------------------------------
   // 1- Setup Azure OpenAI
@@ -88,7 +88,7 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   // AZURE_API_VERSION=2024-09-01-preview
 
   // Define index name
-  const indexName = "llamaindex-vector-store-example";
+  const indexName = "vectorstores-vector-store-example";
 
   // ---------------------------------------------------------
   // 3a- Create Index (if it does not exist)

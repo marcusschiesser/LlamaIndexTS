@@ -1,4 +1,4 @@
-import type { BaseNode } from "@llamaindex/core";
+import type { BaseNode } from "@vectorstores/core";
 import { QdrantVectorStore } from "../src/QdrantVectorStore";
 
 export class TestableQdrantVectorStore extends QdrantVectorStore {

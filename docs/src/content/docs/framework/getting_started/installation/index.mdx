@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to install and set up LlamaIndex.TS for your project.
+description: How to install and set up vectorstores for your project.
 ---
 
 ## Quick Start
@@ -14,7 +14,7 @@ npm i llamaindex
 In most cases, you'll also need an LLM provider and the Workflow package:
 
 ```package-install
-npm i @llamaindex/openai @llamaindex/workflow
+npm i @vectorstores/openai @vectorstores/workflow
 ```
 
 ## Environment Setup
@@ -47,7 +47,7 @@ For other environments, see the deployment-specific guides below.
 
 ## TypeScript Configuration
 
-LlamaIndex.TS is built with TypeScript and provides excellent type safety. Add these settings to your `tsconfig.json`:
+vectorstores is built with TypeScript and provides excellent type safety. Add these settings to your `tsconfig.json`:
 
 ```json5
 {
@@ -74,7 +74,7 @@ If you don't already have a project, you can create a new one in a new folder:
 ```package-install
 npm init
 npm i -D typescript @types/node
-npm i @llamaindex/openai @llamaindex/workflow llamaindex zod
+npm i @vectorstores/openai @vectorstores/workflow llamaindex zod
 ```
 
 ### Run the agent
@@ -165,13 +165,13 @@ Go to [LLM APIs](/typescript/framework/modules/models/llms) and [Embedding APIs]
 
 <CardGrid>
   <Card
-    title="Learn LlamaIndex.TS"
-    description="Learn how to use LlamaIndex.TS by starting with one of our tutorials."
+    title="Learn vectorstores"
+    description="Learn how to use vectorstores by starting with one of our tutorials."
     href="/typescript/framework/tutorials/basic_agent"
   />
   <Card
     title="Show me code examples"
-    description="Explore code examples using LlamaIndex.TS."
+    description="Explore code examples using vectorstores."
     href="/typescript/framework/getting_started/examples"
   />
 </CardGrid>

@@ -1,16 +1,16 @@
 import {
-  gemini,
-  GEMINI_EMBEDDING_MODEL,
-  GEMINI_MODEL,
-  GeminiEmbedding,
-} from "@llamaindex/google";
-import { SupabaseVectorStore } from "@llamaindex/supabase";
-import {
   Document,
   Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import {
+  gemini,
+  GEMINI_EMBEDDING_MODEL,
+  GEMINI_MODEL,
+  GeminiEmbedding,
+} from "@vectorstores/google";
+import { SupabaseVectorStore } from "@vectorstores/supabase";
 async function main() {
   Settings.embedModel = new GeminiEmbedding({
     model: GEMINI_EMBEDDING_MODEL.TEXT_EMBEDDING_004,

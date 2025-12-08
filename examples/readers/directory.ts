@@ -1,4 +1,4 @@
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 
 function callback(
   category: string,

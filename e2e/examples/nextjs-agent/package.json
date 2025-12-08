@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/next-agent-test",
+  "name": "@vectorstores/next-agent-test",
   "version": "0.1.192",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "ai": "^4.3.17",
-    "llamaindex": "workspace:*",
+    "@vectorstores/core": "workspace:*",
     "next": "^15.4.7",
     "react": "19.0.0",
     "react-dom": "19.0.0"

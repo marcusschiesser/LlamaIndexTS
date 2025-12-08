@@ -1,10 +1,10 @@
+import { createClient } from "@supabase/supabase-js";
 import {
   Document,
   FilterOperator,
   MetadataFilters,
   VectorStoreQueryMode,
-} from "@llamaindex/core";
-import { createClient } from "@supabase/supabase-js";
+} from "@vectorstores/core";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SupabaseVectorStore } from "../src";
 

@@ -1,5 +1,3 @@
-import { QdrantVectorStore } from "@llamaindex/qdrant";
-import * as dotenv from "dotenv";
 import {
   Document,
   MetadataMode,
@@ -7,7 +5,9 @@ import {
   Settings,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
+import * as dotenv from "dotenv";
 
 // Update callback manager
 Settings.callbackManager.on("retrieve-end", (event) => {

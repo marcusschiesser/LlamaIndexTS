@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the LlamaIndexTS Cloudflare Workers + Hono example.
+This file provides guidance to Claude Code (claude.ai/code) when working with the vectorstores Cloudflare Workers + Hono example.
 
 ## Package Overview
 
-The `@llamaindex/cloudflare-hono` package is an end-to-end example demonstrating how to use LlamaIndexTS in a Cloudflare Workers environment with the Hono web framework. This example showcases building an AI agent with vector search capabilities that runs on Cloudflare's edge runtime.
+The `@vectorstores/cloudflare-hono` package is an end-to-end example demonstrating how to use vectorstores in a Cloudflare Workers environment with the Hono web framework. This example showcases building an AI agent with vector search capabilities that runs on Cloudflare's edge runtime.
 
 ## Development Commands
 
@@ -28,7 +28,7 @@ This example demonstrates a complete RAG (Retrieval-Augmented Generation) system
 ### Request Flow
 
 1. POST request to `/llm` endpoint with `{ message: "user question" }`
-2. Environment setup using `@llamaindex/env` for Cloudflare Workers compatibility
+2. Environment setup using `@vectorstores/env` for Cloudflare Workers compatibility
 3. Dynamic imports for tree-shaking and edge runtime optimization
 4. LLM and embedding model configuration with API keys from environment
 5. Vector store connection to Pinecone with predefined namespace
@@ -39,8 +39,8 @@ This example demonstrates a complete RAG (Retrieval-Augmented Generation) system
 
 ### Runtime Optimizations
 
-- **Dynamic Imports**: All LlamaIndex packages imported asynchronously for optimal cold start performance
-- **Environment Setup**: Uses `@llamaindex/env` package for Cloudflare Workers compatibility
+- **Dynamic Imports**: All vectorstores packages imported asynchronously for optimal cold start performance
+- **Environment Setup**: Uses `@vectorstores/env` package for Cloudflare Workers compatibility
 - **Tree Shaking**: Selective imports reduce bundle size for edge deployment
 - **Async Operations**: Fully async pipeline optimized for serverless execution
 
@@ -79,21 +79,21 @@ Required Cloudflare Workers environment variables:
 - `wrangler` - Cloudflare Workers CLI and development server
 - `typescript` - TypeScript compiler
 
-### LlamaIndexTS Integration
+### vectorstores Integration
 
 This example relies on workspace dependencies:
 
-- `llamaindex` - Core LlamaIndexTS functionality
-- `@llamaindex/openai` - OpenAI provider (LLM, embeddings, agents)
-- `@llamaindex/pinecone` - Pinecone vector store integration
-- `@llamaindex/env` - Runtime environment compatibility layer
+- `@vectorstores/core` - Core vectorstores functionality
+- `@vectorstores/openai` - OpenAI provider (LLM, embeddings, agents)
+- `@vectorstores/pinecone` - Pinecone vector store integration
+- `@vectorstores/env` - Runtime environment compatibility layer
 
 ## Code Patterns
 
 ### Environment Setup Pattern
 
 ```typescript
-const { setEnvs } = await import("@llamaindex/env");
+const { setEnvs } = await import("@vectorstores/env");
 setEnvs(c.env);
 ```
 
@@ -102,8 +102,8 @@ Required first step for Cloudflare Workers compatibility.
 ### Dynamic Import Pattern
 
 ```typescript
-const { VectorStoreIndex, Settings } = await import("llamaindex");
-const { OpenAI, OpenAIAgent } = await import("@llamaindex/openai");
+const { VectorStoreIndex, Settings } = await import("@vectorstores/core");
+const { OpenAI, OpenAIAgent } = await import("@vectorstores/openai");
 ```
 
 Optimizes bundle size and cold start performance.

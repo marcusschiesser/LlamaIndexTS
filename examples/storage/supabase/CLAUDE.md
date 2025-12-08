@@ -1,6 +1,6 @@
 # CLAUDE.md - Supabase Vector Store Example
 
-This example demonstrates how to use Supabase as a vector store with LlamaIndex.TS for semantic search and retrieval-augmented generation (RAG).
+This example demonstrates how to use Supabase as a vector store with vectorstores for semantic search and retrieval-augmented generation (RAG).
 
 ## Overview
 
@@ -49,7 +49,7 @@ npx tsx index.ts
 
 **Vector Store Configuration:**
 
-- Uses `SupabaseVectorStore` from `@llamaindex/supabase`
+- Uses `SupabaseVectorStore` from `@vectorstores/supabase`
 - Configured with project URL, API key, and table name
 - Supports document deletion and management
 
@@ -93,9 +93,9 @@ npx tsx index.ts
 
 ## Dependencies
 
-- `@llamaindex/supabase` - Supabase vector store integration
-- `@llamaindex/google` - Google Gemini models for embeddings and LLM
-- `llamaindex` - Core LlamaIndex functionality
+- `@vectorstores/supabase` - Supabase vector store integration
+- `@vectorstores/google` - Google Gemini models for embeddings and LLM
+- `@vectorstores/core` - Core vectorstores functionality
 - Supabase project with vector extension enabled
 
 ## Usage Notes

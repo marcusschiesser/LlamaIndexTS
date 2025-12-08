@@ -1,4 +1,4 @@
-# @llamaindex/core
+# @vectorstores/core
 
 ## 0.6.22
 
@@ -109,7 +109,7 @@
 ### Patch Changes
 
 - 680b529: Remove requireContext from tools - better use binding to pass context
-- 361a685: Remove old workflows - use @llamaindex/workflow package
+- 361a685: Remove old workflows - use @vectorstores/workflow package
 
 ## 0.6.5
 
@@ -123,7 +123,7 @@
 
 - 9b2e25a: Use Uint8Array instead of Buffer for file type messages (works with non-NodeJS)
 - Updated dependencies [9b2e25a]
-  - @llamaindex/env@0.1.30
+  - @vectorstores/env@0.1.30
 
 ## 0.6.3
 
@@ -175,7 +175,7 @@
 
 - beb922b: Fix edge runtime builds by adding missing packages to env package. Make gpt-tokenizer optional for llamaindex to reduce package size.
 - Updated dependencies [beb922b]
-  - @llamaindex/env@0.1.29
+  - @vectorstores/env@0.1.29
 
 ## 0.5.5
 
@@ -206,7 +206,7 @@
 ### Patch Changes
 
 - Updated dependencies [cc50c9c]
-  - @llamaindex/env@0.1.28
+  - @vectorstores/env@0.1.28
 
 ## 0.5.0
 
@@ -224,7 +224,7 @@
 
 - 1c908fd: Revert previous release (not working with CJS)
 - Updated dependencies [1c908fd]
-  - @llamaindex/env@0.1.27
+  - @vectorstores/env@0.1.27
 
 ## 0.4.22
 
@@ -232,14 +232,14 @@
 
 - cb608b5: fix: bundle output incorrect
 - Updated dependencies [cb608b5]
-  - @llamaindex/env@0.1.26
+  - @vectorstores/env@0.1.26
 
 ## 0.4.21
 
 ### Patch Changes
 
-- 9456616: refactor: @llamaindex/postgres
-- 1931bbc: refactor: @llamaindex/azure
+- 9456616: refactor: @vectorstores/postgres
+- 1931bbc: refactor: @vectorstores/azure
 
 ## 0.4.20
 
@@ -259,7 +259,7 @@
 
 - e0f6cc3: The compact and refine response synthesizer (retrieved by using `getResponseSynthesizer('compact')`) has been fixed to return the original source nodes that were provided to it in its response. Previous to this it was returning the compacted text chunk documents.
 - Updated dependencies [b504303]
-  - @llamaindex/env@0.1.25
+  - @vectorstores/env@0.1.25
 
 ## 0.4.17
 
@@ -273,21 +273,21 @@
 
 - 8be4589: chore: bump version
 - Updated dependencies [8be4589]
-  - @llamaindex/env@0.1.24
+  - @vectorstores/env@0.1.24
 
 ## 0.4.15
 
 ### Patch Changes
 
 - Updated dependencies [d2b2722]
-  - @llamaindex/env@0.1.23
+  - @vectorstores/env@0.1.23
 
 ## 0.4.14
 
 ### Patch Changes
 
 - Updated dependencies [969365c]
-  - @llamaindex/env@0.1.22
+  - @vectorstores/env@0.1.22
 
 ## 0.4.13
 
@@ -295,7 +295,7 @@
 
 - 90d265c: chore: bump version
 - Updated dependencies [90d265c]
-  - @llamaindex/env@0.1.21
+  - @vectorstores/env@0.1.21
 
 ## 0.4.12
 
@@ -340,7 +340,7 @@
 ### Patch Changes
 
 - Updated dependencies [4fc001c]
-  - @llamaindex/env@0.1.20
+  - @vectorstores/env@0.1.20
 
 ## 0.4.5
 
@@ -349,14 +349,14 @@
 - ad85bd0: - fix agent chat message not saved into the task context when streaming
   - fix async local storage might use `node:async_hook` in edge-light/workerd condition
 - Updated dependencies [ad85bd0]
-  - @llamaindex/env@0.1.19
+  - @vectorstores/env@0.1.19
 
 ## 0.4.4
 
 ### Patch Changes
 
 - Updated dependencies [a8d3fa6]
-  - @llamaindex/env@0.1.18
+  - @vectorstores/env@0.1.18
 
 ## 0.4.3
 
@@ -369,7 +369,7 @@
 ### Patch Changes
 
 - Updated dependencies [14cc9eb]
-  - @llamaindex/env@0.1.17
+  - @vectorstores/env@0.1.17
 
 ## 0.4.1
 
@@ -387,10 +387,10 @@
 
 - 359fd33: refactor(core): move `ContextChatEngine` and `SimpleChatEngine`
 - efb7e1b: refactor: move `RetrieverQueryEngine` into core module
-- 620c63c: feat: add `@llamaindex/readers` package
+- 620c63c: feat: add `@vectorstores/readers` package
 
   If you are using import `llamaindex/readers/...`,
-  you will need to install `@llamaindex/core` and change import path to `@llamaindex/readers/...`.
+  you will need to install `@vectorstores/core` and change import path to `@vectorstores/readers/...`.
 
 ## 0.3.7
 
@@ -409,7 +409,7 @@
 ### Patch Changes
 
 - Updated dependencies [fa60fc6]
-  - @llamaindex/env@0.1.16
+  - @vectorstores/env@0.1.16
 
 ## 0.3.4
 
@@ -428,7 +428,7 @@
 ### Patch Changes
 
 - Updated dependencies [4ba2cfe]
-  - @llamaindex/env@0.1.15
+  - @vectorstores/env@0.1.15
 
 ## 0.3.1
 
@@ -437,7 +437,7 @@
 - a75af83: refactor: move some llm and embedding to single package
 - Updated dependencies [ae49ff4]
 - Updated dependencies [a75af83]
-  - @llamaindex/env@0.1.14
+  - @vectorstores/env@0.1.14
 
 ## 0.3.0
 
@@ -475,9 +475,9 @@
 
 ### Patch Changes
 
-- df441e2: fix: consoleLogger is missing from `@llamaindex/env`
+- df441e2: fix: consoleLogger is missing from `@vectorstores/env`
 - Updated dependencies [df441e2]
-  - @llamaindex/env@0.1.13
+  - @vectorstores/env@0.1.13
 
 ## 0.2.7
 
@@ -508,7 +508,7 @@
   This would benefit user who want to customize the transformer env.
 
 - Updated dependencies [b48bcc3]
-  - @llamaindex/env@0.1.12
+  - @vectorstores/env@0.1.12
 
 ## 0.2.3
 
@@ -519,7 +519,7 @@
   - correct class extends
   - aligin APIs, naming with llama-index python
   - move stream out of first parameter to second parameter for the better tyep checking
-  - remove JSONQueryEngine in `@llamaindex/experimental`, as the code quality is not satisify and we will bring it back later
+  - remove JSONQueryEngine in `@vectorstores/experimental`, as the code quality is not satisify and we will bring it back later
 
 ## 0.2.2
 
@@ -537,7 +537,7 @@
 - Updated dependencies [ac07e3c]
 - Updated dependencies [1a6137b]
 - Updated dependencies [ac07e3c]
-  - @llamaindex/env@0.1.11
+  - @vectorstores/env@0.1.11
 
 ## 0.2.0
 
@@ -556,7 +556,7 @@
 ### Patch Changes
 
 - Updated dependencies [4648da6]
-  - @llamaindex/env@0.1.10
+  - @vectorstores/env@0.1.10
 
 ## 0.1.10
 
@@ -578,7 +578,7 @@
 
 - 58abc57: fix: align version
 - Updated dependencies [58abc57]
-  - @llamaindex/env@0.1.9
+  - @vectorstores/env@0.1.9
 
 ## 0.1.7
 
@@ -640,7 +640,7 @@
 - 16ef5dd: refactor: move callback manager & llm to core module
 
   For people who import `llamaindex/llms/base` or `llamaindex/llms/utils`,
-  use `@llamaindex/core/llms` and `@llamaindex/core/utils` instead.
+  use `@vectorstores/core/llms` and `@vectorstores/core/utils` instead.
 
 ## 0.0.3
 
@@ -648,7 +648,7 @@
 
 - f326ab8: chore: bump version
 - Updated dependencies [f326ab8]
-  - @llamaindex/env@0.1.8
+  - @vectorstores/env@0.1.8
 
 ## 0.0.2
 
@@ -656,4 +656,4 @@
 
 - f10b41d: fix: release files
 - Updated dependencies [41fe871]
-  - @llamaindex/env@0.1.7
+  - @vectorstores/env@0.1.7

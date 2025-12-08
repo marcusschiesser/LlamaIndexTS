@@ -2,10 +2,10 @@ import {
   DEFAULT_NAMESPACE,
   KVDocumentStore,
   noneSerializer,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { PostgresKVStore, type PostgresKVStoreConfig } from "./PostgresKVStore";
 
-const DEFAULT_TABLE_NAME = "llamaindex_doc_store";
+const DEFAULT_TABLE_NAME = "vectorstores_doc_store";
 
 export type PostgresDocumentStoreConfig = PostgresKVStoreConfig & {
   namespace?: string;

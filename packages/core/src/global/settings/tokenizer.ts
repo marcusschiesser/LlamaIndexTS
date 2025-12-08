@@ -1,4 +1,4 @@
-import { AsyncLocalStorage } from "@llamaindex/env";
+import { AsyncLocalStorage } from "@vectorstores/env";
 
 export type TokenSizer = (text: string) => number;
 

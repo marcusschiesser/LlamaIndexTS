@@ -1,4 +1,4 @@
-import { AsyncLocalStorage, randomUUID } from "@llamaindex/env";
+import { AsyncLocalStorage, randomUUID } from "@vectorstores/env";
 
 const eventReasonAsyncLocalStorage = new AsyncLocalStorage<EventCaller>();
 

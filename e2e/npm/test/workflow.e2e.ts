@@ -1,6 +1,6 @@
-import { OpenAI } from "@llamaindex/openai";
-import { agent } from "@llamaindex/workflow";
-import { Settings, tool } from "llamaindex";
+import { Settings, tool } from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
+import { agent } from "@vectorstores/workflow";
 import { ok } from "node:assert";
 import { test } from "node:test";
 import { z } from "zod";

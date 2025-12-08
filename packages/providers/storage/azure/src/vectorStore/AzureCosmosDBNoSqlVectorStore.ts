@@ -16,15 +16,15 @@ import {
   metadataDictToNode,
   MetadataMode,
   nodeToMetadata,
-} from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
 import {
   BaseVectorStore,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 
 /** Azure Cosmos DB for NoSQL database creation options. */
 export type AzureCosmosDBNoSqlCreateDatabaseOptions = Partial<
@@ -70,7 +70,7 @@ export interface AzureCosmosQueryOptions {
   whereClause?: string;
 }
 
-const USER_AGENT_SUFFIX = "llamaindex-cdbnosql-vectorstore-javascript";
+const USER_AGENT_SUFFIX = "vectorstores-cdbnosql-vectorstore-javascript";
 
 const DEFAULT_VECTOR_EMBEDDING_POLICY = {
   vectorEmbeddings: [

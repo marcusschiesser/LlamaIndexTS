@@ -18,7 +18,7 @@ The ResponseSynthesizer is responsible for sending the query, nodes, and prompt 
   can enhance the output quality.
 
 ```typescript
-import { NodeWithScore, TextNode, getResponseSynthesizer, responseModeSchema } from "llamaindex";
+import { NodeWithScore, TextNode, getResponseSynthesizer, responseModeSchema } from "@vectorstores/core";
 
 // you can also use responseModeSchema.Enum.refine, responseModeSchema.Enum.tree_summarize, responseModeSchema.Enum.multi_modal
 // or you can use the CompactAndRefine, Refine, TreeSummarize, or MultiModal classes directly

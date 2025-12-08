@@ -1,12 +1,16 @@
 "use server";
-import { fs } from "@llamaindex/env";
-import { BaseQueryEngine, Document, VectorStoreIndex } from "llamaindex";
+import {
+  BaseQueryEngine,
+  Document,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { fs } from "@vectorstores/env";
 
 let _queryEngine: BaseQueryEngine;
 
 async function lazyLoadQueryEngine() {
   if (!_queryEngine) {
-    const path = "node_modules/llamaindex/examples/abramov.txt";
+    const path = "examples/data/abramov.txt";
 
     const essay = await fs.readFile(path, "utf-8");
 

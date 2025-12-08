@@ -1,12 +1,12 @@
 {
-  "name": "@llamaindex/core-tests",
+  "name": "@vectorstores/core-tests",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "vitest run"
   },
   "devDependencies": {
-    "@llamaindex/core": "workspace:*",
+    "@vectorstores/core": "workspace:*",
     "vitest": "^2.1.5",
     "zod": "^4.1.5"
   }

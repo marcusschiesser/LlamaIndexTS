@@ -2,7 +2,7 @@ import {
   Document,
   SentenceSplitter,
   splitBySentenceTokenizer,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { getEncoding } from "js-tiktoken";
 import { describe, expect, test } from "vitest";
 

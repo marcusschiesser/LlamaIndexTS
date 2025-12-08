@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/next-node-runtime-test",
+  "name": "@vectorstores/next-node-runtime-test",
   "version": "0.1.64",
   "private": true,
   "scripts": {
@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@llamaindex/readers": "workspace:*",
+    "@vectorstores/readers": "workspace:*",
     "js-tiktoken": "^1.0.14",
-    "llamaindex": "workspace:*",
+    "@vectorstores/core": "workspace:*",
     "next": "^15.4.7",
     "react": "19.0.0",
     "react-dom": "19.0.0"

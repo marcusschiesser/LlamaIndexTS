@@ -9,9 +9,9 @@ export default {
     env: Env,
     ctx: ExecutionContext,
   ): Promise<Response> {
-    const { setEnvs } = await import("@llamaindex/env");
+    const { setEnvs } = await import("@vectorstores/env");
     setEnvs(env);
-    const { OpenAIAgent, OpenAI } = await import("@llamaindex/openai");
+    const { OpenAIAgent, OpenAI } = await import("@vectorstores/openai");
     const text = await request.text();
     const agent = new OpenAIAgent({
       llm: new OpenAI({

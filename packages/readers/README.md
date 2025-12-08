@@ -1,15 +1,15 @@
-# @llamaindex/readers
+# @vectorstores/readers
 
 > Utilities for reading data from various sources
 
 ## Usage
 
 ```shell
-npm i @llamaindex/readers
+npm i @vectorstores/readers
 ```
 
 ```ts
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 
 const reader = new SimpleDirectoryReader();
 const documents = reader.loadData("./directory");

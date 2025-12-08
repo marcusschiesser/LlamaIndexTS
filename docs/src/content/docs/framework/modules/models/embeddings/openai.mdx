@@ -2,17 +2,17 @@
 title: OpenAI
 ---
 
-To use OpenAI embeddings, you need to import `OpenAIEmbedding` from `@llamaindex/openai`.
+To use OpenAI embeddings, you need to import `OpenAIEmbedding` from `@vectorstores/openai`.
 
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/openai
+npm i llamaindex @vectorstores/openai
 ```
 
 ```ts
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { OpenAIEmbedding } from "@vectorstores/openai";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
 Settings.embedModel = new OpenAIEmbedding();
 

@@ -1,6 +1,6 @@
-# @llamaindex/env Package
+# @vectorstores/env Package
 
-This package provides environment-specific compatibility layers for different JavaScript runtimes. It's a critical component that enables LlamaIndex.TS to work across Node.js, Deno, Bun, browser, Vercel Edge Runtime, and Cloudflare Workers.
+This package provides environment-specific compatibility layers for different JavaScript runtimes. It's a critical component that enables vectorstores to work across Node.js, Deno, Bun, browser, Vercel Edge Runtime, and Cloudflare Workers.
 
 ## Package Overview
 
@@ -19,8 +19,8 @@ This package provides environment-specific compatibility layers for different Ja
 
 **From workspace root:**
 
-- `turbo run build --filter="@llamaindex/env"` - Build this specific package
-- `turbo run test --filter="@llamaindex/env"` - Test this specific package
+- `turbo run build --filter="@vectorstores/env"` - Build this specific package
+- `turbo run test --filter="@vectorstores/env"` - Test this specific package
 
 ## Runtime Support
 
@@ -79,13 +79,13 @@ The `./tokenizers` and `./multi-model` sub-packages have been removed from this 
 
 ```typescript
 import { getEncoding } from "js-tiktoken";
-import { Settings } from "llamaindex";
+import { Settings } from "@vectorstores/core";
 
 const encoding = getEncoding("cl100k_base");
 Settings.tokenSizer = (text) => encoding.encode(text).length;
 ```
 
-**For embeddings**, use `Settings.embedFunc` or install embedding packages like `@llamaindex/huggingface` or `@llamaindex/clip`.
+**For embeddings**, use `Settings.embedFunc` or install embedding packages like `@vectorstores/huggingface` or `@vectorstores/clip`.
 
 ## Architecture Patterns
 
@@ -123,7 +123,7 @@ The package.json uses conditional exports to map different entry points based on
 
 ## Usage Notes
 
-- This package is typically imported by other LlamaIndex packages, not directly by users
-- Provides the runtime abstraction layer that makes LlamaIndex framework runtime-agnostic
+- This package is typically imported by other vectorstores packages, not directly by users
+- Provides the runtime abstraction layer that makes vectorstores framework runtime-agnostic
 - When adding new environment-specific functionality, ensure all supported runtimes have appropriate implementations or polyfills
 - Use environment detection utilities to handle runtime differences gracefully

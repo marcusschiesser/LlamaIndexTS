@@ -1,18 +1,18 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the LlamaIndexTS Next.js Edge Runtime example.
+This file provides guidance to Claude Code (claude.ai/code) when working with the vectorstores Next.js Edge Runtime example.
 
 ## Package Overview
 
-The `@llamaindex/nextjs-edge-runtime-test` package is an end-to-end test example that validates LlamaIndexTS compatibility with Next.js Edge Runtime. This example serves as both a test case and a reference implementation for using LlamaIndex in Vercel Edge Runtime environments.
+The `@vectorstores/nextjs-edge-runtime-test` package is an end-to-end test example that validates vectorstores compatibility with Next.js Edge Runtime. This example serves as both a test case and a reference implementation for using vectorstores in Vercel Edge Runtime environments.
 
 ## Purpose
 
 This example specifically tests:
 
-- LlamaIndex package import compatibility in Edge Runtime
+- vectorstores package import compatibility in Edge Runtime
 - Next.js Edge Runtime environment detection
-- Proper runtime configuration for LlamaIndex in serverless edge environments
+- Proper runtime configuration for vectorstores in serverless edge environments
 - Integration with Next.js 15.x App Router using edge runtime
 
 ## Development Commands
@@ -34,8 +34,8 @@ From the workspace root:
 
 **next.config.mjs:**
 
-- Uses `withLlamaIndex` wrapper from `llamaindex/next` for proper Edge Runtime configuration
-- Applies necessary bundling and polyfill configurations for LlamaIndex compatibility
+- Uses `withVectorstores` wrapper from `@vectorstores/core/next` for proper Edge Runtime configuration
+- Applies necessary bundling and polyfill configurations for vectorstores compatibility
 
 ### Runtime Configuration
 
@@ -43,13 +43,13 @@ From the workspace root:
 
 - Both `src/app/layout.tsx` and `src/app/page.tsx` export `runtime = "edge"`
 - Forces Next.js to use Edge Runtime instead of Node.js runtime
-- Validates LlamaIndex works in constrained serverless environments
+- Validates vectorstores works in constrained serverless environments
 
 ### Runtime Validation
 
 **src/utils/llm.ts:**
 
-- Imports the main `llamaindex` package to test compatibility
+- Imports the main `@vectorstores/core` package to test compatibility
 - Performs runtime environment validation by checking for `EdgeRuntime` global
 - Throws error if not running in expected Edge Runtime environment
 - Acts as a smoke test for package loading in edge environments
@@ -67,14 +67,14 @@ From the workspace root:
 
 ### Edge Runtime Compatibility
 
-- Tests LlamaIndex package loading in Vercel Edge Runtime
+- Tests vectorstores package loading in Vercel Edge Runtime
 - Validates proper tree-shaking and bundling for edge environments
 - Ensures no Node.js-specific APIs are accidentally imported
 
-### LlamaIndex Integration
+### vectorstores Integration
 
-- Uses workspace dependency `llamaindex: "workspace:*"`
-- Leverages `withLlamaIndex` Next.js plugin for proper configuration
+- Uses workspace dependency `@vectorstores/core: "workspace:*"`
+- Leverages `withVectorstores` Next.js plugin for proper configuration
 - Tests base package import without specific providers
 
 ### Environment Detection
@@ -87,7 +87,7 @@ From the workspace root:
 
 **Core Dependencies:**
 
-- `llamaindex` - Main LlamaIndexTS package (workspace dependency)
+- `@vectorstores/core` - Main vectorstores package (workspace dependency)
 - `next` - Next.js framework (v15.3.0)
 - `react` & `react-dom` - React framework (v19.x)
 
@@ -102,14 +102,14 @@ From the workspace root:
 - **Edge Runtime Only**: This example is specifically designed for Edge Runtime, not Node.js runtime
 - **Minimal Implementation**: Intentionally minimal to isolate Edge Runtime compatibility testing
 - **Import Testing**: The `src/utils/llm.ts` file serves as an import compatibility test
-- **Bundle Size**: Edge Runtime has size constraints, so this tests LlamaIndex bundle compatibility
+- **Bundle Size**: Edge Runtime has size constraints, so this tests vectorstores bundle compatibility
 
 ## Testing Purpose
 
 This example validates that:
 
-1. LlamaIndex packages can be imported in Edge Runtime environments
-2. Next.js configuration works correctly with LlamaIndex
+1. vectorstores packages can be imported in Edge Runtime environments
+2. Next.js configuration works correctly with vectorstores
 3. Runtime environment detection functions properly
 4. Bundle size and tree-shaking work for edge deployments
 5. No Node.js-specific APIs are inadvertently used
@@ -119,7 +119,7 @@ This example validates that:
 - **Runtime Detection Failures**: If `EdgeRuntime` is not detected, check Next.js configuration
 - **Import Errors**: Ensure workspace packages are built before running
 - **Bundle Size**: Edge Runtime has memory/size limits that may affect large imports
-- **API Compatibility**: Some LlamaIndex features may not work in Edge Runtime due to API limitations
+- **API Compatibility**: Some vectorstores features may not work in Edge Runtime due to API limitations
 
 ## Related Examples
 

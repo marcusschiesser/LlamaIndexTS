@@ -1,6 +1,6 @@
-import { JinaAIEmbedding } from "@llamaindex/jinaai";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
-import { ImageDocument, similarity, SimilarityType } from "llamaindex";
+import { ImageDocument, similarity, SimilarityType } from "@vectorstores/core";
+import { JinaAIEmbedding } from "@vectorstores/jinaai";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import path from "path";
 
 async function main() {

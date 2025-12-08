@@ -1,4 +1,4 @@
-import { Ollama } from "@llamaindex/ollama";
+import { Ollama } from "@vectorstores/ollama";
 import assert from "node:assert";
 import { test } from "node:test";
 import { getWeatherTool } from "./fixtures/tools.js";

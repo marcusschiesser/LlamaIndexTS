@@ -44,7 +44,7 @@ describe("MongoKVStore", () => {
 
       expect(kvStore).toBeInstanceOf(MongoKVStore);
       expect(appendMetadataSpy).toHaveBeenCalledWith({
-        name: "LLAMAINDEX_MONGODB_KV_STORE",
+        name: "VECTORSTORES_MONGODB_KV_STORE",
       });
     });
 
@@ -56,7 +56,7 @@ describe("MongoKVStore", () => {
 
       expect(kvStore).toBeInstanceOf(MongoKVStore);
       expect(appendMetadataSpy).toHaveBeenCalledWith({
-        name: "LLAMAINDEX_MONGODB_KV_STORE",
+        name: "VECTORSTORES_MONGODB_KV_STORE",
       });
     });
   });

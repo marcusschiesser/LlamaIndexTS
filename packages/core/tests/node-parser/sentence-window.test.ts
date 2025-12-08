@@ -2,7 +2,7 @@ import {
   Document,
   MetadataMode,
   SentenceWindowNodeParser,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { describe, expect, test } from "vitest";
 
 describe("Tests for the SentenceWindowNodeParser class", () => {

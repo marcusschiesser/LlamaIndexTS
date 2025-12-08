@@ -4,11 +4,11 @@ import type {
   ChatMessage,
   MessageContent,
   MessageType,
-} from "@llamaindex/core";
-import { BaseChatStore } from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { BaseChatStore } from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
-const USER_AGENT_SUFFIX = "llamaindex-cdbnosql-chatstore-javascript";
+const USER_AGENT_SUFFIX = "vectorstores-cdbnosql-chatstore-javascript";
 const DEFAULT_CHAT_DATABASE = "ChatMessagesDB";
 const DEFAULT_CHAT_CONTAINER = "ChatMessagesContainer";
 const DEFAULT_OFFER_THROUGHPUT = 400;

@@ -1,32 +1,32 @@
-# @llamaindex/firestore
+# @vectorstores/firestore
 
 ## 1.0.29
 
 ### Patch Changes
 
 - Updated dependencies [06f884a]
-  - @llamaindex/core@0.6.22
+  - @vectorstores/core@0.6.22
 
 ## 1.0.28
 
 ### Patch Changes
 
 - Updated dependencies [5da1cda]
-  - @llamaindex/core@0.6.21
+  - @vectorstores/core@0.6.21
 
 ## 1.0.27
 
 ### Patch Changes
 
 - Updated dependencies [0267bb0]
-  - @llamaindex/core@0.6.20
+  - @vectorstores/core@0.6.20
 
 ## 1.0.26
 
 ### Patch Changes
 
 - Updated dependencies [f9f1de9]
-  - @llamaindex/core@0.6.19
+  - @vectorstores/core@0.6.19
 
 ## 1.0.25
 
@@ -34,21 +34,21 @@
 
 - Updated dependencies [f29799e]
 - Updated dependencies [7224c06]
-  - @llamaindex/core@0.6.18
+  - @vectorstores/core@0.6.18
 
 ## 1.0.24
 
 ### Patch Changes
 
 - Updated dependencies [38da40b]
-  - @llamaindex/core@0.6.17
+  - @vectorstores/core@0.6.17
 
 ## 1.0.23
 
 ### Patch Changes
 
 - Updated dependencies [a8ec08c]
-  - @llamaindex/core@0.6.16
+  - @vectorstores/core@0.6.16
 
 ## 1.0.22
 
@@ -56,14 +56,14 @@
 
 - Updated dependencies [7ad3411]
 - Updated dependencies [5da5b3c]
-  - @llamaindex/core@0.6.15
+  - @vectorstores/core@0.6.15
 
 ## 1.0.21
 
 ### Patch Changes
 
 - Updated dependencies [8eeac33]
-  - @llamaindex/core@0.6.14
+  - @vectorstores/core@0.6.14
 
 ## 1.0.20
 
@@ -72,7 +72,7 @@
 - Updated dependencies [d578889]
 - Updated dependencies [0fcc92f]
 - Updated dependencies [515a8b9]
-  - @llamaindex/core@0.6.13
+  - @vectorstores/core@0.6.13
 
 ## 1.0.19
 
@@ -80,7 +80,7 @@
 
 - Updated dependencies [7039e1a]
 - Updated dependencies [7039e1a]
-  - @llamaindex/core@0.6.12
+  - @vectorstores/core@0.6.12
 
 ## 1.0.18
 
@@ -90,35 +90,35 @@
 - Updated dependencies [62699b7]
 - Updated dependencies [c5b2691]
 - Updated dependencies [d8ac8d3]
-  - @llamaindex/core@0.6.11
+  - @vectorstores/core@0.6.11
 
 ## 1.0.17
 
 ### Patch Changes
 
 - Updated dependencies [1b5af14]
-  - @llamaindex/core@0.6.10
+  - @vectorstores/core@0.6.10
 
 ## 1.0.16
 
 ### Patch Changes
 
 - Updated dependencies [71598f8]
-  - @llamaindex/core@0.6.9
+  - @vectorstores/core@0.6.9
 
 ## 1.0.15
 
 ### Patch Changes
 
 - Updated dependencies [c927457]
-  - @llamaindex/core@0.6.8
+  - @vectorstores/core@0.6.8
 
 ## 1.0.14
 
 ### Patch Changes
 
 - Updated dependencies [59601dd]
-  - @llamaindex/core@0.6.7
+  - @vectorstores/core@0.6.7
 
 ## 1.0.13
 
@@ -126,7 +126,7 @@
 
 - Updated dependencies [680b529]
 - Updated dependencies [361a685]
-  - @llamaindex/core@0.6.6
+  - @vectorstores/core@0.6.6
 
 ## 1.0.12
 
@@ -134,29 +134,29 @@
 
 - 76c9a80: Make core package a peer dependency
 - Updated dependencies [d671ed6]
-  - @llamaindex/core@0.6.5
+  - @vectorstores/core@0.6.5
 
 ## 1.0.11
 
 ### Patch Changes
 
 - Updated dependencies [9b2e25a]
-  - @llamaindex/core@0.6.4
-  - @llamaindex/env@0.1.30
+  - @vectorstores/core@0.6.4
+  - @vectorstores/env@0.1.30
 
 ## 1.0.10
 
 ### Patch Changes
 
 - Updated dependencies [3ee8c83]
-  - @llamaindex/core@0.6.3
+  - @vectorstores/core@0.6.3
 
 ## 1.0.9
 
 ### Patch Changes
 
 - Updated dependencies [9c63f3f]
-  - @llamaindex/core@0.6.2
+  - @vectorstores/core@0.6.2
 
 ## 1.0.8
 
@@ -164,7 +164,7 @@
 
 - Updated dependencies [1b6f368]
 - Updated dependencies [eaf326e]
-  - @llamaindex/core@0.6.1
+  - @vectorstores/core@0.6.1
 
 ## 1.0.7
 
@@ -174,58 +174,58 @@
 - Updated dependencies [93bc0ff]
 - Updated dependencies [91a18e7]
 - Updated dependencies [5189b44]
-  - @llamaindex/core@0.6.0
+  - @vectorstores/core@0.6.0
 
 ## 1.0.6
 
 ### Patch Changes
 
 - Updated dependencies [40ee761]
-  - @llamaindex/core@0.5.8
+  - @vectorstores/core@0.5.8
 
 ## 1.0.5
 
 ### Patch Changes
 
 - Updated dependencies [4bac71d]
-  - @llamaindex/core@0.5.7
+  - @vectorstores/core@0.5.7
 
 ## 1.0.4
 
 ### Patch Changes
 
 - Updated dependencies [beb922b]
-  - @llamaindex/env@0.1.29
-  - @llamaindex/core@0.5.6
+  - @vectorstores/env@0.1.29
+  - @vectorstores/core@0.5.6
 
 ## 1.0.3
 
 ### Patch Changes
 
 - Updated dependencies [5668970]
-  - @llamaindex/core@0.5.5
+  - @vectorstores/core@0.5.5
 
 ## 1.0.2
 
 ### Patch Changes
 
 - Updated dependencies [ad3c7f1]
-  - @llamaindex/core@0.5.4
+  - @vectorstores/core@0.5.4
 
 ## 1.0.1
 
 ### Patch Changes
 
 - Updated dependencies [cb021e7]
-  - @llamaindex/core@0.5.3
+  - @vectorstores/core@0.5.3
 
 ## 1.0.0
 
 ### Major Changes
 
-- 5c026e8: Firestore vector store support for LlamaIndex
+- 5c026e8: Firestore vector store support for vectorstores
 
 ### Patch Changes
 
 - Updated dependencies [d952e68]
-  - @llamaindex/core@0.5.2
+  - @vectorstores/core@0.5.2

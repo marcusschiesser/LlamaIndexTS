@@ -1,10 +1,10 @@
-import { GEMINI_EMBEDDING_MODEL, GeminiEmbedding } from "@llamaindex/google";
-import { QdrantVectorStore } from "@llamaindex/qdrant";
 import {
   Document,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { GEMINI_EMBEDDING_MODEL, GeminiEmbedding } from "@vectorstores/google";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
 
 const embedding = new GeminiEmbedding({
   model: GEMINI_EMBEDDING_MODEL.EMBEDDING_001,

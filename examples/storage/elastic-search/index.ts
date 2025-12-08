@@ -1,16 +1,16 @@
-import { ElasticSearchVectorStore } from "@llamaindex/elastic-search";
-import {
-  gemini,
-  GEMINI_EMBEDDING_MODEL,
-  GEMINI_MODEL,
-  GeminiEmbedding,
-} from "@llamaindex/google";
 import {
   Document,
   Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { ElasticSearchVectorStore } from "@vectorstores/elastic-search";
+import {
+  gemini,
+  GEMINI_EMBEDDING_MODEL,
+  GEMINI_MODEL,
+  GeminiEmbedding,
+} from "@vectorstores/google";
 async function main() {
   Settings.embedModel = new GeminiEmbedding({
     model: GEMINI_EMBEDDING_MODEL.TEXT_EMBEDDING_004,
@@ -45,7 +45,7 @@ async function main() {
 
   // Initialize ElasticSearch Vector Store
   const vectorStore = new ElasticSearchVectorStore({
-    indexName: "llamaindex-demo",
+    indexName: "vectorstores-demo",
     esCloudId: process.env.ES_CLOUD_ID,
     esApiKey: process.env.ES_API_KEY,
   });

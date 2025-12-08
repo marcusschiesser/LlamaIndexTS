@@ -1,13 +1,13 @@
 ---
 title: Server APIs & Backends
-description: Deploy LlamaIndex.TS in server environments like Express, Fastify, and standalone Node.js applications.
+description: Deploy vectorstores in server environments like Express, Fastify, and standalone Node.js applications.
 ---
 
-This guide covers adding LlamaIndex.TS agents to traditional server environments where you have full Node.js runtime access.
+This guide covers adding vectorstores agents to traditional server environments where you have full Node.js runtime access.
 
 ## Supported Runtimes
 
-LlamaIndex.TS works seamlessly with:
+vectorstores works seamlessly with:
 
 - **Node.js** (v18+)
 - **Bun** (v1.0+)
@@ -19,9 +19,9 @@ LlamaIndex.TS works seamlessly with:
 
 ```typescript
 import express from 'express';
-import { agent } from '@llamaindex/workflow';
+import { agent } from '@vectorstores/workflow';
 import { tool } from 'llamaindex';
-import { openai } from '@llamaindex/openai';
+import { openai } from '@vectorstores/openai';
 import { z } from 'zod';
 
 const app = express();
@@ -81,9 +81,9 @@ initializeAgent().then(() => {
 
 ```typescript
 import Fastify from 'fastify';
-import { agent } from '@llamaindex/workflow';
+import { agent } from '@vectorstores/workflow';
 import { tool } from 'llamaindex';
-import { openai } from '@llamaindex/openai';
+import { openai } from '@vectorstores/openai';
 import { z } from 'zod';
 
 const fastify = Fastify();
@@ -129,9 +129,9 @@ start();
 
 ```typescript
 import { Hono } from "hono";
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 
 type Bindings = {
@@ -141,7 +141,7 @@ type Bindings = {
 const app = new Hono<{ Bindings: Bindings }>();
 
 app.post("/api/chat", async (c) => {
-  const { setEnvs } = await import("@llamaindex/env");
+  const { setEnvs } = await import("@vectorstores/env");
   setEnvs(c.env);
   
   const { message } = await c.req.json();
@@ -176,7 +176,7 @@ export default app;
 For real-time agent responses:
 
 ```typescript
-import { agentStreamEvent } from "@llamaindex/workflow";
+import { agentStreamEvent } from "@vectorstores/workflow";
 
 app.post('/api/chat-stream', async (req, res) => {
   const { message } = req.body;

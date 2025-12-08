@@ -1,14 +1,14 @@
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { openai } from "@llamaindex/openai";
 import {
   Document,
   MetadataMode,
   NodeWithScore,
   Settings,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 
 import { useOpenAIEmbedding } from "../utils/embedding";
 

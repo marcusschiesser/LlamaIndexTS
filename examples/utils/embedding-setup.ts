@@ -2,7 +2,7 @@
  * This example shows how to set up embeddings using Settings.embedFunc
  * with @huggingface/transformers directly.
  *
- * Previously, @llamaindex/env provided transformer utilities, but now you need to:
+ * Previously, @vectorstores/env provided transformer utilities, but now you need to:
  * 1. Install @huggingface/transformers directly in your project
  * 2. Configure Settings.embedFunc with your embedding function
  */
@@ -11,7 +11,7 @@ import {
   pipeline,
   type FeatureExtractionPipeline,
 } from "@huggingface/transformers";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
 // Initialize the embedding pipeline lazily
 let embedder: FeatureExtractionPipeline | null = null;

@@ -1,5 +1,5 @@
-import { VectorStoreIndex } from "@llamaindex/core/indices";
-import { Document } from "@llamaindex/core/schema";
+import { VectorStoreIndex } from "@vectorstores/core/indices";
+import { Document } from "@vectorstores/core/schema";
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 

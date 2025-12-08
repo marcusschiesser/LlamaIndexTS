@@ -5,14 +5,14 @@ title: Perplexity LLM
 ## Installation
 
 ```package-install
-npm i @llamaindex/perplexity
+npm i @vectorstores/perplexity
 ```
 
 ## Usage
 
 ```ts
-import { Settings } from "llamaindex";
-import { perplexity } from "@llamaindex/perplexity";
+import { Settings } from "@vectorstores/core";
+import { perplexity } from "@vectorstores/perplexity";
 Settings.llm = perplexity({
 apiKey: "<YOUR_API_KEY>",
 model: "sonar", // or available models 
@@ -22,7 +22,7 @@ model: "sonar", // or available models
 ## Example
 
 ```ts
-import { perplexity } from "@llamaindex/perplexity";
+import { perplexity } from "@vectorstores/perplexity";
 
 const perplexityLlm = perplexity({
   apiKey: "<YOUR_API_KEY>",
@@ -69,8 +69,8 @@ async function main() {
 ## Full Example
 
 ```ts
-import { perplexity } from "@llamaindex/perplexity";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { perplexity } from "@vectorstores/perplexity";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
 // Use the perplexity LLM
 Settings.llm = perplexity({ model: "sonar", apiKey: "<YOUR_API_KEY>" });

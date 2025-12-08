@@ -1,4 +1,4 @@
-# @llamaindex/next-agent-test
+# @vectorstores/next-agent-test
 
 ## 0.1.192
 

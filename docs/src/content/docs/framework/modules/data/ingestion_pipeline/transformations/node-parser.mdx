@@ -12,7 +12,7 @@ By default, we will use `Settings.nodeParser` to split the document into nodes. 
 The `SentenceSplitter` is the default `NodeParser` in LlamaIndex. It will split the text from a `Document` into sentences.
 
 ```ts twoslash
-import { TextFileReader } from '@llamaindex/readers/text'
+import { TextFileReader } from '@vectorstores/readers/text'
 import { SentenceSplitter } from 'llamaindex';
 import { Settings } from 'llamaindex';
 
@@ -24,7 +24,7 @@ Settings.nodeParser = nodeParser;
 The underlying text splitter will split text by sentences. It can also be used as a standalone module for splitting raw text.
 
 ```ts twoslash
-import { SentenceSplitter } from "llamaindex";
+import { SentenceSplitter } from "@vectorstores/core";
 
 const splitter = new SentenceSplitter({ chunkSize: 1 });
 
@@ -38,8 +38,8 @@ The `MarkdownNodeParser` is a more advanced `NodeParser` that can handle markdow
 
 <Tabs items={["with reader", "with node:fs"]}>
 	```ts twoslash tab="with reader"
-	import { MarkdownNodeParser } from "llamaindex";
-	import { MarkdownReader } from '@llamaindex/readers/markdown'
+	import { MarkdownNodeParser } from "@vectorstores/core";
+	import { MarkdownReader } from '@vectorstores/readers/markdown'
 
 	const reader = new MarkdownReader();
 	const markdownNodeParser = new MarkdownNodeParser();
@@ -52,7 +52,7 @@ The `MarkdownNodeParser` is a more advanced `NodeParser` that can handle markdow
 
 	```ts twoslash tab="with node:fs"
 	import fs from 'node:fs/promises';
-	import { MarkdownNodeParser, Document } from "llamaindex";
+	import { MarkdownNodeParser, Document } from "@vectorstores/core";
 
 	const markdownNodeParser = new MarkdownNodeParser();
 	const text = await fs.readFile('path/to/file.md', 'utf-8');
@@ -111,8 +111,8 @@ It will split the code by AST nodes and then parse the nodes into a `Document` o
 
 <Tabs items={["with reader", "with node:fs"]}>
 	```ts twoslash tab="with reader"
-	import { TextFileReader } from '@llamaindex/readers/text'
-	import { CodeSplitter } from '@llamaindex/node-parser/code'
+	import { TextFileReader } from '@vectorstores/readers/text'
+	import { CodeSplitter } from '@vectorstores/node-parser/code'
 	import Parser from "tree-sitter";
 	import TS from "tree-sitter-typescript";
 
@@ -130,7 +130,7 @@ It will split the code by AST nodes and then parse the nodes into a `Document` o
 
 	```ts twoslash tab="with node:fs"
 	import fs from 'node:fs/promises';
-	import { CodeSplitter } from '@llamaindex/node-parser/code'
+	import { CodeSplitter } from '@vectorstores/node-parser/code'
 	import Parser from "tree-sitter";
 	import TS from "tree-sitter-typescript";
 
@@ -175,7 +175,7 @@ Try it out ⬇️
   
   		In this example, you should put `tree-sitter-typescript.wasm` to the `public` folder for Next.js.
   
-  		And also update the `next.config.js` to make `@llamaindex/env` work properly.
+  		And also update the `next.config.js` to make `@vectorstores/env` work properly.
   
   		```js
   		const config = {

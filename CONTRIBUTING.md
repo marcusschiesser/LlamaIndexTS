@@ -2,22 +2,21 @@
 
 ## Structure
 
-LlamaIndex.TS uses pnpm monorepo.
+vectorstores uses pnpm monorepo.
 
 We recommend you to understand the basics of Node.js, TypeScript, pnpm, and of course, LLM before contributing.
 
 There are some important folders in the repository:
 
 - `packages/*`: Contains the source code of the packages. Each package is a separate npm package.
-  - `llamaindex`: The starter package for LlamaIndex.TS, which contains the all sub-packages.
-  - `core`: The core package of LlamaIndex.TS, which contains the abstract classes and interfaces. It is designed for
+  - `core`: The core package of vectorstores, which contains the abstract classes and interfaces. It is designed for
     all JS runtime environments.
-  - `env`: The environment package of LlamaIndex.TS, which contains the environment-specific classes and interfaces. It
+  - `env`: The environment package of vectorstores, which contains the environment-specific classes and interfaces. It
     includes compatibility layers for Node.js, Deno, Vercel Edge Runtime, Cloudflare Workers...
-  - `providers/*`: The providers package of LlamaIndex.TS, which contains the providers for LLM and other services.
-- `apps/*`: The applications based on LlamaIndex.TS.
+  - `providers/*`: The providers package of vectorstores, which contains the providers for LLM and other services.
+- `apps/*`: The applications based on vectorstores.
   - `next`: Our documentation website based on Next.js.
-- `examples`: The code examples of LlamaIndex.TS using Node.js.
+- `examples`: The code examples of vectorstores using Node.js.
 
 ## Getting Started
 
@@ -68,14 +67,14 @@ pnpm turbo run dev --filter="./packages/core" --concurrency=100
 In another terminal, you can write and run any script needed to quickly test your changes. For example:
 
 ```typescript
-import { createMemory, staticBlock } from "@llamaindex/core/memory";
+import { createMemory, staticBlock } from "@vectorstores/core/memory";
 
 // Create memory with predefined context
 const memory = createMemory({
   memoryBlocks: [
     staticBlock({
       content:
-        "The user is a software engineer who loves TypeScript and LlamaIndex.",
+        "The user is a software engineer who loves TypeScript and vectorstores.",
       messageRole: "system",
     }),
   ],
@@ -109,7 +108,7 @@ After build, to run all unit tests, call:
 pnpm test
 ```
 
-Unit tests are located in the `tests` folder of each package. They are using their own package (e.g. `@llamaindex/core-tests` for `@llamaindex/core`). The tests are importing the package under test and the test package is not published.
+Unit tests are located in the `tests` folder of each package. They are using their own package (e.g. `@vectorstores/core-tests` for `@vectorstores/core`). The tests are importing the package under test and the test package is not published.
 
 #### E2E tests
 

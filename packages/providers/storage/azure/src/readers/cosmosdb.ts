@@ -1,6 +1,6 @@
 import type { CosmosClient, SqlQuerySpec } from "@azure/cosmos";
-import type { Metadata } from "@llamaindex/core";
-import { type BaseReader, Document } from "@llamaindex/core";
+import type { Metadata } from "@vectorstores/core";
+import { type BaseReader, Document } from "@vectorstores/core";
 
 export type SimpleCosmosDBReaderLoaderConfig = {
   /**

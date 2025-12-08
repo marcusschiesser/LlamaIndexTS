@@ -1,7 +1,7 @@
 export * from "./constants";
 export { Settings } from "./settings";
 export { CallbackManager } from "./settings/callback-manager";
-export type { LlamaIndexEventMaps } from "./settings/callback-manager";
+export type { VectorstoresEventMaps } from "./settings/callback-manager";
 export {
   EventCaller,
   getEventCaller,

@@ -1,5 +1,5 @@
-import { Document, type BaseReader, type FileReader } from "@llamaindex/core";
-import { path } from "@llamaindex/env";
+import { Document, type BaseReader, type FileReader } from "@vectorstores/core";
+import { path } from "@vectorstores/env";
 import pLimit from "p-limit";
 import { TextFileReader } from "../text";
 import { walk } from "./utils";

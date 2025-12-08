@@ -9,7 +9,7 @@ To use this vector store, you need a Supabase project. You can create one at [su
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/supabase
+npm i llamaindex @vectorstores/supabase
 ```
 
 ## Database Setup
@@ -63,8 +63,8 @@ $$;
 ## Importing the modules
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
-import { SupabaseVectorStore } from "@llamaindex/supabase";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
+import { SupabaseVectorStore } from "@vectorstores/supabase";
 ```
 
 ## Setup Supabase
@@ -112,7 +112,7 @@ console.log(response.toString());
 You can filter documents based on metadata when querying:
 
 ```ts
-import { FilterOperator, MetadataFilters } from "llamaindex";
+import { FilterOperator, MetadataFilters } from "@vectorstores/core";
 
 // Create a filter for documents with author = "Jane Smith"
 const filters: MetadataFilters = {
@@ -136,8 +136,8 @@ const filteredResponse = await vectorStore.query({
 ## Full code
 
 ```ts
-import { Document, VectorStoreIndex, storageContextFromDefaults } from "llamaindex";
-import { SupabaseVectorStore } from "@llamaindex/supabase";
+import { Document, VectorStoreIndex, storageContextFromDefaults } from "@vectorstores/core";
+import { SupabaseVectorStore } from "@vectorstores/supabase";
 
 async function main() {
   // Initialize the vector store

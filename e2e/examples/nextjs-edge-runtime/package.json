@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/nextjs-edge-runtime-test",
+  "name": "@vectorstores/nextjs-edge-runtime-test",
   "version": "0.1.191",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "llamaindex": "workspace:*",
+    "@vectorstores/core": "workspace:*",
     "next": "^15.4.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

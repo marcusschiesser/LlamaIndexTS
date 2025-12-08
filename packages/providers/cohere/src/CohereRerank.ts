@@ -6,7 +6,7 @@ import {
   type BaseNodePostprocessor,
   type MessageContent,
   type NodeWithScore,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 
 type CohereRerankOptions = {
   topN?: number;

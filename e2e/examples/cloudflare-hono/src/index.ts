@@ -11,7 +11,7 @@ const app = new Hono<{
 
 app.post("/llm", async (c) => {
   //#region init envs
-  const { setEnvs } = await import("@llamaindex/env");
+  const { setEnvs } = await import("@vectorstores/env");
   setEnvs(c.env);
   //#endregion
 
@@ -23,13 +23,13 @@ app.post("/llm", async (c) => {
     VectorStoreIndex,
     Settings,
     SentenceSplitter,
-  } = await import("llamaindex");
+  } = await import("@vectorstores/core");
 
   const { OpenAIAgent, OpenAI, OpenAIEmbedding } = await import(
-    "@llamaindex/openai"
+    "@vectorstores/openai"
   );
 
-  const { PineconeVectorStore } = await import("@llamaindex/pinecone");
+  const { PineconeVectorStore } = await import("@vectorstores/pinecone");
 
   Settings.llm = new OpenAI({
     model: "gpt-4o-mini",

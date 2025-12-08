@@ -1,4 +1,4 @@
-import { ExcelReader } from "@llamaindex/excel";
+import { ExcelReader } from "@vectorstores/excel";
 
 async function main() {
   // Load PDF

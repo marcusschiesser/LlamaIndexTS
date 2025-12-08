@@ -1,5 +1,5 @@
 // test runtime
-import "llamaindex";
+import "@vectorstores/core";
 
 // @ts-expect-error EdgeRuntime is not defined
 if (typeof EdgeRuntime !== "string") {

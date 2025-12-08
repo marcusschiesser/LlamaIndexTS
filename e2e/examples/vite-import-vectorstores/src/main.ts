@@ -1,4 +1,4 @@
-import "llamaindex";
+import "@vectorstores/core";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

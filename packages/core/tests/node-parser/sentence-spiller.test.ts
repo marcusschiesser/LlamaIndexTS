@@ -1,4 +1,4 @@
-import { Document, SentenceSplitter } from "@llamaindex/core";
+import { Document, SentenceSplitter } from "@vectorstores/core";
 import { getEncoding } from "js-tiktoken";
 import { beforeEach, describe, expect, test } from "vitest";
 

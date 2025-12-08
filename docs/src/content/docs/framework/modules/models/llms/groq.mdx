@@ -5,7 +5,7 @@ title: Groq
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/groq
+npm i llamaindex @vectorstores/groq
 ```
 
 ## Usage
@@ -19,8 +19,8 @@ export GROQ_API_KEY=<your-api-key>
 The initialize the Groq module.
 
 ```ts
-import { Groq } from "@llamaindex/groq";
-import { Settings } from "llamaindex";
+import { Groq } from "@vectorstores/groq";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = new Groq({
   // If you do not wish to set your API key in the environment, you may
@@ -34,7 +34,7 @@ Settings.llm = new Groq({
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 

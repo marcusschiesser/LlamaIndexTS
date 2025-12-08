@@ -1,5 +1,5 @@
-import type { StoredValue } from "@llamaindex/core";
-import { BaseKVStore } from "@llamaindex/core";
+import type { StoredValue } from "@vectorstores/core";
+import { BaseKVStore } from "@vectorstores/core";
 import type { Collection, MongoClient } from "mongodb";
 
 const DEFAULT_DB_NAME = "KVStoreDB";
@@ -25,7 +25,7 @@ export class MongoKVStore extends BaseKVStore {
     this.mongoClient = mongoClient;
     this.dbName = dbName;
     this.mongoClient.appendMetadata({
-      name: "LLAMAINDEX_MONGODB_KV_STORE",
+      name: "VECTORSTORES_MONGODB_KV_STORE",
     });
   }
 

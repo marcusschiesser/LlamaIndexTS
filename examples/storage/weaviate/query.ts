@@ -1,5 +1,5 @@
-import { WeaviateVectorStore } from "@llamaindex/weaviate";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { WeaviateVectorStore } from "@vectorstores/weaviate";
 
 const indexName = "MovieReviews";
 

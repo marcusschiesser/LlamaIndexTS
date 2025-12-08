@@ -1,6 +1,6 @@
 # Vercel Examples
 
-These examples demonstrate how to integrate LlamaIndexTS with Vercel's AI SDK. The examples show how to use LlamaIndex for search and retrieval in both local vector store and LlamaCloud environments.
+These examples demonstrate how to integrate vectorstores with Vercel's AI SDK. The examples show how to use LlamaIndex for search and retrieval in both local vector store and LlamaCloud environments.
 
 ## Setup
 

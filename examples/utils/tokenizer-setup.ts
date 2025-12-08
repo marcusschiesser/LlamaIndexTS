@@ -2,13 +2,13 @@
  * This example shows how to set up a tokenizer for use with TokenTextSplitter
  * or any component that needs token-based text measurement.
  *
- * The tokenizer is no longer built into @llamaindex/env, so you need to:
+ * The tokenizer is no longer built into @vectorstores/env, so you need to:
  * 1. Install js-tiktoken or gpt-tokenizer directly in your project
  * 2. Configure Settings.tokenSizer with your tokenizer
  */
 
+import { Settings, TokenTextSplitter } from "@vectorstores/core";
 import { getEncoding } from "js-tiktoken";
-import { Settings, TokenTextSplitter } from "llamaindex";
 
 // Create a tokenizer using js-tiktoken
 const encoding = getEncoding("cl100k_base");

@@ -2,12 +2,12 @@
 title: Azure OpenAI
 ---
 
-To use Azure OpenAI, you only need to install the `@llamaindex/azure` package:
+To use Azure OpenAI, you only need to install the `@vectorstores/azure` package:
 
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/azure
+npm i llamaindex @vectorstores/azure
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ npm i llamaindex @llamaindex/azure
 The class `AzureOpenAI` is used for setting the LLM and `AzureOpenAIEmbedding` is used for setting the embedding model, e.g.:
 
 ```ts
-import { Settings } from "llamaindex";
-import { AzureOpenAI, AzureOpenAIEmbedding } from "@llamaindex/azure";
+import { Settings } from "@vectorstores/core";
+import { AzureOpenAI, AzureOpenAIEmbedding } from "@vectorstores/azure";
 
 Settings.llm = new AzureOpenAI({ 
   apiKey: '[key]',
@@ -36,7 +36,7 @@ Instead of explicitly setting the API key, deployment, version, and endpoint in 
 
 ## Examples
 
-See the [Azure examples](https://github.com/run-llama/LlamaIndexTS/tree/main/examples/storage/azure) for more examples of how to use Azure OpenAI.
+See the [Azure examples](https://github.com/run-llama/vectorstores/tree/main/examples/storage/azure) for more examples of how to use Azure OpenAI.
 
 ## API Reference
 

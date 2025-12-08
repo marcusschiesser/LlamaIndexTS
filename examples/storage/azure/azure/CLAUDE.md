@@ -1,6 +1,6 @@
 # CLAUDE.md - Azure AI Search Vector Store Example
 
-This example demonstrates how to use Azure AI Search as a vector store backend with LlamaIndex.TS, including Azure OpenAI integration for LLM and embedding models.
+This example demonstrates how to use Azure AI Search as a vector store backend with vectorstores, including Azure OpenAI integration for LLM and embedding models.
 
 ## Overview
 
@@ -64,7 +64,7 @@ Settings.embedModel = new AzureOpenAIEmbedding({
 ```typescript
 const vectorStore = new AzureAISearchVectorStore({
   credential: new DefaultAzureCredential(),
-  indexName: "llamaindex-vector-store-example",
+  indexName: "vectorstores-vector-store-example",
   indexManagement: IndexManagement.CREATE_IF_NOT_EXISTS,
   embeddingDimensionality: 3072,
   vectorAlgorithmType: KnownVectorSearchAlgorithmKind.ExhaustiveKnn,
@@ -182,7 +182,7 @@ The example uses Paul Graham's essay "What I Worked On" located in `data/paul_gr
 
 ## Architecture
 
-This example follows the standard LlamaIndex.TS pattern:
+This example follows the standard vectorstores pattern:
 
 1. **Data Ingestion**: SimpleDirectoryReader → Documents
 2. **Processing**: Documents → TextNodes → Embeddings

@@ -2,7 +2,7 @@ packages:
   - "unit"
   - "apps/*"
   # - "e2e"
-  # - "e2e/examples/*"  # disabled: references missing llamaindex package
+  # - "e2e/examples/*"  # disabled: references missing vectorstores package
   - "packages/*"
   - "packages/providers/*"
   - "packages/providers/storage/*"
@@ -11,5 +11,5 @@ packages:
   - "packages/node-parser/tests"
   - "packages/readers/tests"
   - "packages/env/tests"
-  - "examples/" # disabled: references missing llamaindex package
+  - "examples/"
   - "examples/**"

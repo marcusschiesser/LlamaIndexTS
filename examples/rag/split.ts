@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { SentenceSplitter } from "llamaindex";
+import { SentenceSplitter } from "@vectorstores/core";
 
 async function main() {
   const filePath = fileURLToPath(

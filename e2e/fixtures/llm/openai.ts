@@ -1,4 +1,3 @@
-import { extractText } from "@llamaindex/core/utils";
 import type {
   ChatResponse,
   ChatResponseChunk,
@@ -8,20 +7,21 @@ import type {
   LLMChatParamsStreaming,
   LLMCompletionParamsNonStreaming,
   LLMCompletionParamsStreaming,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { extractText } from "@vectorstores/core/utils";
 import { deepStrictEqual, strictEqual } from "node:assert";
 import { llmCompleteMockStorage } from "../../node/utils.js";
 
-import { TransformComponent } from "@llamaindex/core/schema";
 import {
   BaseEmbedding,
   BaseNode,
   SimilarityType,
   type EmbeddingInfo,
   type MessageContentDetail,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { TransformComponent } from "@vectorstores/core/schema";
 
-export { OpenAIAgent, OpenAIAgentWorker } from "@llamaindex/openai";
+export { OpenAIAgent, OpenAIAgentWorker } from "@vectorstores/openai";
 
 export function getOpenAISession() {
   return {};

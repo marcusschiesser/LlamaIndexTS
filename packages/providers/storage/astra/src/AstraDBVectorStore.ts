@@ -6,7 +6,7 @@ import {
   type FindOptions,
   type SomeDoc,
 } from "@datastax/astra-db-ts";
-import type { BaseNode } from "@llamaindex/core";
+import type { BaseNode } from "@vectorstores/core";
 import {
   BaseVectorStore,
   FilterCondition,
@@ -20,8 +20,8 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
 export class AstraDBVectorStore extends BaseVectorStore {
   storesText: boolean = true;
@@ -60,7 +60,7 @@ export class AstraDBVectorStore extends BaseVectorStore {
       getEnv("ASTRA_DB_NAMESPACE") ??
       "default_keyspace";
     this.astraClient = new DataAPIClient(token, {
-      caller: ["LlamaIndexTS"],
+      caller: ["vectorstores"],
     });
     this.astraDB = this.astraClient.db(endpoint, { namespace });
 

@@ -1,5 +1,5 @@
-import { PineconeVectorStore } from "@llamaindex/pinecone";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { PineconeVectorStore } from "@vectorstores/pinecone";
 
 async function main() {
   // eslint-disable-next-line @typescript-eslint/no-require-imports

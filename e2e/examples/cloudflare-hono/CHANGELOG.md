@@ -1,4 +1,4 @@
-# @llamaindex/cloudflare-hono
+# @vectorstores/cloudflare-hono
 
 ## 0.1.0
 

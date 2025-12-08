@@ -19,6 +19,6 @@ export const AzureAISearchVectorStoreConfig = {
   DEFAULT_MAX_BATCH_SIZE: 700,
   // 14MB in bytes
   DEFAULT_MAX_MB_SIZE: 14 * 1024 * 1024,
-  DEFAULT_USER_AGENT_PREFIX: "llamaindex-ts",
+  DEFAULT_USER_AGENT_PREFIX: "vectorstores-ts",
   DEFAULT_AZURE_API_VERSION: "2024-09-01-preview",
 };

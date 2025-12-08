@@ -1,4 +1,4 @@
-import { path } from "@llamaindex/env";
+import { path } from "@vectorstores/env";
 import {
   DEFAULT_DOC_STORE_PERSIST_FILENAME,
   DEFAULT_PERSIST_DIR,

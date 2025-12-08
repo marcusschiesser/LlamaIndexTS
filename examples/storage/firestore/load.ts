@@ -1,10 +1,13 @@
 import { CollectionReference } from "@google-cloud/firestore";
-import { CSVReader } from "@llamaindex/readers/csv";
+import { CSVReader } from "@vectorstores/readers/csv";
 import "dotenv/config";
 
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
 
-import { FirestoreVectorStore } from "@llamaindex/firestore";
+import { FirestoreVectorStore } from "@vectorstores/firestore";
 
 import { useOpenAIEmbedding } from "../../utils/embedding";
 

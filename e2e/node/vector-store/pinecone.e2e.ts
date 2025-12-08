@@ -1,8 +1,8 @@
-import { Document, MetadataMode } from "@llamaindex/core/schema";
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { PineconeVectorStore } from "@llamaindex/pinecone";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { Document, MetadataMode } from "@vectorstores/core/schema";
+import { OpenAIEmbedding } from "@vectorstores/openai";
+import { PineconeVectorStore } from "@vectorstores/pinecone";
 import { config } from "dotenv";
-import { VectorStoreIndex } from "llamaindex";
 import assert from "node:assert";
 import { test } from "node:test";
 

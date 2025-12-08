@@ -1,4 +1,4 @@
-import { fs } from "@llamaindex/env";
+import { fs } from "@vectorstores/env";
 import type {
   MessageContent,
   MessageContentDetail,

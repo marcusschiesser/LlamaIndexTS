@@ -1,4 +1,4 @@
-# @llamaindex/cloudflare-worker-agent-test
+# @vectorstores/cloudflare-worker-agent-test
 
 ## 0.0.192
 

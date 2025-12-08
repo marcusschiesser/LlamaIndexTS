@@ -1,4 +1,4 @@
-# @llamaindex/waku-query-engine-test
+# @vectorstores/waku-query-engine-test
 
 ## 0.0.192
 
@@ -212,7 +212,7 @@
 ### Patch Changes
 
 - Updated dependencies [9b2e25a]
-  - @llamaindex/env@0.1.30
+  - @vectorstores/env@0.1.30
   - llamaindex@0.10.5
 
 ## 0.0.158
@@ -335,7 +335,7 @@
 ### Patch Changes
 
 - Updated dependencies [beb922b]
-  - @llamaindex/env@0.1.29
+  - @vectorstores/env@0.1.29
   - llamaindex@0.9.7
 
 ## 0.0.140
@@ -376,7 +376,7 @@
 
 - Updated dependencies [cc50c9c]
 - Updated dependencies [6d37d44]
-  - @llamaindex/env@0.1.28
+  - @vectorstores/env@0.1.28
   - llamaindex@0.9.1
 
 ## 0.0.134

@@ -1,6 +1,6 @@
-import { ClipEmbedding } from "@llamaindex/clip";
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { ImageNode, Settings } from "llamaindex";
+import { ClipEmbedding } from "@vectorstores/clip";
+import { ImageNode, Settings } from "@vectorstores/core";
+import { OpenAIEmbedding } from "@vectorstores/openai";
 import assert from "node:assert";
 import { test } from "node:test";
 
@@ -15,7 +15,7 @@ await test.skip("clip embedding", async (t) => {
     return;
   }
   const imageUrl = new URL(
-    "../../fixtures/img/llamaindex-white.png",
+    "../../fixtures/img/vectorstores-white.png",
     import.meta.url,
   );
 

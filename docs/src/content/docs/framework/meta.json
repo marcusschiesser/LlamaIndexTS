@@ -1,5 +1,5 @@
 {
-  "title": "LlamaIndex",
+  "title": "vectorstores",
   "description": "The Data framework for LLM",
   "root": true,
   "pages": [

@@ -1,4 +1,4 @@
-import { AsyncLocalStorage, getEnv } from "@llamaindex/env";
+import { AsyncLocalStorage, getEnv } from "@vectorstores/env";
 import type { TextEmbedFunc } from "../embeddings/base";
 import type { NodeParser } from "../node-parser";
 import {
@@ -101,7 +101,7 @@ export const Settings = {
       debug ||= window.localStorage.debug;
     }
     return (
-      (Boolean(debug) && debug?.includes("llamaindex")) ||
+      (Boolean(debug) && debug?.includes("vectorstores")) ||
       debug === "*" ||
       debug === "true"
     );

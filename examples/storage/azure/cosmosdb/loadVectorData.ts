@@ -6,13 +6,13 @@ import {
   AzureOpenAIEmbedding,
   SimpleCosmosDBReader,
   SimpleCosmosDBReaderLoaderConfig,
-} from "@llamaindex/azure";
-import * as dotenv from "dotenv";
+} from "@vectorstores/azure";
 import {
   Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import * as dotenv from "dotenv";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,
@@ -98,7 +98,7 @@ async function loadVectorData() {
     metadataFields: ["metadata"],
   };
 
-  // load objects from cosmos and convert them into LlamaIndex Document objects
+  // load objects from cosmos and convert them into Document objects
   const documents = await reader.loadData(simpleCosmosReaderConfig);
 
   // use Azure CosmosDB as a vectorStore, docStore, and indexStore

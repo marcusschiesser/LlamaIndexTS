@@ -1,7 +1,10 @@
 // load-docs.ts
-import { PGVectorStore } from "@llamaindex/postgres";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { PGVectorStore } from "@vectorstores/postgres";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import fs from "node:fs/promises";
 
 async function getSourceFilenames(sourceDir: string) {

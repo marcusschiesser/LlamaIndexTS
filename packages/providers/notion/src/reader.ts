@@ -1,6 +1,6 @@
-import type { BaseReader } from "@llamaindex/core";
-import { Document } from "@llamaindex/core";
 import { Client } from "@notionhq/client";
+import type { BaseReader } from "@vectorstores/core";
+import { Document } from "@vectorstores/core";
 import type { Crawler, CrawlerOptions, Page } from "notion-md-crawler";
 import { crawler, pageToString } from "notion-md-crawler";
 

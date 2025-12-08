@@ -1,4 +1,4 @@
-import { Document } from "@llamaindex/core";
+import { Document } from "@vectorstores/core";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { WeaviateVectorStore } from "../src/WeaviateVectorStore";
 import {

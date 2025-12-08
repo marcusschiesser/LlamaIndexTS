@@ -1,4 +1,4 @@
-import { fs, path, randomUUID } from "@llamaindex/env";
+import { fs, path, randomUUID } from "@vectorstores/env";
 import type { BaseNode, Document } from "./node";
 
 // fixme: remove any

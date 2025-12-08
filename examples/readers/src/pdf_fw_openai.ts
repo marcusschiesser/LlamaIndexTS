@@ -1,8 +1,8 @@
-import { OpenAI, OpenAIEmbedding } from "@llamaindex/openai";
-import { PDFReader } from "@llamaindex/readers/pdf";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { OpenAI, OpenAIEmbedding } from "@vectorstores/openai";
+import { PDFReader } from "@vectorstores/readers/pdf";
 
-import { Settings } from "llamaindex";
+import { Settings } from "@vectorstores/core";
 
 // Update llm and embedModel
 

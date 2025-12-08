@@ -1,4 +1,4 @@
-import { Settings } from "@llamaindex/core";
+import { Settings } from "@vectorstores/core";
 import { vi } from "vitest";
 
 // Mock embedding function

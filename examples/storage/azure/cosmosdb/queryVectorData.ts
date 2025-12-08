@@ -4,13 +4,13 @@ import {
   AzureCosmosDBNoSQLConfig,
   AzureOpenAI,
   AzureOpenAIEmbedding,
-} from "@llamaindex/azure";
-import * as dotenv from "dotenv";
+} from "@vectorstores/azure";
 import {
   Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import * as dotenv from "dotenv";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,

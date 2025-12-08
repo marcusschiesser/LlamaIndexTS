@@ -1,10 +1,10 @@
-# CLAUDE.md - @llamaindex/core
+# CLAUDE.md - @vectorstores/core
 
-This file provides guidance to Claude Code when working with the `@llamaindex/core` package.
+This file provides guidance to Claude Code when working with the `@vectorstores/core` package.
 
 ## Package Overview
 
-The `@llamaindex/core` package contains the foundational abstract base classes and interfaces for the LlamaIndex.TS framework. This package provides runtime-agnostic core functionality that is implemented by provider-specific packages.
+The `@vectorstores/core` package contains the foundational abstract base classes and interfaces for the vectorstores framework. This package provides runtime-agnostic core functionality that is implemented by provider-specific packages.
 
 ## Development Commands
 
@@ -16,14 +16,14 @@ From this package directory:
 
 From the workspace root:
 
-- `turbo run build --filter="@llamaindex/core"` - Build only this package
-- `turbo run test --filter="@llamaindex/core"` - Test only this package
+- `turbo run build --filter="@vectorstores/core"` - Build only this package
+- `turbo run test --filter="@vectorstores/core"` - Test only this package
 
 ## Architecture
 
 ### Export System
 
-This package exports all functionality from a single entry point. Import everything from `@llamaindex/core`:
+This package exports all functionality from a single entry point. Import everything from `@vectorstores/core`:
 
 ```typescript
 import {
@@ -34,7 +34,7 @@ import {
   Document,
   Settings,
   // ... and more
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 ```
 
 ### Package Structure
@@ -63,7 +63,7 @@ import {
 
 **Deprecated Modules:**
 
-- `src/agent/` - Legacy agent implementations (use `@llamaindex/workflow` instead)
+- `src/agent/` - Legacy agent implementations (use `@vectorstores/workflow` instead)
 
 ### Key Design Patterns
 
@@ -73,7 +73,7 @@ import {
 - `BaseEmbedding` - Extended by embedding providers
 - `BaseVectorStore` - Extended by Pinecone, Chroma, etc.
 
-**Runtime Agnostic:** Core functionality works across Node.js, Deno, Bun, and edge runtimes through the `@llamaindex/env` compatibility layer.
+**Runtime Agnostic:** Core functionality works across Node.js, Deno, Bun, and edge runtimes through the `@vectorstores/env` compatibility layer.
 
 **Settings Management:** Global configuration through the `Settings` object allows dynamic swapping of LLMs, embeddings, and other components.
 
@@ -94,7 +94,7 @@ import {
 
 ## Key Dependencies
 
-- `@llamaindex/env` - Runtime environment abstractions
+- `@vectorstores/env` - Runtime environment abstractions
 - `zod` - Schema validation and type safety
 - `magic-bytes.js` - File type detection
 - `@types/node` - Node.js type definitions
@@ -103,7 +103,7 @@ import {
 
 **When extending core classes:**
 
-1. Import from the appropriate sub-module (e.g., `@llamaindex/core/llms`)
+1. Import from the appropriate sub-module (e.g., `@vectorstores/core/llms`)
 2. Implement all abstract methods
 3. Follow the existing patterns for error handling and async operations
 4. Consider runtime compatibility when using Node.js-specific APIs
@@ -123,4 +123,4 @@ import {
 
 ## Module Dependencies
 
-This package has minimal external dependencies to ensure broad compatibility. The main dependency is `@llamaindex/env` which provides runtime-specific implementations for file system, fetch, and other platform-specific APIs.
+This package has minimal external dependencies to ensure broad compatibility. The main dependency is `@vectorstores/env` which provides runtime-specific implementations for file system, fetch, and other platform-specific APIs.

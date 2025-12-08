@@ -1,5 +1,5 @@
-import { AstraDBVectorStore } from "@llamaindex/astra";
-import { VectorStoreIndex } from "llamaindex";
+import { AstraDBVectorStore } from "@vectorstores/astra";
+import { VectorStoreIndex } from "@vectorstores/core";
 
 const collectionName = "movie_reviews";
 

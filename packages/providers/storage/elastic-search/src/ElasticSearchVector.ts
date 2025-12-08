@@ -9,7 +9,7 @@ import {
   type StoredValue,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { getElasticSearchClient } from "./utils";
 
 type ElasticSearchParams = {

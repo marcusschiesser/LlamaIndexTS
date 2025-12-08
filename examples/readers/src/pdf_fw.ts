@@ -1,8 +1,8 @@
-import { FireworksEmbedding, FireworksLLM } from "@llamaindex/fireworks";
-import { PDFReader } from "@llamaindex/readers/pdf";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { FireworksEmbedding, FireworksLLM } from "@vectorstores/fireworks";
+import { PDFReader } from "@vectorstores/readers/pdf";
 
-import { Settings } from "llamaindex";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = new FireworksLLM({
   model: "accounts/fireworks/models/mixtral-8x7b-instruct",

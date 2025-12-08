@@ -8,12 +8,12 @@ import {
   CLIPVisionModelWithProjection,
   RawImage,
 } from "@huggingface/transformers";
-import { path } from "@llamaindex/env";
 import {
   BaseEmbedding,
   SimpleVectorStore,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { path } from "@vectorstores/env";
 
 // Model ID for CLIP
 const MODEL_ID = "Xenova/clip-vit-base-patch32";

@@ -2,11 +2,11 @@
 title: Jina AI
 ---
 
-To use Jina AI embeddings, you need to import `JinaAIEmbedding` from `@llamaindex/jinaai`.
+To use Jina AI embeddings, you need to import `JinaAIEmbedding` from `@vectorstores/jinaai`.
 
 ```ts
-import { Settings } from "llamaindex";
-import { JinaAIEmbedding } from "@llamaindex/jinaai";
+import { Settings } from "@vectorstores/core";
+import { JinaAIEmbedding } from "@vectorstores/jinaai";
 
 Settings.embedModel = new JinaAIEmbedding();
 

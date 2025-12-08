@@ -1,5 +1,5 @@
-import { MilvusVectorStore } from "@llamaindex/milvus";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { MilvusVectorStore } from "@vectorstores/milvus";
 
 const collectionName = "movie_reviews";
 

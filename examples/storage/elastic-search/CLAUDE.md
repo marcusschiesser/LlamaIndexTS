@@ -1,12 +1,12 @@
 # CLAUDE.md - Elasticsearch Vector Store Example
 
-This example demonstrates how to use Elasticsearch as a vector store with LlamaIndex.TS for semantic search and retrieval-augmented generation (RAG).
+This example demonstrates how to use Elasticsearch as a vector store with vectorstores for semantic search and retrieval-augmented generation (RAG).
 
 ## Overview
 
 This example shows how to:
 
-- Configure Elasticsearch as a vector store using `@llamaindex/elastic-search`
+- Configure Elasticsearch as a vector store using `@vectorstores/elastic-search`
 - Use Google Gemini models for embeddings and text generation
 - Store document embeddings in Elasticsearch
 - Perform semantic queries against the vector store
@@ -63,7 +63,7 @@ The example uses Google Gemini models:
 
 ```typescript
 const vectorStore = new ElasticSearchVectorStore({
-  indexName: "llamaindex-demo",
+  indexName: "vectorstores-demo",
   esCloudId: process.env.ES_CLOUD_ID,
   esApiKey: process.env.ES_API_KEY,
 });

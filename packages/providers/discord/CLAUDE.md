@@ -1,28 +1,28 @@
 # CLAUDE.md - Discord Provider
 
-This package provides a Discord Reader for LlamaIndex.TS that enables reading and processing Discord channel messages as documents.
+This package provides a Discord Reader for vectorstores that enables reading and processing Discord channel messages as documents.
 
 ## Package Overview
 
-- **Package Name**: `@llamaindex/discord`
-- **Description**: Discord Reader for LlamaIndex
+- **Package Name**: `@vectorstores/discord`
+- **Description**: Discord Reader for vectorstores
 - **Type**: Data ingestion provider for Discord channels
 - **Current Version**: 0.1.6
 
 ## Architecture
 
-The Discord provider implements the `BaseReader` interface from `@llamaindex/core/schema` and provides a single class:
+The Discord provider implements the `BaseReader` interface from `@vectorstores/core/schema` and provides a single class:
 
 ### DiscordReader
 
-Located in `src/reader.ts`, this class uses the Discord REST API to read messages from Discord channels and convert them into LlamaIndex Document objects.
+Located in `src/reader.ts`, this class uses the Discord REST API to read messages from Discord channels and convert them into vectorstores Document objects.
 
 **Key Dependencies:**
 
 - `@discordjs/rest` - Discord's official REST client
 - `discord-api-types` - TypeScript types for Discord API
-- `@llamaindex/core/schema` - Core LlamaIndex interfaces
-- `@llamaindex/env` - Environment variable access
+- `@vectorstores/core/schema` - Core vectorstores interfaces
+- `@vectorstores/env` - Environment variable access
 
 ## Core Functionality
 
@@ -36,7 +36,7 @@ The reader requires a Discord bot token, which can be provided:
 ### Message Reading
 
 - Reads messages from Discord channels using channel IDs
-- Converts each message into a LlamaIndex `Document` object
+- Converts each message into a vectorstores `Document` object
 - Supports reading from multiple channels in a single operation
 
 ### Document Structure
@@ -62,7 +62,7 @@ Each Discord message becomes a Document with:
 ## Usage Example
 
 ```typescript
-import { DiscordReader } from "@llamaindex/discord";
+import { DiscordReader } from "@vectorstores/discord";
 
 // Initialize with token
 const reader = new DiscordReader("your-discord-bot-token");
@@ -92,11 +92,11 @@ Main method for loading Discord messages as documents.
 - `additionalInfo?: boolean` - Include embedded messages and attachment URLs
 - `oldestFirst?: boolean` - Read oldest messages first (default: false)
 
-**Returns:** `Promise<Document[]>` - Array of LlamaIndex Document objects
+**Returns:** `Promise<Document[]>` - Array of vectorstores Document objects
 
 ## Build and Development
 
-Uses standard LlamaIndex.TS tooling:
+Uses standard vectorstores tooling:
 
 - **Build**: `pnpm build` (uses bunchee)
 - **Development**: `pnpm dev` (watch mode)

@@ -1,5 +1,4 @@
 // call pnpm tsx multimodal/load.ts first to init the storage
-import { OpenAI } from "@llamaindex/openai";
 import {
   ContextChatEngine,
   extractText,
@@ -7,7 +6,8 @@ import {
   ObjectType,
   Settings,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
 import { getStorageContext } from "./storage";
 
 // Update chunk size and overlap

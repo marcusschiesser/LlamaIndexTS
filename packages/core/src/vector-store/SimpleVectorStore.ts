@@ -1,4 +1,4 @@
-import { consoleLogger, fs, type Logger, path } from "@llamaindex/env";
+import { consoleLogger, fs, type Logger, path } from "@vectorstores/env";
 import {
   type BaseEmbedding,
   getTopKEmbeddings,

@@ -1,6 +1,6 @@
-import { CohereRerank } from "@llamaindex/cohere";
-import { OpenAI } from "@llamaindex/openai";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { CohereRerank } from "@vectorstores/cohere";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
 
 import essay from "../data/essay";
 

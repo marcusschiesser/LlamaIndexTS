@@ -2,19 +2,19 @@
 title: Large Language Models (LLMs)
 ---
 
-The LLM is responsible for reading text and generating natural language responses to queries. By default, LlamaIndex.TS uses `gpt-4o`.
+The LLM is responsible for reading text and generating natural language responses to queries. By default, vectorstores uses `gpt-4o`.
 
 The LLM can be explicitly updated through `Settings`.
 
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/openai
+npm i llamaindex @vectorstores/openai
 ```
 
 ```typescript
-import { OpenAI } from "@llamaindex/openai";
-import { Settings } from "llamaindex";
+import { OpenAI } from "@vectorstores/openai";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = new OpenAI({ model: "gpt-3.5-turbo", temperature: 0 });
 ```
@@ -42,7 +42,7 @@ Most available LLMs are listed in the sidebar on the left. Additionally the foll
 - [HuggingFaceLLM](/typescript/framework-api-reference/classes/huggingfacellm/) and [HuggingFaceInferenceAPI](/typescript/framework-api-reference/classes/huggingfaceinferenceapi/).
 - [ReplicateLLM](/typescript/framework-api-reference/classes/replicatellm/) see [replicate.com](https://replicate.com/)
 
-Check the [LlamaIndexTS Github](https://github.com/run-llama/LlamaIndexTS) for the most up to date overview of integrations.
+Check the [vectorstores Github](https://github.com/run-llama/vectorstores) for the most up to date overview of integrations.
 
 ## API Reference
 

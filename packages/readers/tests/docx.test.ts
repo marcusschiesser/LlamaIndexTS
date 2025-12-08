@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 // Note: Settings import must come first to ensure correct module initialization order
-import "@llamaindex/core";
-import { DocxReader } from "@llamaindex/readers/docx";
+import "@vectorstores/core";
+import { DocxReader } from "@vectorstores/readers/docx";
 
 describe("DocxReader", () => {
   let docxReader: DocxReader;

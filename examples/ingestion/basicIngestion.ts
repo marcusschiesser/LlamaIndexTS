@@ -1,10 +1,10 @@
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import {
   Document,
   IngestionPipeline,
   SentenceSplitter,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { OpenAIEmbedding } from "@vectorstores/openai";
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 

@@ -1,14 +1,14 @@
 {
-  "name": "@llamaindex/node-parser-tests",
+  "name": "@vectorstores/node-parser-tests",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "vitest run"
   },
   "devDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*",
-    "@llamaindex/node-parser": "workspace:*",
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*",
+    "@vectorstores/node-parser": "workspace:*",
     "tree-sitter": "^0.22.1",
     "tree-sitter-javascript": "^0.23.1",
     "tree-sitter-typescript": "^0.23.2",

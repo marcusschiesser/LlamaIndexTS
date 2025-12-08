@@ -10,7 +10,7 @@ import {
   CLIPVisionModelWithProjection,
   RawImage,
 } from "@huggingface/transformers";
-import { similarity, SimilarityType } from "llamaindex";
+import { similarity, SimilarityType } from "@vectorstores/core";
 
 // Model ID for CLIP
 const MODEL_ID = "Xenova/clip-vit-base-patch32";

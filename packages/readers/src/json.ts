@@ -4,8 +4,8 @@ import {
   FileReader,
   type JSONObject,
   type JSONValue,
-} from "@llamaindex/core";
-import { consoleLogger, type Logger } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { consoleLogger, type Logger } from "@vectorstores/env";
 
 // Possible improvements:
 // - use `json-ext` for streaming JSON.stringify. Currently once JSON.stringify is called, the data is already chunked, so there should be no high risk of memory issues

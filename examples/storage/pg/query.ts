@@ -1,5 +1,5 @@
-import { PGVectorStore } from "@llamaindex/postgres";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { PGVectorStore } from "@vectorstores/postgres";
 
 async function main() {
   // eslint-disable-next-line @typescript-eslint/no-require-imports

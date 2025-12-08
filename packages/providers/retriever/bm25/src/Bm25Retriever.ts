@@ -6,7 +6,7 @@ import {
   type BaseNode,
   type NodeWithScore,
   type QueryBundle,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import BM25 from "okapibm25";
 
 export type Bm25RetrieverOptions = {

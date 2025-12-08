@@ -1,6 +1,6 @@
 # CLAUDE.md - Examples Package
 
-This directory contains comprehensive examples demonstrating LlamaIndex.TS functionality across different use cases and integrations.
+This directory contains comprehensive examples demonstrating vectorstores functionality across different use cases and integrations.
 
 ## Running Examples
 
@@ -33,7 +33,7 @@ export PINECONE_API_KEY="..."
 
 Demonstrates agent functionality and workflows:
 
-- **`agent/`** - Modern agent implementations using `@llamaindex/workflow`
+- **`agent/`** - Modern agent implementations using `@vectorstores/workflow`
   - `single-agent.ts` - Basic agent with tool usage
   - `multiple-agents.ts` - Multi-agent coordination
   - `blog-writer.ts` - Content generation agent
@@ -84,12 +84,12 @@ Vision and multimodal capabilities:
 Document ingestion from various sources:
 
 - `src/` - File format readers (PDF, DOCX, CSV, JSON, HTML)
-- `llamaparse.ts` - LlamaParse document processing
+- `llamaparse.ts` - Document processing with LlamaParse
 - `discord/`, `notion/`, `assemblyai/` - Platform-specific readers
 
 ### Cloud (`cloud/`)
 
-LlamaCloud integration examples:
+Cloud integration examples:
 
 - `chat.ts`, `query.ts` - Cloud-based RAG
 - `from-documents.ts` - Document upload to cloud
@@ -105,8 +105,8 @@ Legacy agent implementations for reference (prefer `agents/agent/` for new code)
 Most examples follow this pattern:
 
 ```typescript
-import { ... } from "llamaindex";
-import { ... } from "@llamaindex/provider";
+import { ... } from "@vectorstores/core";
+import { ... } from "@vectorstores/provider";
 
 async function main() {
   // Setup (API keys, configuration)
@@ -125,11 +125,11 @@ Examples use modular provider imports:
 
 ```typescript
 // Specific provider packages
-import { OpenAI } from "@llamaindex/openai";
-import { claude } from "@llamaindex/anthropic";
+import { OpenAI } from "@vectorstores/openai";
+import { claude } from "@vectorstores/anthropic";
 
 // Core functionality
-import { VectorStoreIndex, Document } from "llamaindex";
+import { VectorStoreIndex, Document } from "@vectorstores/core";
 ```
 
 ### Error Handling
@@ -145,11 +145,11 @@ if (!process.env.OPENAI_API_KEY) {
 
 ## Dependencies
 
-The examples package includes all major LlamaIndex.TS providers and integrations. Key dependencies:
+The examples package includes all major vectorstores providers and integrations. Key dependencies:
 
-- **Core**: `llamaindex`, `@llamaindex/core`
+- **Core**: `@vectorstores/core`
 - **Providers**: All LLM, embedding, and vector store providers
-- **Tools**: `@llamaindex/workflow`, `@llamaindex/tools`
+- **Tools**: `@vectorstores/workflow`, `@vectorstores/tools`
 - **Utilities**: `tsx` for TypeScript execution, `dotenv` for environment variables
 
 ## Usage Notes

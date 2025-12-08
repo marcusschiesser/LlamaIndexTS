@@ -2,7 +2,7 @@ import {
   Document,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 import essay from "../data/essay";
 
 async function main() {

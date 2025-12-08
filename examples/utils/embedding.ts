@@ -1,4 +1,4 @@
-import { Settings } from "@llamaindex/core";
+import { Settings } from "@vectorstores/core";
 import { OpenAI } from "openai";
 
 const openai = new OpenAI();

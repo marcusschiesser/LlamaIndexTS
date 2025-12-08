@@ -1,4 +1,4 @@
-import { getEnv } from "@llamaindex/env";
+import { getEnv } from "@vectorstores/env";
 import { Settings } from "../../global";
 
 const emitOnce = false;

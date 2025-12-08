@@ -1,4 +1,4 @@
-import { consoleLogger, type Logger } from "@llamaindex/env";
+import { consoleLogger, type Logger } from "@vectorstores/env";
 import { DEFAULT_NAMESPACE } from "../../global";
 import { BaseNode, ObjectType, type StoredValue } from "../../schema";
 import type { BaseKVStore } from "../kv-store";

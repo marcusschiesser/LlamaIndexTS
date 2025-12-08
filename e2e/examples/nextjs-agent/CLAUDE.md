@@ -1,12 +1,12 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the Next.js Agent example in the LlamaIndexTS e2e testing suite.
+This file provides guidance to Claude Code (claude.ai/code) when working with the Next.js Agent example in the vectorstores e2e testing suite.
 
 ## Package Overview
 
-The `@llamaindex/next-agent-test` package is a Next.js application example that demonstrates integration between LlamaIndexTS and Next.js, specifically showcasing agent functionality with React Server Components and streaming UI using the Vercel AI SDK.
+The `@vectorstores/next-agent-test` package is a Next.js application example that demonstrates integration between vectorstores and Next.js, specifically showcasing agent functionality with React Server Components and streaming UI using the Vercel AI SDK.
 
-This example serves as both an integration test for Next.js compatibility and a reference implementation for building LlamaIndex-powered chat applications with Next.js.
+This example serves as both an integration test for Next.js compatibility and a reference implementation for building vectorstores-powered chat applications with Next.js.
 
 ## Development Commands
 
@@ -25,10 +25,10 @@ From the workspace root:
 
 ### Next.js Configuration
 
-The application uses a custom Next.js configuration with the LlamaIndex Next.js plugin:
+The application uses a custom Next.js configuration with the vectorstores Next.js plugin:
 
-- `next.config.mjs` imports and applies `withLlamaIndex` from `llamaindex/next`
-- Enables Edge Runtime compatibility for LlamaIndex components
+- `next.config.mjs` imports and applies `withVectorstores` from `@vectorstores/core/next`
+- Enables Edge Runtime compatibility for vectorstores components
 - Uses Next.js 15 with React 19
 
 ### Runtime Environment
@@ -48,20 +48,20 @@ The application uses a custom Next.js configuration with the LlamaIndex Next.js 
 **Server Actions (`src/actions/index.tsx`):**
 
 - `chatWithAgent` function creates an OpenAI agent and handles streaming chat
-- Uses `OpenAIAgent` from `@llamaindex/openai` package
+- Uses `OpenAIAgent` from `@vectorstores/openai` package
 - Implements streaming response with `createStreamableUI` from AI SDK
 - Accepts question string and previous chat messages as parameters
 
 **Test Page (`src/app/test/page.tsx`):**
 
-- Simple import test that ensures `llamaindex` package loads correctly
+- Simple import test that ensures `@vectorstores/core` package loads correctly
 - Serves as a basic smoke test for package compatibility
 
 ### Dependencies
 
 **Core Dependencies:**
 
-- `llamaindex` - Main LlamaIndex package (workspace dependency)
+- `@vectorstores/core` - Main vectorstores package (workspace dependency)
 - `next` - Next.js framework (v15.3.0+)
 - `react` & `react-dom` - React 19 for latest features
 - `ai` - Vercel AI SDK for streaming UI components
@@ -93,19 +93,19 @@ The example demonstrates how to:
 
 This example serves multiple testing purposes in the e2e suite:
 
-1. **Next.js Compatibility**: Validates LlamaIndex works with latest Next.js versions
+1. **Next.js Compatibility**: Validates vectorstores works with latest Next.js versions
 2. **Edge Runtime Testing**: Ensures agent functionality works in edge environments
 3. **Streaming Integration**: Tests real-time agent responses with AI SDK
-4. **React Server Components**: Validates RSC compatibility with LlamaIndex agents
-5. **Build Integration**: Confirms Next.js build process works with LlamaIndex
+4. **React Server Components**: Validates RSC compatibility with vectorstores agents
+5. **Build Integration**: Confirms Next.js build process works with vectorstores
 
 ## Development Notes
 
-- **Build Dependency**: This example requires the LlamaIndex packages to be built first (`pnpm build` from workspace root)
+- **Build Dependency**: This example requires the vectorstores packages to be built first (`pnpm build` from workspace root)
 - **API Keys**: Real agent functionality requires OpenAI API key in environment variables
 - **Edge Runtime**: The application is configured for edge runtime compatibility, making it suitable for Vercel deployment
 - **Streaming UI**: Demonstrates modern streaming patterns for AI applications
-- **Framework Integration**: Shows best practices for integrating LlamaIndex with React-based frameworks
+- **Framework Integration**: Shows best practices for integrating vectorstores with React-based frameworks
 
 ## Environment Requirements
 
@@ -118,4 +118,4 @@ This example serves multiple testing purposes in the e2e suite:
 1. **Local Development**: Run `npm run dev` after building workspace packages
 2. **Testing Agent Flow**: Use the simple form interface to test streaming agent responses
 3. **Build Validation**: Run `npm run build` to ensure production build compatibility
-4. **Integration Testing**: Part of e2e test suite validating Next.js + LlamaIndex integration
+4. **Integration Testing**: Part of e2e test suite validating Next.js + vectorstores integration

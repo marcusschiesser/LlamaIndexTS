@@ -19,21 +19,21 @@ This project uses pnpm as the package manager and Turbo for build orchestration:
 
 For individual package development:
 
-- `turbo run build --filter="@llamaindex/core"` - Build specific package
-- `turbo run test --filter="@llamaindex/core"` - Test specific package
+- `turbo run build --filter="@vectorstores/core"` - Build specific package
+- `turbo run test --filter="@vectorstores/core"` - Test specific package
 - Navigate to specific package directory and run `pnpm test` for focused testing
 - `pnpm clean` - Remove all build artifacts and node_modules across workspace
 
 ## Architecture Overview
 
-LlamaIndex.TS is a TypeScript data framework for LLM applications organized as a pnpm monorepo with multiple runtime environment support (Node.js, Deno, Bun, Vercel Edge, Cloudflare Workers).
+vectorstores is a TypeScript data framework for LLM applications organized as a pnpm monorepo with multiple runtime environment support (Node.js, Deno, Bun, Vercel Edge, Cloudflare Workers).
 
 ### Package Structure
 
 **Core Packages:**
 
 - `packages/core/` - Abstract base classes and interfaces for all runtime environments
-- `packages/llamaindex/` - Main package that aggregates core functionality
+- `packages/vectorstores/` - Main package that aggregates core functionality
 - `packages/env/` - Environment-specific compatibility layers for different JS runtimes
 
 **Provider Packages (`packages/providers/`):**
@@ -45,7 +45,7 @@ LlamaIndex.TS is a TypeScript data framework for LLM applications organized as a
 
 **Specialized Packages:**
 
-- `packages/cloud/` - LlamaCloud integration for managed services
+- `packages/cloud/` - Cloud integration for managed services
 - `packages/tools/` - Function calling tools and utilities
 - `packages/workflow/` - Agent workflow orchestration
 - `packages/readers/` - File format readers (PDF, DOCX, etc.)
@@ -54,7 +54,7 @@ LlamaIndex.TS is a TypeScript data framework for LLM applications organized as a
 
 **Runtime Abstraction:** Core functionality is runtime-agnostic, with environment-specific implementations in separate entry points (`index.ts`, `index.edge.ts`, `index.workerd.ts`).
 
-**Provider Pattern:** LLMs, embeddings, and vector stores implement common interfaces from `@llamaindex/core`, allowing easy swapping between providers.
+**Provider Pattern:** LLMs, embeddings, and vector stores implement common interfaces from `@vectorstores/core`, allowing easy swapping between providers.
 
 **Modular Design:** Each provider is a separate package to minimize bundle size - users install only what they need.
 
@@ -65,14 +65,14 @@ LlamaIndex.TS is a TypeScript data framework for LLM applications organized as a
 - **Agents and Workflows:** Abstractions for building agentic workflows and agents in `packages/workflow`
 - **Chat Engines:** Conversational interfaces in `core/chat-engine/`
 - **Query Engines:** Document querying with retrieval in `core/query-engine/`
-- **Indices:** VectorStoreIndex, SummaryIndex, KeywordTable in `llamaindex/indices/`
+- **Indices:** VectorStoreIndex, SummaryIndex, KeywordTable in `packages/core/indices/`
 - **Node Parsers:** Text splitting and chunking in `core/node-parser/`
-- **Ingestion Pipeline:** Document processing workflows in `llamaindex/ingestion/`
+- **Ingestion Pipeline:** Document processing workflows in `packages/core/ingestion/`
 - **Storage:** Chat stores, document stores, index stores, and KV stores in `core/storage/`
 
 ### Deprecated Components
 
-- **Agents:** ReAct and function calling agents in `core/agent/` and `llamaindex/agent/`
+- **Agents:** ReAct and function calling agents in `core/agent/` and `packages/core/agent/`
 
 ### Testing Structure
 
@@ -88,5 +88,5 @@ The codebase supports multiple JavaScript runtimes through conditional exports a
 
 - The project uses Husky for git hooks with lint-staged for pre-commit formatting and linting
 - All packages use bunchee for building with dual CJS/ESM support
-- Core package exports are organized as sub-modules (e.g., `@llamaindex/core/llms`, `@llamaindex/core/embeddings`)
+- Core package exports are organized as sub-modules (e.g., `@vectorstores/core/llms`, `@vectorstores/core/embeddings`)
 - Always run `pnpm build` before running tests, as tests depend on build artifacts

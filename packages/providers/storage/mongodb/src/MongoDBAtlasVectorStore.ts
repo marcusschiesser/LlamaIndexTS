@@ -12,8 +12,8 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import type { BulkWriteOptions, Collection } from "mongodb";
 import { MongoClient } from "mongodb";
 import pkg from "../package.json";
@@ -164,7 +164,7 @@ export class MongoDBAtlasVectorSearch extends BaseVectorStore {
     this.dbName = init.dbName ?? "default_db";
     this.collectionName = init.collectionName ?? "default_collection";
     this.mongodbClient.appendMetadata({
-      name: "LLAMAINDEX_MONGODB_ATLAS_VECTOR_STORE",
+      name: "VECTORSTORES_MONGODB_ATLAS_VECTOR_STORE",
       version: pkg.version,
     });
     this.autoCreateIndex = init.autoCreateIndex ?? true;

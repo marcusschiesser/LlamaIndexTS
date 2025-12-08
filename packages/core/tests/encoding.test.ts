@@ -4,11 +4,11 @@ import {
   blobToDataUrl,
   getMimeTypeFromDataUrl,
   uint8ArrayToBase64,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import { describe, expect, it } from "vitest";
 
-const testString = "LlamaIndex";
-const testBase64 = "TGxhbWFJbmRleA=="; // btoa('LlamaIndex')
+const testString = "vectorstores";
+const testBase64 = "dmVjdG9yc3RvcmVz"; // btoa('vectorstores')
 const testUint8Array = new TextEncoder().encode(testString);
 
 const pngB64 =

@@ -1,4 +1,4 @@
-import { Document, FileReader } from "@llamaindex/core";
+import { Document, FileReader } from "@vectorstores/core";
 import {
   DOMParser,
   XMLSerializer,

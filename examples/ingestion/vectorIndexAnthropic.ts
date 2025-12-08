@@ -1,13 +1,13 @@
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { Anthropic } from "@llamaindex/anthropic";
+import { Anthropic } from "@vectorstores/anthropic";
 import {
   Document,
   Settings,
   VectorStoreIndex,
   getResponseSynthesizer,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 // Update llm to use Anthropic
 Settings.llm = new Anthropic();

@@ -9,7 +9,7 @@ In this tutorial, we define a custom router query engine that selects one out of
 First, we need to install import the necessary modules from `llamaindex`:
 
 ```package-install
-npm i llamaindex @llamaindex/openai @llamaindex/readers
+npm i llamaindex @vectorstores/openai @vectorstores/readers
 ```
 
 ```ts
@@ -20,9 +20,9 @@ import {
   SummaryIndex,
   VectorStoreIndex,
   Settings,
-} from "llamaindex";
-import { OpenAI } from "@llamaindex/openai";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+} from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 ```
 
 ## Loading Data
@@ -110,9 +110,9 @@ import {
   SummaryIndex,
   VectorStoreIndex,
   Settings,
-} from "llamaindex";
-import { OpenAI } from "@llamaindex/openai";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+} from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 
 Settings.llm = new OpenAI();
 Settings.nodeParser = new SentenceSplitter({

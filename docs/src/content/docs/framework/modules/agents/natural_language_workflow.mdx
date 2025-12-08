@@ -16,7 +16,7 @@ First, we define the events for our workflow. We need one for writing the joke, 
 
 ```typescript
 import { z } from "zod";
-import { zodEvent } from "@llamaindex/workflow";
+import { zodEvent } from "@vectorstores/workflow";
 
 const writeJokeSchema = z.object({
   description: z
@@ -60,7 +60,7 @@ Also, we need a `debugLabel` so the LLM can identify the event to emit in the wo
 As usual you first create the workflow:
 
 ```typescript
-import { agentHandler, createWorkflow } from "@llamaindex/workflow";
+import { agentHandler, createWorkflow } from "@vectorstores/workflow";
 
 const jokeFlow = createWorkflow();
 ```
@@ -100,4 +100,4 @@ For advanced usage, you can add more functionality to `agentHandler` by using th
 - `events`: A list of additional events that the agent can emit to the workflow. E.g., your agent can emit a `uiEvent` to update the UI during the execution.
 - `tools`: A list of tools that the agent can use to handle the step. E.g., your agent can use a `search` tool to search the web.
 
-You can find more code examples in the [examples](https://github.com/run-llama/LlamaIndexTS/tree/main/examples/agents/natural) folder.
+You can find more code examples in the [examples](https://github.com/run-llama/vectorstores/tree/main/examples/agents/natural) folder.

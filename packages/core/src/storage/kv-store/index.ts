@@ -1,4 +1,4 @@
-import { consoleLogger, fs, path, type Logger } from "@llamaindex/env";
+import { consoleLogger, fs, path, type Logger } from "@vectorstores/env";
 
 import { DEFAULT_COLLECTION } from "../../global";
 import type { StoredValue } from "../../schema";

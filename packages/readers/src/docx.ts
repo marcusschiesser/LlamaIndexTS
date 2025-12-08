@@ -1,4 +1,4 @@
-import { Document, FileReader } from "@llamaindex/core";
+import { Document, FileReader } from "@vectorstores/core";
 import mammoth from "mammoth";
 
 export class DocxReader extends FileReader<Document> {

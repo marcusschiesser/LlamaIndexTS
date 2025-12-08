@@ -1,4 +1,4 @@
-import { randomUUID } from "@llamaindex/env";
+import { randomUUID } from "@vectorstores/env";
 import {
   buildNodeFromSplits,
   Document,

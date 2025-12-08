@@ -10,13 +10,13 @@ To install readers call:
 
 
 	<details>
-  <summary>Install @llamaindex/readers</summary>
+  <summary>Install @vectorstores/readers</summary>
   
   
-  		If you want to use the reader module, you need to install `@llamaindex/readers`
+  		If you want to use the reader module, you need to install `@vectorstores/readers`
   
       ```package-install
-      npm i @llamaindex/readers
+      npm i @vectorstores/readers
       ```
   	
 </details>
@@ -25,22 +25,22 @@ To install readers call:
 We offer readers for different file formats.
 
 ```ts twoslash
-import { CSVReader } from '@llamaindex/readers/csv';
-import { DocxReader } from '@llamaindex/readers/docx';
-import { HTMLReader } from '@llamaindex/readers/html';
-import { ImageReader } from '@llamaindex/readers/image';
-import { JSONReader } from '@llamaindex/readers/json';
-import { MarkdownReader } from '@llamaindex/readers/markdown';
-import { ObsidianReader } from '@llamaindex/readers/obsidian';
-import { PDFReader } from '@llamaindex/readers/pdf';
-import { TextFileReader } from '@llamaindex/readers/text';
+import { CSVReader } from '@vectorstores/readers/csv';
+import { DocxReader } from '@vectorstores/readers/docx';
+import { HTMLReader } from '@vectorstores/readers/html';
+import { ImageReader } from '@vectorstores/readers/image';
+import { JSONReader } from '@vectorstores/readers/json';
+import { MarkdownReader } from '@vectorstores/readers/markdown';
+import { ObsidianReader } from '@vectorstores/readers/obsidian';
+import { PDFReader } from '@vectorstores/readers/pdf';
+import { TextFileReader } from '@vectorstores/readers/text';
 ```
 
 ## SimpleDirectoryReader
 
-[Open in StackBlitz](https://stackblitz.com/github/run-llama/LlamaIndexTS/tree/main/examples/readers?file=src/simple-directory-reader.ts&title=Simple%20Directory%20Reader)
+[Open in StackBlitz](https://stackblitz.com/github/run-llama/vectorstores/tree/main/examples/readers?file=src/simple-directory-reader.ts&title=Simple%20Directory%20Reader)
 
-LlamaIndex.TS supports easy loading of files from folders using the `SimpleDirectoryReader` class.
+vectorstores supports easy loading of files from folders using the `SimpleDirectoryReader` class.
 
 It is a simple reader that reads all files from a directory and its subdirectories and delegates the actual reading to the reader specified in the `fileExtToReader` map.
 
@@ -70,7 +70,7 @@ SimpleDirectoryReader supports up to 9 concurrent requests. Use the `numWorkers`
 
 ## Tips when using in non-Node.js environments
 
-When using `@llamaindex/readers` in a non-Node.js environment (such as Vercel Edge, Cloudflare Workers, etc.)
+When using `@vectorstores/readers` in a non-Node.js environment (such as Vercel Edge, Cloudflare Workers, etc.)
 Some classes are not exported from top-level entry file.
 
 The reason is that some classes are only compatible with Node.js runtime, (e.g. `PDFReader`) which uses Node.js specific APIs (like `fs`, `child_process`, `crypto`).
@@ -80,7 +80,7 @@ If you need any of those classes, you have to import them instead directly throu
 As the `PDFReader` is not working with the Edge runtime, here's how to use the `SimpleDirectoryReader` with the `LlamaParseReader` to load PDFs:
 
 ```typescript
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import { LlamaParseReader } from "llama-cloud-services";
 
 export const DATA_DIR = "./data";
@@ -99,7 +99,7 @@ export async function getDocuments() {
 
 > _Note_: Reader classes have to be added explicitly to the `fileExtToReader` map in the Edge version of the `SimpleDirectoryReader`.
 
-You'll find a complete example with LlamaIndexTS here: https://github.com/run-llama/create_llama_projects/tree/main/nextjs-edge-llamaparse
+You'll find a complete example with vectorstores here: https://github.com/run-llama/create_llama_projects/tree/main/nextjs-edge-llamaparse
 
 
 ## Load file natively using Node.js Customization Hooks
@@ -107,7 +107,7 @@ You'll find a complete example with LlamaIndexTS here: https://github.com/run-ll
 We have a helper utility to allow you to import a file in Node.js script.
 
 ```shell 
-node --import @llamaindex/readers/node ./script.js
+node --import @vectorstores/readers/node ./script.js
 ```
 
 ```ts

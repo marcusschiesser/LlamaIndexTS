@@ -5,14 +5,14 @@ import { expect, test } from "vitest";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// TODO: Skip due to circular dependency issue in @llamaindex/core
+// TODO: Skip due to circular dependency issue in @vectorstores/core
 // The node loader hook triggers a "Cannot access 'TransformComponent' before initialization" error
-// when loading @llamaindex/readers/node which imports from @llamaindex/core
+// when loading @vectorstores/readers/node which imports from @vectorstores/core
 test.skip("node register", async () => {
   const code = `import csvDocument from '../../../examples/data/movie_reviews.csv';console.log(csvDocument.getText())`;
   const cp = spawnSync(
     process.execPath,
-    ["--input-type=module", "--import=@llamaindex/readers/node"],
+    ["--input-type=module", "--import=@vectorstores/readers/node"],
     {
       input: code,
       stdio: "pipe",

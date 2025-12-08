@@ -11,14 +11,14 @@ You can also check our multi-tenancy blog post to see how metadata filtering can
 Firstly if you haven't already, you need to install the `llamaindex` package:
 
 ```package-install
-npm i llamaindex @llamaindex/openai @llamaindex/chroma
+npm i llamaindex @vectorstores/openai @vectorstores/chroma
 ```
 
 Then you can import the necessary modules from `llamaindex`:
 
 ```ts
-import { Document, VectorStoreIndex, storageContextFromDefaults } from "llamaindex";
-import { ChromaVectorStore } from "@llamaindex/chroma";
+import { Document, VectorStoreIndex, storageContextFromDefaults } from "@vectorstores/core";
+import { ChromaVectorStore } from "@vectorstores/chroma";
 
 const collectionName = "dog_colors";
 ```
@@ -91,8 +91,8 @@ Besides using the equal operator (`==`), you can also use a whole set of differe
 ## Full Code
 
 ```ts
-import { Document, VectorStoreIndex, storageContextFromDefaults } from "llamaindex";
-import { ChromaVectorStore } from "@llamaindex/chroma";
+import { Document, VectorStoreIndex, storageContextFromDefaults } from "@vectorstores/core";
+import { ChromaVectorStore } from "@vectorstores/chroma";
 
 const collectionName = "dog_colors";
 

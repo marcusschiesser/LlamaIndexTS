@@ -1,5 +1,5 @@
-import type { Metadata } from "@llamaindex/core";
-import { type BaseReader, Document } from "@llamaindex/core";
+import type { Metadata } from "@vectorstores/core";
+import { type BaseReader, Document } from "@vectorstores/core";
 import type { Filter, MongoClient, Document as MongoDocument } from "mongodb";
 
 /**

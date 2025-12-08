@@ -1,4 +1,4 @@
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 import fs from "node:fs/promises";
 import { createInterface } from "node:readline/promises";
 import { fileURLToPath } from "node:url";
@@ -26,7 +26,7 @@ async function main() {
   const queryEngine = index.asQueryEngine();
 
   console.log(
-    "Try asking a question about the essay: https://github.com/run-llama/LlamaIndexTS/blob/main/packages/llamaindex/examples/abramov.txt",
+    "Try asking a question about the essay stored in examples/data/abramov.txt",
     "\nExample: When did the author graduate from high school?",
     "\n==============================\n",
   );

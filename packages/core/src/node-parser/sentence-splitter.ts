@@ -1,4 +1,4 @@
-import { consoleLogger, type Logger } from "@llamaindex/env";
+import { consoleLogger, type Logger } from "@vectorstores/env";
 import { Settings } from "../global";
 import type { TokenSizer } from "../global/settings/tokenizer";
 import {

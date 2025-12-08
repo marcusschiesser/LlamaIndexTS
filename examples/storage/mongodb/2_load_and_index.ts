@@ -1,9 +1,12 @@
 import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import {
   MongoDBAtlasVectorSearch,
   SimpleMongoReader,
-} from "@llamaindex/mongodb";
+} from "@vectorstores/mongodb";
 import * as dotenv from "dotenv";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
 import { MongoClient } from "mongodb";
 
 // Load environment variables from local .env file
@@ -18,8 +21,8 @@ const indexName = process.env.MONGODB_VECTOR_INDEX!;
 async function loadAndIndex() {
   // Create a new client and connect to the server
   const client = new MongoClient(mongoUri);
-  // load objects from mongo and convert them into LlamaIndex Document objects
-  // llamaindex has a special class that does this for you
+  // load objects from mongo and convert them into Document objects
+  // vectorstores has a special class that does this for you
   // it pulls every object in a given collection
   const reader = new SimpleMongoReader(client);
   const documents = await reader.loadData(databaseName, collectionName, [

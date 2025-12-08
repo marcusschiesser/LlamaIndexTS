@@ -1,5 +1,5 @@
 {
-  "name": "vite-import-llamaindex",
+  "name": "vite-import-vectorstores",
   "private": true,
   "version": "0.0.58",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "size-limit": [
     {
-      "path": "dist/LlamaIndexImportTest.js"
+      "path": "dist/VectorstoresImportTest.js"
     }
   ],
   "devDependencies": {
@@ -20,6 +20,6 @@
     "vite": "^6.4.1"
   },
   "dependencies": {
-    "llamaindex": "workspace:*"
+    "@vectorstores/core": "workspace:*"
   }
 }

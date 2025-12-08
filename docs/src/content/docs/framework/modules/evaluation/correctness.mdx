@@ -11,7 +11,7 @@ This is useful for measuring if the response was correct. The evaluator returns 
 Firstly, you need to install the package:
 
 ```package-install
-npm i llamaindex @llamaindex/openai
+npm i llamaindex @vectorstores/openai
 ```
 
 Set the OpenAI API key:
@@ -23,8 +23,8 @@ export OPENAI_API_KEY=your-api-key
 Import the required modules:
 
 ```ts
-import { OpenAI } from "@llamaindex/openai";
-import { CorrectnessEvaluator, Settings, Response } from "llamaindex";
+import { OpenAI } from "@vectorstores/openai";
+import { CorrectnessEvaluator, Settings, Response } from "@vectorstores/core";
 ```
 
 Let's setup gpt-4 for better results:

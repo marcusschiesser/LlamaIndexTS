@@ -7,8 +7,8 @@ title: Fireworks LLM
 ## Usage
 
 ```ts
-import { Settings } from "llamaindex";
-import { FireworksLLM } from "@llamaindex/fireworks";
+import { Settings } from "@vectorstores/core";
+import { FireworksLLM } from "@vectorstores/fireworks";
 
 Settings.llm = new FireworksLLM({
   apiKey: "<YOUR_API_KEY>",
@@ -39,7 +39,7 @@ const response = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
 import { PDFReader } from "llamaindex/readers/PDFReader";
 
 async function main() {

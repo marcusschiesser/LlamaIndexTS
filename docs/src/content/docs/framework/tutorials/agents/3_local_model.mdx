@@ -30,10 +30,10 @@ Settings.llm = ollama({
 
 ### Run local agent
 
-You can also create local agent by importing `agent` from `@llamaindex/workflow`.
+You can also create local agent by importing `agent` from `@vectorstores/workflow`.
 
 ```javascript
-import { agent } from "@llamaindex/workflow";
+import { agent } from "@vectorstores/workflow";
 
 const workflow = agent({
   tools: [getWeatherTool],

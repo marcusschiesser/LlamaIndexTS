@@ -1,6 +1,10 @@
-import type { TaskStep } from "@llamaindex/core/agent";
-import { OpenAIAgent } from "@llamaindex/openai";
-import { LLMSingleSelector, Settings, type ChatMessage } from "llamaindex";
+import {
+  LLMSingleSelector,
+  Settings,
+  type ChatMessage,
+} from "@vectorstores/core";
+import type { TaskStep } from "@vectorstores/core/agent";
+import { OpenAIAgent } from "@vectorstores/openai";
 import assert from "node:assert";
 import { test } from "node:test";
 import { divideNumbersTool, sumNumbersTool } from "./fixtures/tools.js";

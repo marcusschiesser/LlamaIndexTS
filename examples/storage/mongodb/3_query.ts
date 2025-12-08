@@ -1,6 +1,6 @@
-import { MongoDBAtlasVectorSearch } from "@llamaindex/mongodb";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { MongoDBAtlasVectorSearch } from "@vectorstores/mongodb";
 import * as dotenv from "dotenv";
-import { VectorStoreIndex } from "llamaindex";
 import { MongoClient } from "mongodb";
 
 // Load environment variables from local .env file

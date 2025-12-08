@@ -1,4 +1,4 @@
-import { BaseEmbedding, similarity, SimilarityType } from "@llamaindex/core";
+import { BaseEmbedding, similarity, SimilarityType } from "@vectorstores/core";
 import { describe, expect, test } from "vitest";
 
 describe("BaseEmbedding", () => {

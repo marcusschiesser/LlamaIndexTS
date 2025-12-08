@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the LlamaIndexTS Waku Query Engine example.
+This file provides guidance to Claude Code (claude.ai/code) when working with the vectorstores Waku Query Engine example.
 
 ## Package Overview
 
-The `@llamaindex/waku-query-engine-test` package demonstrates LlamaIndexTS integration with the Waku React framework. This example showcases how to build a document query interface using LlamaIndex's VectorStoreIndex and QueryEngine capabilities within a Waku application that supports both static rendering and server actions.
+The `@vectorstores/waku-query-engine-test` package demonstrates vectorstores integration with the Waku React framework. This example showcases how to build a document query interface using vectorstores' VectorStoreIndex and QueryEngine capabilities within a Waku application that supports both static rendering and server actions.
 
 ## Development Commands
 
@@ -23,13 +23,13 @@ This example uses **Waku 0.22.2**, a lightweight React framework that supports:
 - Static site generation with `render: "static"` config
 - Client-side hydration with "use client" components
 
-### LlamaIndex Integration
+### vectorstores Integration
 
-The core LlamaIndex functionality is implemented in `src/actions.ts`:
+The core vectorstores functionality is implemented in `src/actions.ts`:
 
 **Key Components:**
 
-- **Document Loading**: Reads text from `node_modules/llamaindex/examples/abramov.txt`
+- **Document Loading**: Reads text from `examples/data/abramov.txt`
 - **Vector Index**: Creates embeddings using `VectorStoreIndex.fromDocuments()`
 - **Query Engine**: Provides semantic search capabilities via `index.asQueryEngine()`
 - **Lazy Loading**: QueryEngine is initialized once and cached for subsequent requests
@@ -65,8 +65,8 @@ The core LlamaIndex functionality is implemented in `src/actions.ts`:
 
 **Core Dependencies:**
 
-- `@llamaindex/env` - Runtime environment compatibility
-- `llamaindex` - Main LlamaIndexTS package for document indexing and querying
+- `@vectorstores/env` - Runtime environment compatibility
+- `@vectorstores/core` - Main vectorstores package for document indexing and querying
 - `waku` - React framework for SSR/SSG
 - `react` & `react-dom` - React 19.0.0 with experimental features
 - `react-server-dom-webpack` - React Server Components support
@@ -86,7 +86,7 @@ The core LlamaIndex functionality is implemented in `src/actions.ts`:
 
 ## Key Features Demonstrated
 
-1. **Server Actions Integration**: Seamless LlamaIndex queries via Waku server actions
+1. **Server Actions Integration**: Seamless vectorstores queries via Waku server actions
 2. **Document RAG**: Retrieval-Augmented Generation using vector embeddings
 3. **Static Generation**: Pages are statically rendered while maintaining interactive features
 4. **React 19 Features**: Uses latest React with experimental types
@@ -96,15 +96,15 @@ The core LlamaIndex functionality is implemented in `src/actions.ts`:
 
 This example serves as an end-to-end test for:
 
-- LlamaIndexTS compatibility with Waku framework
+- vectorstores compatibility with Waku framework
 - React Server Components integration
 - Vector store and query engine functionality
-- Server action patterns with LlamaIndex
+- Server action patterns with vectorstores
 - Build and deployment workflows
 
 ## Development Notes
 
-- **File Loading**: Uses `@llamaindex/env` fs abstraction for cross-platform file access
+- **File Loading**: Uses `@vectorstores/env` fs abstraction for cross-platform file access
 - **Query Caching**: QueryEngine is lazily loaded and cached for performance
 - **Error Handling**: Basic error handling in server actions and form submissions
 - **Bundle Size**: Waku's optimized bundling ensures minimal client-side JavaScript

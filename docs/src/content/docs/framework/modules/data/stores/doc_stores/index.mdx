@@ -9,12 +9,12 @@ Document stores contain ingested document chunks, i.e. [Node](/typescript/framew
 - [SimpleDocumentStore](/typescript/framework-api-reference/classes/simpledocumentstore/): A simple in-memory document store with support for [persisting](/typescript/framework/modules/data/stores#local-storage) data to disk.
 - [PostgresDocumentStore](/typescript/framework-api-reference/classes/postgresdocumentstore/): A PostgreSQL document store, see [PostgreSQL Storage](/typescript/framework/modules/data/stores#postgresql-storage).
 
-Check the [LlamaIndexTS Github](https://github.com/run-llama/LlamaIndexTS) for the most up to date overview of integrations.
+Check the [vectorstores Github](https://github.com/run-llama/vectorstores) for the most up to date overview of integrations.
 
 ## Using PostgreSQL as Document Store
 
 ```package-install
-npm i llamaindex @llamaindex/postgres
+npm i llamaindex @vectorstores/postgres
 ```
 
 You can configure the `schemaName`, `tableName`, `namespace`, and
@@ -23,8 +23,8 @@ provided, it will use the environment variables `PGHOST`, `PGUSER`,
 `PGPASSWORD`, `PGDATABASE` and `PGPORT`.
 
 ```typescript
-import { Document, VectorStoreIndex, storageContextFromDefaults } from "llamaindex";
-import { PostgresDocumentStore } from "@llamaindex/postgres";
+import { Document, VectorStoreIndex, storageContextFromDefaults } from "@vectorstores/core";
+import { PostgresDocumentStore } from "@vectorstores/postgres";
 
 const storageContext = await storageContextFromDefaults({
   docStore: new PostgresDocumentStore(),

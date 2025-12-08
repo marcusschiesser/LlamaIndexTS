@@ -1,6 +1,6 @@
 // test runtime
+import "@vectorstores/core";
 import { getEncoding } from "js-tiktoken";
-import "llamaindex";
 
 // @ts-expect-error EdgeRuntime is not defined in type
 if (typeof EdgeRuntime === "string") {

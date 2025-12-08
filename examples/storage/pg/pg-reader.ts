@@ -1,9 +1,9 @@
-import { PGVectorStore, SimplePostgresReader } from "@llamaindex/postgres";
-import { Document } from "llamaindex";
+import { Document } from "@vectorstores/core";
+import { PGVectorStore, SimplePostgresReader } from "@vectorstores/postgres";
 
 import { useOpenAIEmbedding } from "../../utils/embedding";
 
-const containerName = "llamaindex-postgres-example";
+const containerName = "vectorstores-postgres-example";
 const dbConfig = {
   host: "localhost",
   port: 5432,
@@ -20,7 +20,7 @@ async function main() {
     const vectorStore = new PGVectorStore({
       clientConfig: dbConfig,
       dimensions: 3,
-      tableName: "llamaindex_vector",
+      tableName: "vectorstores_vector",
     });
 
     // Add a test document with embedding
@@ -40,7 +40,7 @@ async function main() {
 
     // Read documents using PostgresReader
     const documents = await reader.loadData({
-      query: "SELECT document as content, metadata FROM llamaindex_vector",
+      query: "SELECT document as content, metadata FROM vectorstores_vector",
       fields: ["content"],
       metadataFields: ["metadata"],
     });

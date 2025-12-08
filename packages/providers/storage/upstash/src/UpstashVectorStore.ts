@@ -5,12 +5,12 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 
-import type { BaseNode, Metadata, TextNode } from "@llamaindex/core";
-import { metadataDictToNode, nodeToMetadata } from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
 import { Index } from "@upstash/vector";
+import type { BaseNode, Metadata, TextNode } from "@vectorstores/core";
+import { metadataDictToNode, nodeToMetadata } from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
 type UpstashParams = {
   namespace?: string;

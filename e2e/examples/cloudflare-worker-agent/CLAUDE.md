@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the Cloudflare Worker Agent example in the LlamaIndexTS e2e testing suite.
+This file provides guidance to Claude Code (claude.ai/code) when working with the Cloudflare Worker Agent example in the vectorstores e2e testing suite.
 
 ## Package Overview
 
-The `@llamaindex/cloudflare-worker-agent-test` package demonstrates how to use LlamaIndex.TS within a Cloudflare Worker environment. This example serves as both a functional integration test and a reference implementation for deploying AI agents on Cloudflare's edge platform.
+The `@vectorstores/cloudflare-worker-agent-test` package demonstrates how to use vectorstores within a Cloudflare Worker environment. This example serves as both a functional integration test and a reference implementation for deploying AI agents on Cloudflare's edge platform.
 
 ## Development Commands
 
@@ -22,7 +22,7 @@ Local development and testing:
 
 The worker implements a basic HTTP handler that:
 
-1. **Environment Setup**: Uses `@llamaindex/env` to configure runtime environment variables
+1. **Environment Setup**: Uses `@vectorstores/env` to configure runtime environment variables
 2. **Agent Initialization**: Creates an OpenAI agent with streaming support
 3. **Request Processing**: Accepts text input via HTTP request body
 4. **Streaming Response**: Returns streaming AI responses (though currently returns static "Hello, world!")
@@ -30,7 +30,7 @@ The worker implements a basic HTTP handler that:
 **Key Components:**
 
 - Environment interface with `OPENAI_API_KEY` requirement
-- Dynamic imports for optimal bundle size (`@llamaindex/env`, `@llamaindex/openai`)
+- Dynamic imports for optimal bundle size (`@vectorstores/env`, `@vectorstores/openai`)
 - OpenAI agent with streaming chat capability
 - Transform stream for encoding chat response deltas
 
@@ -70,7 +70,7 @@ The worker implements a basic HTTP handler that:
 
 ### Cloudflare Workers Compatibility
 
-This example demonstrates LlamaIndex.TS compatibility with the Cloudflare Workers runtime (`workerd`):
+This example demonstrates vectorstores compatibility with the Cloudflare Workers runtime (`workerd`):
 
 - **Edge Runtime**: Runs on Cloudflare's global edge network
 - **Node.js Compatibility**: Uses `nodejs_compat` flag for Node.js APIs
@@ -79,7 +79,7 @@ This example demonstrates LlamaIndex.TS compatibility with the Cloudflare Worker
 
 ### Key Dependencies
 
-- `llamaindex` (workspace) - Main LlamaIndex.TS package
+- `@vectorstores/core` (workspace) - Main vectorstores package
 - `@cloudflare/workers-types` - TypeScript definitions for Workers APIs
 - `@cloudflare/vitest-pool-workers` - Testing framework for Workers environment
 - `wrangler` - Cloudflare Workers CLI and build tool
@@ -100,7 +100,7 @@ This example demonstrates LlamaIndex.TS compatibility with the Cloudflare Worker
 
 - Uses dynamic imports to enable code splitting and reduce initial bundle size
 - Critical for Cloudflare Workers size limits and cold start performance
-- Environment setup (`@llamaindex/env`) imported dynamically to defer execution
+- Environment setup (`@vectorstores/env`) imported dynamically to defer execution
 
 ### Security Considerations
 
@@ -120,7 +120,7 @@ This example demonstrates LlamaIndex.TS compatibility with the Cloudflare Worker
 
 This example serves multiple purposes in the e2e test suite:
 
-- **Runtime Validation**: Ensures LlamaIndex.TS works in Cloudflare Workers environment
+- **Runtime Validation**: Ensures vectorstores works in Cloudflare Workers environment
 - **Bundle Testing**: Validates that dynamic imports and code splitting work correctly
 - **API Integration**: Tests OpenAI provider integration in edge runtime
 - **Streaming Support**: Demonstrates streaming response handling in Workers

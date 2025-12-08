@@ -11,7 +11,7 @@ You can find the full list of models in the [OVHcloud AI Endpoints catalog](http
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/ovhcloud
+npm i llamaindex @vectorstores/ovhcloud
 ```
 
 ## Authentication
@@ -24,8 +24,8 @@ OVHcloud AI Endpoints can be used in two ways:
 ## Basic Usage
 
 ```ts
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
-import { OVHcloudEmbedding } from "@llamaindex/ovhcloud";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
+import { OVHcloudEmbedding } from "@vectorstores/ovhcloud";
 
 // Update Embed Model (using free tier)
 Settings.embedModel = new OVHcloudEmbedding();
@@ -53,7 +53,7 @@ const results = await queryEngine.query({
 By default, `OVHcloudEmbedding` uses the `BGE-M3` model. You can change the model by passing the model parameter to the constructor:
 
 ```ts
-import { OVHcloudEmbedding } from "@llamaindex/ovhcloud";
+import { OVHcloudEmbedding } from "@vectorstores/ovhcloud";
 
 const model = "text-embedding-3-small";
 Settings.embedModel = new OVHcloudEmbedding({
@@ -64,8 +64,8 @@ Settings.embedModel = new OVHcloudEmbedding({
 You can also set the `maxRetries` and `timeout` parameters when initializing `OVHcloudEmbedding` for better control over the request behavior:
 
 ```ts
-import { Settings } from "llamaindex";
-import { OVHcloudEmbedding } from "@llamaindex/ovhcloud";
+import { Settings } from "@vectorstores/core";
+import { OVHcloudEmbedding } from "@vectorstores/ovhcloud";
 
 const model = "text-embedding-3-small";
 const maxRetries = 5;
@@ -81,7 +81,7 @@ Settings.embedModel = new OVHcloudEmbedding({
 ## Standalone Usage
 
 ```ts
-import { OVHcloudEmbedding } from "@llamaindex/ovhcloud";
+import { OVHcloudEmbedding } from "@vectorstores/ovhcloud";
 import { config } from "dotenv";
 // For standalone usage, you can optionally configure OVHCLOUD_API_KEY in .env file
 config();

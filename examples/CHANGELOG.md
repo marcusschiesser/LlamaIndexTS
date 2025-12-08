@@ -18,44 +18,44 @@
 - Updated dependencies [3af5617]
 - Updated dependencies [76709c2]
 - Updated dependencies [91627dc]
-  - @llamaindex/vercel@0.1.23
-  - @llamaindex/ovhcloud@1.0.0
-  - @llamaindex/google@0.4.0
+  - @vectorstores/vercel@0.1.23
+  - @vectorstores/ovhcloud@1.0.0
+  - @vectorstores/google@0.4.0
   - llamaindex@0.12.1
-  - @llamaindex/openai@0.4.22
-  - @llamaindex/mongodb@0.1.0
-  - @llamaindex/azure@0.2.0
-  - @llamaindex/tools@0.2.0
-  - @llamaindex/clip@0.0.78
-  - @llamaindex/deepinfra@0.0.78
-  - @llamaindex/deepseek@0.0.40
-  - @llamaindex/fireworks@0.0.38
-  - @llamaindex/groq@0.0.94
-  - @llamaindex/huggingface@0.1.32
-  - @llamaindex/jinaai@0.0.38
-  - @llamaindex/perplexity@0.0.35
-  - @llamaindex/together@0.0.38
-  - @llamaindex/vllm@0.0.64
-  - @llamaindex/xai@0.0.25
+  - @vectorstores/openai@0.4.22
+  - @vectorstores/mongodb@0.1.0
+  - @vectorstores/azure@0.2.0
+  - @vectorstores/tools@0.2.0
+  - @vectorstores/clip@0.0.78
+  - @vectorstores/deepinfra@0.0.78
+  - @vectorstores/deepseek@0.0.40
+  - @vectorstores/fireworks@0.0.38
+  - @vectorstores/groq@0.0.94
+  - @vectorstores/huggingface@0.1.32
+  - @vectorstores/jinaai@0.0.38
+  - @vectorstores/perplexity@0.0.35
+  - @vectorstores/together@0.0.38
+  - @vectorstores/vllm@0.0.64
+  - @vectorstores/xai@0.0.25
 
 ## 0.3.43
 
 ### Patch Changes
 
 - Updated dependencies [1028877]
-  - @llamaindex/openai@0.4.21
-  - @llamaindex/clip@0.0.77
-  - @llamaindex/deepinfra@0.0.77
-  - @llamaindex/deepseek@0.0.39
-  - @llamaindex/fireworks@0.0.37
-  - @llamaindex/groq@0.0.93
-  - @llamaindex/huggingface@0.1.31
-  - @llamaindex/jinaai@0.0.37
-  - @llamaindex/perplexity@0.0.34
-  - @llamaindex/azure@0.1.38
-  - @llamaindex/together@0.0.37
-  - @llamaindex/vllm@0.0.63
-  - @llamaindex/xai@0.0.24
+  - @vectorstores/openai@0.4.21
+  - @vectorstores/clip@0.0.77
+  - @vectorstores/deepinfra@0.0.77
+  - @vectorstores/deepseek@0.0.39
+  - @vectorstores/fireworks@0.0.37
+  - @vectorstores/groq@0.0.93
+  - @vectorstores/huggingface@0.1.31
+  - @vectorstores/jinaai@0.0.37
+  - @vectorstores/perplexity@0.0.34
+  - @vectorstores/azure@0.1.38
+  - @vectorstores/together@0.0.37
+  - @vectorstores/vllm@0.0.63
+  - @vectorstores/xai@0.0.24
 
 ## 0.3.42
 
@@ -64,51 +64,51 @@
 - Updated dependencies [06f884a]
 - Updated dependencies [06f884a]
 - Updated dependencies [d493015]
-  - @llamaindex/core@0.6.22
-  - @llamaindex/workflow@1.1.24
+  - @vectorstores/core@0.6.22
+  - @vectorstores/workflow@1.1.24
   - llamaindex@0.12.0
-  - @llamaindex/node-parser@2.0.22
-  - @llamaindex/anthropic@0.3.25
-  - @llamaindex/assemblyai@0.1.21
-  - @llamaindex/clip@0.0.76
-  - @llamaindex/cohere@0.0.36
-  - @llamaindex/deepinfra@0.0.76
-  - @llamaindex/discord@0.1.21
-  - @llamaindex/google@0.3.22
-  - @llamaindex/huggingface@0.1.30
-  - @llamaindex/jinaai@0.0.36
-  - @llamaindex/mistral@0.1.22
-  - @llamaindex/mixedbread@0.0.36
-  - @llamaindex/notion@0.1.21
-  - @llamaindex/ollama@0.1.23
-  - @llamaindex/openai@0.4.20
-  - @llamaindex/perplexity@0.0.33
-  - @llamaindex/portkey-ai@0.0.64
-  - @llamaindex/replicate@0.0.64
-  - @llamaindex/bm25-retriever@0.0.11
-  - @llamaindex/astra@0.0.36
-  - @llamaindex/azure@0.1.37
-  - @llamaindex/chroma@0.0.36
-  - @llamaindex/elastic-search@0.1.22
-  - @llamaindex/firestore@1.0.29
-  - @llamaindex/milvus@0.1.31
-  - @llamaindex/mongodb@0.0.37
-  - @llamaindex/pinecone@0.1.22
-  - @llamaindex/postgres@0.0.65
-  - @llamaindex/qdrant@0.1.32
-  - @llamaindex/supabase@0.1.23
-  - @llamaindex/upstash@0.0.36
-  - @llamaindex/weaviate@0.0.37
-  - @llamaindex/vercel@0.1.22
-  - @llamaindex/voyage-ai@1.0.28
-  - @llamaindex/readers@3.1.21
-  - @llamaindex/tools@0.1.12
-  - @llamaindex/deepseek@0.0.38
-  - @llamaindex/fireworks@0.0.36
-  - @llamaindex/groq@0.0.92
-  - @llamaindex/together@0.0.36
-  - @llamaindex/vllm@0.0.62
-  - @llamaindex/xai@0.0.23
+  - @vectorstores/node-parser@2.0.22
+  - @vectorstores/anthropic@0.3.25
+  - @vectorstores/assemblyai@0.1.21
+  - @vectorstores/clip@0.0.76
+  - @vectorstores/cohere@0.0.36
+  - @vectorstores/deepinfra@0.0.76
+  - @vectorstores/discord@0.1.21
+  - @vectorstores/google@0.3.22
+  - @vectorstores/huggingface@0.1.30
+  - @vectorstores/jinaai@0.0.36
+  - @vectorstores/mistral@0.1.22
+  - @vectorstores/mixedbread@0.0.36
+  - @vectorstores/notion@0.1.21
+  - @vectorstores/ollama@0.1.23
+  - @vectorstores/openai@0.4.20
+  - @vectorstores/perplexity@0.0.33
+  - @vectorstores/portkey-ai@0.0.64
+  - @vectorstores/replicate@0.0.64
+  - @vectorstores/bm25-retriever@0.0.11
+  - @vectorstores/astra@0.0.36
+  - @vectorstores/azure@0.1.37
+  - @vectorstores/chroma@0.0.36
+  - @vectorstores/elastic-search@0.1.22
+  - @vectorstores/firestore@1.0.29
+  - @vectorstores/milvus@0.1.31
+  - @vectorstores/mongodb@0.0.37
+  - @vectorstores/pinecone@0.1.22
+  - @vectorstores/postgres@0.0.65
+  - @vectorstores/qdrant@0.1.32
+  - @vectorstores/supabase@0.1.23
+  - @vectorstores/upstash@0.0.36
+  - @vectorstores/weaviate@0.0.37
+  - @vectorstores/vercel@0.1.22
+  - @vectorstores/voyage-ai@1.0.28
+  - @vectorstores/readers@3.1.21
+  - @vectorstores/tools@0.1.12
+  - @vectorstores/deepseek@0.0.38
+  - @vectorstores/fireworks@0.0.36
+  - @vectorstores/groq@0.0.92
+  - @vectorstores/together@0.0.36
+  - @vectorstores/vllm@0.0.62
+  - @vectorstores/xai@0.0.23
 
 ## 0.3.41
 
@@ -119,51 +119,51 @@
 - Updated dependencies [5d5cd44]
 - Updated dependencies [c40adaf]
   - llamaindex@0.11.29
-  - @llamaindex/core@0.6.21
-  - @llamaindex/tools@0.1.11
-  - @llamaindex/workflow@1.1.23
-  - @llamaindex/ollama@0.1.22
-  - @llamaindex/openai@0.4.19
-  - @llamaindex/vercel@0.1.21
-  - @llamaindex/anthropic@0.3.24
-  - @llamaindex/google@0.3.21
-  - @llamaindex/cloud@4.1.3
-  - @llamaindex/node-parser@2.0.21
-  - @llamaindex/assemblyai@0.1.20
-  - @llamaindex/clip@0.0.75
-  - @llamaindex/cohere@0.0.35
-  - @llamaindex/deepinfra@0.0.75
-  - @llamaindex/discord@0.1.20
-  - @llamaindex/huggingface@0.1.29
-  - @llamaindex/jinaai@0.0.35
-  - @llamaindex/mistral@0.1.21
-  - @llamaindex/mixedbread@0.0.35
-  - @llamaindex/notion@0.1.20
-  - @llamaindex/perplexity@0.0.32
-  - @llamaindex/portkey-ai@0.0.63
-  - @llamaindex/replicate@0.0.63
-  - @llamaindex/bm25-retriever@0.0.10
-  - @llamaindex/astra@0.0.35
-  - @llamaindex/azure@0.1.36
-  - @llamaindex/chroma@0.0.35
-  - @llamaindex/elastic-search@0.1.21
-  - @llamaindex/firestore@1.0.28
-  - @llamaindex/milvus@0.1.30
-  - @llamaindex/mongodb@0.0.36
-  - @llamaindex/pinecone@0.1.21
-  - @llamaindex/postgres@0.0.64
-  - @llamaindex/qdrant@0.1.31
-  - @llamaindex/supabase@0.1.22
-  - @llamaindex/upstash@0.0.35
-  - @llamaindex/weaviate@0.0.36
-  - @llamaindex/voyage-ai@1.0.27
-  - @llamaindex/readers@3.1.20
-  - @llamaindex/deepseek@0.0.37
-  - @llamaindex/fireworks@0.0.35
-  - @llamaindex/groq@0.0.91
-  - @llamaindex/together@0.0.35
-  - @llamaindex/vllm@0.0.61
-  - @llamaindex/xai@0.0.22
+  - @vectorstores/core@0.6.21
+  - @vectorstores/tools@0.1.11
+  - @vectorstores/workflow@1.1.23
+  - @vectorstores/ollama@0.1.22
+  - @vectorstores/openai@0.4.19
+  - @vectorstores/vercel@0.1.21
+  - @vectorstores/anthropic@0.3.24
+  - @vectorstores/google@0.3.21
+  - @vectorstores/cloud@4.1.3
+  - @vectorstores/node-parser@2.0.21
+  - @vectorstores/assemblyai@0.1.20
+  - @vectorstores/clip@0.0.75
+  - @vectorstores/cohere@0.0.35
+  - @vectorstores/deepinfra@0.0.75
+  - @vectorstores/discord@0.1.20
+  - @vectorstores/huggingface@0.1.29
+  - @vectorstores/jinaai@0.0.35
+  - @vectorstores/mistral@0.1.21
+  - @vectorstores/mixedbread@0.0.35
+  - @vectorstores/notion@0.1.20
+  - @vectorstores/perplexity@0.0.32
+  - @vectorstores/portkey-ai@0.0.63
+  - @vectorstores/replicate@0.0.63
+  - @vectorstores/bm25-retriever@0.0.10
+  - @vectorstores/astra@0.0.35
+  - @vectorstores/azure@0.1.36
+  - @vectorstores/chroma@0.0.35
+  - @vectorstores/elastic-search@0.1.21
+  - @vectorstores/firestore@1.0.28
+  - @vectorstores/milvus@0.1.30
+  - @vectorstores/mongodb@0.0.36
+  - @vectorstores/pinecone@0.1.21
+  - @vectorstores/postgres@0.0.64
+  - @vectorstores/qdrant@0.1.31
+  - @vectorstores/supabase@0.1.22
+  - @vectorstores/upstash@0.0.35
+  - @vectorstores/weaviate@0.0.36
+  - @vectorstores/voyage-ai@1.0.27
+  - @vectorstores/readers@3.1.20
+  - @vectorstores/deepseek@0.0.37
+  - @vectorstores/fireworks@0.0.35
+  - @vectorstores/groq@0.0.91
+  - @vectorstores/together@0.0.35
+  - @vectorstores/vllm@0.0.61
+  - @vectorstores/xai@0.0.22
 
 ## 0.3.40
 
@@ -172,92 +172,92 @@
 - Updated dependencies [1995b38]
 - Updated dependencies [001a515]
 - Updated dependencies [9d7d205]
-  - @llamaindex/workflow@1.1.22
-  - @llamaindex/openai@0.4.18
+  - @vectorstores/workflow@1.1.22
+  - @vectorstores/openai@0.4.18
   - llamaindex@0.11.28
-  - @llamaindex/clip@0.0.74
-  - @llamaindex/deepinfra@0.0.74
-  - @llamaindex/deepseek@0.0.36
-  - @llamaindex/fireworks@0.0.34
-  - @llamaindex/groq@0.0.90
-  - @llamaindex/huggingface@0.1.28
-  - @llamaindex/jinaai@0.0.34
-  - @llamaindex/perplexity@0.0.31
-  - @llamaindex/azure@0.1.35
-  - @llamaindex/together@0.0.34
-  - @llamaindex/vllm@0.0.60
-  - @llamaindex/xai@0.0.21
+  - @vectorstores/clip@0.0.74
+  - @vectorstores/deepinfra@0.0.74
+  - @vectorstores/deepseek@0.0.36
+  - @vectorstores/fireworks@0.0.34
+  - @vectorstores/groq@0.0.90
+  - @vectorstores/huggingface@0.1.28
+  - @vectorstores/jinaai@0.0.34
+  - @vectorstores/perplexity@0.0.31
+  - @vectorstores/azure@0.1.35
+  - @vectorstores/together@0.0.34
+  - @vectorstores/vllm@0.0.60
+  - @vectorstores/xai@0.0.21
 
 ## 0.3.39
 
 ### Patch Changes
 
 - Updated dependencies [0267bb0]
-  - @llamaindex/core@0.6.20
-  - @llamaindex/cloud@4.1.2
+  - @vectorstores/core@0.6.20
+  - @vectorstores/cloud@4.1.2
   - llamaindex@0.11.27
-  - @llamaindex/node-parser@2.0.20
-  - @llamaindex/anthropic@0.3.23
-  - @llamaindex/assemblyai@0.1.19
-  - @llamaindex/clip@0.0.73
-  - @llamaindex/cohere@0.0.34
-  - @llamaindex/deepinfra@0.0.73
-  - @llamaindex/discord@0.1.19
-  - @llamaindex/google@0.3.20
-  - @llamaindex/huggingface@0.1.27
-  - @llamaindex/jinaai@0.0.33
-  - @llamaindex/mistral@0.1.20
-  - @llamaindex/mixedbread@0.0.34
-  - @llamaindex/notion@0.1.19
-  - @llamaindex/ollama@0.1.21
-  - @llamaindex/openai@0.4.17
-  - @llamaindex/perplexity@0.0.30
-  - @llamaindex/portkey-ai@0.0.62
-  - @llamaindex/replicate@0.0.62
-  - @llamaindex/bm25-retriever@0.0.9
-  - @llamaindex/astra@0.0.34
-  - @llamaindex/azure@0.1.34
-  - @llamaindex/chroma@0.0.34
-  - @llamaindex/elastic-search@0.1.20
-  - @llamaindex/firestore@1.0.27
-  - @llamaindex/milvus@0.1.29
-  - @llamaindex/mongodb@0.0.35
-  - @llamaindex/pinecone@0.1.20
-  - @llamaindex/postgres@0.0.63
-  - @llamaindex/qdrant@0.1.30
-  - @llamaindex/supabase@0.1.21
-  - @llamaindex/upstash@0.0.34
-  - @llamaindex/weaviate@0.0.35
-  - @llamaindex/vercel@0.1.20
-  - @llamaindex/voyage-ai@1.0.26
-  - @llamaindex/readers@3.1.19
-  - @llamaindex/tools@0.1.10
-  - @llamaindex/workflow@1.1.21
-  - @llamaindex/deepseek@0.0.35
-  - @llamaindex/fireworks@0.0.33
-  - @llamaindex/groq@0.0.89
-  - @llamaindex/together@0.0.33
-  - @llamaindex/vllm@0.0.59
-  - @llamaindex/xai@0.0.20
+  - @vectorstores/node-parser@2.0.20
+  - @vectorstores/anthropic@0.3.23
+  - @vectorstores/assemblyai@0.1.19
+  - @vectorstores/clip@0.0.73
+  - @vectorstores/cohere@0.0.34
+  - @vectorstores/deepinfra@0.0.73
+  - @vectorstores/discord@0.1.19
+  - @vectorstores/google@0.3.20
+  - @vectorstores/huggingface@0.1.27
+  - @vectorstores/jinaai@0.0.33
+  - @vectorstores/mistral@0.1.20
+  - @vectorstores/mixedbread@0.0.34
+  - @vectorstores/notion@0.1.19
+  - @vectorstores/ollama@0.1.21
+  - @vectorstores/openai@0.4.17
+  - @vectorstores/perplexity@0.0.30
+  - @vectorstores/portkey-ai@0.0.62
+  - @vectorstores/replicate@0.0.62
+  - @vectorstores/bm25-retriever@0.0.9
+  - @vectorstores/astra@0.0.34
+  - @vectorstores/azure@0.1.34
+  - @vectorstores/chroma@0.0.34
+  - @vectorstores/elastic-search@0.1.20
+  - @vectorstores/firestore@1.0.27
+  - @vectorstores/milvus@0.1.29
+  - @vectorstores/mongodb@0.0.35
+  - @vectorstores/pinecone@0.1.20
+  - @vectorstores/postgres@0.0.63
+  - @vectorstores/qdrant@0.1.30
+  - @vectorstores/supabase@0.1.21
+  - @vectorstores/upstash@0.0.34
+  - @vectorstores/weaviate@0.0.35
+  - @vectorstores/vercel@0.1.20
+  - @vectorstores/voyage-ai@1.0.26
+  - @vectorstores/readers@3.1.19
+  - @vectorstores/tools@0.1.10
+  - @vectorstores/workflow@1.1.21
+  - @vectorstores/deepseek@0.0.35
+  - @vectorstores/fireworks@0.0.33
+  - @vectorstores/groq@0.0.89
+  - @vectorstores/together@0.0.33
+  - @vectorstores/vllm@0.0.59
+  - @vectorstores/xai@0.0.20
 
 ## 0.3.38
 
 ### Patch Changes
 
 - Updated dependencies [4c70376]
-  - @llamaindex/openai@0.4.16
-  - @llamaindex/clip@0.0.72
-  - @llamaindex/deepinfra@0.0.72
-  - @llamaindex/deepseek@0.0.34
-  - @llamaindex/fireworks@0.0.32
-  - @llamaindex/groq@0.0.88
-  - @llamaindex/huggingface@0.1.26
-  - @llamaindex/jinaai@0.0.32
-  - @llamaindex/perplexity@0.0.29
-  - @llamaindex/azure@0.1.33
-  - @llamaindex/together@0.0.32
-  - @llamaindex/vllm@0.0.58
-  - @llamaindex/xai@0.0.19
+  - @vectorstores/openai@0.4.16
+  - @vectorstores/clip@0.0.72
+  - @vectorstores/deepinfra@0.0.72
+  - @vectorstores/deepseek@0.0.34
+  - @vectorstores/fireworks@0.0.32
+  - @vectorstores/groq@0.0.88
+  - @vectorstores/huggingface@0.1.26
+  - @vectorstores/jinaai@0.0.32
+  - @vectorstores/perplexity@0.0.29
+  - @vectorstores/azure@0.1.33
+  - @vectorstores/together@0.0.32
+  - @vectorstores/vllm@0.0.58
+  - @vectorstores/xai@0.0.19
 
 ## 0.3.37
 
@@ -267,21 +267,21 @@
 - Updated dependencies [b80f33e]
 - Updated dependencies [b6409b6]
 - Updated dependencies [b80f33e]
-  - @llamaindex/ollama@0.1.20
-  - @llamaindex/anthropic@0.3.22
-  - @llamaindex/openai@0.4.15
-  - @llamaindex/clip@0.0.71
-  - @llamaindex/deepinfra@0.0.71
-  - @llamaindex/deepseek@0.0.33
-  - @llamaindex/fireworks@0.0.31
-  - @llamaindex/groq@0.0.87
-  - @llamaindex/huggingface@0.1.25
-  - @llamaindex/jinaai@0.0.31
-  - @llamaindex/perplexity@0.0.28
-  - @llamaindex/azure@0.1.32
-  - @llamaindex/together@0.0.31
-  - @llamaindex/vllm@0.0.57
-  - @llamaindex/xai@0.0.18
+  - @vectorstores/ollama@0.1.20
+  - @vectorstores/anthropic@0.3.22
+  - @vectorstores/openai@0.4.15
+  - @vectorstores/clip@0.0.71
+  - @vectorstores/deepinfra@0.0.71
+  - @vectorstores/deepseek@0.0.33
+  - @vectorstores/fireworks@0.0.31
+  - @vectorstores/groq@0.0.87
+  - @vectorstores/huggingface@0.1.25
+  - @vectorstores/jinaai@0.0.31
+  - @vectorstores/perplexity@0.0.28
+  - @vectorstores/azure@0.1.32
+  - @vectorstores/together@0.0.31
+  - @vectorstores/vllm@0.0.57
+  - @vectorstores/xai@0.0.18
 
 ## 0.3.36
 
@@ -289,8 +289,8 @@
 
 - Updated dependencies [4b51791]
 - Updated dependencies [971d37c]
-  - @llamaindex/cloud@4.1.1
-  - @llamaindex/deepseek@0.0.32
+  - @vectorstores/cloud@4.1.1
+  - @vectorstores/deepseek@0.0.32
   - llamaindex@0.11.26
 
 ## 0.3.35
@@ -299,52 +299,52 @@
 
 - Updated dependencies [c3bf3c7]
 - Updated dependencies [f9f1de9]
-  - @llamaindex/cloud@4.0.28
-  - @llamaindex/core@0.6.19
+  - @vectorstores/cloud@4.0.28
+  - @vectorstores/core@0.6.19
   - llamaindex@0.11.24
-  - @llamaindex/node-parser@2.0.19
-  - @llamaindex/anthropic@0.3.21
-  - @llamaindex/assemblyai@0.1.18
-  - @llamaindex/clip@0.0.70
-  - @llamaindex/cohere@0.0.33
-  - @llamaindex/deepinfra@0.0.70
-  - @llamaindex/discord@0.1.18
-  - @llamaindex/google@0.3.18
-  - @llamaindex/huggingface@0.1.24
-  - @llamaindex/jinaai@0.0.30
-  - @llamaindex/mistral@0.1.19
-  - @llamaindex/mixedbread@0.0.33
-  - @llamaindex/notion@0.1.18
-  - @llamaindex/ollama@0.1.19
-  - @llamaindex/openai@0.4.14
-  - @llamaindex/perplexity@0.0.27
-  - @llamaindex/portkey-ai@0.0.61
-  - @llamaindex/replicate@0.0.61
-  - @llamaindex/bm25-retriever@0.0.8
-  - @llamaindex/astra@0.0.33
-  - @llamaindex/azure@0.1.31
-  - @llamaindex/chroma@0.0.33
-  - @llamaindex/elastic-search@0.1.19
-  - @llamaindex/firestore@1.0.26
-  - @llamaindex/milvus@0.1.28
-  - @llamaindex/mongodb@0.0.34
-  - @llamaindex/pinecone@0.1.19
-  - @llamaindex/postgres@0.0.62
-  - @llamaindex/qdrant@0.1.29
-  - @llamaindex/supabase@0.1.20
-  - @llamaindex/upstash@0.0.33
-  - @llamaindex/weaviate@0.0.34
-  - @llamaindex/vercel@0.1.19
-  - @llamaindex/voyage-ai@1.0.25
-  - @llamaindex/readers@3.1.18
-  - @llamaindex/tools@0.1.9
-  - @llamaindex/workflow@1.1.20
-  - @llamaindex/deepseek@0.0.31
-  - @llamaindex/fireworks@0.0.30
-  - @llamaindex/groq@0.0.86
-  - @llamaindex/together@0.0.30
-  - @llamaindex/vllm@0.0.56
-  - @llamaindex/xai@0.0.17
+  - @vectorstores/node-parser@2.0.19
+  - @vectorstores/anthropic@0.3.21
+  - @vectorstores/assemblyai@0.1.18
+  - @vectorstores/clip@0.0.70
+  - @vectorstores/cohere@0.0.33
+  - @vectorstores/deepinfra@0.0.70
+  - @vectorstores/discord@0.1.18
+  - @vectorstores/google@0.3.18
+  - @vectorstores/huggingface@0.1.24
+  - @vectorstores/jinaai@0.0.30
+  - @vectorstores/mistral@0.1.19
+  - @vectorstores/mixedbread@0.0.33
+  - @vectorstores/notion@0.1.18
+  - @vectorstores/ollama@0.1.19
+  - @vectorstores/openai@0.4.14
+  - @vectorstores/perplexity@0.0.27
+  - @vectorstores/portkey-ai@0.0.61
+  - @vectorstores/replicate@0.0.61
+  - @vectorstores/bm25-retriever@0.0.8
+  - @vectorstores/astra@0.0.33
+  - @vectorstores/azure@0.1.31
+  - @vectorstores/chroma@0.0.33
+  - @vectorstores/elastic-search@0.1.19
+  - @vectorstores/firestore@1.0.26
+  - @vectorstores/milvus@0.1.28
+  - @vectorstores/mongodb@0.0.34
+  - @vectorstores/pinecone@0.1.19
+  - @vectorstores/postgres@0.0.62
+  - @vectorstores/qdrant@0.1.29
+  - @vectorstores/supabase@0.1.20
+  - @vectorstores/upstash@0.0.33
+  - @vectorstores/weaviate@0.0.34
+  - @vectorstores/vercel@0.1.19
+  - @vectorstores/voyage-ai@1.0.25
+  - @vectorstores/readers@3.1.18
+  - @vectorstores/tools@0.1.9
+  - @vectorstores/workflow@1.1.20
+  - @vectorstores/deepseek@0.0.31
+  - @vectorstores/fireworks@0.0.30
+  - @vectorstores/groq@0.0.86
+  - @vectorstores/together@0.0.30
+  - @vectorstores/vllm@0.0.56
+  - @vectorstores/xai@0.0.17
 
 ## 0.3.34
 
@@ -352,104 +352,104 @@
 
 - Updated dependencies [f29799e]
 - Updated dependencies [7224c06]
-  - @llamaindex/workflow@1.1.19
-  - @llamaindex/core@0.6.18
+  - @vectorstores/workflow@1.1.19
+  - @vectorstores/core@0.6.18
   - llamaindex@0.11.23
-  - @llamaindex/cloud@4.0.27
-  - @llamaindex/node-parser@2.0.18
-  - @llamaindex/anthropic@0.3.20
-  - @llamaindex/assemblyai@0.1.17
-  - @llamaindex/clip@0.0.69
-  - @llamaindex/cohere@0.0.32
-  - @llamaindex/deepinfra@0.0.69
-  - @llamaindex/discord@0.1.17
-  - @llamaindex/google@0.3.17
-  - @llamaindex/huggingface@0.1.23
-  - @llamaindex/jinaai@0.0.29
-  - @llamaindex/mistral@0.1.18
-  - @llamaindex/mixedbread@0.0.32
-  - @llamaindex/notion@0.1.17
-  - @llamaindex/ollama@0.1.18
-  - @llamaindex/openai@0.4.13
-  - @llamaindex/perplexity@0.0.26
-  - @llamaindex/portkey-ai@0.0.60
-  - @llamaindex/replicate@0.0.60
-  - @llamaindex/bm25-retriever@0.0.7
-  - @llamaindex/astra@0.0.32
-  - @llamaindex/azure@0.1.30
-  - @llamaindex/chroma@0.0.32
-  - @llamaindex/elastic-search@0.1.18
-  - @llamaindex/firestore@1.0.25
-  - @llamaindex/milvus@0.1.27
-  - @llamaindex/mongodb@0.0.33
-  - @llamaindex/pinecone@0.1.18
-  - @llamaindex/postgres@0.0.61
-  - @llamaindex/qdrant@0.1.28
-  - @llamaindex/supabase@0.1.19
-  - @llamaindex/upstash@0.0.32
-  - @llamaindex/weaviate@0.0.33
-  - @llamaindex/vercel@0.1.18
-  - @llamaindex/voyage-ai@1.0.24
-  - @llamaindex/readers@3.1.17
-  - @llamaindex/tools@0.1.8
-  - @llamaindex/deepseek@0.0.30
-  - @llamaindex/fireworks@0.0.29
-  - @llamaindex/groq@0.0.85
-  - @llamaindex/together@0.0.29
-  - @llamaindex/vllm@0.0.55
-  - @llamaindex/xai@0.0.16
+  - @vectorstores/cloud@4.0.27
+  - @vectorstores/node-parser@2.0.18
+  - @vectorstores/anthropic@0.3.20
+  - @vectorstores/assemblyai@0.1.17
+  - @vectorstores/clip@0.0.69
+  - @vectorstores/cohere@0.0.32
+  - @vectorstores/deepinfra@0.0.69
+  - @vectorstores/discord@0.1.17
+  - @vectorstores/google@0.3.17
+  - @vectorstores/huggingface@0.1.23
+  - @vectorstores/jinaai@0.0.29
+  - @vectorstores/mistral@0.1.18
+  - @vectorstores/mixedbread@0.0.32
+  - @vectorstores/notion@0.1.17
+  - @vectorstores/ollama@0.1.18
+  - @vectorstores/openai@0.4.13
+  - @vectorstores/perplexity@0.0.26
+  - @vectorstores/portkey-ai@0.0.60
+  - @vectorstores/replicate@0.0.60
+  - @vectorstores/bm25-retriever@0.0.7
+  - @vectorstores/astra@0.0.32
+  - @vectorstores/azure@0.1.30
+  - @vectorstores/chroma@0.0.32
+  - @vectorstores/elastic-search@0.1.18
+  - @vectorstores/firestore@1.0.25
+  - @vectorstores/milvus@0.1.27
+  - @vectorstores/mongodb@0.0.33
+  - @vectorstores/pinecone@0.1.18
+  - @vectorstores/postgres@0.0.61
+  - @vectorstores/qdrant@0.1.28
+  - @vectorstores/supabase@0.1.19
+  - @vectorstores/upstash@0.0.32
+  - @vectorstores/weaviate@0.0.33
+  - @vectorstores/vercel@0.1.18
+  - @vectorstores/voyage-ai@1.0.24
+  - @vectorstores/readers@3.1.17
+  - @vectorstores/tools@0.1.8
+  - @vectorstores/deepseek@0.0.30
+  - @vectorstores/fireworks@0.0.29
+  - @vectorstores/groq@0.0.85
+  - @vectorstores/together@0.0.29
+  - @vectorstores/vllm@0.0.55
+  - @vectorstores/xai@0.0.16
 
 ## 0.3.33
 
 ### Patch Changes
 
 - Updated dependencies [38da40b]
-  - @llamaindex/core@0.6.17
-  - @llamaindex/cloud@4.0.26
+  - @vectorstores/core@0.6.17
+  - @vectorstores/cloud@4.0.26
   - llamaindex@0.11.21
-  - @llamaindex/node-parser@2.0.17
-  - @llamaindex/anthropic@0.3.19
-  - @llamaindex/assemblyai@0.1.16
-  - @llamaindex/clip@0.0.68
-  - @llamaindex/cohere@0.0.31
-  - @llamaindex/deepinfra@0.0.68
-  - @llamaindex/discord@0.1.16
-  - @llamaindex/google@0.3.16
-  - @llamaindex/huggingface@0.1.22
-  - @llamaindex/jinaai@0.0.28
-  - @llamaindex/mistral@0.1.17
-  - @llamaindex/mixedbread@0.0.31
-  - @llamaindex/notion@0.1.16
-  - @llamaindex/ollama@0.1.17
-  - @llamaindex/openai@0.4.12
-  - @llamaindex/perplexity@0.0.25
-  - @llamaindex/portkey-ai@0.0.59
-  - @llamaindex/replicate@0.0.59
-  - @llamaindex/bm25-retriever@0.0.6
-  - @llamaindex/astra@0.0.31
-  - @llamaindex/azure@0.1.29
-  - @llamaindex/chroma@0.0.31
-  - @llamaindex/elastic-search@0.1.17
-  - @llamaindex/firestore@1.0.24
-  - @llamaindex/milvus@0.1.26
-  - @llamaindex/mongodb@0.0.32
-  - @llamaindex/pinecone@0.1.17
-  - @llamaindex/postgres@0.0.60
-  - @llamaindex/qdrant@0.1.27
-  - @llamaindex/supabase@0.1.18
-  - @llamaindex/upstash@0.0.31
-  - @llamaindex/weaviate@0.0.32
-  - @llamaindex/vercel@0.1.17
-  - @llamaindex/voyage-ai@1.0.23
-  - @llamaindex/readers@3.1.16
-  - @llamaindex/tools@0.1.7
-  - @llamaindex/workflow@1.1.17
-  - @llamaindex/deepseek@0.0.29
-  - @llamaindex/fireworks@0.0.28
-  - @llamaindex/groq@0.0.84
-  - @llamaindex/together@0.0.28
-  - @llamaindex/vllm@0.0.54
-  - @llamaindex/xai@0.0.15
+  - @vectorstores/node-parser@2.0.17
+  - @vectorstores/anthropic@0.3.19
+  - @vectorstores/assemblyai@0.1.16
+  - @vectorstores/clip@0.0.68
+  - @vectorstores/cohere@0.0.31
+  - @vectorstores/deepinfra@0.0.68
+  - @vectorstores/discord@0.1.16
+  - @vectorstores/google@0.3.16
+  - @vectorstores/huggingface@0.1.22
+  - @vectorstores/jinaai@0.0.28
+  - @vectorstores/mistral@0.1.17
+  - @vectorstores/mixedbread@0.0.31
+  - @vectorstores/notion@0.1.16
+  - @vectorstores/ollama@0.1.17
+  - @vectorstores/openai@0.4.12
+  - @vectorstores/perplexity@0.0.25
+  - @vectorstores/portkey-ai@0.0.59
+  - @vectorstores/replicate@0.0.59
+  - @vectorstores/bm25-retriever@0.0.6
+  - @vectorstores/astra@0.0.31
+  - @vectorstores/azure@0.1.29
+  - @vectorstores/chroma@0.0.31
+  - @vectorstores/elastic-search@0.1.17
+  - @vectorstores/firestore@1.0.24
+  - @vectorstores/milvus@0.1.26
+  - @vectorstores/mongodb@0.0.32
+  - @vectorstores/pinecone@0.1.17
+  - @vectorstores/postgres@0.0.60
+  - @vectorstores/qdrant@0.1.27
+  - @vectorstores/supabase@0.1.18
+  - @vectorstores/upstash@0.0.31
+  - @vectorstores/weaviate@0.0.32
+  - @vectorstores/vercel@0.1.17
+  - @vectorstores/voyage-ai@1.0.23
+  - @vectorstores/readers@3.1.16
+  - @vectorstores/tools@0.1.7
+  - @vectorstores/workflow@1.1.17
+  - @vectorstores/deepseek@0.0.29
+  - @vectorstores/fireworks@0.0.28
+  - @vectorstores/groq@0.0.84
+  - @vectorstores/together@0.0.28
+  - @vectorstores/vllm@0.0.54
+  - @vectorstores/xai@0.0.15
 
 ## 0.3.32
 
@@ -458,52 +458,52 @@
 - Updated dependencies [650eeb1]
 - Updated dependencies [a8ec08c]
 - Updated dependencies [2967d57]
-  - @llamaindex/google@0.3.15
-  - @llamaindex/core@0.6.16
-  - @llamaindex/workflow@1.1.16
-  - @llamaindex/cloud@4.0.25
+  - @vectorstores/google@0.3.15
+  - @vectorstores/core@0.6.16
+  - @vectorstores/workflow@1.1.16
+  - @vectorstores/cloud@4.0.25
   - llamaindex@0.11.20
-  - @llamaindex/node-parser@2.0.16
-  - @llamaindex/anthropic@0.3.18
-  - @llamaindex/assemblyai@0.1.15
-  - @llamaindex/clip@0.0.67
-  - @llamaindex/cohere@0.0.30
-  - @llamaindex/deepinfra@0.0.67
-  - @llamaindex/discord@0.1.15
-  - @llamaindex/huggingface@0.1.21
-  - @llamaindex/jinaai@0.0.27
-  - @llamaindex/mistral@0.1.16
-  - @llamaindex/mixedbread@0.0.30
-  - @llamaindex/notion@0.1.15
-  - @llamaindex/ollama@0.1.16
-  - @llamaindex/openai@0.4.11
-  - @llamaindex/perplexity@0.0.24
-  - @llamaindex/portkey-ai@0.0.58
-  - @llamaindex/replicate@0.0.58
-  - @llamaindex/bm25-retriever@0.0.5
-  - @llamaindex/astra@0.0.30
-  - @llamaindex/azure@0.1.28
-  - @llamaindex/chroma@0.0.30
-  - @llamaindex/elastic-search@0.1.16
-  - @llamaindex/firestore@1.0.23
-  - @llamaindex/milvus@0.1.25
-  - @llamaindex/mongodb@0.0.31
-  - @llamaindex/pinecone@0.1.16
-  - @llamaindex/postgres@0.0.59
-  - @llamaindex/qdrant@0.1.26
-  - @llamaindex/supabase@0.1.17
-  - @llamaindex/upstash@0.0.30
-  - @llamaindex/weaviate@0.0.31
-  - @llamaindex/vercel@0.1.16
-  - @llamaindex/voyage-ai@1.0.22
-  - @llamaindex/readers@3.1.15
-  - @llamaindex/tools@0.1.6
-  - @llamaindex/deepseek@0.0.28
-  - @llamaindex/fireworks@0.0.27
-  - @llamaindex/groq@0.0.83
-  - @llamaindex/together@0.0.27
-  - @llamaindex/vllm@0.0.53
-  - @llamaindex/xai@0.0.14
+  - @vectorstores/node-parser@2.0.16
+  - @vectorstores/anthropic@0.3.18
+  - @vectorstores/assemblyai@0.1.15
+  - @vectorstores/clip@0.0.67
+  - @vectorstores/cohere@0.0.30
+  - @vectorstores/deepinfra@0.0.67
+  - @vectorstores/discord@0.1.15
+  - @vectorstores/huggingface@0.1.21
+  - @vectorstores/jinaai@0.0.27
+  - @vectorstores/mistral@0.1.16
+  - @vectorstores/mixedbread@0.0.30
+  - @vectorstores/notion@0.1.15
+  - @vectorstores/ollama@0.1.16
+  - @vectorstores/openai@0.4.11
+  - @vectorstores/perplexity@0.0.24
+  - @vectorstores/portkey-ai@0.0.58
+  - @vectorstores/replicate@0.0.58
+  - @vectorstores/bm25-retriever@0.0.5
+  - @vectorstores/astra@0.0.30
+  - @vectorstores/azure@0.1.28
+  - @vectorstores/chroma@0.0.30
+  - @vectorstores/elastic-search@0.1.16
+  - @vectorstores/firestore@1.0.23
+  - @vectorstores/milvus@0.1.25
+  - @vectorstores/mongodb@0.0.31
+  - @vectorstores/pinecone@0.1.16
+  - @vectorstores/postgres@0.0.59
+  - @vectorstores/qdrant@0.1.26
+  - @vectorstores/supabase@0.1.17
+  - @vectorstores/upstash@0.0.30
+  - @vectorstores/weaviate@0.0.31
+  - @vectorstores/vercel@0.1.16
+  - @vectorstores/voyage-ai@1.0.22
+  - @vectorstores/readers@3.1.15
+  - @vectorstores/tools@0.1.6
+  - @vectorstores/deepseek@0.0.28
+  - @vectorstores/fireworks@0.0.27
+  - @vectorstores/groq@0.0.83
+  - @vectorstores/together@0.0.27
+  - @vectorstores/vllm@0.0.53
+  - @vectorstores/xai@0.0.14
 
 ## 0.3.31
 
@@ -511,20 +511,20 @@
 
 - Updated dependencies [d8f4f6a]
 - Updated dependencies [856dd8c]
-  - @llamaindex/supabase@0.1.16
-  - @llamaindex/openai@0.4.10
-  - @llamaindex/clip@0.0.66
-  - @llamaindex/deepinfra@0.0.66
-  - @llamaindex/deepseek@0.0.27
-  - @llamaindex/fireworks@0.0.26
-  - @llamaindex/groq@0.0.82
-  - @llamaindex/huggingface@0.1.20
-  - @llamaindex/jinaai@0.0.26
-  - @llamaindex/perplexity@0.0.23
-  - @llamaindex/azure@0.1.27
-  - @llamaindex/together@0.0.26
-  - @llamaindex/vllm@0.0.52
-  - @llamaindex/xai@0.0.13
+  - @vectorstores/supabase@0.1.16
+  - @vectorstores/openai@0.4.10
+  - @vectorstores/clip@0.0.66
+  - @vectorstores/deepinfra@0.0.66
+  - @vectorstores/deepseek@0.0.27
+  - @vectorstores/fireworks@0.0.26
+  - @vectorstores/groq@0.0.82
+  - @vectorstores/huggingface@0.1.20
+  - @vectorstores/jinaai@0.0.26
+  - @vectorstores/perplexity@0.0.23
+  - @vectorstores/azure@0.1.27
+  - @vectorstores/together@0.0.26
+  - @vectorstores/vllm@0.0.52
+  - @vectorstores/xai@0.0.13
 
 ## 0.3.30
 
@@ -534,59 +534,59 @@
 - Updated dependencies [5da5b3c]
 - Updated dependencies [a1fdb07]
 - Updated dependencies [ddc0eaf]
-  - @llamaindex/core@0.6.15
-  - @llamaindex/tools@0.1.5
-  - @llamaindex/workflow@1.1.15
-  - @llamaindex/openai@0.4.9
-  - @llamaindex/anthropic@0.3.17
-  - @llamaindex/cloud@4.0.24
+  - @vectorstores/core@0.6.15
+  - @vectorstores/tools@0.1.5
+  - @vectorstores/workflow@1.1.15
+  - @vectorstores/openai@0.4.9
+  - @vectorstores/anthropic@0.3.17
+  - @vectorstores/cloud@4.0.24
   - llamaindex@0.11.19
-  - @llamaindex/node-parser@2.0.15
-  - @llamaindex/assemblyai@0.1.14
-  - @llamaindex/clip@0.0.65
-  - @llamaindex/cohere@0.0.29
-  - @llamaindex/deepinfra@0.0.65
-  - @llamaindex/discord@0.1.14
-  - @llamaindex/google@0.3.14
-  - @llamaindex/huggingface@0.1.19
-  - @llamaindex/jinaai@0.0.25
-  - @llamaindex/mistral@0.1.15
-  - @llamaindex/mixedbread@0.0.29
-  - @llamaindex/notion@0.1.14
-  - @llamaindex/ollama@0.1.15
-  - @llamaindex/perplexity@0.0.22
-  - @llamaindex/portkey-ai@0.0.57
-  - @llamaindex/replicate@0.0.57
-  - @llamaindex/bm25-retriever@0.0.4
-  - @llamaindex/astra@0.0.29
-  - @llamaindex/azure@0.1.26
-  - @llamaindex/chroma@0.0.29
-  - @llamaindex/elastic-search@0.1.15
-  - @llamaindex/firestore@1.0.22
-  - @llamaindex/milvus@0.1.24
-  - @llamaindex/mongodb@0.0.30
-  - @llamaindex/pinecone@0.1.15
-  - @llamaindex/postgres@0.0.58
-  - @llamaindex/qdrant@0.1.25
-  - @llamaindex/supabase@0.1.15
-  - @llamaindex/upstash@0.0.29
-  - @llamaindex/weaviate@0.0.30
-  - @llamaindex/vercel@0.1.15
-  - @llamaindex/voyage-ai@1.0.21
-  - @llamaindex/readers@3.1.14
-  - @llamaindex/deepseek@0.0.26
-  - @llamaindex/fireworks@0.0.25
-  - @llamaindex/groq@0.0.81
-  - @llamaindex/together@0.0.25
-  - @llamaindex/vllm@0.0.51
-  - @llamaindex/xai@0.0.12
+  - @vectorstores/node-parser@2.0.15
+  - @vectorstores/assemblyai@0.1.14
+  - @vectorstores/clip@0.0.65
+  - @vectorstores/cohere@0.0.29
+  - @vectorstores/deepinfra@0.0.65
+  - @vectorstores/discord@0.1.14
+  - @vectorstores/google@0.3.14
+  - @vectorstores/huggingface@0.1.19
+  - @vectorstores/jinaai@0.0.25
+  - @vectorstores/mistral@0.1.15
+  - @vectorstores/mixedbread@0.0.29
+  - @vectorstores/notion@0.1.14
+  - @vectorstores/ollama@0.1.15
+  - @vectorstores/perplexity@0.0.22
+  - @vectorstores/portkey-ai@0.0.57
+  - @vectorstores/replicate@0.0.57
+  - @vectorstores/bm25-retriever@0.0.4
+  - @vectorstores/astra@0.0.29
+  - @vectorstores/azure@0.1.26
+  - @vectorstores/chroma@0.0.29
+  - @vectorstores/elastic-search@0.1.15
+  - @vectorstores/firestore@1.0.22
+  - @vectorstores/milvus@0.1.24
+  - @vectorstores/mongodb@0.0.30
+  - @vectorstores/pinecone@0.1.15
+  - @vectorstores/postgres@0.0.58
+  - @vectorstores/qdrant@0.1.25
+  - @vectorstores/supabase@0.1.15
+  - @vectorstores/upstash@0.0.29
+  - @vectorstores/weaviate@0.0.30
+  - @vectorstores/vercel@0.1.15
+  - @vectorstores/voyage-ai@1.0.21
+  - @vectorstores/readers@3.1.14
+  - @vectorstores/deepseek@0.0.26
+  - @vectorstores/fireworks@0.0.25
+  - @vectorstores/groq@0.0.81
+  - @vectorstores/together@0.0.25
+  - @vectorstores/vllm@0.0.51
+  - @vectorstores/xai@0.0.12
 
 ## 0.3.29
 
 ### Patch Changes
 
 - Updated dependencies [af3f866]
-  - @llamaindex/deepseek@0.0.25
+  - @vectorstores/deepseek@0.0.25
 
 ## 0.3.28
 
@@ -597,52 +597,52 @@
 - Updated dependencies [5a0ed1f]
 - Updated dependencies [5a0ed1f]
 - Updated dependencies [8eeac33]
-  - @llamaindex/cloud@4.0.19
-  - @llamaindex/core@0.6.14
+  - @vectorstores/cloud@4.0.19
+  - @vectorstores/core@0.6.14
   - llamaindex@0.11.14
-  - @llamaindex/node-parser@2.0.14
-  - @llamaindex/anthropic@0.3.16
-  - @llamaindex/assemblyai@0.1.13
-  - @llamaindex/clip@0.0.64
-  - @llamaindex/cohere@0.0.28
-  - @llamaindex/deepinfra@0.0.64
-  - @llamaindex/discord@0.1.13
-  - @llamaindex/google@0.3.13
-  - @llamaindex/huggingface@0.1.18
-  - @llamaindex/jinaai@0.0.24
-  - @llamaindex/mistral@0.1.14
-  - @llamaindex/mixedbread@0.0.28
-  - @llamaindex/notion@0.1.13
-  - @llamaindex/ollama@0.1.14
-  - @llamaindex/openai@0.4.8
-  - @llamaindex/perplexity@0.0.21
-  - @llamaindex/portkey-ai@0.0.56
-  - @llamaindex/replicate@0.0.56
-  - @llamaindex/bm25-retriever@0.0.3
-  - @llamaindex/astra@0.0.28
-  - @llamaindex/azure@0.1.25
-  - @llamaindex/chroma@0.0.28
-  - @llamaindex/elastic-search@0.1.14
-  - @llamaindex/firestore@1.0.21
-  - @llamaindex/milvus@0.1.23
-  - @llamaindex/mongodb@0.0.29
-  - @llamaindex/pinecone@0.1.14
-  - @llamaindex/postgres@0.0.57
-  - @llamaindex/qdrant@0.1.24
-  - @llamaindex/supabase@0.1.14
-  - @llamaindex/upstash@0.0.28
-  - @llamaindex/weaviate@0.0.29
-  - @llamaindex/vercel@0.1.14
-  - @llamaindex/voyage-ai@1.0.20
-  - @llamaindex/readers@3.1.13
-  - @llamaindex/tools@0.1.4
-  - @llamaindex/workflow@1.1.14
-  - @llamaindex/deepseek@0.0.24
-  - @llamaindex/fireworks@0.0.24
-  - @llamaindex/groq@0.0.80
-  - @llamaindex/together@0.0.24
-  - @llamaindex/vllm@0.0.50
-  - @llamaindex/xai@0.0.11
+  - @vectorstores/node-parser@2.0.14
+  - @vectorstores/anthropic@0.3.16
+  - @vectorstores/assemblyai@0.1.13
+  - @vectorstores/clip@0.0.64
+  - @vectorstores/cohere@0.0.28
+  - @vectorstores/deepinfra@0.0.64
+  - @vectorstores/discord@0.1.13
+  - @vectorstores/google@0.3.13
+  - @vectorstores/huggingface@0.1.18
+  - @vectorstores/jinaai@0.0.24
+  - @vectorstores/mistral@0.1.14
+  - @vectorstores/mixedbread@0.0.28
+  - @vectorstores/notion@0.1.13
+  - @vectorstores/ollama@0.1.14
+  - @vectorstores/openai@0.4.8
+  - @vectorstores/perplexity@0.0.21
+  - @vectorstores/portkey-ai@0.0.56
+  - @vectorstores/replicate@0.0.56
+  - @vectorstores/bm25-retriever@0.0.3
+  - @vectorstores/astra@0.0.28
+  - @vectorstores/azure@0.1.25
+  - @vectorstores/chroma@0.0.28
+  - @vectorstores/elastic-search@0.1.14
+  - @vectorstores/firestore@1.0.21
+  - @vectorstores/milvus@0.1.23
+  - @vectorstores/mongodb@0.0.29
+  - @vectorstores/pinecone@0.1.14
+  - @vectorstores/postgres@0.0.57
+  - @vectorstores/qdrant@0.1.24
+  - @vectorstores/supabase@0.1.14
+  - @vectorstores/upstash@0.0.28
+  - @vectorstores/weaviate@0.0.29
+  - @vectorstores/vercel@0.1.14
+  - @vectorstores/voyage-ai@1.0.20
+  - @vectorstores/readers@3.1.13
+  - @vectorstores/tools@0.1.4
+  - @vectorstores/workflow@1.1.14
+  - @vectorstores/deepseek@0.0.24
+  - @vectorstores/fireworks@0.0.24
+  - @vectorstores/groq@0.0.80
+  - @vectorstores/together@0.0.24
+  - @vectorstores/vllm@0.0.50
+  - @vectorstores/xai@0.0.11
 
 ## 0.3.27
 
@@ -650,8 +650,8 @@
 
 - Updated dependencies [229cdeb]
 - Updated dependencies [47a7555]
-  - @llamaindex/groq@0.0.79
-  - @llamaindex/cloud@4.0.18
+  - @vectorstores/groq@0.0.79
+  - @vectorstores/cloud@4.0.18
   - llamaindex@0.11.13
 
 ## 0.3.26
@@ -663,52 +663,52 @@
 - Updated dependencies [515a8b9]
 - Updated dependencies [3cd8a57]
 - Updated dependencies [f2dfd30]
-  - @llamaindex/core@0.6.13
+  - @vectorstores/core@0.6.13
   - llamaindex@0.11.12
-  - @llamaindex/tools@0.1.3
-  - @llamaindex/bm25-retriever@0.0.2
-  - @llamaindex/cloud@4.0.17
-  - @llamaindex/node-parser@2.0.13
-  - @llamaindex/anthropic@0.3.15
-  - @llamaindex/assemblyai@0.1.12
-  - @llamaindex/clip@0.0.63
-  - @llamaindex/cohere@0.0.27
-  - @llamaindex/deepinfra@0.0.63
-  - @llamaindex/discord@0.1.12
-  - @llamaindex/google@0.3.12
-  - @llamaindex/huggingface@0.1.17
-  - @llamaindex/jinaai@0.0.23
-  - @llamaindex/mistral@0.1.13
-  - @llamaindex/mixedbread@0.0.27
-  - @llamaindex/notion@0.1.12
-  - @llamaindex/ollama@0.1.13
-  - @llamaindex/openai@0.4.7
-  - @llamaindex/perplexity@0.0.20
-  - @llamaindex/portkey-ai@0.0.55
-  - @llamaindex/replicate@0.0.55
-  - @llamaindex/astra@0.0.27
-  - @llamaindex/azure@0.1.24
-  - @llamaindex/chroma@0.0.27
-  - @llamaindex/elastic-search@0.1.13
-  - @llamaindex/firestore@1.0.20
-  - @llamaindex/milvus@0.1.22
-  - @llamaindex/mongodb@0.0.28
-  - @llamaindex/pinecone@0.1.13
-  - @llamaindex/postgres@0.0.56
-  - @llamaindex/qdrant@0.1.23
-  - @llamaindex/supabase@0.1.13
-  - @llamaindex/upstash@0.0.27
-  - @llamaindex/weaviate@0.0.28
-  - @llamaindex/vercel@0.1.13
-  - @llamaindex/voyage-ai@1.0.19
-  - @llamaindex/readers@3.1.12
-  - @llamaindex/workflow@1.1.13
-  - @llamaindex/deepseek@0.0.23
-  - @llamaindex/fireworks@0.0.23
-  - @llamaindex/groq@0.0.78
-  - @llamaindex/together@0.0.23
-  - @llamaindex/vllm@0.0.49
-  - @llamaindex/xai@0.0.10
+  - @vectorstores/tools@0.1.3
+  - @vectorstores/bm25-retriever@0.0.2
+  - @vectorstores/cloud@4.0.17
+  - @vectorstores/node-parser@2.0.13
+  - @vectorstores/anthropic@0.3.15
+  - @vectorstores/assemblyai@0.1.12
+  - @vectorstores/clip@0.0.63
+  - @vectorstores/cohere@0.0.27
+  - @vectorstores/deepinfra@0.0.63
+  - @vectorstores/discord@0.1.12
+  - @vectorstores/google@0.3.12
+  - @vectorstores/huggingface@0.1.17
+  - @vectorstores/jinaai@0.0.23
+  - @vectorstores/mistral@0.1.13
+  - @vectorstores/mixedbread@0.0.27
+  - @vectorstores/notion@0.1.12
+  - @vectorstores/ollama@0.1.13
+  - @vectorstores/openai@0.4.7
+  - @vectorstores/perplexity@0.0.20
+  - @vectorstores/portkey-ai@0.0.55
+  - @vectorstores/replicate@0.0.55
+  - @vectorstores/astra@0.0.27
+  - @vectorstores/azure@0.1.24
+  - @vectorstores/chroma@0.0.27
+  - @vectorstores/elastic-search@0.1.13
+  - @vectorstores/firestore@1.0.20
+  - @vectorstores/milvus@0.1.22
+  - @vectorstores/mongodb@0.0.28
+  - @vectorstores/pinecone@0.1.13
+  - @vectorstores/postgres@0.0.56
+  - @vectorstores/qdrant@0.1.23
+  - @vectorstores/supabase@0.1.13
+  - @vectorstores/upstash@0.0.27
+  - @vectorstores/weaviate@0.0.28
+  - @vectorstores/vercel@0.1.13
+  - @vectorstores/voyage-ai@1.0.19
+  - @vectorstores/readers@3.1.12
+  - @vectorstores/workflow@1.1.13
+  - @vectorstores/deepseek@0.0.23
+  - @vectorstores/fireworks@0.0.23
+  - @vectorstores/groq@0.0.78
+  - @vectorstores/together@0.0.23
+  - @vectorstores/vllm@0.0.49
+  - @vectorstores/xai@0.0.10
 
 ## 0.3.25
 
@@ -717,50 +717,50 @@
 - Updated dependencies [7039e1a]
 - Updated dependencies [7039e1a]
   - llamaindex@0.11.11
-  - @llamaindex/core@0.6.12
-  - @llamaindex/google@0.3.11
-  - @llamaindex/cloud@4.0.16
-  - @llamaindex/node-parser@2.0.12
-  - @llamaindex/anthropic@0.3.14
-  - @llamaindex/assemblyai@0.1.11
-  - @llamaindex/clip@0.0.62
-  - @llamaindex/cohere@0.0.26
-  - @llamaindex/deepinfra@0.0.62
-  - @llamaindex/discord@0.1.11
-  - @llamaindex/huggingface@0.1.16
-  - @llamaindex/jinaai@0.0.22
-  - @llamaindex/mistral@0.1.12
-  - @llamaindex/mixedbread@0.0.26
-  - @llamaindex/notion@0.1.11
-  - @llamaindex/ollama@0.1.12
-  - @llamaindex/openai@0.4.6
-  - @llamaindex/perplexity@0.0.19
-  - @llamaindex/portkey-ai@0.0.54
-  - @llamaindex/replicate@0.0.54
-  - @llamaindex/astra@0.0.26
-  - @llamaindex/azure@0.1.23
-  - @llamaindex/chroma@0.0.26
-  - @llamaindex/elastic-search@0.1.12
-  - @llamaindex/firestore@1.0.19
-  - @llamaindex/milvus@0.1.21
-  - @llamaindex/mongodb@0.0.27
-  - @llamaindex/pinecone@0.1.12
-  - @llamaindex/postgres@0.0.55
-  - @llamaindex/qdrant@0.1.22
-  - @llamaindex/supabase@0.1.12
-  - @llamaindex/upstash@0.0.26
-  - @llamaindex/weaviate@0.0.27
-  - @llamaindex/vercel@0.1.12
-  - @llamaindex/voyage-ai@1.0.18
-  - @llamaindex/readers@3.1.11
-  - @llamaindex/tools@0.1.1
-  - @llamaindex/workflow@1.1.12
-  - @llamaindex/deepseek@0.0.22
-  - @llamaindex/fireworks@0.0.22
-  - @llamaindex/groq@0.0.77
-  - @llamaindex/together@0.0.22
-  - @llamaindex/vllm@0.0.48
-  - @llamaindex/xai@0.0.9
+  - @vectorstores/core@0.6.12
+  - @vectorstores/google@0.3.11
+  - @vectorstores/cloud@4.0.16
+  - @vectorstores/node-parser@2.0.12
+  - @vectorstores/anthropic@0.3.14
+  - @vectorstores/assemblyai@0.1.11
+  - @vectorstores/clip@0.0.62
+  - @vectorstores/cohere@0.0.26
+  - @vectorstores/deepinfra@0.0.62
+  - @vectorstores/discord@0.1.11
+  - @vectorstores/huggingface@0.1.16
+  - @vectorstores/jinaai@0.0.22
+  - @vectorstores/mistral@0.1.12
+  - @vectorstores/mixedbread@0.0.26
+  - @vectorstores/notion@0.1.11
+  - @vectorstores/ollama@0.1.12
+  - @vectorstores/openai@0.4.6
+  - @vectorstores/perplexity@0.0.19
+  - @vectorstores/portkey-ai@0.0.54
+  - @vectorstores/replicate@0.0.54
+  - @vectorstores/astra@0.0.26
+  - @vectorstores/azure@0.1.23
+  - @vectorstores/chroma@0.0.26
+  - @vectorstores/elastic-search@0.1.12
+  - @vectorstores/firestore@1.0.19
+  - @vectorstores/milvus@0.1.21
+  - @vectorstores/mongodb@0.0.27
+  - @vectorstores/pinecone@0.1.12
+  - @vectorstores/postgres@0.0.55
+  - @vectorstores/qdrant@0.1.22
+  - @vectorstores/supabase@0.1.12
+  - @vectorstores/upstash@0.0.26
+  - @vectorstores/weaviate@0.0.27
+  - @vectorstores/vercel@0.1.12
+  - @vectorstores/voyage-ai@1.0.18
+  - @vectorstores/readers@3.1.11
+  - @vectorstores/tools@0.1.1
+  - @vectorstores/workflow@1.1.12
+  - @vectorstores/deepseek@0.0.22
+  - @vectorstores/fireworks@0.0.22
+  - @vectorstores/groq@0.0.77
+  - @vectorstores/together@0.0.22
+  - @vectorstores/vllm@0.0.48
+  - @vectorstores/xai@0.0.9
 
 ## 0.3.24
 
@@ -768,8 +768,8 @@
 
 - Updated dependencies [096bf2b]
 - Updated dependencies [c5846bd]
-  - @llamaindex/tools@0.1.0
-  - @llamaindex/readers@3.1.10
+  - @vectorstores/tools@0.1.0
+  - @vectorstores/readers@3.1.10
 
 ## 0.3.23
 
@@ -779,51 +779,51 @@
 - Updated dependencies [62699b7]
 - Updated dependencies [c5b2691]
 - Updated dependencies [d8ac8d3]
-  - @llamaindex/core@0.6.11
-  - @llamaindex/google@0.3.10
-  - @llamaindex/openai@0.4.5
-  - @llamaindex/cloud@4.0.15
+  - @vectorstores/core@0.6.11
+  - @vectorstores/google@0.3.10
+  - @vectorstores/openai@0.4.5
+  - @vectorstores/cloud@4.0.15
   - llamaindex@0.11.9
-  - @llamaindex/node-parser@2.0.11
-  - @llamaindex/anthropic@0.3.13
-  - @llamaindex/assemblyai@0.1.10
-  - @llamaindex/clip@0.0.61
-  - @llamaindex/cohere@0.0.25
-  - @llamaindex/deepinfra@0.0.61
-  - @llamaindex/discord@0.1.10
-  - @llamaindex/huggingface@0.1.15
-  - @llamaindex/jinaai@0.0.21
-  - @llamaindex/mistral@0.1.11
-  - @llamaindex/mixedbread@0.0.25
-  - @llamaindex/notion@0.1.10
-  - @llamaindex/ollama@0.1.11
-  - @llamaindex/perplexity@0.0.18
-  - @llamaindex/portkey-ai@0.0.53
-  - @llamaindex/replicate@0.0.53
-  - @llamaindex/astra@0.0.25
-  - @llamaindex/azure@0.1.22
-  - @llamaindex/chroma@0.0.25
-  - @llamaindex/elastic-search@0.1.11
-  - @llamaindex/firestore@1.0.18
-  - @llamaindex/milvus@0.1.20
-  - @llamaindex/mongodb@0.0.26
-  - @llamaindex/pinecone@0.1.11
-  - @llamaindex/postgres@0.0.54
-  - @llamaindex/qdrant@0.1.21
-  - @llamaindex/supabase@0.1.10
-  - @llamaindex/upstash@0.0.25
-  - @llamaindex/weaviate@0.0.26
-  - @llamaindex/vercel@0.1.11
-  - @llamaindex/voyage-ai@1.0.17
-  - @llamaindex/readers@3.1.9
-  - @llamaindex/tools@0.0.17
-  - @llamaindex/workflow@1.1.10
-  - @llamaindex/deepseek@0.0.21
-  - @llamaindex/fireworks@0.0.21
-  - @llamaindex/groq@0.0.76
-  - @llamaindex/together@0.0.21
-  - @llamaindex/vllm@0.0.47
-  - @llamaindex/xai@0.0.8
+  - @vectorstores/node-parser@2.0.11
+  - @vectorstores/anthropic@0.3.13
+  - @vectorstores/assemblyai@0.1.10
+  - @vectorstores/clip@0.0.61
+  - @vectorstores/cohere@0.0.25
+  - @vectorstores/deepinfra@0.0.61
+  - @vectorstores/discord@0.1.10
+  - @vectorstores/huggingface@0.1.15
+  - @vectorstores/jinaai@0.0.21
+  - @vectorstores/mistral@0.1.11
+  - @vectorstores/mixedbread@0.0.25
+  - @vectorstores/notion@0.1.10
+  - @vectorstores/ollama@0.1.11
+  - @vectorstores/perplexity@0.0.18
+  - @vectorstores/portkey-ai@0.0.53
+  - @vectorstores/replicate@0.0.53
+  - @vectorstores/astra@0.0.25
+  - @vectorstores/azure@0.1.22
+  - @vectorstores/chroma@0.0.25
+  - @vectorstores/elastic-search@0.1.11
+  - @vectorstores/firestore@1.0.18
+  - @vectorstores/milvus@0.1.20
+  - @vectorstores/mongodb@0.0.26
+  - @vectorstores/pinecone@0.1.11
+  - @vectorstores/postgres@0.0.54
+  - @vectorstores/qdrant@0.1.21
+  - @vectorstores/supabase@0.1.10
+  - @vectorstores/upstash@0.0.25
+  - @vectorstores/weaviate@0.0.26
+  - @vectorstores/vercel@0.1.11
+  - @vectorstores/voyage-ai@1.0.17
+  - @vectorstores/readers@3.1.9
+  - @vectorstores/tools@0.0.17
+  - @vectorstores/workflow@1.1.10
+  - @vectorstores/deepseek@0.0.21
+  - @vectorstores/fireworks@0.0.21
+  - @vectorstores/groq@0.0.76
+  - @vectorstores/together@0.0.21
+  - @vectorstores/vllm@0.0.47
+  - @vectorstores/xai@0.0.8
 
 ## 0.3.22
 
@@ -831,51 +831,51 @@
 
 - Updated dependencies [8a51c16]
 - Updated dependencies [1b5af14]
-  - @llamaindex/workflow@1.1.9
-  - @llamaindex/core@0.6.10
+  - @vectorstores/workflow@1.1.9
+  - @vectorstores/core@0.6.10
   - llamaindex@0.11.8
-  - @llamaindex/cloud@4.0.14
-  - @llamaindex/node-parser@2.0.10
-  - @llamaindex/anthropic@0.3.12
-  - @llamaindex/assemblyai@0.1.9
-  - @llamaindex/clip@0.0.60
-  - @llamaindex/cohere@0.0.24
-  - @llamaindex/deepinfra@0.0.60
-  - @llamaindex/discord@0.1.9
-  - @llamaindex/google@0.3.9
-  - @llamaindex/huggingface@0.1.14
-  - @llamaindex/jinaai@0.0.20
-  - @llamaindex/mistral@0.1.10
-  - @llamaindex/mixedbread@0.0.24
-  - @llamaindex/notion@0.1.9
-  - @llamaindex/ollama@0.1.10
-  - @llamaindex/openai@0.4.4
-  - @llamaindex/perplexity@0.0.17
-  - @llamaindex/portkey-ai@0.0.52
-  - @llamaindex/replicate@0.0.52
-  - @llamaindex/astra@0.0.24
-  - @llamaindex/azure@0.1.21
-  - @llamaindex/chroma@0.0.24
-  - @llamaindex/elastic-search@0.1.10
-  - @llamaindex/firestore@1.0.17
-  - @llamaindex/milvus@0.1.19
-  - @llamaindex/mongodb@0.0.25
-  - @llamaindex/pinecone@0.1.10
-  - @llamaindex/postgres@0.0.53
-  - @llamaindex/qdrant@0.1.20
-  - @llamaindex/supabase@0.1.9
-  - @llamaindex/upstash@0.0.24
-  - @llamaindex/weaviate@0.0.25
-  - @llamaindex/vercel@0.1.10
-  - @llamaindex/voyage-ai@1.0.16
-  - @llamaindex/readers@3.1.8
-  - @llamaindex/tools@0.0.16
-  - @llamaindex/deepseek@0.0.20
-  - @llamaindex/fireworks@0.0.20
-  - @llamaindex/groq@0.0.75
-  - @llamaindex/together@0.0.20
-  - @llamaindex/vllm@0.0.46
-  - @llamaindex/xai@0.0.7
+  - @vectorstores/cloud@4.0.14
+  - @vectorstores/node-parser@2.0.10
+  - @vectorstores/anthropic@0.3.12
+  - @vectorstores/assemblyai@0.1.9
+  - @vectorstores/clip@0.0.60
+  - @vectorstores/cohere@0.0.24
+  - @vectorstores/deepinfra@0.0.60
+  - @vectorstores/discord@0.1.9
+  - @vectorstores/google@0.3.9
+  - @vectorstores/huggingface@0.1.14
+  - @vectorstores/jinaai@0.0.20
+  - @vectorstores/mistral@0.1.10
+  - @vectorstores/mixedbread@0.0.24
+  - @vectorstores/notion@0.1.9
+  - @vectorstores/ollama@0.1.10
+  - @vectorstores/openai@0.4.4
+  - @vectorstores/perplexity@0.0.17
+  - @vectorstores/portkey-ai@0.0.52
+  - @vectorstores/replicate@0.0.52
+  - @vectorstores/astra@0.0.24
+  - @vectorstores/azure@0.1.21
+  - @vectorstores/chroma@0.0.24
+  - @vectorstores/elastic-search@0.1.10
+  - @vectorstores/firestore@1.0.17
+  - @vectorstores/milvus@0.1.19
+  - @vectorstores/mongodb@0.0.25
+  - @vectorstores/pinecone@0.1.10
+  - @vectorstores/postgres@0.0.53
+  - @vectorstores/qdrant@0.1.20
+  - @vectorstores/supabase@0.1.9
+  - @vectorstores/upstash@0.0.24
+  - @vectorstores/weaviate@0.0.25
+  - @vectorstores/vercel@0.1.10
+  - @vectorstores/voyage-ai@1.0.16
+  - @vectorstores/readers@3.1.8
+  - @vectorstores/tools@0.0.16
+  - @vectorstores/deepseek@0.0.20
+  - @vectorstores/fireworks@0.0.20
+  - @vectorstores/groq@0.0.75
+  - @vectorstores/together@0.0.20
+  - @vectorstores/vllm@0.0.46
+  - @vectorstores/xai@0.0.7
 
 ## 0.3.21
 
@@ -883,16 +883,16 @@
 
 - Updated dependencies [dbd857f]
 - Updated dependencies [3c857f4]
-  - @llamaindex/workflow@1.1.8
+  - @vectorstores/workflow@1.1.8
   - llamaindex@0.11.7
-  - @llamaindex/tools@0.0.15
+  - @vectorstores/tools@0.0.15
 
 ## 0.3.20
 
 ### Patch Changes
 
 - Updated dependencies [e7484ef]
-  - @llamaindex/weaviate@0.0.24
+  - @vectorstores/weaviate@0.0.24
 
 ## 0.3.19
 
@@ -901,153 +901,153 @@
 - Updated dependencies [766054b]
 - Updated dependencies [5346623]
 - Updated dependencies [71598f8]
-  - @llamaindex/workflow@1.1.6
-  - @llamaindex/google@0.3.6
-  - @llamaindex/core@0.6.9
+  - @vectorstores/workflow@1.1.6
+  - @vectorstores/google@0.3.6
+  - @vectorstores/core@0.6.9
   - llamaindex@0.11.5
-  - @llamaindex/cloud@4.0.13
-  - @llamaindex/node-parser@2.0.9
-  - @llamaindex/anthropic@0.3.11
-  - @llamaindex/assemblyai@0.1.8
-  - @llamaindex/clip@0.0.59
-  - @llamaindex/cohere@0.0.23
-  - @llamaindex/deepinfra@0.0.59
-  - @llamaindex/discord@0.1.8
-  - @llamaindex/huggingface@0.1.13
-  - @llamaindex/jinaai@0.0.19
-  - @llamaindex/mistral@0.1.9
-  - @llamaindex/mixedbread@0.0.23
-  - @llamaindex/notion@0.1.8
-  - @llamaindex/ollama@0.1.9
-  - @llamaindex/openai@0.4.3
-  - @llamaindex/perplexity@0.0.16
-  - @llamaindex/portkey-ai@0.0.51
-  - @llamaindex/replicate@0.0.51
-  - @llamaindex/astra@0.0.23
-  - @llamaindex/azure@0.1.20
-  - @llamaindex/chroma@0.0.23
-  - @llamaindex/elastic-search@0.1.9
-  - @llamaindex/firestore@1.0.16
-  - @llamaindex/milvus@0.1.18
-  - @llamaindex/mongodb@0.0.24
-  - @llamaindex/pinecone@0.1.9
-  - @llamaindex/postgres@0.0.52
-  - @llamaindex/qdrant@0.1.19
-  - @llamaindex/supabase@0.1.8
-  - @llamaindex/upstash@0.0.23
-  - @llamaindex/weaviate@0.0.23
-  - @llamaindex/vercel@0.1.9
-  - @llamaindex/voyage-ai@1.0.15
-  - @llamaindex/readers@3.1.7
-  - @llamaindex/tools@0.0.14
-  - @llamaindex/deepseek@0.0.19
-  - @llamaindex/fireworks@0.0.19
-  - @llamaindex/groq@0.0.74
-  - @llamaindex/together@0.0.19
-  - @llamaindex/vllm@0.0.45
-  - @llamaindex/xai@0.0.6
+  - @vectorstores/cloud@4.0.13
+  - @vectorstores/node-parser@2.0.9
+  - @vectorstores/anthropic@0.3.11
+  - @vectorstores/assemblyai@0.1.8
+  - @vectorstores/clip@0.0.59
+  - @vectorstores/cohere@0.0.23
+  - @vectorstores/deepinfra@0.0.59
+  - @vectorstores/discord@0.1.8
+  - @vectorstores/huggingface@0.1.13
+  - @vectorstores/jinaai@0.0.19
+  - @vectorstores/mistral@0.1.9
+  - @vectorstores/mixedbread@0.0.23
+  - @vectorstores/notion@0.1.8
+  - @vectorstores/ollama@0.1.9
+  - @vectorstores/openai@0.4.3
+  - @vectorstores/perplexity@0.0.16
+  - @vectorstores/portkey-ai@0.0.51
+  - @vectorstores/replicate@0.0.51
+  - @vectorstores/astra@0.0.23
+  - @vectorstores/azure@0.1.20
+  - @vectorstores/chroma@0.0.23
+  - @vectorstores/elastic-search@0.1.9
+  - @vectorstores/firestore@1.0.16
+  - @vectorstores/milvus@0.1.18
+  - @vectorstores/mongodb@0.0.24
+  - @vectorstores/pinecone@0.1.9
+  - @vectorstores/postgres@0.0.52
+  - @vectorstores/qdrant@0.1.19
+  - @vectorstores/supabase@0.1.8
+  - @vectorstores/upstash@0.0.23
+  - @vectorstores/weaviate@0.0.23
+  - @vectorstores/vercel@0.1.9
+  - @vectorstores/voyage-ai@1.0.15
+  - @vectorstores/readers@3.1.7
+  - @vectorstores/tools@0.0.14
+  - @vectorstores/deepseek@0.0.19
+  - @vectorstores/fireworks@0.0.19
+  - @vectorstores/groq@0.0.74
+  - @vectorstores/together@0.0.19
+  - @vectorstores/vllm@0.0.45
+  - @vectorstores/xai@0.0.6
 
 ## 0.3.18
 
 ### Patch Changes
 
 - Updated dependencies [c927457]
-  - @llamaindex/anthropic@0.3.10
-  - @llamaindex/openai@0.4.2
-  - @llamaindex/core@0.6.8
-  - @llamaindex/clip@0.0.58
-  - @llamaindex/deepinfra@0.0.58
-  - @llamaindex/deepseek@0.0.18
-  - @llamaindex/fireworks@0.0.18
-  - @llamaindex/groq@0.0.73
-  - @llamaindex/huggingface@0.1.12
-  - @llamaindex/jinaai@0.0.18
-  - @llamaindex/perplexity@0.0.15
-  - @llamaindex/azure@0.1.19
-  - @llamaindex/elastic-search@0.1.8
-  - @llamaindex/milvus@0.1.17
-  - @llamaindex/qdrant@0.1.18
-  - @llamaindex/supabase@0.1.7
-  - @llamaindex/together@0.0.18
-  - @llamaindex/vllm@0.0.44
-  - @llamaindex/xai@0.0.5
-  - @llamaindex/cloud@4.0.12
+  - @vectorstores/anthropic@0.3.10
+  - @vectorstores/openai@0.4.2
+  - @vectorstores/core@0.6.8
+  - @vectorstores/clip@0.0.58
+  - @vectorstores/deepinfra@0.0.58
+  - @vectorstores/deepseek@0.0.18
+  - @vectorstores/fireworks@0.0.18
+  - @vectorstores/groq@0.0.73
+  - @vectorstores/huggingface@0.1.12
+  - @vectorstores/jinaai@0.0.18
+  - @vectorstores/perplexity@0.0.15
+  - @vectorstores/azure@0.1.19
+  - @vectorstores/elastic-search@0.1.8
+  - @vectorstores/milvus@0.1.17
+  - @vectorstores/qdrant@0.1.18
+  - @vectorstores/supabase@0.1.7
+  - @vectorstores/together@0.0.18
+  - @vectorstores/vllm@0.0.44
+  - @vectorstores/xai@0.0.5
+  - @vectorstores/cloud@4.0.12
   - llamaindex@0.11.4
-  - @llamaindex/node-parser@2.0.8
-  - @llamaindex/assemblyai@0.1.7
-  - @llamaindex/cohere@0.0.22
-  - @llamaindex/discord@0.1.7
-  - @llamaindex/google@0.3.5
-  - @llamaindex/mistral@0.1.8
-  - @llamaindex/mixedbread@0.0.22
-  - @llamaindex/notion@0.1.7
-  - @llamaindex/ollama@0.1.8
-  - @llamaindex/portkey-ai@0.0.50
-  - @llamaindex/replicate@0.0.50
-  - @llamaindex/astra@0.0.22
-  - @llamaindex/chroma@0.0.22
-  - @llamaindex/firestore@1.0.15
-  - @llamaindex/mongodb@0.0.23
-  - @llamaindex/pinecone@0.1.8
-  - @llamaindex/postgres@0.0.51
-  - @llamaindex/upstash@0.0.22
-  - @llamaindex/weaviate@0.0.22
-  - @llamaindex/vercel@0.1.8
-  - @llamaindex/voyage-ai@1.0.14
-  - @llamaindex/readers@3.1.6
-  - @llamaindex/tools@0.0.13
-  - @llamaindex/workflow@1.1.5
+  - @vectorstores/node-parser@2.0.8
+  - @vectorstores/assemblyai@0.1.7
+  - @vectorstores/cohere@0.0.22
+  - @vectorstores/discord@0.1.7
+  - @vectorstores/google@0.3.5
+  - @vectorstores/mistral@0.1.8
+  - @vectorstores/mixedbread@0.0.22
+  - @vectorstores/notion@0.1.7
+  - @vectorstores/ollama@0.1.8
+  - @vectorstores/portkey-ai@0.0.50
+  - @vectorstores/replicate@0.0.50
+  - @vectorstores/astra@0.0.22
+  - @vectorstores/chroma@0.0.22
+  - @vectorstores/firestore@1.0.15
+  - @vectorstores/mongodb@0.0.23
+  - @vectorstores/pinecone@0.1.8
+  - @vectorstores/postgres@0.0.51
+  - @vectorstores/upstash@0.0.22
+  - @vectorstores/weaviate@0.0.22
+  - @vectorstores/vercel@0.1.8
+  - @vectorstores/voyage-ai@1.0.14
+  - @vectorstores/readers@3.1.6
+  - @vectorstores/tools@0.0.13
+  - @vectorstores/workflow@1.1.5
 
 ## 0.3.17
 
 ### Patch Changes
 
 - Updated dependencies [59601dd]
-  - @llamaindex/openai@0.4.1
-  - @llamaindex/core@0.6.7
-  - @llamaindex/clip@0.0.57
-  - @llamaindex/deepinfra@0.0.57
-  - @llamaindex/deepseek@0.0.17
-  - @llamaindex/fireworks@0.0.17
-  - @llamaindex/groq@0.0.72
-  - @llamaindex/huggingface@0.1.11
-  - @llamaindex/jinaai@0.0.17
-  - @llamaindex/perplexity@0.0.14
-  - @llamaindex/azure@0.1.17
-  - @llamaindex/elastic-search@0.1.7
-  - @llamaindex/milvus@0.1.16
-  - @llamaindex/qdrant@0.1.16
-  - @llamaindex/supabase@0.1.6
-  - @llamaindex/together@0.0.17
-  - @llamaindex/vllm@0.0.43
-  - @llamaindex/xai@0.0.4
-  - @llamaindex/cloud@4.0.10
+  - @vectorstores/openai@0.4.1
+  - @vectorstores/core@0.6.7
+  - @vectorstores/clip@0.0.57
+  - @vectorstores/deepinfra@0.0.57
+  - @vectorstores/deepseek@0.0.17
+  - @vectorstores/fireworks@0.0.17
+  - @vectorstores/groq@0.0.72
+  - @vectorstores/huggingface@0.1.11
+  - @vectorstores/jinaai@0.0.17
+  - @vectorstores/perplexity@0.0.14
+  - @vectorstores/azure@0.1.17
+  - @vectorstores/elastic-search@0.1.7
+  - @vectorstores/milvus@0.1.16
+  - @vectorstores/qdrant@0.1.16
+  - @vectorstores/supabase@0.1.6
+  - @vectorstores/together@0.0.17
+  - @vectorstores/vllm@0.0.43
+  - @vectorstores/xai@0.0.4
+  - @vectorstores/cloud@4.0.10
   - llamaindex@0.11.2
-  - @llamaindex/node-parser@2.0.7
-  - @llamaindex/anthropic@0.3.8
-  - @llamaindex/assemblyai@0.1.6
-  - @llamaindex/cohere@0.0.21
-  - @llamaindex/discord@0.1.6
-  - @llamaindex/google@0.3.3
-  - @llamaindex/mistral@0.1.7
-  - @llamaindex/mixedbread@0.0.21
-  - @llamaindex/notion@0.1.6
-  - @llamaindex/ollama@0.1.7
-  - @llamaindex/portkey-ai@0.0.49
-  - @llamaindex/replicate@0.0.49
-  - @llamaindex/astra@0.0.21
-  - @llamaindex/chroma@0.0.21
-  - @llamaindex/firestore@1.0.14
-  - @llamaindex/mongodb@0.0.22
-  - @llamaindex/pinecone@0.1.7
-  - @llamaindex/postgres@0.0.50
-  - @llamaindex/upstash@0.0.21
-  - @llamaindex/weaviate@0.0.21
-  - @llamaindex/vercel@0.1.7
-  - @llamaindex/voyage-ai@1.0.13
-  - @llamaindex/readers@3.1.5
-  - @llamaindex/tools@0.0.12
-  - @llamaindex/workflow@1.1.4
+  - @vectorstores/node-parser@2.0.7
+  - @vectorstores/anthropic@0.3.8
+  - @vectorstores/assemblyai@0.1.6
+  - @vectorstores/cohere@0.0.21
+  - @vectorstores/discord@0.1.6
+  - @vectorstores/google@0.3.3
+  - @vectorstores/mistral@0.1.7
+  - @vectorstores/mixedbread@0.0.21
+  - @vectorstores/notion@0.1.6
+  - @vectorstores/ollama@0.1.7
+  - @vectorstores/portkey-ai@0.0.49
+  - @vectorstores/replicate@0.0.49
+  - @vectorstores/astra@0.0.21
+  - @vectorstores/chroma@0.0.21
+  - @vectorstores/firestore@1.0.14
+  - @vectorstores/mongodb@0.0.22
+  - @vectorstores/pinecone@0.1.7
+  - @vectorstores/postgres@0.0.50
+  - @vectorstores/upstash@0.0.21
+  - @vectorstores/weaviate@0.0.21
+  - @vectorstores/vercel@0.1.7
+  - @vectorstores/voyage-ai@1.0.13
+  - @vectorstores/readers@3.1.5
+  - @vectorstores/tools@0.0.12
+  - @vectorstores/workflow@1.1.4
 
 ## 0.3.16
 
@@ -1058,51 +1058,51 @@
 - Updated dependencies [c73c659]
 - Updated dependencies [361a685]
 - Updated dependencies [3e66ddc]
-  - @llamaindex/workflow@1.1.3
-  - @llamaindex/core@0.6.6
+  - @vectorstores/workflow@1.1.3
+  - @vectorstores/core@0.6.6
   - llamaindex@0.11.0
-  - @llamaindex/qdrant@0.1.15
-  - @llamaindex/azure@0.1.16
-  - @llamaindex/openai@0.4.0
-  - @llamaindex/cloud@4.0.8
-  - @llamaindex/node-parser@2.0.6
-  - @llamaindex/anthropic@0.3.7
-  - @llamaindex/assemblyai@0.1.5
-  - @llamaindex/clip@0.0.56
-  - @llamaindex/cohere@0.0.20
-  - @llamaindex/deepinfra@0.0.56
-  - @llamaindex/discord@0.1.5
-  - @llamaindex/google@0.3.2
-  - @llamaindex/huggingface@0.1.10
-  - @llamaindex/jinaai@0.0.16
-  - @llamaindex/mistral@0.1.6
-  - @llamaindex/mixedbread@0.0.20
-  - @llamaindex/notion@0.1.5
-  - @llamaindex/ollama@0.1.6
-  - @llamaindex/perplexity@0.0.13
-  - @llamaindex/portkey-ai@0.0.48
-  - @llamaindex/replicate@0.0.48
-  - @llamaindex/astra@0.0.20
-  - @llamaindex/chroma@0.0.20
-  - @llamaindex/elastic-search@0.1.6
-  - @llamaindex/firestore@1.0.13
-  - @llamaindex/milvus@0.1.15
-  - @llamaindex/mongodb@0.0.21
-  - @llamaindex/pinecone@0.1.6
-  - @llamaindex/postgres@0.0.49
-  - @llamaindex/supabase@0.1.5
-  - @llamaindex/upstash@0.0.20
-  - @llamaindex/weaviate@0.0.20
-  - @llamaindex/vercel@0.1.6
-  - @llamaindex/voyage-ai@1.0.12
-  - @llamaindex/readers@3.1.4
-  - @llamaindex/tools@0.0.11
-  - @llamaindex/deepseek@0.0.16
-  - @llamaindex/fireworks@0.0.16
-  - @llamaindex/groq@0.0.71
-  - @llamaindex/together@0.0.16
-  - @llamaindex/vllm@0.0.42
-  - @llamaindex/xai@0.0.3
+  - @vectorstores/qdrant@0.1.15
+  - @vectorstores/azure@0.1.16
+  - @vectorstores/openai@0.4.0
+  - @vectorstores/cloud@4.0.8
+  - @vectorstores/node-parser@2.0.6
+  - @vectorstores/anthropic@0.3.7
+  - @vectorstores/assemblyai@0.1.5
+  - @vectorstores/clip@0.0.56
+  - @vectorstores/cohere@0.0.20
+  - @vectorstores/deepinfra@0.0.56
+  - @vectorstores/discord@0.1.5
+  - @vectorstores/google@0.3.2
+  - @vectorstores/huggingface@0.1.10
+  - @vectorstores/jinaai@0.0.16
+  - @vectorstores/mistral@0.1.6
+  - @vectorstores/mixedbread@0.0.20
+  - @vectorstores/notion@0.1.5
+  - @vectorstores/ollama@0.1.6
+  - @vectorstores/perplexity@0.0.13
+  - @vectorstores/portkey-ai@0.0.48
+  - @vectorstores/replicate@0.0.48
+  - @vectorstores/astra@0.0.20
+  - @vectorstores/chroma@0.0.20
+  - @vectorstores/elastic-search@0.1.6
+  - @vectorstores/firestore@1.0.13
+  - @vectorstores/milvus@0.1.15
+  - @vectorstores/mongodb@0.0.21
+  - @vectorstores/pinecone@0.1.6
+  - @vectorstores/postgres@0.0.49
+  - @vectorstores/supabase@0.1.5
+  - @vectorstores/upstash@0.0.20
+  - @vectorstores/weaviate@0.0.20
+  - @vectorstores/vercel@0.1.6
+  - @vectorstores/voyage-ai@1.0.12
+  - @vectorstores/readers@3.1.4
+  - @vectorstores/tools@0.0.11
+  - @vectorstores/deepseek@0.0.16
+  - @vectorstores/fireworks@0.0.16
+  - @vectorstores/groq@0.0.71
+  - @vectorstores/together@0.0.16
+  - @vectorstores/vllm@0.0.42
+  - @vectorstores/xai@0.0.3
 
 ## 0.3.15
 
@@ -1115,51 +1115,51 @@
 - Updated dependencies [168d11f]
 - Updated dependencies [d671ed6]
 - Updated dependencies [40f5f41]
-  - @llamaindex/xai@0.0.2
-  - @llamaindex/fireworks@0.0.15
-  - @llamaindex/elastic-search@0.1.5
-  - @llamaindex/firestore@1.0.12
-  - @llamaindex/pinecone@0.1.5
-  - @llamaindex/postgres@0.0.48
-  - @llamaindex/supabase@0.1.4
-  - @llamaindex/weaviate@0.0.19
-  - @llamaindex/mongodb@0.0.20
-  - @llamaindex/upstash@0.0.19
-  - @llamaindex/chroma@0.0.19
-  - @llamaindex/milvus@0.1.14
-  - @llamaindex/qdrant@0.1.14
-  - @llamaindex/astra@0.0.19
-  - @llamaindex/azure@0.1.15
-  - @llamaindex/huggingface@0.1.9
-  - @llamaindex/assemblyai@0.1.4
-  - @llamaindex/mixedbread@0.0.19
-  - @llamaindex/perplexity@0.0.12
-  - @llamaindex/portkey-ai@0.0.47
-  - @llamaindex/anthropic@0.3.6
-  - @llamaindex/deepinfra@0.0.55
-  - @llamaindex/replicate@0.0.47
-  - @llamaindex/voyage-ai@1.0.11
-  - @llamaindex/discord@0.1.4
-  - @llamaindex/mistral@0.1.5
-  - @llamaindex/cohere@0.0.19
-  - @llamaindex/google@0.3.1
-  - @llamaindex/jinaai@0.0.15
-  - @llamaindex/notion@0.1.4
-  - @llamaindex/ollama@0.1.5
-  - @llamaindex/openai@0.3.7
-  - @llamaindex/vercel@0.1.5
-  - @llamaindex/clip@0.0.55
-  - @llamaindex/tools@0.0.10
-  - @llamaindex/workflow@1.1.2
-  - @llamaindex/core@0.6.5
-  - @llamaindex/cloud@4.0.7
+  - @vectorstores/xai@0.0.2
+  - @vectorstores/fireworks@0.0.15
+  - @vectorstores/elastic-search@0.1.5
+  - @vectorstores/firestore@1.0.12
+  - @vectorstores/pinecone@0.1.5
+  - @vectorstores/postgres@0.0.48
+  - @vectorstores/supabase@0.1.4
+  - @vectorstores/weaviate@0.0.19
+  - @vectorstores/mongodb@0.0.20
+  - @vectorstores/upstash@0.0.19
+  - @vectorstores/chroma@0.0.19
+  - @vectorstores/milvus@0.1.14
+  - @vectorstores/qdrant@0.1.14
+  - @vectorstores/astra@0.0.19
+  - @vectorstores/azure@0.1.15
+  - @vectorstores/huggingface@0.1.9
+  - @vectorstores/assemblyai@0.1.4
+  - @vectorstores/mixedbread@0.0.19
+  - @vectorstores/perplexity@0.0.12
+  - @vectorstores/portkey-ai@0.0.47
+  - @vectorstores/anthropic@0.3.6
+  - @vectorstores/deepinfra@0.0.55
+  - @vectorstores/replicate@0.0.47
+  - @vectorstores/voyage-ai@1.0.11
+  - @vectorstores/discord@0.1.4
+  - @vectorstores/mistral@0.1.5
+  - @vectorstores/cohere@0.0.19
+  - @vectorstores/google@0.3.1
+  - @vectorstores/jinaai@0.0.15
+  - @vectorstores/notion@0.1.4
+  - @vectorstores/ollama@0.1.5
+  - @vectorstores/openai@0.3.7
+  - @vectorstores/vercel@0.1.5
+  - @vectorstores/clip@0.0.55
+  - @vectorstores/tools@0.0.10
+  - @vectorstores/workflow@1.1.2
+  - @vectorstores/core@0.6.5
+  - @vectorstores/cloud@4.0.7
   - llamaindex@0.10.6
-  - @llamaindex/deepseek@0.0.15
-  - @llamaindex/groq@0.0.70
-  - @llamaindex/together@0.0.15
-  - @llamaindex/vllm@0.0.41
-  - @llamaindex/node-parser@2.0.5
-  - @llamaindex/readers@3.1.3
+  - @vectorstores/deepseek@0.0.15
+  - @vectorstores/groq@0.0.70
+  - @vectorstores/together@0.0.15
+  - @vectorstores/vllm@0.0.41
+  - @vectorstores/node-parser@2.0.5
+  - @vectorstores/readers@3.1.3
 
 ## 0.3.14
 
@@ -1169,116 +1169,116 @@
 - 206b491: Add support for google live api
 - Updated dependencies [9b2e25a]
 - Updated dependencies [206b491]
-  - @llamaindex/anthropic@0.3.5
-  - @llamaindex/google@0.3.0
-  - @llamaindex/openai@0.3.6
-  - @llamaindex/core@0.6.4
-  - @llamaindex/env@0.1.30
+  - @vectorstores/anthropic@0.3.5
+  - @vectorstores/google@0.3.0
+  - @vectorstores/openai@0.3.6
+  - @vectorstores/core@0.6.4
+  - @vectorstores/env@0.1.30
   - llamaindex@0.10.5
-  - @llamaindex/clip@0.0.54
-  - @llamaindex/deepinfra@0.0.54
-  - @llamaindex/deepseek@0.0.14
-  - @llamaindex/fireworks@0.0.14
-  - @llamaindex/groq@0.0.69
-  - @llamaindex/huggingface@0.1.8
-  - @llamaindex/jinaai@0.0.14
-  - @llamaindex/perplexity@0.0.11
-  - @llamaindex/azure@0.1.14
-  - @llamaindex/elastic-search@0.1.4
-  - @llamaindex/milvus@0.1.13
-  - @llamaindex/qdrant@0.1.13
-  - @llamaindex/supabase@0.1.3
-  - @llamaindex/together@0.0.14
-  - @llamaindex/vllm@0.0.40
-  - @llamaindex/cloud@4.0.6
-  - @llamaindex/node-parser@2.0.4
-  - @llamaindex/assemblyai@0.1.3
-  - @llamaindex/cohere@0.0.18
-  - @llamaindex/discord@0.1.3
-  - @llamaindex/mistral@0.1.4
-  - @llamaindex/mixedbread@0.0.18
-  - @llamaindex/notion@0.1.3
-  - @llamaindex/ollama@0.1.4
-  - @llamaindex/portkey-ai@0.0.46
-  - @llamaindex/replicate@0.0.46
-  - @llamaindex/astra@0.0.18
-  - @llamaindex/chroma@0.0.18
-  - @llamaindex/firestore@1.0.11
-  - @llamaindex/mongodb@0.0.19
-  - @llamaindex/pinecone@0.1.4
-  - @llamaindex/postgres@0.0.47
-  - @llamaindex/upstash@0.0.18
-  - @llamaindex/weaviate@0.0.18
-  - @llamaindex/vercel@0.1.4
-  - @llamaindex/voyage-ai@1.0.10
-  - @llamaindex/readers@3.1.2
-  - @llamaindex/tools@0.0.9
-  - @llamaindex/workflow@1.1.1
+  - @vectorstores/clip@0.0.54
+  - @vectorstores/deepinfra@0.0.54
+  - @vectorstores/deepseek@0.0.14
+  - @vectorstores/fireworks@0.0.14
+  - @vectorstores/groq@0.0.69
+  - @vectorstores/huggingface@0.1.8
+  - @vectorstores/jinaai@0.0.14
+  - @vectorstores/perplexity@0.0.11
+  - @vectorstores/azure@0.1.14
+  - @vectorstores/elastic-search@0.1.4
+  - @vectorstores/milvus@0.1.13
+  - @vectorstores/qdrant@0.1.13
+  - @vectorstores/supabase@0.1.3
+  - @vectorstores/together@0.0.14
+  - @vectorstores/vllm@0.0.40
+  - @vectorstores/cloud@4.0.6
+  - @vectorstores/node-parser@2.0.4
+  - @vectorstores/assemblyai@0.1.3
+  - @vectorstores/cohere@0.0.18
+  - @vectorstores/discord@0.1.3
+  - @vectorstores/mistral@0.1.4
+  - @vectorstores/mixedbread@0.0.18
+  - @vectorstores/notion@0.1.3
+  - @vectorstores/ollama@0.1.4
+  - @vectorstores/portkey-ai@0.0.46
+  - @vectorstores/replicate@0.0.46
+  - @vectorstores/astra@0.0.18
+  - @vectorstores/chroma@0.0.18
+  - @vectorstores/firestore@1.0.11
+  - @vectorstores/mongodb@0.0.19
+  - @vectorstores/pinecone@0.1.4
+  - @vectorstores/postgres@0.0.47
+  - @vectorstores/upstash@0.0.18
+  - @vectorstores/weaviate@0.0.18
+  - @vectorstores/vercel@0.1.4
+  - @vectorstores/voyage-ai@1.0.10
+  - @vectorstores/readers@3.1.2
+  - @vectorstores/tools@0.0.9
+  - @vectorstores/workflow@1.1.1
 
 ## 0.3.13
 
 ### Patch Changes
 
 - Updated dependencies [3ee8c83]
-  - @llamaindex/core@0.6.3
+  - @vectorstores/core@0.6.3
   - llamaindex@0.10.3
-  - @llamaindex/anthropic@0.3.4
-  - @llamaindex/google@0.2.5
-  - @llamaindex/openai@0.3.5
-  - @llamaindex/vercel@0.1.3
-  - @llamaindex/cloud@4.0.4
-  - @llamaindex/node-parser@2.0.3
-  - @llamaindex/assemblyai@0.1.2
-  - @llamaindex/clip@0.0.53
-  - @llamaindex/cohere@0.0.17
-  - @llamaindex/deepinfra@0.0.53
-  - @llamaindex/discord@0.1.2
-  - @llamaindex/huggingface@0.1.7
-  - @llamaindex/jinaai@0.0.13
-  - @llamaindex/mistral@0.1.3
-  - @llamaindex/mixedbread@0.0.17
-  - @llamaindex/notion@0.1.2
-  - @llamaindex/ollama@0.1.3
-  - @llamaindex/perplexity@0.0.10
-  - @llamaindex/portkey-ai@0.0.45
-  - @llamaindex/replicate@0.0.45
-  - @llamaindex/astra@0.0.17
-  - @llamaindex/azure@0.1.13
-  - @llamaindex/chroma@0.0.17
-  - @llamaindex/elastic-search@0.1.3
-  - @llamaindex/firestore@1.0.10
-  - @llamaindex/milvus@0.1.12
-  - @llamaindex/mongodb@0.0.18
-  - @llamaindex/pinecone@0.1.3
-  - @llamaindex/postgres@0.0.46
-  - @llamaindex/qdrant@0.1.12
-  - @llamaindex/supabase@0.1.2
-  - @llamaindex/upstash@0.0.17
-  - @llamaindex/weaviate@0.0.17
-  - @llamaindex/voyage-ai@1.0.9
-  - @llamaindex/readers@3.1.1
-  - @llamaindex/tools@0.0.8
-  - @llamaindex/workflow@1.0.4
-  - @llamaindex/deepseek@0.0.13
-  - @llamaindex/fireworks@0.0.13
-  - @llamaindex/groq@0.0.68
-  - @llamaindex/together@0.0.13
-  - @llamaindex/vllm@0.0.39
+  - @vectorstores/anthropic@0.3.4
+  - @vectorstores/google@0.2.5
+  - @vectorstores/openai@0.3.5
+  - @vectorstores/vercel@0.1.3
+  - @vectorstores/cloud@4.0.4
+  - @vectorstores/node-parser@2.0.3
+  - @vectorstores/assemblyai@0.1.2
+  - @vectorstores/clip@0.0.53
+  - @vectorstores/cohere@0.0.17
+  - @vectorstores/deepinfra@0.0.53
+  - @vectorstores/discord@0.1.2
+  - @vectorstores/huggingface@0.1.7
+  - @vectorstores/jinaai@0.0.13
+  - @vectorstores/mistral@0.1.3
+  - @vectorstores/mixedbread@0.0.17
+  - @vectorstores/notion@0.1.2
+  - @vectorstores/ollama@0.1.3
+  - @vectorstores/perplexity@0.0.10
+  - @vectorstores/portkey-ai@0.0.45
+  - @vectorstores/replicate@0.0.45
+  - @vectorstores/astra@0.0.17
+  - @vectorstores/azure@0.1.13
+  - @vectorstores/chroma@0.0.17
+  - @vectorstores/elastic-search@0.1.3
+  - @vectorstores/firestore@1.0.10
+  - @vectorstores/milvus@0.1.12
+  - @vectorstores/mongodb@0.0.18
+  - @vectorstores/pinecone@0.1.3
+  - @vectorstores/postgres@0.0.46
+  - @vectorstores/qdrant@0.1.12
+  - @vectorstores/supabase@0.1.2
+  - @vectorstores/upstash@0.0.17
+  - @vectorstores/weaviate@0.0.17
+  - @vectorstores/voyage-ai@1.0.9
+  - @vectorstores/readers@3.1.1
+  - @vectorstores/tools@0.0.8
+  - @vectorstores/workflow@1.0.4
+  - @vectorstores/deepseek@0.0.13
+  - @vectorstores/fireworks@0.0.13
+  - @vectorstores/groq@0.0.68
+  - @vectorstores/together@0.0.13
+  - @vectorstores/vllm@0.0.39
 
 ## 0.3.12
 
 ### Patch Changes
 
 - Updated dependencies [82d4b46]
-  - @llamaindex/server@0.1.6
-  - @llamaindex/tools@0.0.7
+  - @vectorstores/server@0.1.6
+  - @vectorstores/tools@0.0.7
 
 ## 0.3.11
 
 ### Patch Changes
 
 - Updated dependencies [294f502]
-  - @llamaindex/tools@0.0.6
+  - @vectorstores/tools@0.0.6
 
 ## 0.3.10
 
@@ -1290,12 +1290,12 @@
 - Updated dependencies [1e59695]
 - Updated dependencies [1e59695]
 - Updated dependencies [1e59695]
-  - @llamaindex/assemblyai@0.1.1
-  - @llamaindex/mongodb@0.0.17
-  - @llamaindex/azure@0.1.12
-  - @llamaindex/readers@3.1.0
-  - @llamaindex/notion@0.1.1
-  - @llamaindex/discord@0.1.1
+  - @vectorstores/assemblyai@0.1.1
+  - @vectorstores/mongodb@0.0.17
+  - @vectorstores/azure@0.1.12
+  - @vectorstores/readers@3.1.0
+  - @vectorstores/notion@0.1.1
+  - @vectorstores/discord@0.1.1
 
 ## 0.3.9
 
@@ -1303,37 +1303,37 @@
 
 - Updated dependencies [96dac4d]
 - Updated dependencies [e5c3f95]
-  - @llamaindex/google@0.2.4
-  - @llamaindex/openai@0.3.4
+  - @vectorstores/google@0.2.4
+  - @vectorstores/openai@0.3.4
   - llamaindex@0.10.2
-  - @llamaindex/clip@0.0.52
-  - @llamaindex/deepinfra@0.0.52
-  - @llamaindex/deepseek@0.0.12
-  - @llamaindex/fireworks@0.0.12
-  - @llamaindex/groq@0.0.67
-  - @llamaindex/huggingface@0.1.6
-  - @llamaindex/jinaai@0.0.12
-  - @llamaindex/perplexity@0.0.9
-  - @llamaindex/together@0.0.12
-  - @llamaindex/vllm@0.0.38
+  - @vectorstores/clip@0.0.52
+  - @vectorstores/deepinfra@0.0.52
+  - @vectorstores/deepseek@0.0.12
+  - @vectorstores/fireworks@0.0.12
+  - @vectorstores/groq@0.0.67
+  - @vectorstores/huggingface@0.1.6
+  - @vectorstores/jinaai@0.0.12
+  - @vectorstores/perplexity@0.0.9
+  - @vectorstores/together@0.0.12
+  - @vectorstores/vllm@0.0.38
 
 ## 0.3.8
 
 ### Patch Changes
 
 - Updated dependencies [96dd798]
-  - @llamaindex/openai@0.3.3
+  - @vectorstores/openai@0.3.3
   - llamaindex@0.10.1
-  - @llamaindex/clip@0.0.51
-  - @llamaindex/deepinfra@0.0.51
-  - @llamaindex/deepseek@0.0.11
-  - @llamaindex/fireworks@0.0.11
-  - @llamaindex/groq@0.0.66
-  - @llamaindex/huggingface@0.1.5
-  - @llamaindex/jinaai@0.0.11
-  - @llamaindex/perplexity@0.0.8
-  - @llamaindex/together@0.0.11
-  - @llamaindex/vllm@0.0.37
+  - @vectorstores/clip@0.0.51
+  - @vectorstores/deepinfra@0.0.51
+  - @vectorstores/deepseek@0.0.11
+  - @vectorstores/fireworks@0.0.11
+  - @vectorstores/groq@0.0.66
+  - @vectorstores/huggingface@0.1.5
+  - @vectorstores/jinaai@0.0.11
+  - @vectorstores/perplexity@0.0.8
+  - @vectorstores/together@0.0.11
+  - @vectorstores/vllm@0.0.37
 
 ## 0.3.7
 
@@ -1347,36 +1347,36 @@
 ### Patch Changes
 
 - Updated dependencies [d365eb2]
-  - @llamaindex/openai@0.3.2
+  - @vectorstores/openai@0.3.2
   - llamaindex@0.9.19
-  - @llamaindex/clip@0.0.50
-  - @llamaindex/deepinfra@0.0.50
-  - @llamaindex/deepseek@0.0.10
-  - @llamaindex/fireworks@0.0.10
-  - @llamaindex/groq@0.0.65
-  - @llamaindex/huggingface@0.1.4
-  - @llamaindex/jinaai@0.0.10
-  - @llamaindex/perplexity@0.0.7
-  - @llamaindex/together@0.0.10
-  - @llamaindex/vllm@0.0.36
+  - @vectorstores/clip@0.0.50
+  - @vectorstores/deepinfra@0.0.50
+  - @vectorstores/deepseek@0.0.10
+  - @vectorstores/fireworks@0.0.10
+  - @vectorstores/groq@0.0.65
+  - @vectorstores/huggingface@0.1.4
+  - @vectorstores/jinaai@0.0.10
+  - @vectorstores/perplexity@0.0.7
+  - @vectorstores/together@0.0.10
+  - @vectorstores/vllm@0.0.36
 
 ## 0.3.5
 
 ### Patch Changes
 
 - Updated dependencies [88b7046]
-  - @llamaindex/openai@0.3.1
+  - @vectorstores/openai@0.3.1
   - llamaindex@0.9.18
-  - @llamaindex/clip@0.0.49
-  - @llamaindex/deepinfra@0.0.49
-  - @llamaindex/deepseek@0.0.9
-  - @llamaindex/fireworks@0.0.9
-  - @llamaindex/groq@0.0.64
-  - @llamaindex/huggingface@0.1.3
-  - @llamaindex/jinaai@0.0.9
-  - @llamaindex/perplexity@0.0.6
-  - @llamaindex/together@0.0.9
-  - @llamaindex/vllm@0.0.35
+  - @vectorstores/clip@0.0.49
+  - @vectorstores/deepinfra@0.0.49
+  - @vectorstores/deepseek@0.0.9
+  - @vectorstores/fireworks@0.0.9
+  - @vectorstores/groq@0.0.64
+  - @vectorstores/huggingface@0.1.3
+  - @vectorstores/jinaai@0.0.9
+  - @vectorstores/perplexity@0.0.6
+  - @vectorstores/together@0.0.9
+  - @vectorstores/vllm@0.0.35
 
 ## 0.3.4
 
@@ -1387,12 +1387,12 @@
 - Updated dependencies [3534c37]
 - Updated dependencies [41191d0]
 - Updated dependencies [0dfa371]
-  - @llamaindex/postgres@0.0.45
-  - @llamaindex/google@0.2.3
+  - @vectorstores/postgres@0.0.45
+  - @vectorstores/google@0.2.3
   - llamaindex@0.9.17
-  - @llamaindex/workflow@1.0.3
-  - @llamaindex/cloud@4.0.3
-  - @llamaindex/anthropic@0.3.3
+  - @vectorstores/workflow@1.0.3
+  - @vectorstores/cloud@4.0.3
+  - @vectorstores/anthropic@0.3.3
 
 ## 0.3.3
 
@@ -1401,7 +1401,7 @@
 - Updated dependencies [f5e4d09]
 - Updated dependencies [ead657a]
   - llamaindex@0.9.16
-  - @llamaindex/tools@0.0.5
+  - @vectorstores/tools@0.0.5
 
 ## 0.3.2
 
@@ -1410,47 +1410,47 @@
 - 9c63f3f: Add support for openai responses api
 - Updated dependencies [9c63f3f]
 - Updated dependencies [c515a32]
-  - @llamaindex/openai@0.3.0
-  - @llamaindex/google@0.2.2
-  - @llamaindex/core@0.6.2
-  - @llamaindex/workflow@1.0.2
+  - @vectorstores/openai@0.3.0
+  - @vectorstores/google@0.2.2
+  - @vectorstores/core@0.6.2
+  - @vectorstores/workflow@1.0.2
   - llamaindex@0.9.15
-  - @llamaindex/clip@0.0.48
-  - @llamaindex/deepinfra@0.0.48
-  - @llamaindex/deepseek@0.0.8
-  - @llamaindex/fireworks@0.0.8
-  - @llamaindex/groq@0.0.63
-  - @llamaindex/huggingface@0.1.2
-  - @llamaindex/jinaai@0.0.8
-  - @llamaindex/perplexity@0.0.5
-  - @llamaindex/azure@0.1.11
-  - @llamaindex/elastic-search@0.1.2
-  - @llamaindex/milvus@0.1.11
-  - @llamaindex/qdrant@0.1.11
-  - @llamaindex/supabase@0.1.1
-  - @llamaindex/together@0.0.8
-  - @llamaindex/vllm@0.0.34
-  - @llamaindex/cloud@4.0.2
-  - @llamaindex/node-parser@2.0.2
-  - @llamaindex/anthropic@0.3.2
-  - @llamaindex/cohere@0.0.16
-  - @llamaindex/mistral@0.1.2
-  - @llamaindex/mixedbread@0.0.16
-  - @llamaindex/ollama@0.1.2
-  - @llamaindex/portkey-ai@0.0.44
-  - @llamaindex/replicate@0.0.44
-  - @llamaindex/astra@0.0.16
-  - @llamaindex/chroma@0.0.16
-  - @llamaindex/firestore@1.0.9
-  - @llamaindex/mongodb@0.0.16
-  - @llamaindex/pinecone@0.1.2
-  - @llamaindex/postgres@0.0.44
-  - @llamaindex/upstash@0.0.16
-  - @llamaindex/weaviate@0.0.16
-  - @llamaindex/vercel@0.1.2
-  - @llamaindex/voyage-ai@1.0.8
-  - @llamaindex/readers@3.0.2
-  - @llamaindex/tools@0.0.4
+  - @vectorstores/clip@0.0.48
+  - @vectorstores/deepinfra@0.0.48
+  - @vectorstores/deepseek@0.0.8
+  - @vectorstores/fireworks@0.0.8
+  - @vectorstores/groq@0.0.63
+  - @vectorstores/huggingface@0.1.2
+  - @vectorstores/jinaai@0.0.8
+  - @vectorstores/perplexity@0.0.5
+  - @vectorstores/azure@0.1.11
+  - @vectorstores/elastic-search@0.1.2
+  - @vectorstores/milvus@0.1.11
+  - @vectorstores/qdrant@0.1.11
+  - @vectorstores/supabase@0.1.1
+  - @vectorstores/together@0.0.8
+  - @vectorstores/vllm@0.0.34
+  - @vectorstores/cloud@4.0.2
+  - @vectorstores/node-parser@2.0.2
+  - @vectorstores/anthropic@0.3.2
+  - @vectorstores/cohere@0.0.16
+  - @vectorstores/mistral@0.1.2
+  - @vectorstores/mixedbread@0.0.16
+  - @vectorstores/ollama@0.1.2
+  - @vectorstores/portkey-ai@0.0.44
+  - @vectorstores/replicate@0.0.44
+  - @vectorstores/astra@0.0.16
+  - @vectorstores/chroma@0.0.16
+  - @vectorstores/firestore@1.0.9
+  - @vectorstores/mongodb@0.0.16
+  - @vectorstores/pinecone@0.1.2
+  - @vectorstores/postgres@0.0.44
+  - @vectorstores/upstash@0.0.16
+  - @vectorstores/weaviate@0.0.16
+  - @vectorstores/vercel@0.1.2
+  - @vectorstores/voyage-ai@1.0.8
+  - @vectorstores/readers@3.0.2
+  - @vectorstores/tools@0.0.4
 
 ## 0.3.1
 
@@ -1462,47 +1462,47 @@
 - Updated dependencies [1b6f368]
 - Updated dependencies [eaf326e]
 - Updated dependencies [9d951b2]
-  - @llamaindex/supabase@0.1.0
-  - @llamaindex/core@0.6.1
+  - @vectorstores/supabase@0.1.0
+  - @vectorstores/core@0.6.1
   - llamaindex@0.9.14
-  - @llamaindex/tools@0.0.3
-  - @llamaindex/cloud@4.0.1
-  - @llamaindex/node-parser@2.0.1
-  - @llamaindex/anthropic@0.3.1
-  - @llamaindex/clip@0.0.47
-  - @llamaindex/cohere@0.0.15
-  - @llamaindex/deepinfra@0.0.47
-  - @llamaindex/google@0.2.1
-  - @llamaindex/huggingface@0.1.1
-  - @llamaindex/jinaai@0.0.7
-  - @llamaindex/mistral@0.1.1
-  - @llamaindex/mixedbread@0.0.15
-  - @llamaindex/ollama@0.1.1
-  - @llamaindex/openai@0.2.1
-  - @llamaindex/perplexity@0.0.4
-  - @llamaindex/portkey-ai@0.0.43
-  - @llamaindex/replicate@0.0.43
-  - @llamaindex/astra@0.0.15
-  - @llamaindex/azure@0.1.10
-  - @llamaindex/chroma@0.0.15
-  - @llamaindex/elastic-search@0.1.1
-  - @llamaindex/firestore@1.0.8
-  - @llamaindex/milvus@0.1.10
-  - @llamaindex/mongodb@0.0.15
-  - @llamaindex/pinecone@0.1.1
-  - @llamaindex/postgres@0.0.43
-  - @llamaindex/qdrant@0.1.10
-  - @llamaindex/upstash@0.0.15
-  - @llamaindex/weaviate@0.0.15
-  - @llamaindex/vercel@0.1.1
-  - @llamaindex/voyage-ai@1.0.7
-  - @llamaindex/readers@3.0.1
-  - @llamaindex/workflow@1.0.1
-  - @llamaindex/deepseek@0.0.7
-  - @llamaindex/fireworks@0.0.7
-  - @llamaindex/groq@0.0.62
-  - @llamaindex/together@0.0.7
-  - @llamaindex/vllm@0.0.33
+  - @vectorstores/tools@0.0.3
+  - @vectorstores/cloud@4.0.1
+  - @vectorstores/node-parser@2.0.1
+  - @vectorstores/anthropic@0.3.1
+  - @vectorstores/clip@0.0.47
+  - @vectorstores/cohere@0.0.15
+  - @vectorstores/deepinfra@0.0.47
+  - @vectorstores/google@0.2.1
+  - @vectorstores/huggingface@0.1.1
+  - @vectorstores/jinaai@0.0.7
+  - @vectorstores/mistral@0.1.1
+  - @vectorstores/mixedbread@0.0.15
+  - @vectorstores/ollama@0.1.1
+  - @vectorstores/openai@0.2.1
+  - @vectorstores/perplexity@0.0.4
+  - @vectorstores/portkey-ai@0.0.43
+  - @vectorstores/replicate@0.0.43
+  - @vectorstores/astra@0.0.15
+  - @vectorstores/azure@0.1.10
+  - @vectorstores/chroma@0.0.15
+  - @vectorstores/elastic-search@0.1.1
+  - @vectorstores/firestore@1.0.8
+  - @vectorstores/milvus@0.1.10
+  - @vectorstores/mongodb@0.0.15
+  - @vectorstores/pinecone@0.1.1
+  - @vectorstores/postgres@0.0.43
+  - @vectorstores/qdrant@0.1.10
+  - @vectorstores/upstash@0.0.15
+  - @vectorstores/weaviate@0.0.15
+  - @vectorstores/vercel@0.1.1
+  - @vectorstores/voyage-ai@1.0.7
+  - @vectorstores/readers@3.0.1
+  - @vectorstores/workflow@1.0.1
+  - @vectorstores/deepseek@0.0.7
+  - @vectorstores/fireworks@0.0.7
+  - @vectorstores/groq@0.0.62
+  - @vectorstores/together@0.0.7
+  - @vectorstores/vllm@0.0.33
 
 ## 0.3.0
 
@@ -1535,46 +1535,46 @@
 - Updated dependencies [3fd4cc3]
 - Updated dependencies [04f8c96]
 - Updated dependencies [58a9446]
-  - @llamaindex/readers@3.0.0
-  - @llamaindex/core@0.6.0
-  - @llamaindex/tools@0.0.2
-  - @llamaindex/elastic-search@0.1.0
-  - @llamaindex/google@0.2.0
-  - @llamaindex/pinecone@0.1.0
-  - @llamaindex/huggingface@0.1.0
-  - @llamaindex/anthropic@0.3.0
-  - @llamaindex/mistral@0.1.0
-  - @llamaindex/ollama@0.1.0
-  - @llamaindex/openai@0.2.0
-  - @llamaindex/cloud@4.0.0
-  - @llamaindex/vercel@0.1.0
-  - @llamaindex/azure@0.1.9
-  - @llamaindex/workflow@1.0.0
-  - @llamaindex/mongodb@0.0.14
+  - @vectorstores/readers@3.0.0
+  - @vectorstores/core@0.6.0
+  - @vectorstores/tools@0.0.2
+  - @vectorstores/elastic-search@0.1.0
+  - @vectorstores/google@0.2.0
+  - @vectorstores/pinecone@0.1.0
+  - @vectorstores/huggingface@0.1.0
+  - @vectorstores/anthropic@0.3.0
+  - @vectorstores/mistral@0.1.0
+  - @vectorstores/ollama@0.1.0
+  - @vectorstores/openai@0.2.0
+  - @vectorstores/cloud@4.0.0
+  - @vectorstores/vercel@0.1.0
+  - @vectorstores/azure@0.1.9
+  - @vectorstores/workflow@1.0.0
+  - @vectorstores/mongodb@0.0.14
   - llamaindex@0.9.12
-  - @llamaindex/node-parser@2.0.0
-  - @llamaindex/clip@0.0.46
-  - @llamaindex/cohere@0.0.14
-  - @llamaindex/deepinfra@0.0.46
-  - @llamaindex/jinaai@0.0.6
-  - @llamaindex/mixedbread@0.0.14
-  - @llamaindex/perplexity@0.0.3
-  - @llamaindex/portkey-ai@0.0.42
-  - @llamaindex/replicate@0.0.42
-  - @llamaindex/astra@0.0.14
-  - @llamaindex/chroma@0.0.14
-  - @llamaindex/firestore@1.0.7
-  - @llamaindex/milvus@0.1.9
-  - @llamaindex/postgres@0.0.42
-  - @llamaindex/qdrant@0.1.9
-  - @llamaindex/upstash@0.0.14
-  - @llamaindex/weaviate@0.0.14
-  - @llamaindex/voyage-ai@1.0.6
-  - @llamaindex/deepseek@0.0.6
-  - @llamaindex/fireworks@0.0.6
-  - @llamaindex/groq@0.0.61
-  - @llamaindex/together@0.0.6
-  - @llamaindex/vllm@0.0.32
+  - @vectorstores/node-parser@2.0.0
+  - @vectorstores/clip@0.0.46
+  - @vectorstores/cohere@0.0.14
+  - @vectorstores/deepinfra@0.0.46
+  - @vectorstores/jinaai@0.0.6
+  - @vectorstores/mixedbread@0.0.14
+  - @vectorstores/perplexity@0.0.3
+  - @vectorstores/portkey-ai@0.0.42
+  - @vectorstores/replicate@0.0.42
+  - @vectorstores/astra@0.0.14
+  - @vectorstores/chroma@0.0.14
+  - @vectorstores/firestore@1.0.7
+  - @vectorstores/milvus@0.1.9
+  - @vectorstores/postgres@0.0.42
+  - @vectorstores/qdrant@0.1.9
+  - @vectorstores/upstash@0.0.14
+  - @vectorstores/weaviate@0.0.14
+  - @vectorstores/voyage-ai@1.0.6
+  - @vectorstores/deepseek@0.0.6
+  - @vectorstores/fireworks@0.0.6
+  - @vectorstores/groq@0.0.61
+  - @vectorstores/together@0.0.6
+  - @vectorstores/vllm@0.0.32
 
 ## 0.2.10
 
@@ -1585,20 +1585,20 @@
 - Updated dependencies [a8c0637]
 - Updated dependencies [1587e48]
 - Updated dependencies [98eebf7]
-  - @llamaindex/mistral@0.0.14
-  - @llamaindex/openai@0.1.61
-  - @llamaindex/perplexity@0.0.2
-  - @llamaindex/google@0.1.2
+  - @vectorstores/mistral@0.0.14
+  - @vectorstores/openai@0.1.61
+  - @vectorstores/perplexity@0.0.2
+  - @vectorstores/google@0.1.2
   - llamaindex@0.9.11
-  - @llamaindex/clip@0.0.45
-  - @llamaindex/deepinfra@0.0.45
-  - @llamaindex/deepseek@0.0.5
-  - @llamaindex/fireworks@0.0.5
-  - @llamaindex/groq@0.0.60
-  - @llamaindex/huggingface@0.0.45
-  - @llamaindex/jinaai@0.0.5
-  - @llamaindex/together@0.0.5
-  - @llamaindex/vllm@0.0.31
+  - @vectorstores/clip@0.0.45
+  - @vectorstores/deepinfra@0.0.45
+  - @vectorstores/deepseek@0.0.5
+  - @vectorstores/fireworks@0.0.5
+  - @vectorstores/groq@0.0.60
+  - @vectorstores/huggingface@0.0.45
+  - @vectorstores/jinaai@0.0.5
+  - @vectorstores/together@0.0.5
+  - @vectorstores/vllm@0.0.31
 
 ## 0.2.9
 
@@ -1611,43 +1611,43 @@
 - Updated dependencies [c1b5be5]
 - Updated dependencies [40ee761]
 - Updated dependencies [40ee761]
-  - @llamaindex/azure@0.1.8
-  - @llamaindex/google@0.1.1
-  - @llamaindex/huggingface@0.0.44
-  - @llamaindex/portkey-ai@0.0.41
-  - @llamaindex/anthropic@0.2.6
-  - @llamaindex/deepinfra@0.0.44
-  - @llamaindex/fireworks@0.0.4
-  - @llamaindex/replicate@0.0.41
-  - @llamaindex/deepseek@0.0.4
-  - @llamaindex/together@0.0.4
-  - @llamaindex/mistral@0.0.13
-  - @llamaindex/ollama@0.0.48
-  - @llamaindex/openai@0.1.60
-  - @llamaindex/vercel@0.0.19
-  - @llamaindex/groq@0.0.59
-  - @llamaindex/vllm@0.0.30
+  - @vectorstores/azure@0.1.8
+  - @vectorstores/google@0.1.1
+  - @vectorstores/huggingface@0.0.44
+  - @vectorstores/portkey-ai@0.0.41
+  - @vectorstores/anthropic@0.2.6
+  - @vectorstores/deepinfra@0.0.44
+  - @vectorstores/fireworks@0.0.4
+  - @vectorstores/replicate@0.0.41
+  - @vectorstores/deepseek@0.0.4
+  - @vectorstores/together@0.0.4
+  - @vectorstores/mistral@0.0.13
+  - @vectorstores/ollama@0.0.48
+  - @vectorstores/openai@0.1.60
+  - @vectorstores/vercel@0.0.19
+  - @vectorstores/groq@0.0.59
+  - @vectorstores/vllm@0.0.30
   - llamaindex@0.9.10
-  - @llamaindex/workflow@0.0.16
-  - @llamaindex/core@0.5.8
-  - @llamaindex/clip@0.0.44
-  - @llamaindex/jinaai@0.0.4
-  - @llamaindex/milvus@0.1.8
-  - @llamaindex/qdrant@0.1.8
-  - @llamaindex/cloud@3.0.9
-  - @llamaindex/node-parser@1.0.8
-  - @llamaindex/cohere@0.0.13
-  - @llamaindex/mixedbread@0.0.13
-  - @llamaindex/astra@0.0.13
-  - @llamaindex/chroma@0.0.13
-  - @llamaindex/firestore@1.0.6
-  - @llamaindex/mongodb@0.0.13
-  - @llamaindex/pinecone@0.0.13
-  - @llamaindex/postgres@0.0.41
-  - @llamaindex/upstash@0.0.13
-  - @llamaindex/weaviate@0.0.13
-  - @llamaindex/voyage-ai@1.0.5
-  - @llamaindex/readers@2.0.8
+  - @vectorstores/workflow@0.0.16
+  - @vectorstores/core@0.5.8
+  - @vectorstores/clip@0.0.44
+  - @vectorstores/jinaai@0.0.4
+  - @vectorstores/milvus@0.1.8
+  - @vectorstores/qdrant@0.1.8
+  - @vectorstores/cloud@3.0.9
+  - @vectorstores/node-parser@1.0.8
+  - @vectorstores/cohere@0.0.13
+  - @vectorstores/mixedbread@0.0.13
+  - @vectorstores/astra@0.0.13
+  - @vectorstores/chroma@0.0.13
+  - @vectorstores/firestore@1.0.6
+  - @vectorstores/mongodb@0.0.13
+  - @vectorstores/pinecone@0.0.13
+  - @vectorstores/postgres@0.0.41
+  - @vectorstores/upstash@0.0.13
+  - @vectorstores/weaviate@0.0.13
+  - @vectorstores/voyage-ai@1.0.5
+  - @vectorstores/readers@2.0.8
 
 ## 0.2.8
 
@@ -1656,43 +1656,43 @@
 - Updated dependencies [58b3ee5]
 - Updated dependencies [4bac71d]
 - Updated dependencies [8bf1ca1]
-  - @llamaindex/google@0.1.0
-  - @llamaindex/core@0.5.7
-  - @llamaindex/anthropic@0.2.5
-  - @llamaindex/cloud@3.0.8
+  - @vectorstores/google@0.1.0
+  - @vectorstores/core@0.5.7
+  - @vectorstores/anthropic@0.2.5
+  - @vectorstores/cloud@3.0.8
   - llamaindex@0.9.9
-  - @llamaindex/node-parser@1.0.7
-  - @llamaindex/clip@0.0.43
-  - @llamaindex/cohere@0.0.12
-  - @llamaindex/deepinfra@0.0.43
-  - @llamaindex/huggingface@0.0.43
-  - @llamaindex/jinaai@0.0.3
-  - @llamaindex/mistral@0.0.12
-  - @llamaindex/mixedbread@0.0.12
-  - @llamaindex/ollama@0.0.47
-  - @llamaindex/openai@0.1.59
-  - @llamaindex/portkey-ai@0.0.40
-  - @llamaindex/replicate@0.0.40
-  - @llamaindex/astra@0.0.12
-  - @llamaindex/azure@0.1.7
-  - @llamaindex/chroma@0.0.12
-  - @llamaindex/firestore@1.0.5
-  - @llamaindex/milvus@0.1.7
-  - @llamaindex/mongodb@0.0.12
-  - @llamaindex/pinecone@0.0.12
-  - @llamaindex/postgres@0.0.40
-  - @llamaindex/qdrant@0.1.7
-  - @llamaindex/upstash@0.0.12
-  - @llamaindex/weaviate@0.0.12
-  - @llamaindex/vercel@0.0.18
-  - @llamaindex/voyage-ai@1.0.4
-  - @llamaindex/readers@2.0.7
-  - @llamaindex/workflow@0.0.15
-  - @llamaindex/deepseek@0.0.3
-  - @llamaindex/fireworks@0.0.3
-  - @llamaindex/groq@0.0.58
-  - @llamaindex/together@0.0.3
-  - @llamaindex/vllm@0.0.29
+  - @vectorstores/node-parser@1.0.7
+  - @vectorstores/clip@0.0.43
+  - @vectorstores/cohere@0.0.12
+  - @vectorstores/deepinfra@0.0.43
+  - @vectorstores/huggingface@0.0.43
+  - @vectorstores/jinaai@0.0.3
+  - @vectorstores/mistral@0.0.12
+  - @vectorstores/mixedbread@0.0.12
+  - @vectorstores/ollama@0.0.47
+  - @vectorstores/openai@0.1.59
+  - @vectorstores/portkey-ai@0.0.40
+  - @vectorstores/replicate@0.0.40
+  - @vectorstores/astra@0.0.12
+  - @vectorstores/azure@0.1.7
+  - @vectorstores/chroma@0.0.12
+  - @vectorstores/firestore@1.0.5
+  - @vectorstores/milvus@0.1.7
+  - @vectorstores/mongodb@0.0.12
+  - @vectorstores/pinecone@0.0.12
+  - @vectorstores/postgres@0.0.40
+  - @vectorstores/qdrant@0.1.7
+  - @vectorstores/upstash@0.0.12
+  - @vectorstores/weaviate@0.0.12
+  - @vectorstores/vercel@0.0.18
+  - @vectorstores/voyage-ai@1.0.4
+  - @vectorstores/readers@2.0.7
+  - @vectorstores/workflow@0.0.15
+  - @vectorstores/deepseek@0.0.3
+  - @vectorstores/fireworks@0.0.3
+  - @vectorstores/groq@0.0.58
+  - @vectorstores/together@0.0.3
+  - @vectorstores/vllm@0.0.29
 
 ## 0.2.7
 
@@ -1701,53 +1701,53 @@
 - Updated dependencies [4b49428]
 - Updated dependencies [bbc8c87]
 - Updated dependencies [7ee4968]
-  - @llamaindex/workflow@0.0.14
+  - @vectorstores/workflow@0.0.14
   - llamaindex@0.9.8
-  - @llamaindex/deepseek@0.0.2
-  - @llamaindex/fireworks@0.0.2
-  - @llamaindex/together@0.0.2
-  - @llamaindex/jinaai@0.0.2
-  - @llamaindex/google@0.0.14
+  - @vectorstores/deepseek@0.0.2
+  - @vectorstores/fireworks@0.0.2
+  - @vectorstores/together@0.0.2
+  - @vectorstores/jinaai@0.0.2
+  - @vectorstores/google@0.0.14
 
 ## 0.2.6
 
 ### Patch Changes
 
 - Updated dependencies [beb922b]
-  - @llamaindex/env@0.1.29
-  - @llamaindex/core@0.5.6
+  - @vectorstores/env@0.1.29
+  - @vectorstores/core@0.5.6
   - llamaindex@0.9.7
-  - @llamaindex/cloud@3.0.7
-  - @llamaindex/node-parser@1.0.6
-  - @llamaindex/anthropic@0.2.4
-  - @llamaindex/clip@0.0.42
-  - @llamaindex/cohere@0.0.11
-  - @llamaindex/deepinfra@0.0.42
-  - @llamaindex/google@0.0.13
-  - @llamaindex/groq@0.0.57
-  - @llamaindex/huggingface@0.0.42
-  - @llamaindex/mistral@0.0.11
-  - @llamaindex/mixedbread@0.0.11
-  - @llamaindex/ollama@0.0.46
-  - @llamaindex/openai@0.1.58
-  - @llamaindex/portkey-ai@0.0.39
-  - @llamaindex/replicate@0.0.39
-  - @llamaindex/astra@0.0.11
-  - @llamaindex/azure@0.1.6
-  - @llamaindex/chroma@0.0.11
-  - @llamaindex/firestore@1.0.4
-  - @llamaindex/milvus@0.1.6
-  - @llamaindex/mongodb@0.0.11
-  - @llamaindex/pinecone@0.0.11
-  - @llamaindex/postgres@0.0.39
-  - @llamaindex/qdrant@0.1.6
-  - @llamaindex/upstash@0.0.11
-  - @llamaindex/weaviate@0.0.11
-  - @llamaindex/voyage-ai@1.0.3
-  - @llamaindex/readers@2.0.6
-  - @llamaindex/workflow@0.0.13
-  - @llamaindex/vercel@0.0.17
-  - @llamaindex/vllm@0.0.28
+  - @vectorstores/cloud@3.0.7
+  - @vectorstores/node-parser@1.0.6
+  - @vectorstores/anthropic@0.2.4
+  - @vectorstores/clip@0.0.42
+  - @vectorstores/cohere@0.0.11
+  - @vectorstores/deepinfra@0.0.42
+  - @vectorstores/google@0.0.13
+  - @vectorstores/groq@0.0.57
+  - @vectorstores/huggingface@0.0.42
+  - @vectorstores/mistral@0.0.11
+  - @vectorstores/mixedbread@0.0.11
+  - @vectorstores/ollama@0.0.46
+  - @vectorstores/openai@0.1.58
+  - @vectorstores/portkey-ai@0.0.39
+  - @vectorstores/replicate@0.0.39
+  - @vectorstores/astra@0.0.11
+  - @vectorstores/azure@0.1.6
+  - @vectorstores/chroma@0.0.11
+  - @vectorstores/firestore@1.0.4
+  - @vectorstores/milvus@0.1.6
+  - @vectorstores/mongodb@0.0.11
+  - @vectorstores/pinecone@0.0.11
+  - @vectorstores/postgres@0.0.39
+  - @vectorstores/qdrant@0.1.6
+  - @vectorstores/upstash@0.0.11
+  - @vectorstores/weaviate@0.0.11
+  - @vectorstores/voyage-ai@1.0.3
+  - @vectorstores/readers@2.0.6
+  - @vectorstores/workflow@0.0.13
+  - @vectorstores/vercel@0.0.17
+  - @vectorstores/vllm@0.0.28
 
 ## 0.2.5
 
@@ -1755,77 +1755,77 @@
 
 - Updated dependencies [5668970]
 - Updated dependencies [fd74ba4]
-  - @llamaindex/core@0.5.5
-  - @llamaindex/workflow@0.0.12
-  - @llamaindex/voyage-ai@1.0.2
-  - @llamaindex/cloud@3.0.6
+  - @vectorstores/core@0.5.5
+  - @vectorstores/workflow@0.0.12
+  - @vectorstores/voyage-ai@1.0.2
+  - @vectorstores/cloud@3.0.6
   - llamaindex@0.9.6
-  - @llamaindex/node-parser@1.0.5
-  - @llamaindex/anthropic@0.2.3
-  - @llamaindex/clip@0.0.41
-  - @llamaindex/cohere@0.0.10
-  - @llamaindex/deepinfra@0.0.41
-  - @llamaindex/google@0.0.12
-  - @llamaindex/huggingface@0.0.41
-  - @llamaindex/mistral@0.0.10
-  - @llamaindex/mixedbread@0.0.10
-  - @llamaindex/ollama@0.0.45
-  - @llamaindex/openai@0.1.57
-  - @llamaindex/portkey-ai@0.0.38
-  - @llamaindex/replicate@0.0.38
-  - @llamaindex/astra@0.0.10
-  - @llamaindex/azure@0.1.5
-  - @llamaindex/chroma@0.0.10
-  - @llamaindex/firestore@1.0.3
-  - @llamaindex/milvus@0.1.5
-  - @llamaindex/mongodb@0.0.10
-  - @llamaindex/pinecone@0.0.10
-  - @llamaindex/postgres@0.0.38
-  - @llamaindex/qdrant@0.1.5
-  - @llamaindex/upstash@0.0.10
-  - @llamaindex/weaviate@0.0.10
-  - @llamaindex/vercel@0.0.16
-  - @llamaindex/readers@2.0.5
-  - @llamaindex/groq@0.0.56
-  - @llamaindex/vllm@0.0.27
+  - @vectorstores/node-parser@1.0.5
+  - @vectorstores/anthropic@0.2.3
+  - @vectorstores/clip@0.0.41
+  - @vectorstores/cohere@0.0.10
+  - @vectorstores/deepinfra@0.0.41
+  - @vectorstores/google@0.0.12
+  - @vectorstores/huggingface@0.0.41
+  - @vectorstores/mistral@0.0.10
+  - @vectorstores/mixedbread@0.0.10
+  - @vectorstores/ollama@0.0.45
+  - @vectorstores/openai@0.1.57
+  - @vectorstores/portkey-ai@0.0.38
+  - @vectorstores/replicate@0.0.38
+  - @vectorstores/astra@0.0.10
+  - @vectorstores/azure@0.1.5
+  - @vectorstores/chroma@0.0.10
+  - @vectorstores/firestore@1.0.3
+  - @vectorstores/milvus@0.1.5
+  - @vectorstores/mongodb@0.0.10
+  - @vectorstores/pinecone@0.0.10
+  - @vectorstores/postgres@0.0.38
+  - @vectorstores/qdrant@0.1.5
+  - @vectorstores/upstash@0.0.10
+  - @vectorstores/weaviate@0.0.10
+  - @vectorstores/vercel@0.0.16
+  - @vectorstores/readers@2.0.5
+  - @vectorstores/groq@0.0.56
+  - @vectorstores/vllm@0.0.27
 
 ## 0.2.4
 
 ### Patch Changes
 
 - Updated dependencies [ad3c7f1]
-  - @llamaindex/core@0.5.4
-  - @llamaindex/cloud@3.0.5
+  - @vectorstores/core@0.5.4
+  - @vectorstores/cloud@3.0.5
   - llamaindex@0.9.5
-  - @llamaindex/node-parser@1.0.4
-  - @llamaindex/anthropic@0.2.2
-  - @llamaindex/clip@0.0.40
-  - @llamaindex/cohere@0.0.9
-  - @llamaindex/deepinfra@0.0.40
-  - @llamaindex/google@0.0.11
-  - @llamaindex/huggingface@0.0.40
-  - @llamaindex/mistral@0.0.9
-  - @llamaindex/mixedbread@0.0.9
-  - @llamaindex/ollama@0.0.44
-  - @llamaindex/openai@0.1.56
-  - @llamaindex/portkey-ai@0.0.37
-  - @llamaindex/replicate@0.0.37
-  - @llamaindex/astra@0.0.9
-  - @llamaindex/azure@0.1.4
-  - @llamaindex/chroma@0.0.9
-  - @llamaindex/firestore@1.0.2
-  - @llamaindex/milvus@0.1.4
-  - @llamaindex/mongodb@0.0.9
-  - @llamaindex/pinecone@0.0.9
-  - @llamaindex/postgres@0.0.37
-  - @llamaindex/qdrant@0.1.4
-  - @llamaindex/upstash@0.0.9
-  - @llamaindex/weaviate@0.0.9
-  - @llamaindex/vercel@0.0.15
-  - @llamaindex/voyage-ai@1.0.1
-  - @llamaindex/readers@2.0.4
-  - @llamaindex/groq@0.0.55
-  - @llamaindex/vllm@0.0.26
+  - @vectorstores/node-parser@1.0.4
+  - @vectorstores/anthropic@0.2.2
+  - @vectorstores/clip@0.0.40
+  - @vectorstores/cohere@0.0.9
+  - @vectorstores/deepinfra@0.0.40
+  - @vectorstores/google@0.0.11
+  - @vectorstores/huggingface@0.0.40
+  - @vectorstores/mistral@0.0.9
+  - @vectorstores/mixedbread@0.0.9
+  - @vectorstores/ollama@0.0.44
+  - @vectorstores/openai@0.1.56
+  - @vectorstores/portkey-ai@0.0.37
+  - @vectorstores/replicate@0.0.37
+  - @vectorstores/astra@0.0.9
+  - @vectorstores/azure@0.1.4
+  - @vectorstores/chroma@0.0.9
+  - @vectorstores/firestore@1.0.2
+  - @vectorstores/milvus@0.1.4
+  - @vectorstores/mongodb@0.0.9
+  - @vectorstores/pinecone@0.0.9
+  - @vectorstores/postgres@0.0.37
+  - @vectorstores/qdrant@0.1.4
+  - @vectorstores/upstash@0.0.9
+  - @vectorstores/weaviate@0.0.9
+  - @vectorstores/vercel@0.0.15
+  - @vectorstores/voyage-ai@1.0.1
+  - @vectorstores/readers@2.0.4
+  - @vectorstores/groq@0.0.55
+  - @vectorstores/vllm@0.0.26
 
 ## 0.2.3
 
@@ -1834,38 +1834,38 @@
 - Updated dependencies [cb256f2]
 - Updated dependencies [cb021e7]
 - Updated dependencies [0346391]
-  - @llamaindex/openai@0.1.55
-  - @llamaindex/core@0.5.3
+  - @vectorstores/openai@0.1.55
+  - @vectorstores/core@0.5.3
   - llamaindex@0.9.4
-  - @llamaindex/voyage-ai@1.0.0
-  - @llamaindex/clip@0.0.39
-  - @llamaindex/deepinfra@0.0.39
-  - @llamaindex/groq@0.0.54
-  - @llamaindex/huggingface@0.0.39
-  - @llamaindex/azure@0.1.3
-  - @llamaindex/milvus@0.1.3
-  - @llamaindex/qdrant@0.1.3
-  - @llamaindex/vllm@0.0.25
-  - @llamaindex/cloud@3.0.4
-  - @llamaindex/node-parser@1.0.3
-  - @llamaindex/anthropic@0.2.1
-  - @llamaindex/cohere@0.0.8
-  - @llamaindex/google@0.0.10
-  - @llamaindex/mistral@0.0.8
-  - @llamaindex/mixedbread@0.0.8
-  - @llamaindex/ollama@0.0.43
-  - @llamaindex/portkey-ai@0.0.36
-  - @llamaindex/replicate@0.0.36
-  - @llamaindex/astra@0.0.8
-  - @llamaindex/chroma@0.0.8
-  - @llamaindex/firestore@1.0.1
-  - @llamaindex/mongodb@0.0.8
-  - @llamaindex/pinecone@0.0.8
-  - @llamaindex/postgres@0.0.36
-  - @llamaindex/upstash@0.0.8
-  - @llamaindex/weaviate@0.0.8
-  - @llamaindex/vercel@0.0.14
-  - @llamaindex/readers@2.0.3
+  - @vectorstores/voyage-ai@1.0.0
+  - @vectorstores/clip@0.0.39
+  - @vectorstores/deepinfra@0.0.39
+  - @vectorstores/groq@0.0.54
+  - @vectorstores/huggingface@0.0.39
+  - @vectorstores/azure@0.1.3
+  - @vectorstores/milvus@0.1.3
+  - @vectorstores/qdrant@0.1.3
+  - @vectorstores/vllm@0.0.25
+  - @vectorstores/cloud@3.0.4
+  - @vectorstores/node-parser@1.0.3
+  - @vectorstores/anthropic@0.2.1
+  - @vectorstores/cohere@0.0.8
+  - @vectorstores/google@0.0.10
+  - @vectorstores/mistral@0.0.8
+  - @vectorstores/mixedbread@0.0.8
+  - @vectorstores/ollama@0.0.43
+  - @vectorstores/portkey-ai@0.0.36
+  - @vectorstores/replicate@0.0.36
+  - @vectorstores/astra@0.0.8
+  - @vectorstores/chroma@0.0.8
+  - @vectorstores/firestore@1.0.1
+  - @vectorstores/mongodb@0.0.8
+  - @vectorstores/pinecone@0.0.8
+  - @vectorstores/postgres@0.0.36
+  - @vectorstores/upstash@0.0.8
+  - @vectorstores/weaviate@0.0.8
+  - @vectorstores/vercel@0.0.14
+  - @vectorstores/readers@2.0.3
 
 ## 0.2.2
 
@@ -1878,37 +1878,37 @@
 - Updated dependencies [5c026e8]
 - Updated dependencies [3564244]
 - Updated dependencies [3564244]
-  - @llamaindex/core@0.5.2
-  - @llamaindex/anthropic@0.2.0
-  - @llamaindex/firestore@1.0.0
-  - @llamaindex/cloud@3.0.3
+  - @vectorstores/core@0.5.2
+  - @vectorstores/anthropic@0.2.0
+  - @vectorstores/firestore@1.0.0
+  - @vectorstores/cloud@3.0.3
   - llamaindex@0.9.3
-  - @llamaindex/node-parser@1.0.2
-  - @llamaindex/clip@0.0.38
-  - @llamaindex/cohere@0.0.7
-  - @llamaindex/deepinfra@0.0.38
-  - @llamaindex/google@0.0.9
-  - @llamaindex/huggingface@0.0.38
-  - @llamaindex/mistral@0.0.7
-  - @llamaindex/mixedbread@0.0.7
-  - @llamaindex/ollama@0.0.42
-  - @llamaindex/openai@0.1.54
-  - @llamaindex/portkey-ai@0.0.35
-  - @llamaindex/replicate@0.0.35
-  - @llamaindex/astra@0.0.7
-  - @llamaindex/azure@0.1.2
-  - @llamaindex/chroma@0.0.7
-  - @llamaindex/milvus@0.1.2
-  - @llamaindex/mongodb@0.0.7
-  - @llamaindex/pinecone@0.0.7
-  - @llamaindex/postgres@0.0.35
-  - @llamaindex/qdrant@0.1.2
-  - @llamaindex/upstash@0.0.7
-  - @llamaindex/weaviate@0.0.7
-  - @llamaindex/vercel@0.0.13
-  - @llamaindex/readers@2.0.2
-  - @llamaindex/groq@0.0.53
-  - @llamaindex/vllm@0.0.24
+  - @vectorstores/node-parser@1.0.2
+  - @vectorstores/clip@0.0.38
+  - @vectorstores/cohere@0.0.7
+  - @vectorstores/deepinfra@0.0.38
+  - @vectorstores/google@0.0.9
+  - @vectorstores/huggingface@0.0.38
+  - @vectorstores/mistral@0.0.7
+  - @vectorstores/mixedbread@0.0.7
+  - @vectorstores/ollama@0.0.42
+  - @vectorstores/openai@0.1.54
+  - @vectorstores/portkey-ai@0.0.35
+  - @vectorstores/replicate@0.0.35
+  - @vectorstores/astra@0.0.7
+  - @vectorstores/azure@0.1.2
+  - @vectorstores/chroma@0.0.7
+  - @vectorstores/milvus@0.1.2
+  - @vectorstores/mongodb@0.0.7
+  - @vectorstores/pinecone@0.0.7
+  - @vectorstores/postgres@0.0.35
+  - @vectorstores/qdrant@0.1.2
+  - @vectorstores/upstash@0.0.7
+  - @vectorstores/weaviate@0.0.7
+  - @vectorstores/vercel@0.0.13
+  - @vectorstores/readers@2.0.2
+  - @vectorstores/groq@0.0.53
+  - @vectorstores/vllm@0.0.24
 
 ## 0.2.1
 
@@ -1916,38 +1916,38 @@
 
 - Updated dependencies [cc50c9c]
 - Updated dependencies [6d37d44]
-  - @llamaindex/env@0.1.28
+  - @vectorstores/env@0.1.28
   - llamaindex@0.9.1
-  - @llamaindex/cloud@3.0.1
-  - @llamaindex/core@0.5.1
-  - @llamaindex/node-parser@1.0.1
-  - @llamaindex/anthropic@0.1.1
-  - @llamaindex/clip@0.0.37
-  - @llamaindex/cohere@0.0.6
-  - @llamaindex/deepinfra@0.0.37
-  - @llamaindex/google@0.0.8
-  - @llamaindex/groq@0.0.52
-  - @llamaindex/huggingface@0.0.37
-  - @llamaindex/mistral@0.0.6
-  - @llamaindex/mixedbread@0.0.6
-  - @llamaindex/ollama@0.0.41
-  - @llamaindex/openai@0.1.53
-  - @llamaindex/portkey-ai@0.0.34
-  - @llamaindex/replicate@0.0.34
-  - @llamaindex/astra@0.0.6
-  - @llamaindex/azure@0.1.1
-  - @llamaindex/chroma@0.0.6
-  - @llamaindex/milvus@0.1.1
-  - @llamaindex/mongodb@0.0.6
-  - @llamaindex/pinecone@0.0.6
-  - @llamaindex/postgres@0.0.34
-  - @llamaindex/qdrant@0.1.1
-  - @llamaindex/upstash@0.0.6
-  - @llamaindex/weaviate@0.0.6
-  - @llamaindex/readers@2.0.1
-  - @llamaindex/workflow@0.0.11
-  - @llamaindex/vercel@0.0.12
-  - @llamaindex/vllm@0.0.23
+  - @vectorstores/cloud@3.0.1
+  - @vectorstores/core@0.5.1
+  - @vectorstores/node-parser@1.0.1
+  - @vectorstores/anthropic@0.1.1
+  - @vectorstores/clip@0.0.37
+  - @vectorstores/cohere@0.0.6
+  - @vectorstores/deepinfra@0.0.37
+  - @vectorstores/google@0.0.8
+  - @vectorstores/groq@0.0.52
+  - @vectorstores/huggingface@0.0.37
+  - @vectorstores/mistral@0.0.6
+  - @vectorstores/mixedbread@0.0.6
+  - @vectorstores/ollama@0.0.41
+  - @vectorstores/openai@0.1.53
+  - @vectorstores/portkey-ai@0.0.34
+  - @vectorstores/replicate@0.0.34
+  - @vectorstores/astra@0.0.6
+  - @vectorstores/azure@0.1.1
+  - @vectorstores/chroma@0.0.6
+  - @vectorstores/milvus@0.1.1
+  - @vectorstores/mongodb@0.0.6
+  - @vectorstores/pinecone@0.0.6
+  - @vectorstores/postgres@0.0.34
+  - @vectorstores/qdrant@0.1.1
+  - @vectorstores/upstash@0.0.6
+  - @vectorstores/weaviate@0.0.6
+  - @vectorstores/readers@2.0.1
+  - @vectorstores/workflow@0.0.11
+  - @vectorstores/vercel@0.0.12
+  - @vectorstores/vllm@0.0.23
 
 ## 0.2.0
 
@@ -1963,70 +1963,70 @@
 - Updated dependencies [d924c63]
 - Updated dependencies [b490376]
 - Updated dependencies [f4588bc]
-  - @llamaindex/milvus@0.1.0
-  - @llamaindex/qdrant@0.1.0
-  - @llamaindex/azure@0.1.0
-  - @llamaindex/anthropic@0.1.0
+  - @vectorstores/milvus@0.1.0
+  - @vectorstores/qdrant@0.1.0
+  - @vectorstores/azure@0.1.0
+  - @vectorstores/anthropic@0.1.0
   - llamaindex@0.9.0
-  - @llamaindex/cloud@3.0.0
-  - @llamaindex/node-parser@1.0.0
-  - @llamaindex/clip@0.0.36
-  - @llamaindex/cohere@0.0.5
-  - @llamaindex/deepinfra@0.0.36
-  - @llamaindex/google@0.0.7
-  - @llamaindex/huggingface@0.0.36
-  - @llamaindex/mistral@0.0.5
-  - @llamaindex/mixedbread@0.0.5
-  - @llamaindex/ollama@0.0.40
-  - @llamaindex/openai@0.1.52
-  - @llamaindex/portkey-ai@0.0.33
-  - @llamaindex/replicate@0.0.33
-  - @llamaindex/astra@0.0.5
-  - @llamaindex/chroma@0.0.5
-  - @llamaindex/mongodb@0.0.5
-  - @llamaindex/pinecone@0.0.5
-  - @llamaindex/postgres@0.0.33
-  - @llamaindex/upstash@0.0.5
-  - @llamaindex/weaviate@0.0.5
-  - @llamaindex/vercel@0.0.11
-  - @llamaindex/readers@2.0.0
-  - @llamaindex/groq@0.0.51
-  - @llamaindex/vllm@0.0.22
+  - @vectorstores/cloud@3.0.0
+  - @vectorstores/node-parser@1.0.0
+  - @vectorstores/clip@0.0.36
+  - @vectorstores/cohere@0.0.5
+  - @vectorstores/deepinfra@0.0.36
+  - @vectorstores/google@0.0.7
+  - @vectorstores/huggingface@0.0.36
+  - @vectorstores/mistral@0.0.5
+  - @vectorstores/mixedbread@0.0.5
+  - @vectorstores/ollama@0.0.40
+  - @vectorstores/openai@0.1.52
+  - @vectorstores/portkey-ai@0.0.33
+  - @vectorstores/replicate@0.0.33
+  - @vectorstores/astra@0.0.5
+  - @vectorstores/chroma@0.0.5
+  - @vectorstores/mongodb@0.0.5
+  - @vectorstores/pinecone@0.0.5
+  - @vectorstores/postgres@0.0.33
+  - @vectorstores/upstash@0.0.5
+  - @vectorstores/weaviate@0.0.5
+  - @vectorstores/vercel@0.0.11
+  - @vectorstores/readers@2.0.0
+  - @vectorstores/groq@0.0.51
+  - @vectorstores/vllm@0.0.22
 
 ## 0.1.3
 
 ### Patch Changes
 
 - Updated dependencies [1c908fd]
-  - @llamaindex/pinecone@0.0.4
-  - @llamaindex/postgres@0.0.32
-  - @llamaindex/weaviate@0.0.4
-  - @llamaindex/mongodb@0.0.4
-  - @llamaindex/upstash@0.0.4
-  - @llamaindex/chroma@0.0.4
-  - @llamaindex/milvus@0.0.4
-  - @llamaindex/qdrant@0.0.4
-  - @llamaindex/astra@0.0.4
-  - @llamaindex/azure@0.0.4
-  - @llamaindex/huggingface@0.0.35
-  - @llamaindex/mixedbread@0.0.4
-  - @llamaindex/portkey-ai@0.0.32
-  - @llamaindex/anthropic@0.0.33
-  - @llamaindex/deepinfra@0.0.35
-  - @llamaindex/replicate@0.0.32
-  - @llamaindex/mistral@0.0.4
-  - @llamaindex/cohere@0.0.4
-  - @llamaindex/google@0.0.6
-  - @llamaindex/ollama@0.0.39
-  - @llamaindex/openai@0.1.51
-  - @llamaindex/vercel@0.0.10
-  - @llamaindex/clip@0.0.35
-  - @llamaindex/groq@0.0.50
-  - @llamaindex/vllm@0.0.21
-  - @llamaindex/node-parser@0.0.24
-  - @llamaindex/workflow@0.0.10
-  - @llamaindex/readers@1.0.25
-  - @llamaindex/cloud@2.0.24
+  - @vectorstores/pinecone@0.0.4
+  - @vectorstores/postgres@0.0.32
+  - @vectorstores/weaviate@0.0.4
+  - @vectorstores/mongodb@0.0.4
+  - @vectorstores/upstash@0.0.4
+  - @vectorstores/chroma@0.0.4
+  - @vectorstores/milvus@0.0.4
+  - @vectorstores/qdrant@0.0.4
+  - @vectorstores/astra@0.0.4
+  - @vectorstores/azure@0.0.4
+  - @vectorstores/huggingface@0.0.35
+  - @vectorstores/mixedbread@0.0.4
+  - @vectorstores/portkey-ai@0.0.32
+  - @vectorstores/anthropic@0.0.33
+  - @vectorstores/deepinfra@0.0.35
+  - @vectorstores/replicate@0.0.32
+  - @vectorstores/mistral@0.0.4
+  - @vectorstores/cohere@0.0.4
+  - @vectorstores/google@0.0.6
+  - @vectorstores/ollama@0.0.39
+  - @vectorstores/openai@0.1.51
+  - @vectorstores/vercel@0.0.10
+  - @vectorstores/clip@0.0.35
+  - @vectorstores/groq@0.0.50
+  - @vectorstores/vllm@0.0.21
+  - @vectorstores/node-parser@0.0.24
+  - @vectorstores/workflow@0.0.10
+  - @vectorstores/readers@1.0.25
+  - @vectorstores/cloud@2.0.24
   - llamaindex@0.8.37
 
 ## 0.1.2
@@ -2034,35 +2034,35 @@
 ### Patch Changes
 
 - Updated dependencies [cb608b5]
-  - @llamaindex/pinecone@0.0.3
-  - @llamaindex/postgres@0.0.31
-  - @llamaindex/weaviate@0.0.3
-  - @llamaindex/mongodb@0.0.3
-  - @llamaindex/upstash@0.0.3
-  - @llamaindex/chroma@0.0.3
-  - @llamaindex/milvus@0.0.3
-  - @llamaindex/qdrant@0.0.3
-  - @llamaindex/astra@0.0.3
-  - @llamaindex/azure@0.0.3
-  - @llamaindex/huggingface@0.0.34
-  - @llamaindex/mixedbread@0.0.3
-  - @llamaindex/portkey-ai@0.0.31
-  - @llamaindex/anthropic@0.0.32
-  - @llamaindex/deepinfra@0.0.34
-  - @llamaindex/replicate@0.0.31
-  - @llamaindex/mistral@0.0.3
-  - @llamaindex/cohere@0.0.3
-  - @llamaindex/google@0.0.5
-  - @llamaindex/ollama@0.0.38
-  - @llamaindex/openai@0.1.50
-  - @llamaindex/vercel@0.0.9
-  - @llamaindex/clip@0.0.34
-  - @llamaindex/groq@0.0.49
-  - @llamaindex/vllm@0.0.20
-  - @llamaindex/node-parser@0.0.23
-  - @llamaindex/workflow@0.0.9
-  - @llamaindex/readers@1.0.24
-  - @llamaindex/cloud@2.0.23
+  - @vectorstores/pinecone@0.0.3
+  - @vectorstores/postgres@0.0.31
+  - @vectorstores/weaviate@0.0.3
+  - @vectorstores/mongodb@0.0.3
+  - @vectorstores/upstash@0.0.3
+  - @vectorstores/chroma@0.0.3
+  - @vectorstores/milvus@0.0.3
+  - @vectorstores/qdrant@0.0.3
+  - @vectorstores/astra@0.0.3
+  - @vectorstores/azure@0.0.3
+  - @vectorstores/huggingface@0.0.34
+  - @vectorstores/mixedbread@0.0.3
+  - @vectorstores/portkey-ai@0.0.31
+  - @vectorstores/anthropic@0.0.32
+  - @vectorstores/deepinfra@0.0.34
+  - @vectorstores/replicate@0.0.31
+  - @vectorstores/mistral@0.0.3
+  - @vectorstores/cohere@0.0.3
+  - @vectorstores/google@0.0.5
+  - @vectorstores/ollama@0.0.38
+  - @vectorstores/openai@0.1.50
+  - @vectorstores/vercel@0.0.9
+  - @vectorstores/clip@0.0.34
+  - @vectorstores/groq@0.0.49
+  - @vectorstores/vllm@0.0.20
+  - @vectorstores/node-parser@0.0.23
+  - @vectorstores/workflow@0.0.9
+  - @vectorstores/readers@1.0.24
+  - @vectorstores/cloud@2.0.23
   - llamaindex@0.8.36
 
 ## 0.1.1
@@ -2071,14 +2071,14 @@
 
 - Updated dependencies [b6ea2bf]
 - Updated dependencies [15563a0]
-  - @llamaindex/google@0.0.4
-  - @llamaindex/openai@0.1.49
+  - @vectorstores/google@0.0.4
+  - @vectorstores/openai@0.1.49
   - llamaindex@0.8.35
-  - @llamaindex/clip@0.0.33
-  - @llamaindex/deepinfra@0.0.33
-  - @llamaindex/groq@0.0.48
-  - @llamaindex/huggingface@0.0.33
-  - @llamaindex/vllm@0.0.19
+  - @vectorstores/clip@0.0.33
+  - @vectorstores/deepinfra@0.0.33
+  - @vectorstores/groq@0.0.48
+  - @vectorstores/huggingface@0.0.33
+  - @vectorstores/vllm@0.0.19
 
 ## 0.1.0
 
@@ -2100,9 +2100,9 @@
 - Updated dependencies [9456616]
 - Updated dependencies [1931bbc]
   - llamaindex@0.8.32
-  - @llamaindex/core@0.4.21
-  - @llamaindex/vercel@0.0.8
-  - @llamaindex/readers@1.0.23
+  - @vectorstores/core@0.4.21
+  - @vectorstores/vercel@0.0.8
+  - @vectorstores/readers@1.0.23
 
 ## 0.0.22
 
@@ -2111,19 +2111,19 @@
 - Updated dependencies [d211b7a]
 - Updated dependencies [0ebbfc1]
   - llamaindex@0.8.31
-  - @llamaindex/core@0.4.20
-  - @llamaindex/vercel@0.0.7
-  - @llamaindex/readers@1.0.22
+  - @vectorstores/core@0.4.20
+  - @vectorstores/vercel@0.0.7
+  - @vectorstores/readers@1.0.22
 
 ## 0.0.21
 
 ### Patch Changes
 
 - Updated dependencies [a9b5b99]
-  - @llamaindex/core@0.4.19
-  - @llamaindex/readers@1.0.21
+  - @vectorstores/core@0.4.19
+  - @vectorstores/readers@1.0.21
   - llamaindex@0.8.28
-  - @llamaindex/vercel@0.0.6
+  - @vectorstores/vercel@0.0.6
 
 ## 0.0.20
 
@@ -2134,20 +2134,20 @@
 - Updated dependencies [e0f6cc3]
 - Updated dependencies [a0e6f57]
   - llamaindex@0.8.27
-  - @llamaindex/vercel@0.0.5
-  - @llamaindex/core@0.4.18
-  - @llamaindex/readers@1.0.20
-  - @llamaindex/workflow@0.0.8
+  - @vectorstores/vercel@0.0.5
+  - @vectorstores/core@0.4.18
+  - @vectorstores/readers@1.0.20
+  - @vectorstores/workflow@0.0.8
 
 ## 0.0.19
 
 ### Patch Changes
 
 - Updated dependencies [3d1808b]
-  - @llamaindex/core@0.4.17
+  - @vectorstores/core@0.4.17
   - llamaindex@0.8.26
-  - @llamaindex/vercel@0.0.4
-  - @llamaindex/readers@1.0.19
+  - @vectorstores/vercel@0.0.4
+  - @vectorstores/readers@1.0.19
 
 ## 0.0.18
 
@@ -2155,10 +2155,10 @@
 
 - Updated dependencies [7e8230b]
 - Updated dependencies [8be4589]
-  - @llamaindex/readers@1.0.18
-  - @llamaindex/core@0.4.16
-  - @llamaindex/vercel@0.0.3
-  - @llamaindex/workflow@0.0.7
+  - @vectorstores/readers@1.0.18
+  - @vectorstores/core@0.4.16
+  - @vectorstores/vercel@0.0.3
+  - @vectorstores/workflow@0.0.7
   - llamaindex@0.8.25
 
 ## 0.0.17
@@ -2167,7 +2167,7 @@
 
 - fd38a25: Add vercel tool adapter to use query engine tool
 - Updated dependencies [fd38a25]
-  - @llamaindex/vercel@0.0.2
+  - @vectorstores/vercel@0.0.2
 
 ## 0.0.16
 
@@ -2176,10 +2176,10 @@
 - Updated dependencies [a7b0ac3]
 - Updated dependencies [ee20c44]
 - Updated dependencies [c69605f]
-  - @llamaindex/core@0.4.10
-  - @llamaindex/workflow@0.0.6
+  - @vectorstores/core@0.4.10
+  - @vectorstores/workflow@0.0.6
   - llamaindex@0.8.13
-  - @llamaindex/readers@1.0.11
+  - @vectorstores/readers@1.0.11
 
 ## 0.0.15
 
@@ -2187,7 +2187,7 @@
 
 - Updated dependencies [ea92b69]
 - Updated dependencies [fadc8b8]
-  - @llamaindex/workflow@0.0.5
+  - @vectorstores/workflow@0.0.5
 
 ## 0.0.14
 
@@ -2198,26 +2198,26 @@
 - Updated dependencies [fd8c882]
 - Updated dependencies [fd8c882]
   - llamaindex@0.8.10
-  - @llamaindex/core@0.4.7
-  - @llamaindex/workflow@0.0.4
-  - @llamaindex/readers@1.0.8
+  - @vectorstores/core@0.4.7
+  - @vectorstores/workflow@0.0.4
+  - @vectorstores/readers@1.0.8
 
 ## 0.0.13
 
 ### Patch Changes
 
 - Updated dependencies [ad85bd0]
-  - @llamaindex/core@0.4.5
+  - @vectorstores/core@0.4.5
   - llamaindex@0.8.8
-  - @llamaindex/workflow@0.0.3
-  - @llamaindex/readers@1.0.6
+  - @vectorstores/workflow@0.0.3
+  - @vectorstores/readers@1.0.6
 
 ## 0.0.12
 
 ### Patch Changes
 
 - Updated dependencies [0765742]
-  - @llamaindex/workflow@0.0.2
+  - @vectorstores/workflow@0.0.2
 
 ## 0.0.11
 
@@ -2227,9 +2227,9 @@
 - Updated dependencies [efb7e1b]
 - Updated dependencies [98ba1e7]
 - Updated dependencies [620c63c]
-  - @llamaindex/core@0.4.0
+  - @vectorstores/core@0.4.0
   - llamaindex@0.8.0
-  - @llamaindex/readers@1.0.0
+  - @vectorstores/readers@1.0.0
 
 ## 0.0.10
 
@@ -2237,7 +2237,7 @@
 
 - 2486bd8: Add files_via_content example for LlamaCloud retrieval
 - Updated dependencies [e2a0876]
-  - @llamaindex/core@0.3.4
+  - @vectorstores/core@0.3.4
   - llamaindex@0.7.7
 
 ## 0.0.9
@@ -2249,7 +2249,7 @@
 - Updated dependencies [3b7736f]
 - Updated dependencies [96fc69c]
   - llamaindex@0.7.0
-  - @llamaindex/core@0.3.0
+  - @vectorstores/core@0.3.0
 
 ## 0.0.8
 
@@ -2257,7 +2257,7 @@
 
 - 11feef8: Add workflows
 - Updated dependencies [11feef8]
-  - @llamaindex/core@0.2.0
+  - @vectorstores/core@0.2.0
   - llamaindex@0.6.0
 
 ## 0.0.7
@@ -2268,7 +2268,7 @@
 - Updated dependencies [16ef5dd]
 - Updated dependencies [36ddec4]
   - llamaindex@0.5.0
-  - @llamaindex/core@0.1.0
+  - @vectorstores/core@0.1.0
 
 ## 0.0.6
 

@@ -4,7 +4,7 @@ import {
   SimpleDocumentStore,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 Settings.callbackManager.on("retrieve-end", (event) => {
   const { nodes } = event.detail;

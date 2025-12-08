@@ -1,5 +1,5 @@
-import { DocxReader } from "@llamaindex/readers/docx";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { DocxReader } from "@vectorstores/readers/docx";
 
 const FILE_PATH = "../data/stars.docx";
 const SAMPLE_QUERY = "Information about Zodiac";

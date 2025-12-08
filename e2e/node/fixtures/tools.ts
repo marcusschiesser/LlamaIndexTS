@@ -1,4 +1,4 @@
-import { FunctionTool } from "llamaindex";
+import { FunctionTool } from "@vectorstores/core";
 import { z } from "zod";
 
 function sumNumbers({ a, b }: { a: number; b: number }) {

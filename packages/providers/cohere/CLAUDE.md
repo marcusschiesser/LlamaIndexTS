@@ -1,14 +1,14 @@
-# CLAUDE.md - @llamaindex/cohere
+# CLAUDE.md - @vectorstores/cohere
 
-This package provides Cohere integration for LlamaIndex.TS, specifically implementing Cohere's reranking capabilities.
+This package provides Cohere integration for vectorstores, specifically implementing Cohere's reranking capabilities.
 
 ## Package Overview
 
-**Package Name:** `@llamaindex/cohere`  
-**Description:** Cohere Adapter for LlamaIndex  
+**Package Name:** `@vectorstores/cohere`  
+**Description:** Cohere Adapter for vectorstores  
 **Version:** 0.0.21
 
-This is a provider package that integrates Cohere's reranking API with the LlamaIndex.TS framework.
+This is a provider package that integrates Cohere's reranking API with the vectorstores framework.
 
 ## Architecture
 
@@ -19,7 +19,7 @@ This is a provider package that integrates Cohere's reranking API with the Llama
 ### Dependencies
 
 - **External:** `cohere-ai` (v7.14.0) - Official Cohere SDK
-- **Internal:** `@llamaindex/core` - Core LlamaIndex interfaces and utilities
+- **Internal:** `@vectorstores/core` - Core vectorstores interfaces and utilities
 
 ## Key Features
 
@@ -27,7 +27,7 @@ This is a provider package that integrates Cohere's reranking API with the Llama
 
 The primary functionality is reranking search results using Cohere's rerank models:
 
-- Implements `BaseNodePostprocessor` interface for seamless integration with LlamaIndex pipelines
+- Implements `BaseNodePostprocessor` interface for seamless integration with vectorstores pipelines
 - Uses Cohere's rerank API to improve search result relevance
 - Supports custom model selection and configuration
 
@@ -42,7 +42,7 @@ The primary functionality is reranking search results using Cohere's rerank mode
 ## Usage Pattern
 
 ```typescript
-import { CohereRerank } from "@llamaindex/cohere";
+import { CohereRerank } from "@vectorstores/cohere";
 
 const reranker = new CohereRerank({
   apiKey: "your-cohere-api-key",
@@ -61,7 +61,7 @@ const rerankedNodes = await reranker.postprocessNodes(nodes, query);
 - Implements `BaseNodePostprocessor` interface
 - Manages CohereClient instance for API communication
 - Extracts text content from nodes using `MetadataMode.ALL`
-- Maps Cohere relevance scores back to LlamaIndex `NodeWithScore` format
+- Maps Cohere relevance scores back to vectorstores `NodeWithScore` format
 - Preserves original nodes while updating relevance scores
 
 ### Error Handling
@@ -76,7 +76,7 @@ const rerankedNodes = await reranker.postprocessNodes(nodes, query);
 - Uses `bunchee` for building with dual CJS/ESM support
 - Exports both CommonJS and ES module formats
 - Includes TypeScript declarations for both formats
-- Follows LlamaIndex.TS provider package conventions
+- Follows vectorstores provider package conventions
 
 ## Development Commands
 
@@ -87,6 +87,6 @@ const rerankedNodes = await reranker.postprocessNodes(nodes, query);
 
 This package integrates with:
 
-- LlamaIndex.TS retrieval pipelines as a node postprocessor
+- vectorstores retrieval pipelines as a node postprocessor
 - Any component that processes `NodeWithScore[]` arrays
 - Query engines that benefit from result reranking

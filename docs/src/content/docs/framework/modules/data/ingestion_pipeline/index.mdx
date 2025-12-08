@@ -8,7 +8,7 @@ These `Transformations` are applied to your input data, and the resulting nodes 
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/openai @llamaindex/qdrant
+npm i llamaindex @vectorstores/openai @vectorstores/qdrant
 ```
 
 ## Usage Pattern
@@ -17,14 +17,14 @@ The simplest usage is to instantiate an IngestionPipeline like so:
 
 ```ts
 import fs from "node:fs/promises";
-import { OpenAI, OpenAIEmbedding } from "@llamaindex/openai";
+import { OpenAI, OpenAIEmbedding } from "@vectorstores/openai";
 import {
   Document,
   IngestionPipeline,
   MetadataMode,
   TitleExtractor,
   SentenceSplitter,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 async function main() {
   // Load essay from abramov.txt in Node
@@ -63,8 +63,8 @@ Then, you can construct an index from that vector store later on.
 ```ts
 import fs from "node:fs/promises";
 
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { QdrantVectorStore } from "@llamaindex/qdrant";
+import { OpenAIEmbedding } from "@vectorstores/openai";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
 import {
   Document,
   IngestionPipeline,
@@ -72,7 +72,7 @@ import {
   TitleExtractor,
   SentenceSplitter,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 async function main() {
   // Load essay from abramov.txt in Node

@@ -1,8 +1,8 @@
-import { CallbackManager, Settings } from "@llamaindex/core";
+import { CallbackManager, Settings } from "@vectorstores/core";
 import { beforeEach, describe, expect, expectTypeOf, test, vi } from "vitest";
 
-declare module "@llamaindex/core" {
-  interface LlamaIndexEventMaps {
+declare module "@vectorstores/core" {
+  interface VectorstoresEventMaps {
     test: {
       value: number;
     };

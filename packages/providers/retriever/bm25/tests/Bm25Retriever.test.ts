@@ -6,7 +6,7 @@ import {
   Serializer,
   TextNode,
   type QueryBundle,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 import BM25 from "okapibm25";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { Bm25Retriever } from "../src/Bm25Retriever";

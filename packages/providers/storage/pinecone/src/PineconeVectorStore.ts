@@ -7,11 +7,8 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
+} from "@vectorstores/core";
 
-import type { BaseNode, Metadata } from "@llamaindex/core";
-import { metadataDictToNode, nodeToMetadata } from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
 import type {
   FetchResponse,
   Index,
@@ -20,6 +17,9 @@ import type {
   ScoredPineconeRecord,
 } from "@pinecone-database/pinecone";
 import { type Pinecone } from "@pinecone-database/pinecone";
+import type { BaseNode, Metadata } from "@vectorstores/core";
+import { metadataDictToNode, nodeToMetadata } from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
 type PineconeParams = {
   indexName?: string;

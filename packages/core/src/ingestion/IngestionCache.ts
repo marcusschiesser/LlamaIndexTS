@@ -1,4 +1,4 @@
-import { createSHA256 } from "@llamaindex/env";
+import { createSHA256 } from "@vectorstores/env";
 import {
   type BaseNode,
   MetadataMode,

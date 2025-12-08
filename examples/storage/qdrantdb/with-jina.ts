@@ -1,10 +1,10 @@
-import { JinaAIEmbedding } from "@llamaindex/jinaai";
-import { QdrantVectorStore } from "@llamaindex/qdrant";
 import {
   Document,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { JinaAIEmbedding } from "@vectorstores/jinaai";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
 
 const embedding = new JinaAIEmbedding({
   apiKey: process.env.JINAAI_API_KEY,

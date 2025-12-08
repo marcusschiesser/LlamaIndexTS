@@ -1,6 +1,3 @@
-import { extractText } from "@llamaindex/core/utils";
-import { OpenAI, OpenAIAgent } from "@llamaindex/openai";
-import { consola } from "consola";
 import {
   Document,
   FunctionTool,
@@ -13,7 +10,10 @@ import {
   SummaryIndex,
   VectorStoreIndex,
   type LLM,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { extractText } from "@vectorstores/core/utils";
+import { OpenAI, OpenAIAgent } from "@vectorstores/openai";
+import { consola } from "consola";
 import { ok, strictEqual } from "node:assert";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";

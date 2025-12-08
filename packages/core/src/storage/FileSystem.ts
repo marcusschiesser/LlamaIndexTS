@@ -1,6 +1,6 @@
 // FS utility helpers
 
-import { fs } from "@llamaindex/env";
+import { fs } from "@vectorstores/env";
 
 /**
  * Checks if a file exists.

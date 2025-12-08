@@ -1,10 +1,10 @@
+import type { Document, Metadata } from "@vectorstores/core";
+import { FileReader } from "@vectorstores/core";
 import {
   FILE_EXT_TO_READER,
   SimpleDirectoryReader,
-} from "@llamaindex/readers/directory";
-import { TextFileReader } from "@llamaindex/readers/text";
-import type { Document, Metadata } from "llamaindex";
-import { FileReader } from "llamaindex";
+} from "@vectorstores/readers/directory";
+import { TextFileReader } from "@vectorstores/readers/text";
 
 class ZipReader extends FileReader {
   loadDataAsContent(fileContent: Uint8Array): Promise<Document<Metadata>[]> {

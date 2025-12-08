@@ -1,4 +1,4 @@
-import { AsyncLocalStorage, CustomEvent } from "@llamaindex/env";
+import { AsyncLocalStorage, CustomEvent } from "@vectorstores/env";
 import type { RetrieveEndEvent, RetrieveStartEvent } from "../../retriever";
 import type { TextNode } from "../../schema";
 import { type EventCaller, getEventCaller } from "./event-caller";
@@ -19,7 +19,7 @@ export type NodeParsingEndEvent = {
   nodes: TextNode[];
 };
 
-export interface LlamaIndexEventMaps {
+export interface VectorstoresEventMaps {
   "chunking-start": ChunkingStartEvent;
   "chunking-end": ChunkingEndEvent;
   "node-parsing-start": NodeParsingStartEvent;
@@ -29,7 +29,7 @@ export interface LlamaIndexEventMaps {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export class LlamaIndexCustomEvent<T = any> extends CustomEvent<T> {
+export class VectorstoresCustomEvent<T = any> extends CustomEvent<T> {
   reason: EventCaller | null = null;
   private constructor(
     event: string,
@@ -41,26 +41,26 @@ export class LlamaIndexCustomEvent<T = any> extends CustomEvent<T> {
     this.reason = options?.reason ?? null;
   }
 
-  static fromEvent<Type extends keyof LlamaIndexEventMaps>(
+  static fromEvent<Type extends keyof VectorstoresEventMaps>(
     type: Type,
-    detail: LlamaIndexEventMaps[Type],
+    detail: VectorstoresEventMaps[Type],
   ) {
-    return new LlamaIndexCustomEvent(type, {
+    return new VectorstoresCustomEvent(type, {
       detail: detail,
       reason: getEventCaller(),
     });
   }
 }
 
-type EventHandler<Event> = (event: LlamaIndexCustomEvent<Event>) => void;
+type EventHandler<Event> = (event: VectorstoresCustomEvent<Event>) => void;
 
 export class CallbackManager {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  #handlers = new Map<keyof LlamaIndexEventMaps, EventHandler<any>[]>();
+  #handlers = new Map<keyof VectorstoresEventMaps, EventHandler<any>[]>();
 
-  on<K extends keyof LlamaIndexEventMaps>(
+  on<K extends keyof VectorstoresEventMaps>(
     event: K,
-    handler: EventHandler<LlamaIndexEventMaps[K]>,
+    handler: EventHandler<VectorstoresEventMaps[K]>,
   ) {
     if (!this.#handlers.has(event)) {
       this.#handlers.set(event, []);
@@ -69,9 +69,9 @@ export class CallbackManager {
     return this;
   }
 
-  off<K extends keyof LlamaIndexEventMaps>(
+  off<K extends keyof VectorstoresEventMaps>(
     event: K,
-    handler: EventHandler<LlamaIndexEventMaps[K]>,
+    handler: EventHandler<VectorstoresEventMaps[K]>,
   ) {
     if (!this.#handlers.has(event)) {
       return this;
@@ -84,9 +84,9 @@ export class CallbackManager {
     return this;
   }
 
-  dispatchEvent<K extends keyof LlamaIndexEventMaps>(
+  dispatchEvent<K extends keyof VectorstoresEventMaps>(
     event: K,
-    detail: LlamaIndexEventMaps[K],
+    detail: VectorstoresEventMaps[K],
     sync = false,
   ) {
     const cbs = this.#handlers.get(event);
@@ -101,12 +101,12 @@ export class CallbackManager {
     }
     if (sync) {
       cbs.forEach((handler) =>
-        handler(LlamaIndexCustomEvent.fromEvent(event, { ...detail })),
+        handler(VectorstoresCustomEvent.fromEvent(event, { ...detail })),
       );
     } else {
       queueMicrotask(() => {
         cbs.forEach((handler) =>
-          handler(LlamaIndexCustomEvent.fromEvent(event, { ...detail })),
+          handler(VectorstoresCustomEvent.fromEvent(event, { ...detail })),
         );
       });
     }

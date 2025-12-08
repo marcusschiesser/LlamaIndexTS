@@ -5,14 +5,14 @@ title: Gemini
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/google
+npm i llamaindex @vectorstores/google
 ```
 
 ## Usage
 
 ```ts
-import { gemini, GEMINI_MODEL } from "@llamaindex/google";
-import { Settings } from "llamaindex";
+import { gemini, GEMINI_MODEL } from "@vectorstores/google";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = gemini({
   model: GEMINI_MODEL.GEMINI_2_0_FLASH,
@@ -24,7 +24,7 @@ Settings.llm = gemini({
 To use Gemini via Vertex AI, you can specify the vertex configuration:
 
 ```ts
-import { gemini, GEMINI_MODEL } from "@llamaindex/google";
+import { gemini, GEMINI_MODEL } from "@vectorstores/google";
 
 const llm = gemini({
   model: GEMINI_MODEL.GEMINI_2_0_FLASH,
@@ -48,7 +48,7 @@ To authenticate for production you'll have to use a [service account](https://cl
 Gemini supports multimodal inputs including text, images, audio, and video:
 
 ```ts
-import { gemini, GEMINI_MODEL } from "@llamaindex/google";
+import { gemini, GEMINI_MODEL } from "@vectorstores/google";
 import fs from "fs";
 
 const llm = gemini({ model: GEMINI_MODEL.GEMINI_2_0_FLASH });
@@ -78,8 +78,8 @@ const result = await llm.chat({
 Gemini supports function calling with tools:
 
 ```ts
-import { gemini, GEMINI_MODEL } from "@llamaindex/google";
-import { tool } from "llamaindex";
+import { gemini, GEMINI_MODEL } from "@vectorstores/google";
+import { tool } from "@vectorstores/core";
 import { z } from "zod";
 
 const llm = gemini({ model: GEMINI_MODEL.GEMINI_2_0_FLASH });
@@ -115,7 +115,7 @@ The Live API is running directly in the frontend. That's why you have to generat
 To use the Live API, make sure to pass `apiVersion: "v1alpha"` to the `httpOptions`.
 
 ```ts
-import { gemini, GEMINI_MODEL } from "@llamaindex/google";
+import { gemini, GEMINI_MODEL } from "@vectorstores/google";
 
 // Server-side: Generate ephemeral key
 const serverLlm = gemini({
@@ -140,7 +140,7 @@ const session = await llm.live.connect();
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 
@@ -162,8 +162,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { gemini, GEMINI_MODEL } from "@llamaindex/google";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { gemini, GEMINI_MODEL } from "@vectorstores/google";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 Settings.llm = gemini({
   model: GEMINI_MODEL.GEMINI_2_0_FLASH,

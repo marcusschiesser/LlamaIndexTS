@@ -1,11 +1,11 @@
-import { OpenAI } from "@llamaindex/openai";
-import { CSVReader } from "@llamaindex/readers/csv";
 import {
   getResponseSynthesizer,
   PromptTemplate,
   Settings,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
+import { CSVReader } from "@vectorstores/readers/csv";
 
 Settings.llm = new OpenAI({ model: "gpt-4" });
 

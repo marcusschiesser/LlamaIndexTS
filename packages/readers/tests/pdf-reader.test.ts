@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 // Note: Settings import must come first to ensure correct module initialization order
-import "@llamaindex/core";
-import { PDFReader } from "@llamaindex/readers/pdf";
+import "@vectorstores/core";
+import { PDFReader } from "@vectorstores/readers/pdf";
 
 describe("pdf reader", () => {
   const reader = new PDFReader();

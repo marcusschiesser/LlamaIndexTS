@@ -1,4 +1,4 @@
-import { Document, MarkdownNodeParser, MetadataMode } from "@llamaindex/core";
+import { Document, MarkdownNodeParser, MetadataMode } from "@vectorstores/core";
 import { describe, expect, test } from "vitest";
 
 describe("MarkdownNodeParser", () => {

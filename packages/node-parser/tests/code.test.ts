@@ -1,4 +1,4 @@
-import { CodeSplitter } from "@llamaindex/node-parser/code";
+import { CodeSplitter } from "@vectorstores/node-parser/code";
 import Parser from "tree-sitter";
 import JS from "tree-sitter-javascript";
 import TS from "tree-sitter-typescript";

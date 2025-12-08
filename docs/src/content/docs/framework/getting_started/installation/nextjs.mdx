@@ -1,9 +1,9 @@
 ---
 title: Next.js Applications
-description: Deploy LlamaIndex.TS in Next.js applications with API routes, server components, and edge runtime.
+description: Deploy vectorstores in Next.js applications with API routes, server components, and edge runtime.
 ---
 
-This guide covers integrating LlamaIndex.TS agents with Next.js applications.
+This guide covers integrating vectorstores agents with Next.js applications.
 
 ## Essential Configuration
 
@@ -29,9 +29,9 @@ export default withLlamaIndex(nextConfig);
 
 ```typescript
 // app/api/chat/route.ts
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -92,9 +92,9 @@ export async function POST(request: NextRequest) {
 
 ```typescript
 // pages/api/chat.ts
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -146,9 +146,9 @@ Initialize agents in server components:
 
 ```typescript
 // app/chat/page.tsx
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 
 async function initializeAgent() {
@@ -196,15 +196,15 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
-  const { setEnvs } = await import("@llamaindex/env");
+  const { setEnvs } = await import("@vectorstores/env");
   setEnvs(process.env);
   
   try {
     const { message } = await request.json();
     
-    const { agent } = await import("@llamaindex/workflow");
-    const { tool } = await import("llamaindex");
-    const { openai } = await import("@llamaindex/openai");
+    const { agent } = await import("@vectorstores/workflow");
+    const { tool } = await import("@vectorstores/core");
+    const { openai } = await import("@vectorstores/openai");
     const { z } = await import("zod");
 
     const timeTool = tool({
@@ -233,10 +233,10 @@ Implement streaming for better user experience:
 
 ```typescript
 // app/api/chat-stream/route.ts
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
-import { agentStreamEvent } from "@llamaindex/workflow";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
+import { agentStreamEvent } from "@vectorstores/workflow";
 import { NextRequest } from "next/server";
 import { z } from "zod";
 

@@ -1,7 +1,7 @@
 import { CollectionReference } from "@google-cloud/firestore";
 import "dotenv/config";
 
-import { FirestoreVectorStore } from "@llamaindex/firestore";
+import { FirestoreVectorStore } from "@vectorstores/firestore";
 
 import { useOpenAIEmbedding } from "../../utils/embedding";
 

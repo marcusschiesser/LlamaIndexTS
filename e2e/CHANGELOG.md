@@ -1,4 +1,4 @@
-# @llamaindex/core-e2e
+# @vectorstores/core-e2e
 
 ## 0.1.1
 
@@ -25,7 +25,7 @@
 ### Patch Changes
 
 - 34faf48: chore: move vector stores to their own packages
-- 9456616: refactor: @llamaindex/postgres
+- 9456616: refactor: @vectorstores/postgres
 
 ## 0.0.7
 

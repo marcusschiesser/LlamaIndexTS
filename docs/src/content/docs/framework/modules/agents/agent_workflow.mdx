@@ -12,9 +12,9 @@ Agent Workflows are a powerful system that enables you to create and orchestrate
 The simplest use case is creating a single agent with specific tools. Here's an example of creating an assistant that tells jokes:
 
 ```typescript
-import { tool } from "llamaindex";
-import { agent } from "@llamaindex/workflow";
-import { openai } from "@llamaindex/openai";
+import { tool } from "@vectorstores/core";
+import { agent } from "@vectorstores/workflow";
+import { openai } from "@vectorstores/openai";
 
 // Define a joke-telling tool
 const jokeTool = tool(
@@ -43,9 +43,9 @@ You can extract structured data from agent responses by providing a `responseFor
 
 ```typescript
 import { z } from "zod";
-import { tool } from "llamaindex";
-import { agent } from "@llamaindex/workflow";
-import { openai } from "@llamaindex/openai";
+import { tool } from "@vectorstores/core";
+import { agent } from "@vectorstores/workflow";
+import { openai } from "@vectorstores/openai";
 
 // Define a weather tool
 const weatherTool = tool({
@@ -94,7 +94,7 @@ The agent will:
 Agent Workflows provide a unified interface for event streaming, making it easy to track and respond to different events during execution:
 
 ```typescript
-import { agentToolCallEvent, agentStreamEvent } from "@llamaindex/workflow";
+import { agentToolCallEvent, agentStreamEvent } from "@vectorstores/workflow";
 
 // Get the workflow execution context
 const events = jokeAgent.runStream("Tell me something funny");
@@ -122,9 +122,9 @@ An Agent Workflow can orchestrate multiple agents, enabling complex interactions
 Here's an example of a multi-agent system that combines joke-telling and weather information:
 
 ```typescript
-import { tool } from "llamaindex";
-import { multiAgent, agent } from "@llamaindex/workflow";
-import { openai } from "@llamaindex/openai";
+import { tool } from "@vectorstores/core";
+import { multiAgent, agent } from "@vectorstores/workflow";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 
 // Create a weather agent

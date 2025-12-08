@@ -1,3 +1,4 @@
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import {
   BaseVectorStore,
   metadataDictToNode,
@@ -8,9 +9,8 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core";
-import { getEnv } from "@llamaindex/env";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
 export interface SupabaseVectorStoreInit extends VectorStoreBaseParams {
   client?: SupabaseClient;

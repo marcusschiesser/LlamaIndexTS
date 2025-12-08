@@ -1,7 +1,7 @@
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { PGVectorStore } from "@llamaindex/postgres";
+import { Document, Settings, VectorStoreQueryMode } from "@vectorstores/core";
+import { OpenAIEmbedding } from "@vectorstores/openai";
+import { PGVectorStore } from "@vectorstores/postgres";
 import { config } from "dotenv";
-import { Document, Settings, VectorStoreQueryMode } from "llamaindex";
 import assert from "node:assert";
 import { beforeEach, test } from "node:test";
 import pg from "pg";
@@ -12,7 +12,7 @@ config({ path: [".env.local", ".env", ".env.ci"] });
 const pgConfig = {
   user: process.env.POSTGRES_USER ?? "user",
   password: process.env.POSTGRES_PASSWORD ?? "password",
-  database: "llamaindex_node_test",
+  database: "vectorstores_node_test",
 };
 
 beforeEach(async () => {
@@ -63,7 +63,7 @@ await test("init without client", async (t) => {
 await test("simple node", async (t) => {
   const dimensions = 3;
   const schemaName =
-    "llamaindex_vector_store_test_" + Math.random().toString(36).substring(7);
+    "vectorstores_vector_store_test_" + Math.random().toString(36).substring(7);
   const nodeId = "5bb16627-f6c0-459c-bb18-71642813ef21";
   const node = new Document({
     text: "hello world",

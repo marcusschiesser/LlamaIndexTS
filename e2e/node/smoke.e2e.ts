@@ -8,13 +8,11 @@ import { testRootDir } from "./utils.js";
 
 await test("cjs/esm dual module check", async (t) => {
   const esmImports = `import fs from 'node:fs/promises'
-import { Document, MetadataMode, VectorStoreIndex } from 'llamaindex'
-import { OpenAIEmbedding } from '@llamaindex/openai'
-import { Settings } from '@llamaindex/core'`;
+import { Document, MetadataMode, VectorStoreIndex, Settings } from '@vectorstores/core'
+import { OpenAIEmbedding } from '@vectorstores/openai'`;
   const cjsRequire = `const fs = require('fs').promises
-const { Document, MetadataMode, VectorStoreIndex } = require('llamaindex')
-const { OpenAIEmbedding } = require('@llamaindex/openai')
-const { Settings } = require('@llamaindex/core')`;
+const { Document, MetadataMode, VectorStoreIndex, Settings } = require('@vectorstores/core')
+const { OpenAIEmbedding } = require('@vectorstores/openai')`;
   const mainCode = `
 Settings.embedModel = new OpenAIEmbedding({
   model: 'text-embedding-3-small',
@@ -87,18 +85,18 @@ const index = await VectorStoreIndex.fromDocuments([document])
   }
 });
 
-test('no extra deps in "@llamaindex/env" cjs module', async () => {
+test('no extra deps in "@vectorstores/env" cjs module', async () => {
   const modules = ["@aws-crypto/sha256-js"];
   const require = createRequire(import.meta.url);
-  const envPackage = require.resolve("@llamaindex/env");
+  const envPackage = require.resolve("@vectorstores/env");
   const file = await readFile(envPackage, "utf-8");
   for (const module of modules) {
     assert.ok(!file.includes(module));
   }
 });
 
-test('no error when require "llamaindex" in CJS', async () => {
-  const code = `require('llamaindex')`;
+test('no error when require "@vectorstores/core" in CJS', async () => {
+  const code = `require('@vectorstores/core')`;
   execSync(`${process.argv[0]} -e "${code}"`, {
     cwd: process.cwd(),
   });

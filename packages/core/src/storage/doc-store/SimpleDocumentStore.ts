@@ -1,4 +1,4 @@
-import { type Logger, path } from "@llamaindex/env";
+import { type Logger, path } from "@vectorstores/env";
 import _ from "lodash";
 import { KVDocumentStore } from ".";
 import {
