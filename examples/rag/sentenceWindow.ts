@@ -1,4 +1,12 @@
-import { HuggingFaceEmbedding } from "@llamaindex/huggingface";
+/**
+ * This example demonstrates using Settings.embedFunc with @huggingface/transformers
+ * to create embeddings for a sentence window retrieval system.
+ */
+
+import {
+  pipeline,
+  type FeatureExtractionPipeline,
+} from "@huggingface/transformers";
 import {
   Document,
   MetadataReplacementPostProcessor,
@@ -9,13 +17,37 @@ import {
 
 import essay from "../data/essay";
 
-// Update node parser and embed model
+// Initialize the embedding pipeline using @huggingface/transformers
+let embedder: FeatureExtractionPipeline | null = null;
+
+async function getEmbedder(): Promise<FeatureExtractionPipeline> {
+  if (!embedder) {
+    embedder = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2", {
+      dtype: "fp32",
+    });
+  }
+  return embedder;
+}
+
+// Set up the global embedFunc in Settings using @huggingface/transformers
+Settings.embedFunc = async (texts: string[]): Promise<number[][]> => {
+  const pipe = await getEmbedder();
+  const embeddings: number[][] = [];
+
+  for (const text of texts) {
+    const output = await pipe(text, { pooling: "mean", normalize: true });
+    embeddings.push(Array.from(output.data as Float32Array));
+  }
+
+  return embeddings;
+};
+
+// Update node parser
 Settings.nodeParser = new SentenceWindowNodeParser({
   windowSize: 3,
   windowMetadataKey: "window",
   originalTextMetadataKey: "original_text",
 });
-Settings.embedModel = new HuggingFaceEmbedding();
 
 async function main() {
   const document = new Document({ text: essay, id_: "essay" });

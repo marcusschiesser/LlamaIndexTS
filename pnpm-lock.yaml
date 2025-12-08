@@ -86,6 +86,9 @@ importers:
       '@azure/search-documents':
         specifier: ^12.1.0
         version: 12.1.0
+      '@huggingface/transformers':
+        specifier: ^3.5.0
+        version: 3.5.0
       '@llamaindex/anthropic':
         specifier: ^0.3.25
         version: 0.3.26(@llamaindex/core@packages+core)(@llamaindex/env@packages+env)

@@ -29,6 +29,7 @@
     "@llamaindex/fireworks": "^0.0.38",
     "@llamaindex/google": "^0.4.0",
     "@llamaindex/groq": "^0.0.94",
+    "@huggingface/transformers": "^3.5.0",
     "@llamaindex/huggingface": "^0.1.32",
     "@llamaindex/jinaai": "^0.0.38",
     "@llamaindex/milvus": "^0.1.31",
