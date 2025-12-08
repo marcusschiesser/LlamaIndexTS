@@ -7,9 +7,7 @@ This package provides environment-specific compatibility layers for different Ja
 **Purpose**: Environment wrapper that provides unified APIs across all supported JavaScript runtimes
 **Main exports**:
 
-- `.` - Main environment APIs
-- `./tokenizers` - Tokenization utilities
-- `./multi-model` - Multi-modal model support
+- `.` - Main environment APIs (fs, crypto, path, AsyncLocalStorage, etc.)
 
 ## Development Commands
 
@@ -67,23 +65,27 @@ The package uses conditional exports to provide runtime-specific implementations
 - `memory.ts` - In-memory filesystem for testing
 - `memfs/` - Memory filesystem implementation
 
-### Tokenizers (`src/internal/tokenizers/`)
-
-- Runtime-specific tokenizer implementations
-- Supports both `gpt-tokenizer` (fast) and `js-tiktoken` (fallback)
-- Encoding/decoding for token counting
-
-### Multi-Model Support (`src/internal/multi-model/`)
-
-- Hugging Face Transformers integration
-- Runtime-specific loading strategies
-- Browser, Node.js, and non-Node implementations
-
 ### Utilities (`src/utils/`)
 
 - `base64.ts` - Base64 encoding/decoding utilities
 - `shared.ts` - Shared utility classes
 - `index.ts` - Environment detection and configuration
+
+## Tokenizers and Transformers (Removed)
+
+The `./tokenizers` and `./multi-model` sub-packages have been removed from this package.
+
+**For tokenization**, install `js-tiktoken` or `gpt-tokenizer` directly and use `Settings.tokenSizer`:
+
+```typescript
+import { getEncoding } from "js-tiktoken";
+import { Settings } from "llamaindex";
+
+const encoding = getEncoding("cl100k_base");
+Settings.tokenSizer = (text) => encoding.encode(text).length;
+```
+
+**For embeddings**, use `Settings.embedFunc` or install embedding packages like `@llamaindex/huggingface` or `@llamaindex/clip`.
 
 ## Architecture Patterns
 
@@ -110,15 +112,13 @@ The package.json uses conditional exports to map different entry points based on
 
 ### Dependency Management
 
-- Core dependencies: `pathe`, `@aws-crypto/sha256-js`, `js-tiktoken`
-- Optional peer dependencies: `@huggingface/transformers`, `gpt-tokenizer`
+- Core dependencies: `pathe`, `@aws-crypto/sha256-js`
 - Runtime detection determines which implementations to use
 
 ## Testing
 
 - Tests in `tests/` directory use Vitest
 - `memfs.test.ts` - Memory filesystem tests
-- `tokenizer.test.ts` - Tokenizer functionality tests
 - Always run `pnpm build` before testing as tests depend on build artifacts
 
 ## Usage Notes

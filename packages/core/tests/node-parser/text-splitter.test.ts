@@ -3,8 +3,20 @@ import {
   splitBySentenceTokenizer,
 } from "@llamaindex/core/node-parser";
 import { Document } from "@llamaindex/core/schema";
-import { Tokenizers, tokenizers } from "@llamaindex/env/tokenizers";
+import { getEncoding } from "js-tiktoken";
 import { describe, expect, test } from "vitest";
+
+// Create tokenizer from js-tiktoken for tests
+const encoding = getEncoding("cl100k_base");
+const tokenizer = {
+  encode: (text: string) => new Uint32Array(encoding.encode(text)),
+  decode: (tokens: Uint32Array) => {
+    const numberArray = Array.from(tokens);
+    const text = encoding.decode(numberArray);
+    const uint8Array = new TextEncoder().encode(text);
+    return new TextDecoder().decode(uint8Array);
+  },
+};
 
 describe("sentence splitter", () => {
   test("initializes", () => {
@@ -87,7 +99,6 @@ describe("sentence splitter", () => {
   });
 
   test("split at tokenizer limit", () => {
-    const tokenizer = tokenizers.tokenizer(Tokenizers.CL100K_BASE);
     const text = "The short sentence. The long long long long sentence.";
     const tokenCount = tokenizer.encode(text).length;
     const sentenceSplitter = new SentenceSplitter({

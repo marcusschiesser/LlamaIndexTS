@@ -329,6 +329,7 @@
     "@edge-runtime/vm": "^4.0.4",
     "ajv": "^8.17.1",
     "happy-dom": "^15.11.6",
+    "js-tiktoken": "^1.0.14",
     "natural": "^8.0.1"
   },
   "dependencies": {

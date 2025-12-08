@@ -50,57 +50,9 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
-    },
-    "./tokenizers": {
-      "workerd": {
-        "types": "./tokenizers/dist/index.workerd.d.ts",
-        "default": "./tokenizers/dist/index.workerd.js"
-      },
-      "edge-light": {
-        "types": "./tokenizers/dist/index.edge-light.d.ts",
-        "default": "./tokenizers/dist/index.edge-light.js"
-      },
-      "browser": {
-        "types": "./tokenizers/dist/index.browser.d.ts",
-        "default": "./tokenizers/dist/index.browser.js"
-      },
-      "import": {
-        "types": "./tokenizers/dist/index.d.ts",
-        "default": "./tokenizers/dist/index.js"
-      },
-      "require": {
-        "types": "./tokenizers/dist/index.d.cts",
-        "default": "./tokenizers/dist/index.cjs"
-      },
-      "default": "./tokenizers/dist/index.js"
-    },
-    "./multi-model": {
-      "workerd": {
-        "types": "./multi-model/dist/index.workerd.d.ts",
-        "default": "./multi-model/dist/index.workerd.js"
-      },
-      "edge-light": {
-        "types": "./multi-model/dist/index.edge-light.d.ts",
-        "default": "./multi-model/dist/index.edge-light.js"
-      },
-      "browser": {
-        "types": "./multi-model/dist/index.browser.d.ts",
-        "default": "./multi-model/dist/index.browser.js"
-      },
-      "import": {
-        "types": "./multi-model/dist/index.d.ts",
-        "default": "./multi-model/dist/index.js"
-      },
-      "require": {
-        "types": "./multi-model/dist/index.d.cts",
-        "default": "./multi-model/dist/index.cjs"
-      },
-      "default": "./multi-model/dist/index.js"
     }
   },
   "files": [
-    "tokenizers",
-    "multi-model",
     "dist",
     "CHANGELOG.md",
     "!**/*.tsbuildinfo"
@@ -116,26 +68,12 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@huggingface/transformers": "^3.5.0",
     "@types/node": "^24.0.13",
     "@types/readable-stream": "^4.0.15",
     "vitest": "^2.1.5"
   },
   "dependencies": {
     "@aws-crypto/sha256-js": "^5.2.0",
-    "js-tiktoken": "^1.0.12",
     "pathe": "^1.1.2"
-  },
-  "peerDependencies": {
-    "@huggingface/transformers": "^3.5.0",
-    "gpt-tokenizer": "^2.5.0"
-  },
-  "peerDependenciesMeta": {
-    "@huggingface/transformers": {
-      "optional": true
-    },
-    "gpt-tokenizer": {
-      "optional": true
-    }
   }
 }

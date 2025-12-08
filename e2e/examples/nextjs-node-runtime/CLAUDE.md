@@ -58,10 +58,12 @@ if (typeof EdgeRuntime === "string") {
 }
 ```
 
-Uses LlamaIndex tokenizers:
+Uses js-tiktoken for tokenization:
 
 ```typescript
-import { Tokenizers, tokenizers } from "@llamaindex/env/tokenizers";
+import { getEncoding } from "js-tiktoken";
+
+const encoding = getEncoding("cl100k_base");
 ```
 
 ### 2. OpenAI Agent Integration (`src/actions/openai.ts`)

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@llamaindex/readers": "workspace:*",
+    "js-tiktoken": "^1.0.14",
     "llamaindex": "workspace:*",
     "next": "^15.4.7",
     "react": "19.0.0",
