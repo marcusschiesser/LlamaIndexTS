@@ -1,12 +1,6 @@
-import { VectorStoreIndex } from "@vectorstores/core";
-import { FireworksEmbedding, FireworksLLM } from "@vectorstores/fireworks";
+import { Settings, VectorStoreIndex } from "@vectorstores/core";
+import { FireworksEmbedding } from "@vectorstores/fireworks";
 import { PDFReader } from "@vectorstores/readers/pdf";
-
-import { Settings } from "@vectorstores/core";
-
-Settings.llm = new FireworksLLM({
-  model: "accounts/fireworks/models/mixtral-8x7b-instruct",
-});
 
 Settings.embedModel = new FireworksEmbedding({
   model: "nomic-ai/nomic-embed-text-v1.5",
@@ -20,14 +14,14 @@ async function main() {
   // Split text and create embeddings. Store them in a VectorStoreIndex
   const index = await VectorStoreIndex.fromDocuments(documents);
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
-  const response = await queryEngine.query({
+  // Retrieve from the index
+  const retriever = index.asRetriever();
+  const response = await retriever.retrieve({
     query: "What mistakes did Warren E. Buffett make?",
   });
 
   // Output response
-  console.log(response.toString());
+  console.log(JSON.stringify(response));
 }
 
 main().catch(console.error);

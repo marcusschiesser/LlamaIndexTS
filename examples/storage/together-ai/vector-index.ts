@@ -2,12 +2,7 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
-import { TogetherEmbedding, TogetherLLM } from "@vectorstores/together";
-
-// Update llm to use TogetherAI
-Settings.llm = new TogetherLLM({
-  model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
-});
+import { TogetherEmbedding } from "@vectorstores/together";
 
 // Update embedModel
 Settings.embedModel = new TogetherEmbedding();
@@ -26,13 +21,13 @@ async function main() {
 
   const index = await VectorStoreIndex.fromDocuments([document]);
 
-  const queryEngine = index.asQueryEngine();
+  const retriever = index.asRetriever();
 
-  const response = await queryEngine.query({
+  const response = await retriever.retrieve({
     query: "What did the author do in college?",
   });
 
-  console.log(response.toString());
+  console.log(JSON.stringify(response));
 }
 
 main().catch(console.error);

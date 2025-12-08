@@ -4,8 +4,8 @@
  */
 
 import {
-  pipeline,
   type FeatureExtractionPipeline,
+  pipeline,
 } from "@huggingface/transformers";
 import {
   Document,
@@ -57,17 +57,19 @@ async function main() {
     logProgress: true,
   });
 
-  // Query the index
-  const queryEngine = index.asQueryEngine({
-    nodePostprocessors: [new MetadataReplacementPostProcessor("window")],
-  });
+  // Retrieve from the index
+  const retriever = index.asRetriever();
 
-  const response = await queryEngine.query({
+  const nodes = await retriever.retrieve({
     query: "What did the author do in college?",
   });
 
+  // Apply node postprocessor to replace metadata
+  const postProcessor = new MetadataReplacementPostProcessor("window");
+  const processedNodes = await postProcessor.postprocessNodes(nodes);
+
   // Output response
-  console.log(response.toString());
+  console.log(JSON.stringify(processedNodes));
 }
 
 main().catch(console.error);

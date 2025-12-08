@@ -25,11 +25,11 @@ async function main() {
     });
 
     console.log("Querying index");
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "Tell me about Godfrey Cheshire's rating of La Sapienza.",
     });
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   } catch (e) {
     console.error(e);
   }

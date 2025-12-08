@@ -10,15 +10,14 @@ async function main() {
     const index = await VectorStoreIndex.fromVectorStore(vectorStore);
     const retriever = index.asRetriever({ similarityTopK: 20 });
 
-    const queryEngine = index.asQueryEngine({ retriever });
-    const results = await queryEngine.query({ query });
-    console.log(`Query from ${results.sourceNodes?.length} nodes`);
-    console.log(results.response);
+    const results = await retriever.retrieve({ query });
+    console.log(`Retrieved ${results.length} nodes`);
+    console.log(JSON.stringify(results));
 
     console.log("\n=====\nQuerying the index with filters");
-    const queryEngineWithFilters = index.asQueryEngine({
-      retriever,
-      preFilters: {
+    const retrieverWithFilters = index.asRetriever({
+      similarityTopK: 20,
+      filters: {
         filters: [
           {
             key: "document_id",
@@ -34,11 +33,11 @@ async function main() {
         condition: "or",
       },
     });
-    const resultAfterFilter = await queryEngineWithFilters.query({
+    const resultAfterFilter = await retrieverWithFilters.retrieve({
       query: "Get all movie titles.",
     });
-    console.log(`Query from ${resultAfterFilter.sourceNodes?.length} nodes`);
-    console.log(resultAfterFilter.response);
+    console.log(`Retrieved ${resultAfterFilter.length} nodes`);
+    console.log(JSON.stringify(resultAfterFilter));
   } catch (e) {
     console.error(e);
   }

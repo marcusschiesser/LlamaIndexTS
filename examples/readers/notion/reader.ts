@@ -64,7 +64,7 @@ program
 
     const index = await VectorStoreIndex.fromDocuments(documents);
 
-    const queryEngine = index.asQueryEngine();
+    const retriever = index.asRetriever();
 
     const rl = createInterface({ input, output });
     while (true) {
@@ -74,9 +74,9 @@ program
         break;
       }
 
-      const response = await queryEngine.query({ query });
+      const response = await retriever.retrieve({ query });
 
-      console.log(response.toString());
+      console.log(JSON.stringify(response));
     }
   });
 

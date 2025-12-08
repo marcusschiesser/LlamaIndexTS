@@ -37,14 +37,15 @@ async function main() {
   // initialize the VectorStoreIndex from nodes
   const index = await VectorStoreIndex.init({ nodes });
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
+  // Retrieve from the index
+  const retriever = index.asRetriever();
 
-  const { message } = await queryEngine.query({
-    query: "summarize the article in three sentence",
+  const response = await retriever.retrieve({
+    query: "What did the author do in college?",
   });
 
-  console.log(message);
+  // Output response
+  console.log(JSON.stringify(response));
 }
 
 main().catch(console.error);

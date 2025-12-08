@@ -18,14 +18,14 @@ async function main() {
     storageContext,
   });
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
-  const response = await queryEngine.query({
+  // Retrieve from the index
+  const retriever = index.asRetriever();
+  const response = await retriever.retrieve({
     query: "What did the author do in college?",
   });
 
   // Output response
-  console.log(response.toString());
+  console.log(JSON.stringify(response));
 
   // load the index
   const secondStorageContext = await storageContextFromDefaults({
@@ -34,11 +34,11 @@ async function main() {
   const loadedIndex = await VectorStoreIndex.init({
     storageContext: secondStorageContext,
   });
-  const loadedQueryEngine = loadedIndex.asQueryEngine();
-  const loadedResponse = await loadedQueryEngine.query({
+  const loadedRetriever = loadedIndex.asRetriever();
+  const loadedResponse = await loadedRetriever.retrieve({
     query: "What did the author do growing up?",
   });
-  console.log(loadedResponse.toString());
+  console.log(JSON.stringify(loadedResponse));
 }
 
 main().catch(console.error);

@@ -1,12 +1,8 @@
-import { VectorStoreIndex } from "@vectorstores/core";
-import { OpenAI, OpenAIEmbedding } from "@vectorstores/openai";
+import { Settings, VectorStoreIndex } from "@vectorstores/core";
+import { OpenAIEmbedding } from "@vectorstores/openai";
 import { PDFReader } from "@vectorstores/readers/pdf";
 
-import { Settings } from "@vectorstores/core";
-
-// Update llm and embedModel
-
-Settings.llm = new OpenAI({ model: "gpt-3.5-turbo", temperature: 0.1 });
+// Update embedModel
 Settings.embedModel = new OpenAIEmbedding({
   model: "nomic-ai/nomic-embed-text-v1.5",
 });
@@ -19,15 +15,15 @@ async function main() {
   // Split text and create embeddings. Store them in a VectorStoreIndex
   const index = await VectorStoreIndex.fromDocuments(documents);
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
+  // Retrieve from the index
+  const retriever = index.asRetriever();
 
-  const response = await queryEngine.query({
+  const response = await retriever.retrieve({
     query: "What mistakes did Warren E. Buffett make?",
   });
 
   // Output response
-  console.log(response.toString());
+  console.log(JSON.stringify(response));
 }
 
 main().catch(console.error);

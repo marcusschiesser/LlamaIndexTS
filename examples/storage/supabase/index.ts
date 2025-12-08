@@ -4,19 +4,11 @@ import {
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
-import {
-  gemini,
-  GEMINI_EMBEDDING_MODEL,
-  GEMINI_MODEL,
-  GeminiEmbedding,
-} from "@vectorstores/google";
+import { GEMINI_EMBEDDING_MODEL, GeminiEmbedding } from "@vectorstores/google";
 import { SupabaseVectorStore } from "@vectorstores/supabase";
 async function main() {
   Settings.embedModel = new GeminiEmbedding({
     model: GEMINI_EMBEDDING_MODEL.TEXT_EMBEDDING_004,
-  });
-  Settings.llm = gemini({
-    model: GEMINI_MODEL.GEMINI_PRO_1_5_FLASH,
   });
   // Create sample documents
   const documents = [
@@ -43,7 +35,7 @@ async function main() {
     }),
   ];
 
-  // Initialize ElasticSearch Vector Store
+  // Initialize Supabase Vector Store
   const vectorStore = new SupabaseVectorStore({
     supabaseUrl: process.env.SUPABASE_URL,
     supabaseKey: process.env.SUPABASE_KEY,
@@ -57,19 +49,19 @@ async function main() {
     vectorStore,
   });
 
-  // Create and store embeddings in ElasticSearch
+  // Create and store embeddings in Supabase
   const index = await VectorStoreIndex.fromDocuments(documents, {
     storageContext,
   });
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
+  // Retrieve from the index
+  const retriever = index.asRetriever();
 
-  // Simple query
-  const response = await queryEngine.query({
+  // Simple retrieval
+  const response = await retriever.retrieve({
     query: "What is vector search?",
   });
-  console.log("Basic Query Response:", response.toString());
+  console.log("Basic Retrieval Response:", JSON.stringify(response));
 }
 
 main().catch(console.error);

@@ -25,10 +25,10 @@ const index = await VectorStoreIndex.fromDocuments(docs, {
   storageContext: ctx,
 });
 
-const queryEngine = index.asQueryEngine();
+const retriever = index.asRetriever();
 
-const results = await queryEngine.query({
+const results = await retriever.retrieve({
   query: "Information about the planet",
 });
 
-console.log(results);
+console.log(JSON.stringify(results));

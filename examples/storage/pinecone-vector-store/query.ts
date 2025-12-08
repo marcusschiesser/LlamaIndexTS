@@ -13,8 +13,8 @@ async function main() {
 
     const index = await VectorStoreIndex.fromVectorStore(pcvs);
 
-    // Query the index
-    const queryEngine = await index.asQueryEngine();
+    // Create retriever
+    const retriever = index.asRetriever();
 
     let question = "";
     while (!isQuit(question)) {
@@ -26,8 +26,8 @@ async function main() {
       }
 
       try {
-        const answer = await queryEngine.query({ query: question });
-        console.log(answer.response);
+        const response = await retriever.retrieve({ query: question });
+        console.log(JSON.stringify(response));
       } catch (error) {
         console.error("Error:", error);
       }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   DefaultAzureCredential,
   getBearerTokenProvider,
@@ -174,12 +173,11 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   });
 
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever({ similarityTopK: 3 });
+    const response = await retriever.retrieve({
       query: "What did the author do growing up?",
-      similarityTopK: 3,
-    } as any);
-    console.log({ response });
+    });
+    console.log({ response: JSON.stringify(response) });
     // The author focused on writing and programming outside of school,
     // writing short stories and experimenting with programming on an IBM 1401 in 9th grade.
     // Later, the author continued programming on microcomputers and eventually
@@ -190,11 +188,11 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   // ---------------------------------------------------------
   // 4- Insert documents into the index
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What colour is the sky?",
     });
-    console.log({ response });
+    console.log({ response: JSON.stringify(response) });
   }
   // The color of the sky varies depending on factors such as the time of day, weather conditions, and location.
   // The text does not provide information about the color of the sky.
@@ -206,11 +204,11 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
       }),
     );
 
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What colour is the sky?",
     });
-    console.log({ response });
+    console.log({ response: JSON.stringify(response) });
     // The color of the sky is indigo.
   }
 
@@ -271,31 +269,28 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
 
   // 6a- Perform a Vector Search (default mode)
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.retrieve({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is the meaning of life?",
-      mode: VectorStoreQueryMode.DEFAULT,
-    } as any);
+    });
     processResults(response, VectorStoreQueryMode.DEFAULT);
   }
 
   // 6b- Perform a Hybrid Search
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.retrieve({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is the meaning of life?",
-      mode: VectorStoreQueryMode.HYBRID,
-    } as any);
+    });
     processResults(response, VectorStoreQueryMode.HYBRID);
   }
 
   // 6c- Perform a Hybrid Search with Semantic Reranking
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.retrieve({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is inception about?",
-      mode: VectorStoreQueryMode.SEMANTIC_HYBRID,
-    } as any);
+    });
     processResults(response, VectorStoreQueryMode.SEMANTIC_HYBRID);
   }
 })();

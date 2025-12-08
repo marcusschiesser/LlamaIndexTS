@@ -41,17 +41,11 @@ async function main() {
       storageContext: ctx,
     });
 
-    const queryEngine = index.asQueryEngine({
-      customParams: {
-        hnsw_ef: 10,
-        exact: true,
-        indexed_only: true,
-      },
-    });
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   } catch (error) {
     console.error(error);
   }

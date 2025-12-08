@@ -19,10 +19,9 @@ async function query() {
 
   const index = await VectorStoreIndex.fromVectorStore(store);
 
-  const retriever = index.asRetriever({ similarityTopK: 20 });
-  const queryEngine = index.asQueryEngine({
-    retriever,
-    preFilters: {
+  const retriever = index.asRetriever({
+    similarityTopK: 20,
+    filters: {
       filters: [
         {
           key: "content_type",
@@ -32,10 +31,10 @@ async function query() {
       ],
     },
   });
-  const result = await queryEngine.query({
+  const result = await retriever.retrieve({
     query: "What does author receive when he was 11 years old?", // Isaac Asimov's "Foundation" for Christmas
   });
-  console.log(result.response);
+  console.log(JSON.stringify(result));
   await client.close();
 }
 

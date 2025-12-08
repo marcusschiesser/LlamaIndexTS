@@ -65,15 +65,15 @@ async function main() {
     logProgress: true,
   });
 
-  console.log("\nQuerying the index...");
+  console.log("\nRetrieving from the index...");
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
-  const response = await queryEngine.query({
+  // Retrieve from the index
+  const retriever = index.asRetriever();
+  const response = await retriever.retrieve({
     query: "What is machine learning?",
   });
 
-  console.log("\nResponse:", response.toString());
+  console.log("\nResponse:", JSON.stringify(response));
 
   // You can also use the embedding function directly
   console.log("\nDirect embedding example:");

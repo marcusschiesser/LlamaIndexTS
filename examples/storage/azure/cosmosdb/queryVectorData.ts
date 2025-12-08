@@ -94,14 +94,13 @@ async function query() {
   // create an index from the Azure CosmosDB NoSQL Vector Store
   const index = await VectorStoreIndex.init({ storageContext });
 
-  // create a retriever and a query engine from the index
+  // create a retriever from the index
   const retriever = index.asRetriever({ similarityTopK: 20 });
-  const queryEngine = index.asQueryEngine({ retriever });
 
-  const result = await queryEngine.query({
+  const result = await retriever.retrieve({
     query: "Who all jog?", // Cosmo, Ludo, Maud, Hale, Constance, Garrison, Fergus, Rafe, Waverly, Rex, Loveday
   });
-  console.log(result.message);
+  console.log(JSON.stringify(result));
 }
 
 void query();

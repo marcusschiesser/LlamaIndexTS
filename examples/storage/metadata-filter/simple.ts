@@ -57,19 +57,19 @@ async function main() {
   console.log(
     "=============\nQuerying index with no filters. The output should be any color.",
   );
-  const queryEngineNoFilters = index.asQueryEngine({
+  const retrieverNoFilters = index.asRetriever({
     similarityTopK: 3,
   });
-  const noFilterResponse = await queryEngineNoFilters.query({
+  const noFilterResponse = await retrieverNoFilters.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log("No filter response:", noFilterResponse.toString());
+  console.log("No filter response:", JSON.stringify(noFilterResponse));
 
   console.log(
     "\n=============\nQuerying index with dogId 2 and private false. The output always should be red.",
   );
-  const queryEngineEQ = index.asQueryEngine({
-    preFilters: {
+  const retrieverEQ = index.asRetriever({
+    filters: {
       filters: [
         {
           key: "private",
@@ -85,16 +85,16 @@ async function main() {
     },
     similarityTopK: 3,
   });
-  const responseEQ = await queryEngineEQ.query({
+  const responseEQ = await retrieverEQ.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log("Filter with dogId 2 response:", responseEQ.toString());
+  console.log("Filter with dogId 2 response:", JSON.stringify(responseEQ));
 
   console.log(
     "\n=============\nQuerying index with dogId IN (1, 3). The output should be brown and red.",
   );
-  const queryEngineIN = index.asQueryEngine({
-    preFilters: {
+  const retrieverIN = index.asRetriever({
+    filters: {
       filters: [
         {
           key: "dogId",
@@ -105,16 +105,19 @@ async function main() {
     },
     similarityTopK: 3,
   });
-  const responseIN = await queryEngineIN.query({
+  const responseIN = await retrieverIN.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log("Filter with dogId IN (1, 3) response:", responseIN.toString());
+  console.log(
+    "Filter with dogId IN (1, 3) response:",
+    JSON.stringify(responseIN),
+  );
 
   console.log(
     "\n=============\nQuerying index with dogId IN (1, 3). The output should be any.",
   );
-  const queryEngineOR = index.asQueryEngine({
-    preFilters: {
+  const retrieverOR = index.asRetriever({
+    filters: {
       filters: [
         {
           key: "private",
@@ -131,12 +134,12 @@ async function main() {
     },
     similarityTopK: 3,
   });
-  const responseOR = await queryEngineOR.query({
+  const responseOR = await retrieverOR.retrieve({
     query: "What is the color of the dog?",
   });
   console.log(
     "Filter with dogId with OR operator response:",
-    responseOR.toString(),
+    JSON.stringify(responseOR),
   );
 }
 

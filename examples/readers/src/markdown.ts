@@ -14,10 +14,10 @@ async function main() {
   console.log("Creating embeddings...");
   const index = await VectorStoreIndex.fromDocuments(documents);
 
-  // Test query
-  const queryEngine = index.asQueryEngine();
-  const response = await queryEngine.query({ query: SAMPLE_QUERY });
-  console.log(`Test query > ${SAMPLE_QUERY}:\n`, response.toString());
+  // Test retrieval
+  const retriever = index.asRetriever();
+  const response = await retriever.retrieve({ query: SAMPLE_QUERY });
+  console.log(`Test query > ${SAMPLE_QUERY}:\n`, JSON.stringify(response));
 }
 
 void main();

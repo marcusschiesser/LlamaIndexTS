@@ -23,7 +23,7 @@ async function main() {
   const document = new Document({ text: essay, id_: filePath });
 
   const index = await VectorStoreIndex.fromDocuments([document]);
-  const queryEngine = index.asQueryEngine();
+  const retriever = index.asRetriever();
 
   console.log(
     "Try asking a question about the essay stored in examples/data/abramov.txt",
@@ -32,10 +32,10 @@ async function main() {
   );
   while (true) {
     const query = await rl.question("Query: ");
-    const response = await queryEngine.query({
+    const response = await retriever.retrieve({
       query,
     });
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   }
 }
 

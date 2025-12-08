@@ -9,15 +9,15 @@ async function main() {
   // Split text and create embeddings. Store them in a VectorStoreIndex
   const index = await VectorStoreIndex.fromDocuments(documents);
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
+  // Retrieve from the index
+  const retriever = index.asRetriever();
 
-  const response = await queryEngine.query({
+  const response = await retriever.retrieve({
     query: "What does the example code do?",
   });
 
   // Output response
-  console.log(response.toString());
+  console.log(JSON.stringify(response));
 }
 
 main().catch(console.error);
