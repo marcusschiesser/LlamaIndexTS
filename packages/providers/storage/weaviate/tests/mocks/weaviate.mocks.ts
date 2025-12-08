@@ -1,11 +1,11 @@
 import { Settings } from "@llamaindex/core/global";
 import { vi } from "vitest";
 
-// Mock embedding model
-export const mockEmbedding = {
-  getTextEmbedding: vi.fn(() => Promise.resolve([0.1, 0.2, 0.3])),
-  getTextEmbeddings: vi.fn(() => Promise.resolve([[0.1, 0.2, 0.3]])),
-};
+// Mock embedding function
+export const mockEmbedFunc = vi.fn(async (texts: string[]) => {
+  // Return one embedding vector per input text
+  return texts.map(() => [0.1, 0.2, 0.3]);
+});
 
 // Mock weaviate collection
 export const mockCollection = {
@@ -26,8 +26,7 @@ export const mockClient = {
   },
 };
 
-// Setup embedding model for tests
+// Setup embedding function for tests
 export const setupMockEmbedding = () => {
-  (Settings as unknown as { embedModel: typeof mockEmbedding }).embedModel =
-    mockEmbedding;
+  Settings.embedFunc = mockEmbedFunc;
 };

@@ -37,7 +37,7 @@ describe("sanitize", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    // Set up embedding model for tests
+    // Set up embedding function for tests
     setupMockEmbedding();
   });
 

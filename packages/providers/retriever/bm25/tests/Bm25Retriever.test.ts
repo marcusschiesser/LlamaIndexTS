@@ -1,4 +1,4 @@
-import { QueryBundle } from "@llamaindex/core/query-engine";
+import { type QueryBundle } from "@llamaindex/core/retriever";
 import { BaseNode, MetadataMode, TextNode } from "@llamaindex/core/schema";
 import {
   BaseDocumentStore,
