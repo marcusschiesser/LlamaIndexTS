@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
+    "type-check": "tsc --noEmit",
     "start": "echo 'To get started, run `npx tsx <path to example>`'"
   },
   "dependencies": {

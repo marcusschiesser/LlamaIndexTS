@@ -1,16 +1,13 @@
 import { CosmosClient } from "@azure/cosmos";
 import { DefaultAzureCredential } from "@azure/identity";
+import { AzureCosmosDBNoSQLConfig } from "@vectorstores/azure";
 import {
-  AzureCosmosDBNoSQLConfig,
-  AzureOpenAI,
-  AzureOpenAIEmbedding,
-} from "@vectorstores/azure";
-import {
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
 import * as dotenv from "dotenv";
+
+import { useOpenAIEmbedding } from "../../../utils/embedding";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,
@@ -26,21 +23,6 @@ const databaseName =
   process.env.AZURE_COSMOSDB_DATABASE_NAME || "shortStoriesDatabase";
 const containerName =
   process.env.AZURE_COSMOSDB_VECTOR_CONTAINER_NAME || "vectorContainer";
-
-const llmInit = {
-  apiVersion: process.env.AZURE_OPENAI_LLM_API_VERSION,
-  endpoint: process.env.AZURE_OPENAI_LLM_ENDPOINT,
-  apiKey: process.env.AZURE_OPENAI_LLM_API_KEY,
-};
-
-const embedModelInit = {
-  apiVersion: process.env.AZURE_OPENAI_EMBEDDING_API_VERSION,
-  endpoint: process.env.AZURE_OPENAI_EMBEDDING_ENDPOINT,
-  apiKey: process.env.AZURE_OPENAI_EMBEDDING_API_KEY,
-};
-
-Settings.llm = new AzureOpenAI(llmInit);
-Settings.embedModel = new AzureOpenAIEmbedding(embedModelInit);
 
 async function initializeStores() {
   // Create a configuration object for the Azure CosmosDB NoSQL Vector Store
@@ -64,6 +46,9 @@ async function initializeStores() {
 }
 
 async function query() {
+  // Use OpenAI embeddings
+  useOpenAIEmbedding();
+
   if (!cosmosConnectionString && !cosmosEndpoint) {
     throw new Error(
       "Azure CosmosDB connection string or endpoint must be set.",

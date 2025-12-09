@@ -1,22 +1,17 @@
 import "dotenv/config";
 
 import {
-  DefaultAzureCredential,
-  getBearerTokenProvider,
-} from "@azure/identity";
-import {
   AzureCosmosDBNoSqlVectorStore,
   AzureCosmosNoSqlDocumentStore,
   AzureCosmosNoSqlIndexStore,
-  AzureOpenAI,
-  AzureOpenAIEmbedding,
 } from "@vectorstores/azure";
 import {
   Document,
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 /**
  * This example demonstrates how to use Azure CosmosDB with vectorstores.
@@ -24,29 +19,16 @@ import {
  *
  * To run this example, create an .env file under /examples and set the following environment variables:
  *
- * AZURE_OPENAI_ENDPOINT="https://AOAI-ACCOUNT.openai.azure.com" // Sample Azure OpenAI endpoint.
- * AZURE_DEPLOYMENT_NAME="gpt-4o" // Sample Azure OpenAI deployment name.
- * EMBEDDING_MODEL="text-embedding-3-large" // Sample Azure OpenAI embedding model.
+ * OPENAI_API_KEY= // OpenAI API key for embeddings.
  * AZURE_COSMOSDB_NOSQL_ACCOUNT_ENDPOINT = "https://DB-ACCOUNT.documents.azure.com:443/" // Sample CosmosDB account endpoint.
  *
- * This example uses managed identity to authenticate with Azure CosmosDB and Azure OpenAI. Make sure to assign the required roles to the managed identity.
- * You can also use connectionString for Azure CosmosDB and Keys with Azure OpenAI for authentication.
+ * This example uses managed identity to authenticate with Azure CosmosDB. Make sure to assign the required roles to the managed identity.
+ * You can also use connectionString for Azure CosmosDB for authentication.
  */
 (async () => {
-  const credential = new DefaultAzureCredential();
-  const azureADTokenProvider = getBearerTokenProvider(
-    credential,
-    "https://cognitiveservices.azure.com/.default",
-  );
+  // Use OpenAI embeddings
+  useOpenAIEmbedding();
 
-  Settings.llm = new AzureOpenAI({
-    azureADTokenProvider,
-    deployment: process.env.AZURE_DEPLOYMENT_NAME,
-  });
-  Settings.embedModel = new AzureOpenAIEmbedding({
-    azureADTokenProvider,
-    deployment: process.env.EMBEDDING_MODEL,
-  });
   const docStore = AzureCosmosNoSqlDocumentStore.fromAadToken();
   console.log({ docStore });
   const indexStore = AzureCosmosNoSqlIndexStore.fromAadToken();

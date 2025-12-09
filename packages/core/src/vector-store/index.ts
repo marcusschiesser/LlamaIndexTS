@@ -155,4 +155,5 @@ export const parseNumberValue = (value?: MetadataFilterValue): number => {
   return value;
 };
 
+export * from "./SimpleVectorStore.js";
 export * from "./utils.js";

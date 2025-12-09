@@ -22,6 +22,7 @@ let embedder: FeatureExtractionPipeline | null = null;
 
 async function getEmbedder(): Promise<FeatureExtractionPipeline> {
   if (!embedder) {
+    // @ts-expect-error - pipeline returns a complex union type
     embedder = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2", {
       dtype: "fp32",
     });

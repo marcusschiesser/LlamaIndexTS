@@ -3,25 +3,21 @@ import {
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
-import { JinaAIEmbedding } from "@vectorstores/jinaai";
 import { QdrantVectorStore } from "@vectorstores/qdrant";
 
-const embedding = new JinaAIEmbedding({
-  apiKey: process.env.JINAAI_API_KEY,
-  model: "jina-embeddings-v3",
-});
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 async function main() {
+  useOpenAIEmbedding();
   const docs = [new Document({ text: "Lorem ipsum dolor sit amet" })];
   const vectorStore = new QdrantVectorStore({
     url: process.env.QDRANT_URL,
     apiKey: process.env.QDRANT_API_KEY,
-    embedModel: embedding,
-    collectionName: "jina_test",
+    collectionName: "openai_test",
   });
   const storageContext = await storageContextFromDefaults({ vectorStore });
   await VectorStoreIndex.fromDocuments(docs, { storageContext });
-  console.log("Inizialized vector store successfully");
+  console.log("Initialized vector store successfully");
 }
 
 void main().catch((err) => console.error(err));

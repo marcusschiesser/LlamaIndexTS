@@ -1,22 +1,22 @@
 import { CosmosClient } from "@azure/cosmos";
 import { DefaultAzureCredential } from "@azure/identity";
 import {
-  AzureCosmosDBNoSQLConfig,
-  AzureOpenAI,
-  AzureOpenAIEmbedding,
+  type AzureCosmosDBNoSQLConfig,
   SimpleCosmosDBReader,
-  SimpleCosmosDBReaderLoaderConfig,
+  type SimpleCosmosDBReaderLoaderConfig,
 } from "@vectorstores/azure";
 import {
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
 import * as dotenv from "dotenv";
+
+import { useOpenAIEmbedding } from "../../../utils/embedding";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,
 } from "./utils";
+
 // Load environment variables from local .env file
 dotenv.config();
 
@@ -29,22 +29,6 @@ const collectionName =
   process.env.AZURE_COSMOSDB_CONTAINER_NAME || "shortStoriesContainer";
 const vectorCollectionName =
   process.env.AZURE_COSMOSDB_VECTOR_CONTAINER_NAME || "vectorContainer";
-
-// This example uses Azure OpenAI llm and embedding models
-const llmInit = {
-  apiVersion: process.env.AZURE_OPENAI_LLM_API_VERSION,
-  endpoint: process.env.AZURE_OPENAI_LLM_ENDPOINT,
-  apiKey: process.env.AZURE_OPENAI_LLM_API_KEY,
-};
-
-const embedModelInit = {
-  apiVersion: process.env.AZURE_OPENAI_EMBEDDING_API_VERSION,
-  endpoint: process.env.AZURE_OPENAI_EMBEDDING_ENDPOINT,
-  apiKey: process.env.AZURE_OPENAI_EMBEDDING_API_KEY,
-};
-
-Settings.llm = new AzureOpenAI(llmInit);
-Settings.embedModel = new AzureOpenAIEmbedding(embedModelInit);
 
 // Initialize the CosmosDB client
 async function initializeCosmosClient() {
@@ -82,6 +66,9 @@ async function initializeStores() {
 }
 
 async function loadVectorData() {
+  // Use OpenAI embeddings
+  useOpenAIEmbedding();
+
   if (!cosmosConnectionString && !cosmosEndpoint) {
     throw new Error(
       "Azure CosmosDB connection string or endpoint must be set.",

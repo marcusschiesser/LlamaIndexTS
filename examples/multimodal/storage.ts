@@ -33,6 +33,7 @@ async function getVisionModel() {
 
 async function getProcessor() {
   if (!processor) {
+    // @ts-expect-error - AutoProcessor types require 2 arguments
     processor = await AutoProcessor.from_pretrained(MODEL_ID);
   }
   return processor;

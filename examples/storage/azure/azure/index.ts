@@ -1,15 +1,10 @@
-import {
-  DefaultAzureCredential,
-  getBearerTokenProvider,
-} from "@azure/identity";
+import { DefaultAzureCredential } from "@azure/identity";
 import {
   KnownAnalyzerNames,
   KnownVectorSearchAlgorithmKind,
 } from "@azure/search-documents";
 import {
   AzureAISearchVectorStore,
-  AzureOpenAI,
-  AzureOpenAIEmbedding,
   type FilterableMetadataFieldKeysType,
   IndexManagement,
   MetadataIndexFieldType,
@@ -21,14 +16,15 @@ import {
   FilterOperator,
   type Metadata,
   type NodeWithScore,
-  Settings,
   storageContextFromDefaults,
-  TextNode,
+  type TextNode,
   VectorStoreIndex,
   VectorStoreQueryMode,
 } from "@vectorstores/core";
 import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import dotenv from "dotenv";
+
+import { useOpenAIEmbedding } from "../../../utils/embedding";
 
 dotenv.config();
 
@@ -60,31 +56,15 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
 // Based on Azure AI Search Index Demo example
 (async () => {
   // ---------------------------------------------------------
-  // 1- Setup Azure OpenAI
-  const credential = new DefaultAzureCredential();
-  const azureADTokenProvider = getBearerTokenProvider(
-    credential,
-    "https://cognitiveservices.azure.com/.default",
-  );
-  // You need to deploy your own embedding model as well as your own chat completion model
-  Settings.llm = new AzureOpenAI({
-    azureADTokenProvider,
-    deployment: process.env.AZURE_DEPLOYMENT_NAME,
-  });
-  Settings.embedModel = new AzureOpenAIEmbedding({
-    azureADTokenProvider,
-    deployment: process.env.EMBEDDING_MODEL,
-  });
+  // 1- Setup OpenAI Embeddings
+  useOpenAIEmbedding();
 
   // ---------------------------------------------------------
   // 2- Setup Azure AI Search
   // Define env variables in .env file
   // AZURE_AI_SEARCH_ENDPOINT=
   // AZURE_AI_SEARCH_KEY=
-  // AZURE_OPENAI_ENDPOINT=
-  // EMBEDDING_MODEL=text-embedding-ada-002
-  // AZURE_DEPLOYMENT_NAME=gpt-4
-  // AZURE_API_VERSION=2024-09-01-preview
+  // OPENAI_API_KEY=
 
   // Define index name
   const indexName = "vectorstores-vector-store-example";

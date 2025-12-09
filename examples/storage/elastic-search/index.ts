@@ -1,15 +1,15 @@
 import {
   Document,
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
 import { ElasticSearchVectorStore } from "@vectorstores/elastic-search";
-import { GEMINI_EMBEDDING_MODEL, GeminiEmbedding } from "@vectorstores/google";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
+
+useOpenAIEmbedding();
+
 async function main() {
-  Settings.embedModel = new GeminiEmbedding({
-    model: GEMINI_EMBEDDING_MODEL.TEXT_EMBEDDING_004,
-  });
   // Create sample documents
   const documents = [
     new Document({
