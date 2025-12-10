@@ -214,36 +214,6 @@ importers:
         specifier: ^5.8.3
         version: 5.9.2
 
-  examples/readers:
-    dependencies:
-      '@notionhq/client':
-        specifier: 4.0.0
-        version: 4.0.0
-      '@vectorstores/excel':
-        specifier: workspace:*
-        version: link:../../packages/providers/excel
-      '@vectorstores/readers':
-        specifier: workspace:* || ^1.0.25
-        version: link:../../packages/readers
-    devDependencies:
-      '@types/node':
-        specifier: ^24.0.13
-        version: 24.0.13
-      tsx:
-        specifier: ^4.20.3
-        version: 4.20.3
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.2
-
-  examples/storage/azure/azure: {}
-
-  examples/storage/elastic-search: {}
-
-  examples/storage/pg: {}
-
-  examples/storage/supabase: {}
-
   packages/core:
     dependencies:
       '@vectorstores/env':
