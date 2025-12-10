@@ -1,7 +1,7 @@
 {
   "name": "@vectorstores/readers",
   "description": "vectorstores Readers",
-  "version": "3.1.21",
+  "version": "0.1.0",
   "type": "module",
   "exports": {
     "./node/hook": "./node/dist/hook.js",

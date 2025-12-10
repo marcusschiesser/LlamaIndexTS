@@ -1,7 +1,7 @@
 {
   "name": "@vectorstores/env",
   "description": "environment wrapper, supports all JS environment including node, deno, bun, edge runtime, and cloudflare worker",
-  "version": "0.1.30",
+  "version": "0.1.0",
   "type": "module",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
@@ -54,7 +54,6 @@
   },
   "files": [
     "dist",
-    "CHANGELOG.md",
     "!**/*.tsbuildinfo"
   ],
   "repository": {

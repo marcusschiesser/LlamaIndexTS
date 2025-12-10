@@ -1,7 +1,7 @@
 {
   "name": "@vectorstores/core",
   "type": "module",
-  "version": "0.6.22",
+  "version": "0.1.0",
   "description": "vectorstores Core Module",
   "exports": {
     ".": {
