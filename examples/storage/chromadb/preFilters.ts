@@ -1,10 +1,10 @@
-import { ChromaVectorStore } from "@llamaindex/chroma";
+import { ChromaVectorStore } from "@vectorstores/chroma";
 import {
   Document,
   MetadataFilters,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 const collectionName = "dogs_with_color";
 
@@ -16,12 +16,12 @@ async function main() {
     const queryFn = async (filters?: MetadataFilters) => {
       console.log("\nQuerying dogs by filters: ", JSON.stringify(filters));
       const query = "List all colors of dogs";
-      const queryEngine = index.asQueryEngine({
-        preFilters: filters,
+      const retriever = index.asRetriever({
+        filters,
         similarityTopK: 3,
       });
-      const response = await queryEngine.query({ query });
-      console.log(response.toString());
+      const response = await retriever.retrieve({ query });
+      console.log(JSON.stringify(response));
     };
 
     await queryFn(); // red, brown, yellow

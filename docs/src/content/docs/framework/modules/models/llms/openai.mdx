@@ -5,12 +5,12 @@ title: OpenAI
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/openai
+npm i llamaindex @vectorstores/openai
 ```
 
 ```ts
-import { OpenAI } from "@llamaindex/openai";
-import { Settings } from "llamaindex";
+import { OpenAI } from "@vectorstores/openai";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = new OpenAI({ model: "gpt-3.5-turbo", temperature: 0, apiKey: <YOUR_API_KEY> });
 ```
@@ -40,7 +40,7 @@ The OpenAI Responses API provides enhanced functionality for handling complex in
 ### Basic Setup
 
 ```ts
-import { openaiResponses } from "@llamaindex/openai";
+import { openaiResponses } from "@vectorstores/openai";
 
 const llm = openaiResponses({
   model: "gpt-4o",
@@ -321,7 +321,7 @@ The response format options are:
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 
@@ -343,8 +343,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { OpenAI } from "@llamaindex/openai";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { OpenAI } from "@vectorstores/openai";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
 // Use the OpenAI LLM
 Settings.llm = new OpenAI({ model: "gpt-3.5-turbo", temperature: 0 });
@@ -387,8 +387,8 @@ The OpenAI Live LLM integration in LlamaIndex provides real-time chat capabiliti
 ## Basic Usage
 
 ```typescript
-import { openai } from "@llamaindex/openai";
-import { tool, ModalityType } from "llamaindex";
+import { openai } from "@vectorstores/openai";
+import { tool, ModalityType } from "@vectorstores/core";
 
 // Get the ephimeral key on the server 
 const serverllm = openai({
@@ -407,7 +407,7 @@ const llm = openai({
   model: "gpt-4o-realtime-preview-2025-06-03"
 });
 
-// Create a live sessionimport { tool } from "llamaindex";
+// Create a live sessionimport { tool } from "@vectorstores/core";
 const session = await llm.live.connect({
   systemInstruction: "You are a helpful assistant.",
 });

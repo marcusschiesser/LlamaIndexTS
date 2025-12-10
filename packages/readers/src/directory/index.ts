@@ -1,5 +1,5 @@
-import type { FileReader } from "@llamaindex/core/schema";
-import { Document } from "@llamaindex/core/schema";
+import type { FileReader } from "@vectorstores/core";
+import { Document } from "@vectorstores/core";
 import { CSVReader } from "../csv";
 import { DocxReader } from "../docx";
 import { HTMLReader } from "../html.js";

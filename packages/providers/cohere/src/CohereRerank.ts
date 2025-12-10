@@ -1,10 +1,12 @@
 import { CohereClient } from "cohere-ai";
 
-import type { MessageContent } from "@llamaindex/core/llms";
-import type { BaseNodePostprocessor } from "@llamaindex/core/postprocessor";
-import type { NodeWithScore } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
-import { extractText } from "@llamaindex/core/utils";
+import {
+  extractText,
+  MetadataMode,
+  type BaseNodePostprocessor,
+  type MessageContent,
+  type NodeWithScore,
+} from "@vectorstores/core";
 
 type CohereRerankOptions = {
   topN?: number;

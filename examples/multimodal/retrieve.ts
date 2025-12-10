@@ -1,4 +1,9 @@
-import { ImageNode, Settings, TextNode, VectorStoreIndex } from "llamaindex";
+import {
+  ImageNode,
+  Settings,
+  TextNode,
+  VectorStoreIndex,
+} from "@vectorstores/core";
 import { getStorageContext } from "./storage";
 
 // Update chunk size and overlap

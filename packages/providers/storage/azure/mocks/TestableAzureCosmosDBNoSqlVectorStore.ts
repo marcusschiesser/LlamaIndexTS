@@ -1,4 +1,4 @@
-import type { BaseNode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@vectorstores/core";
 import type { Mocked } from "vitest";
 import { AzureCosmosDBNoSqlVectorStore } from "../src/vectorStore/AzureCosmosDBNoSqlVectorStore";
 

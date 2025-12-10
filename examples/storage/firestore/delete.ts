@@ -1,13 +1,13 @@
 import { CollectionReference } from "@google-cloud/firestore";
 import "dotenv/config";
 
-import { FirestoreVectorStore } from "@llamaindex/firestore";
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { Settings } from "llamaindex";
+import { FirestoreVectorStore } from "@vectorstores/firestore";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 const indexName = "MovieReviews";
 
-Settings.embedModel = new OpenAIEmbedding();
+useOpenAIEmbedding();
 
 async function main() {
   try {

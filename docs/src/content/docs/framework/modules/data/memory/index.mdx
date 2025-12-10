@@ -7,7 +7,7 @@ description: Manage conversation history and context with agents
 
 Memory is a core component of agentic systems. It allows you to store and retrieve information from the past.
 
-In LlamaIndexTS, you can create memory by using the `createMemory` function. This function will return a `Memory` object, which you can then use to store and retrieve information.
+In vectorstores, you can create memory by using the `createMemory` function. This function will return a `Memory` object, which you can then use to store and retrieve information.
 
 As the agent runs, it will make calls to `add()` to store information, and `get()` to retrieve information. 
 
@@ -22,9 +22,9 @@ A `Memory` object has both short-term memory (i.e. a FIFO queue of messages) and
 Here we're creating a memory with a static block (read more about [memory blocks](#long-term-memory)) that contains some information about the user.
 
 ```ts twoslash
-import { openai } from "@llamaindex/openai";
-import { agent } from "@llamaindex/workflow";
-import { createMemory, staticBlock } from "llamaindex";
+import { openai } from "@vectorstores/openai";
+import { agent } from "@vectorstores/workflow";
+import { createMemory, staticBlock } from "@vectorstores/core";
 
 const llm = openai({ model: "gpt-4.1-mini" });
 
@@ -71,7 +71,7 @@ await memory.add({
 });
 ```
 
-If you call `get`, messages are usually retrieved in the LlamaIndexTS format (type `ChatMessage`). If you specify the `type` parameter using `get`, you can return the messages in different formats. E.g.: using `type: "vercel"`, you can return the messages in Vercel format:
+If you call `get`, messages are usually retrieved in the vectorstores format (type `ChatMessage`). If you specify the `type` parameter using `get`, you can return the messages in different formats. E.g.: using `type: "vercel"`, you can return the messages in Vercel format:
 
 ```ts
 const messages = await memory.get({ type: "vercel" });
@@ -115,9 +115,9 @@ Currently, there are three predefined memory blocks:
 This sounds a bit complicated, but it's actually quite simple. Let's look at an example:
 
 ```ts
-import { createMemory, factExtractionBlock, staticBlock, vectorBlock } from "llamaindex";
-import { QdrantVectorStore } from "@llamaindex/qdrant";
-import { OpenAIEmbedding } from "@llamaindex/openai";
+import { createMemory, factExtractionBlock, staticBlock, vectorBlock } from "@vectorstores/core";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
+import { OpenAIEmbedding } from "@vectorstores/openai";
 
 const memoryBlocks= [
   staticBlock({
@@ -209,7 +209,7 @@ The vectorBlock automatically adds a session filter using the block's ID to ensu
 Save and restore memory state:
 
 ```ts twoslash
-import { createMemory, loadMemory } from "llamaindex";
+import { createMemory, loadMemory } from "@vectorstores/core";
 
 const memory = createMemory();
 
@@ -225,4 +225,4 @@ const restoredMemory = loadMemory(snapshot);
 
 ## Examples
 
-Want to learn more about the Memory class? Check out our example codes in [Github](https://github.com/run-llama/LlamaIndexTS/tree/main/examples/agents/memory).
+Want to learn more about the Memory class? Check out our example codes in [Github](https://github.com/run-llama/vectorstores/tree/main/examples/agents/memory).

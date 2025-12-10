@@ -1,10 +1,12 @@
-import { QueryBundle } from "@llamaindex/core/query-engine";
-import { BaseNode, MetadataMode, TextNode } from "@llamaindex/core/schema";
 import {
   BaseDocumentStore,
+  BaseNode,
+  MetadataMode,
   RefDocInfo,
   Serializer,
-} from "@llamaindex/core/storage/doc-store";
+  TextNode,
+  type QueryBundle,
+} from "@vectorstores/core";
 import BM25 from "okapibm25";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { Bm25Retriever } from "../src/Bm25Retriever";

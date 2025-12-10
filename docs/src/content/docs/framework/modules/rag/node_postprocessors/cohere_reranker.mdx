@@ -9,15 +9,15 @@ The Cohere Reranker is a postprocessor that uses the Cohere API to rerank the re
 Firstly, you will need to install the `llamaindex` package.
 
 ```package-install
-npm i llamaindex @llamaindex/cohere @llamaindex/openai
+npm i llamaindex @vectorstores/cohere @vectorstores/openai
 ```
 
 Now, you will need to sign up for an API key at [Cohere](https://cohere.ai/). Once you have your API key you can import the necessary modules and create a new instance of the `CohereRerank` class.
 
 ```ts
-import { OpenAI } from "@llamaindex/openai";
-import { CohereRerank } from "@llamaindex/cohere";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { OpenAI } from "@vectorstores/openai";
+import { CohereRerank } from "@vectorstores/cohere";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 ```
 
 ## Load and index documents

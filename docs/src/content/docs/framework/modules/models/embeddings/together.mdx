@@ -2,11 +2,11 @@
 title: Together
 ---
 
-To use together embeddings, you need to import `TogetherEmbedding` from `@llamaindex/together`.
+To use together embeddings, you need to import `TogetherEmbedding` from `@vectorstores/together`.
 
 ```ts
-import { Settings } from "llamaindex";
-import { TogetherEmbedding } from "@llamaindex/together";
+import { Settings } from "@vectorstores/core";
+import { TogetherEmbedding } from "@vectorstores/together";
 
 Settings.embedModel = new TogetherEmbedding({
   apiKey: "<YOUR_API_KEY>",

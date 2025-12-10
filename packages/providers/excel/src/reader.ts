@@ -1,4 +1,4 @@
-import { Document, FileReader } from "@llamaindex/core/schema";
+import { Document, FileReader } from "@vectorstores/core";
 import * as XLSX from "xlsx";
 
 interface ExcelReaderOptions {

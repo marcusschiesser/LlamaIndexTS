@@ -1,23 +1,15 @@
-import { ElasticSearchVectorStore } from "@llamaindex/elastic-search";
-import {
-  gemini,
-  GEMINI_EMBEDDING_MODEL,
-  GEMINI_MODEL,
-  GeminiEmbedding,
-} from "@llamaindex/google";
 import {
   Document,
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { ElasticSearchVectorStore } from "@vectorstores/elastic-search";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
+
+useOpenAIEmbedding();
+
 async function main() {
-  Settings.embedModel = new GeminiEmbedding({
-    model: GEMINI_EMBEDDING_MODEL.TEXT_EMBEDDING_004,
-  });
-  Settings.llm = gemini({
-    model: GEMINI_MODEL.GEMINI_PRO_1_5_FLASH,
-  });
   // Create sample documents
   const documents = [
     new Document({
@@ -45,7 +37,7 @@ async function main() {
 
   // Initialize ElasticSearch Vector Store
   const vectorStore = new ElasticSearchVectorStore({
-    indexName: "llamaindex-demo",
+    indexName: "vectorstores-demo",
     esCloudId: process.env.ES_CLOUD_ID,
     esApiKey: process.env.ES_API_KEY,
   });
@@ -60,14 +52,14 @@ async function main() {
     storageContext,
   });
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
+  // Retrieve from the index
+  const retriever = index.asRetriever();
 
-  // Simple query
-  const response = await queryEngine.query({
+  // Simple retrieval
+  const response = await retriever.retrieve({
     query: "What is vector search?",
   });
-  console.log("Basic Query Response:", response.toString());
+  console.log("Basic Retrieval Response:", JSON.stringify(response));
 }
 
 main().catch(console.error);

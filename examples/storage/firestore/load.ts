@@ -1,19 +1,19 @@
 import { CollectionReference } from "@google-cloud/firestore";
-import { CSVReader } from "@llamaindex/readers/csv";
+import { CSVReader } from "@vectorstores/readers/csv";
 import "dotenv/config";
 
-import { OpenAIEmbedding } from "@llamaindex/openai";
 import {
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 
-import { FirestoreVectorStore } from "@llamaindex/firestore";
+import { FirestoreVectorStore } from "@vectorstores/firestore";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 const indexName = "MovieReviews";
 
-Settings.embedModel = new OpenAIEmbedding();
+useOpenAIEmbedding();
 
 async function main() {
   try {

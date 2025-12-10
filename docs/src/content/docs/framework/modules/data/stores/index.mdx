@@ -2,7 +2,7 @@
 title: Storage
 ---
 
-Storage in LlamaIndex.TS works automatically once you've configured a
+Storage in vectorstores works automatically once you've configured a
 `StorageContext` object.
 
 Per default a local directory is used for storage. Depening on the storage type (i.e. doc stores, index stores or vector stores), you can configure a different persistence layer. 
@@ -18,7 +18,7 @@ import {
   Document,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 const storageContext = await storageContextFromDefaults({
   persistDir: "./storage",

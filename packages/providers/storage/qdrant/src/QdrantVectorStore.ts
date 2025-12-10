@@ -1,4 +1,4 @@
-import type { BaseNode, Metadata } from "@llamaindex/core/schema";
+import type { BaseNode, Metadata } from "@vectorstores/core";
 import {
   BaseVectorStore,
   FilterCondition,
@@ -7,14 +7,11 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@vectorstores/core";
 
-import {
-  metadataDictToNode,
-  nodeToMetadata,
-} from "@llamaindex/core/vector-store";
 import type { QdrantClientParams, Schemas } from "@qdrant/js-client-rest";
 import { QdrantClient } from "@qdrant/js-client-rest";
+import { metadataDictToNode, nodeToMetadata } from "@vectorstores/core";
 
 type QdrantFilter = Schemas["Filter"];
 type QdrantMustConditions = QdrantFilter["must"];

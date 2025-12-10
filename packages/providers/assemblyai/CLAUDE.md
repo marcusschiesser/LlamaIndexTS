@@ -1,17 +1,17 @@
-# CLAUDE.md - @llamaindex/assemblyai
+# CLAUDE.md - @vectorstores/assemblyai
 
-This package provides AssemblyAI reader implementations for LlamaIndex, enabling audio transcription and processing capabilities.
+This package provides AssemblyAI reader implementations for vectorstores, enabling audio transcription and processing capabilities.
 
 ## Package Overview
 
-**Package Name:** `@llamaindex/assemblyai`  
-**Description:** AssemblyAI Reader for LlamaIndex  
+**Package Name:** `@vectorstores/assemblyai`  
+**Description:** AssemblyAI Reader for vectorstores  
 **Version:** 0.1.6  
 **Type:** Provider package for audio transcription and data ingestion
 
 ## Architecture
 
-This package implements the BaseReader interface from `@llamaindex/core/schema` to provide audio transcription capabilities using AssemblyAI's API.
+This package implements the BaseReader interface from `@vectorstores/core/schema` to provide audio transcription capabilities using AssemblyAI's API.
 
 ### Core Components
 
@@ -29,8 +29,8 @@ This package implements the BaseReader interface from `@llamaindex/core/schema` 
 ## Dependencies
 
 - `assemblyai` (^4.8.0) - Official AssemblyAI SDK
-- `@llamaindex/core` (workspace) - Core interfaces and Document class
-- `@llamaindex/env` (workspace) - Environment utilities for API key handling
+- `@vectorstores/core` (workspace) - Core interfaces and Document class
+- `@vectorstores/env` (workspace) - Environment utilities for API key handling
 
 ## Configuration
 
@@ -49,7 +49,7 @@ The package sets default user agent information for AssemblyAI integration track
 {
   userAgent: {
     integration: {
-      name: "LlamaIndexTS",
+      name: "vectorstores",
       version: "1.0.1"
     }
   }
@@ -61,7 +61,7 @@ The package sets default user agent information for AssemblyAI integration track
 ### Basic Transcription
 
 ```typescript
-import { AudioTranscriptReader } from "@llamaindex/assemblyai";
+import { AudioTranscriptReader } from "@vectorstores/assemblyai";
 
 const reader = new AudioTranscriptReader();
 const documents = await reader.loadData("path/to/audio.mp3");
@@ -70,7 +70,7 @@ const documents = await reader.loadData("path/to/audio.mp3");
 ### Paragraph-based Processing
 
 ```typescript
-import { AudioTranscriptParagraphsReader } from "@llamaindex/assemblyai";
+import { AudioTranscriptParagraphsReader } from "@vectorstores/assemblyai";
 
 const reader = new AudioTranscriptParagraphsReader();
 const paragraphDocs = await reader.loadData(transcribeParams);

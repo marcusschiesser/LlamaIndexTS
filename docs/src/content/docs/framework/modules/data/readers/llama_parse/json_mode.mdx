@@ -67,7 +67,7 @@ All Readers share a `loadData` method with `SimpleDirectoryReader` that promises
 However, a simple work around is to create a new reader class that extends `LlamaParseReader` and adds a new method or overrides `loadData`, wrapping around JSON mode, extracting the required values, and returning a Document object.
 
 ```ts
-import { Document } from "llamaindex";
+import { Document } from "@vectorstores/core";
 import { LlamaParseReader } from "llama-cloud-services";
 
 class LlamaParseReaderWithJson extends LlamaParseReader {

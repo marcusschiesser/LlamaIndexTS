@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Settings } from "@llamaindex/core/global";
-import type { BaseNode } from "@llamaindex/core/schema";
-import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
-import { OpenAIEmbedding } from "@llamaindex/openai";
+import type { BaseNode } from "@vectorstores/core";
+import { VectorStoreQueryMode } from "@vectorstores/core";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { TestableAzureCosmosDBNoSqlVectorStore } from "../mocks/TestableAzureCosmosDBNoSqlVectorStore.js";
 import { createMockClient } from "../utility/mockCosmosClient.js"; // Import the mock client
-
-Settings.embedModel = new OpenAIEmbedding();
 
 const createNodes = (n: number) => {
   const nodes: BaseNode[] = [];

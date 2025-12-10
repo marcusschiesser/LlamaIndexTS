@@ -1,4 +1,4 @@
-import { Document, MetadataMode } from "@llamaindex/core/schema";
+import { Document, MetadataMode } from "@vectorstores/core";
 import { MongoClient, type DriverInfo } from "mongodb";
 import {
   afterAll,
@@ -39,7 +39,7 @@ describe("MongoDocumentStore", () => {
       const store = MongoDocumentStore.fromMongoClient(mongoClient);
       expect(store).toBeInstanceOf(MongoDocumentStore);
       expect(appendMetadataSpy).toHaveBeenCalledWith({
-        name: "LLAMAINDEX_MONGODB_DOC_STORE",
+        name: "VECTORSTORES_MONGODB_DOC_STORE",
         version: pkg.version,
       });
     });
@@ -52,7 +52,7 @@ describe("MongoDocumentStore", () => {
       );
       expect(store).toBeInstanceOf(MongoDocumentStore);
       expect(appendMetadataSpy).toHaveBeenCalledWith({
-        name: "LLAMAINDEX_MONGODB_DOC_STORE",
+        name: "VECTORSTORES_MONGODB_DOC_STORE",
         version: pkg.version,
       });
     });
@@ -68,7 +68,7 @@ describe("MongoDocumentStore", () => {
       const store = MongoDocumentStore.fromMongoClient(mongoClient);
       expect(store).toBeInstanceOf(MongoDocumentStore);
       expect(appendMetadataSpy).toHaveBeenCalledWith({
-        name: "LLAMAINDEX_MONGODB_DOC_STORE",
+        name: "VECTORSTORES_MONGODB_DOC_STORE",
         version: pkg.version,
       });
     });

@@ -1,5 +1,5 @@
 {
-  "name": "@llamaindex/monorepo",
+  "name": "@vectorstores/monorepo",
   "private": true,
   "scripts": {
     "clean": "find . -type d \\( -name .turbo -o -name node_modules -o -name dist -o -name .next -o -name lib \\) -exec rm -rf {} +",
@@ -9,7 +9,6 @@
     "format:write": "prettier --ignore-unknown --write .",
     "lint": "turbo run lint",
     "prepare": "husky",
-    "e2e": "turbo run e2e",
     "test": "turbo run test",
     "type-check": "tsc -b --diagnostics",
     "circular-check": "madge --circular ./packages/**/**/dist/index.js",
@@ -46,7 +45,22 @@
   "pnpm": {
     "overrides": {
       "@notionhq/client": "4.0.0"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@swc/core",
+      "bufferutil",
+      "canvas",
+      "esbuild",
+      "mongodb-memory-server",
+      "msw",
+      "onnxruntime-node",
+      "protobufjs",
+      "sharp",
+      "tree-sitter",
+      "tree-sitter-javascript",
+      "tree-sitter-typescript",
+      "unrs-resolver"
+    ]
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

@@ -1,4 +1,4 @@
-import { DiscordReader } from "@llamaindex/discord";
+import { DiscordReader } from "@vectorstores/discord";
 
 async function main() {
   // Create an instance of the DiscordReader. Set token here or DISCORD_TOKEN environment variable

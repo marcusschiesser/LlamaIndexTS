@@ -1,6 +1,9 @@
-import { CSVReader } from "@llamaindex/readers/csv";
-import { WeaviateVectorStore } from "@llamaindex/weaviate";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { CSVReader } from "@vectorstores/readers/csv";
+import { WeaviateVectorStore } from "@vectorstores/weaviate";
 
 const indexName = "MovieReviews";
 

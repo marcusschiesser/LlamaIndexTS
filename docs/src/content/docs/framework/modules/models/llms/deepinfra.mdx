@@ -7,12 +7,12 @@ Check out available LLMs [here](https://deepinfra.com/models/text-generation).
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/deepinfra
+npm i llamaindex @vectorstores/deepinfra
 ```
 
 ```ts
-import { DeepInfra } from "@llamaindex/deepinfra";
-import { Settings } from "llamaindex";
+import { DeepInfra } from "@vectorstores/deepinfra";
+import { Settings } from "@vectorstores/core";
 
 // Get the API key from `DEEPINFRA_API_TOKEN` environment variable
 import { config } from "dotenv";
@@ -35,7 +35,7 @@ export DEEPINFRA_API_TOKEN="<YOUR_API_KEY>"
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 
@@ -57,8 +57,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { DeepInfra } from "@llamaindex/deepinfra";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { DeepInfra } from "@vectorstores/deepinfra";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 // Use custom LLM
 const model = "meta-llama/Meta-Llama-3-8B-Instruct";

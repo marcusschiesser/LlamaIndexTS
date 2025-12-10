@@ -5,14 +5,14 @@ title: LLama2
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/replicate
+npm i llamaindex @vectorstores/replicate
 ```
 
 ## Usage
 
 ```ts
-import { LlamaDeuce, DeuceChatStrategy } from "@llamaindex/replicate";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { LlamaDeuce, DeuceChatStrategy } from "@vectorstores/replicate";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 Settings.llm = new LlamaDeuce({ chatStrategy: DeuceChatStrategy.META });
 ```
@@ -20,8 +20,8 @@ Settings.llm = new LlamaDeuce({ chatStrategy: DeuceChatStrategy.META });
 ## Usage with Replication
 
 ```ts
-import { Settings } from "llamaindex";
-import { LlamaDeuce, DeuceChatStrategy, ReplicateSession } from "@llamaindex/replicate";
+import { Settings } from "@vectorstores/core";
+import { LlamaDeuce, DeuceChatStrategy, ReplicateSession } from "@vectorstores/replicate";
 
 const replicateSession = new ReplicateSession({
   replicateKey,
@@ -58,8 +58,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { LlamaDeuce, DeuceChatStrategy } from "@llamaindex/replicate";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { LlamaDeuce, DeuceChatStrategy } from "@vectorstores/replicate";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 // Use the LlamaDeuce LLM
 Settings.llm = new LlamaDeuce({ chatStrategy: DeuceChatStrategy.META });

@@ -1,7 +1,7 @@
 {
-  "name": "@llamaindex/elastic-search",
-  "description": "Elastic Search Storage for LlamaIndex",
-  "version": "0.1.22",
+  "name": "@vectorstores/elastic-search",
+  "description": "Elastic Search Storage for vectorstores",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -30,23 +30,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/run-llama/LlamaIndexTS.git",
+    "url": "git+https://github.com/schiesser/vectorstores.git",
     "directory": "packages/providers/storage/elastic-search"
   },
   "scripts": {
     "build": "bunchee",
     "dev": "bunchee --watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "vitest": "^3.0.9",
-    "@llamaindex/openai": "workspace:*",
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*"
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*"
   },
   "peerDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*"
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.17.1"

@@ -1,12 +1,12 @@
-import type { QueryBundle } from "@llamaindex/core/query-engine";
-import { BaseRetriever } from "@llamaindex/core/retriever";
 import {
+  BaseRetriever,
+  extractText,
   MetadataMode,
+  type BaseDocumentStore,
   type BaseNode,
   type NodeWithScore,
-} from "@llamaindex/core/schema";
-import type { BaseDocumentStore } from "@llamaindex/core/storage/doc-store";
-import { extractText } from "@llamaindex/core/utils";
+  type QueryBundle,
+} from "@vectorstores/core";
 import BM25 from "okapibm25";
 
 export type Bm25RetrieverOptions = {

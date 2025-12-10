@@ -1,4 +1,4 @@
-import { Document, MarkdownNodeParser } from "llamaindex";
+import { Document, MarkdownNodeParser } from "@vectorstores/core";
 
 async function main() {
   const markdownParser = new MarkdownNodeParser();

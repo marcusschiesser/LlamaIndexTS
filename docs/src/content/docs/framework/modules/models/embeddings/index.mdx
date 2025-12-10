@@ -9,12 +9,12 @@ This can be explicitly updated through `Settings.embedModel`.
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/openai
+npm i llamaindex @vectorstores/openai
 ```
 
 ```typescript
-import { OpenAIEmbedding } from "@llamaindex/openai";
-import { Settings } from "llamaindex";
+import { OpenAIEmbedding } from "@vectorstores/openai";
+import { Settings } from "@vectorstores/core";
 
 Settings.embedModel = new OpenAIEmbedding({
   model: "text-embedding-ada-002",
@@ -38,8 +38,8 @@ in the Ollama server to `0.0.0.0` to allow connections from other machines.
 To use Ollama embeddings with a remote host, you need to specify the host URL in the configuration like this:
 
 ```typescript
-import { OllamaEmbedding } from "@llamaindex/ollama";
-import { Settings } from "llamaindex";
+import { OllamaEmbedding } from "@vectorstores/ollama";
+import { Settings } from "@vectorstores/core";
 
 // Configure Ollama with a remote host
 Settings.embedModel = new OllamaEmbedding({
@@ -58,7 +58,7 @@ Additionally the following integrations exist without separate documentation:
 - [ClipEmbedding](/typescript/framework-api-reference/classes/clipembedding/) using `@xenova/transformers`
 - [FireworksEmbedding](/typescript/framework-api-reference/classes/fireworksembedding/) see [fireworks.ai](https://fireworks.ai/)
 
-Check the [LlamaIndexTS Github](https://github.com/run-llama/LlamaIndexTS) for the most up to date overview of integrations.
+Check the [vectorstores Github](https://github.com/run-llama/vectorstores) for the most up to date overview of integrations.
 
 ## API Reference
 

@@ -1,15 +1,20 @@
 import type { Client } from "@elastic/elasticsearch";
-import { Settings } from "@llamaindex/core/global";
 import {
   Document,
   NodeRelationship,
   ObjectType,
-} from "@llamaindex/core/schema";
-import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
-import { OpenAIEmbedding } from "@llamaindex/openai";
+  Settings,
+  VectorStoreQueryMode,
+} from "@vectorstores/core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { ElasticSearchVectorStore } from "../src";
 import { getElasticSearchClient } from "../src/utils";
+
+// Setup mock embedding function for tests
+Settings.embedFunc = async (texts: string[]) => {
+  // Return one embedding vector per input text
+  return texts.map(() => [0.1, 0.2, 0.3]);
+};
 
 const ELASTICSEARCH_URL = process.env.ELASTICSEARCH_URL;
 const ELASTICSEARCH_CLOUD_ID = process.env.ELASTICSEARCH_CLOUD_ID;
@@ -51,10 +56,6 @@ describe("ElasticSearchVectorStore", async () => {
   let esClient: Client;
 
   beforeAll(async () => {
-    Settings.embedModel = new OpenAIEmbedding({
-      model: "text-embedding-3-small",
-    });
-
     esClient = getElasticSearchClient({
       esCloudId: ELASTICSEARCH_CLOUD_ID,
       esApiKey: ELASTICSEARCH_API_KEY,

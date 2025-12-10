@@ -1,10 +1,10 @@
-import { AstraDBVectorStore } from "@llamaindex/astra";
+import { AstraDBVectorStore } from "@vectorstores/astra";
 import {
   Document,
-  MetadataFilters,
+  type MetadataFilters,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 const collectionName = "test_collection";
 
@@ -43,15 +43,15 @@ async function main() {
     const index = await VectorStoreIndex.fromDocuments(docs, {
       storageContext: ctx,
     });
-    const preFilters: MetadataFilters = {
+    const filters: MetadataFilters = {
       filters: [{ key: "id", operator: "in", value: [123, 789] }],
     }; // try changing the filters to see the different results
-    const queryEngine = index.asQueryEngine({ preFilters });
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever({ filters });
+    const response = await retriever.retrieve({
       query: "Describe AstraDB.",
     });
 
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   } catch (e) {
     console.error(e);
   }

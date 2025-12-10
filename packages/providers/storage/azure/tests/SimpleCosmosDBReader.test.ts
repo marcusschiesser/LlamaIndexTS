@@ -1,5 +1,5 @@
 import { CosmosClient } from "@azure/cosmos";
-import { Document } from "@llamaindex/core/schema";
+import { Document } from "@vectorstores/core";
 import { describe, expect, it, vi } from "vitest";
 import {
   SimpleCosmosDBReader,

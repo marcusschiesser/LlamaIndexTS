@@ -1,5 +1,5 @@
-import { type BaseReader, Document } from "@llamaindex/core/schema";
-import { getEnv } from "@llamaindex/env";
+import { type BaseReader, Document } from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import type {
   AssemblyAI,
   BaseServiceParams,
@@ -13,8 +13,8 @@ type AssemblyAIOptions = Partial<BaseServiceParams>;
 const defaultOptions = {
   userAgent: {
     integration: {
-      // fixme: use `@llamaindex/env`
-      name: "LlamaIndexTS",
+      // fixme: use `@vectorstores/env`
+      name: "vectorstores",
       version: "1.0.1",
     },
   },

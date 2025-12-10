@@ -1,17 +1,17 @@
-import type { BaseNode } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@vectorstores/core";
 import {
   BaseVectorStore,
   FilterCondition,
   FilterOperator,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
   VectorStoreQueryMode,
   type MetadataFilters,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
+} from "@vectorstores/core";
 import {
   ChromaClient,
   type ChromaClientParams,

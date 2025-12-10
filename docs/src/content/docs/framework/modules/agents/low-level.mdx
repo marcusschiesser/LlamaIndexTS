@@ -18,8 +18,8 @@ The LLM might either request to call one or more of the tools or generate an ass
 For each tool call that is requested, `llm.exec` executes it and generates the two tool call messages (call and result). If no tool call is requested, just the assistant message is returned. 
 
 ```ts
-import { openai } from "@llamaindex/openai";
-import { ChatMessage, tool } from "llamaindex";
+import { openai } from "@vectorstores/openai";
+import { ChatMessage, tool } from "@vectorstores/core";
 import z from "zod";
 
 const llm = openai({ model: "gpt-4.1-mini" });
@@ -57,8 +57,8 @@ messages.push(...newMessages);
 You can use `responseFormat` with a Zod schema to get structured data from the LLM response:
 
 ```ts
-import { openai } from "@llamaindex/openai";
-import { ChatMessage } from "llamaindex";
+import { openai } from "@vectorstores/openai";
+import { ChatMessage } from "@vectorstores/core";
 import z from "zod";
 
 const llm = openai({ model: "gpt-4.1-mini" });
@@ -89,8 +89,8 @@ console.log(object); // { title: "La Divina Commedia", author: "Dante Alighieri"
 A common pattern is to use `llm.exec` in a loop until the LLM stops making tool calls:
 
 ```ts
-import { openai } from "@llamaindex/openai";
-import { ChatMessage, tool } from "llamaindex";
+import { openai } from "@vectorstores/openai";
+import { ChatMessage, tool } from "@vectorstores/core";
 import z from "zod";
 
 async function runAgentLoop() {
@@ -134,8 +134,8 @@ async function runAgentLoop() {
 For real-time responses, use the `stream` option to get the assistant's response as streamed tokens:
 
 ```ts
-import { openai } from "@llamaindex/openai";
-import { ChatMessage, tool } from "llamaindex";
+import { openai } from "@vectorstores/openai";
+import { ChatMessage, tool } from "@vectorstores/core";
 import z from "zod";
 
 async function streamingAgentLoop() {

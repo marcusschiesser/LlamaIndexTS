@@ -1,12 +1,11 @@
-import { DEFAULT_COLLECTION } from "@llamaindex/core/global";
-import type { StoredValue } from "@llamaindex/core/schema";
-import { BaseKVStore } from "@llamaindex/core/storage/kv-store";
+import type { StoredValue } from "@vectorstores/core";
+import { BaseKVStore, DEFAULT_COLLECTION } from "@vectorstores/core";
 import type pg from "pg";
 
 export type DataType = Record<string, Record<string, StoredValue>>;
 
 const DEFAULT_SCHEMA_NAME = "public";
-const DEFAULT_TABLE_NAME = "llamaindex_kv_store";
+const DEFAULT_TABLE_NAME = "vectorstores_kv_store";
 
 export type PostgresKVStoreBaseConfig = {
   schemaName?: string | undefined;

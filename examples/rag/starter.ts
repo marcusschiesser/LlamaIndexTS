@@ -1,6 +1,7 @@
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 import fs from "node:fs/promises";
 import { createInterface } from "node:readline/promises";
+import { fileURLToPath } from "node:url";
 
 async function main() {
   const rl = createInterface({ input: process.stdin, output: process.stdout });
@@ -15,24 +16,26 @@ async function main() {
     );
   }
 
-  const path = "node_modules/llamaindex/examples/abramov.txt";
-  const essay = await fs.readFile(path, "utf-8");
-  const document = new Document({ text: essay, id_: path });
+  const filePath = fileURLToPath(
+    new URL("../data/abramov.txt", import.meta.url),
+  );
+  const essay = await fs.readFile(filePath, "utf-8");
+  const document = new Document({ text: essay, id_: filePath });
 
   const index = await VectorStoreIndex.fromDocuments([document]);
-  const queryEngine = index.asQueryEngine();
+  const retriever = index.asRetriever();
 
   console.log(
-    "Try asking a question about the essay: https://github.com/run-llama/LlamaIndexTS/blob/main/packages/llamaindex/examples/abramov.txt",
+    "Try asking a question about the essay stored in examples/data/abramov.txt",
     "\nExample: When did the author graduate from high school?",
     "\n==============================\n",
   );
   while (true) {
     const query = await rl.question("Query: ");
-    const response = await queryEngine.query({
+    const response = await retriever.retrieve({
       query,
     });
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   }
 }
 

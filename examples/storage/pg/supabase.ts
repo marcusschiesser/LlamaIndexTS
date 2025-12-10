@@ -1,7 +1,10 @@
-import { PGVectorStore } from "@llamaindex/postgres";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { PGVectorStore } from "@vectorstores/postgres";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import dotenv from "dotenv";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
 
 dotenv.config();
 
@@ -22,10 +25,10 @@ const index = await VectorStoreIndex.fromDocuments(docs, {
   storageContext: ctx,
 });
 
-const queryEngine = index.asQueryEngine();
+const retriever = index.asRetriever();
 
-const results = await queryEngine.query({
+const results = await retriever.retrieve({
   query: "Information about the planet",
 });
 
-console.log(results);
+console.log(JSON.stringify(results));

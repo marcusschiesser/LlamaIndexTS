@@ -1,4 +1,4 @@
-# LlamaIndexTS retrieval augmented generation with MongoDB
+# vectorstores retrieval augmented generation with MongoDB
 
 ### Prepare Environment
 
@@ -19,7 +19,7 @@ The signup process will walk you through the process of creating your cluster an
 Copy the connection string (make sure you include your password) and put it into a file called `.env` in the parent folder of this directory. It should look like this:
 
 ```
-MONGODB_URI=mongodb+srv://seldo:xxxxxxxxxxx@llamaindexdemocluster.xfrdhpz.mongodb.net/?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://seldo:xxxxxxxxxxx@democluster.xfrdhpz.mongodb.net/?retryWrites=true&w=majority
 ```
 
 You will also need to choose a name for your database, and the collection where we will store the tweets, and also include them in .env. They can be any string, but this is what we used:

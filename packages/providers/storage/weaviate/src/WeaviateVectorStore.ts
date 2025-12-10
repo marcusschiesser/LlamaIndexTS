@@ -1,4 +1,4 @@
-import { BaseNode, MetadataMode, type Metadata } from "@llamaindex/core/schema";
+import { BaseNode, MetadataMode, type Metadata } from "@vectorstores/core";
 import weaviate, {
   Filters,
   type Collection,
@@ -20,8 +20,8 @@ import {
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import type { BaseHybridOptions } from "weaviate-client";
 import { sanitizeMetadata } from "./sanitize";
 
@@ -167,7 +167,7 @@ export class WeaviateVectorStore extends BaseVectorStore {
     }
 
     this.checkIndexName(init?.indexName);
-    this.indexName = init?.indexName ?? "LlamaIndex";
+    this.indexName = init?.indexName ?? "Vectorstores";
     this.idKey = init?.idKey ?? "id";
     this.contentKey = init?.contentKey ?? "text";
     this.embeddingKey = init?.embeddingKey ?? "vectors";
@@ -351,7 +351,7 @@ export class WeaviateVectorStore extends BaseVectorStore {
   private checkIndexName(indexName?: string) {
     if (indexName && indexName[0] !== indexName[0]!.toUpperCase()) {
       throw new Error(
-        "Index name must start with a capital letter, e.g. 'LlamaIndex'",
+        "Index name must start with a capital letter, e.g. 'Vectorstores'",
       );
     }
   }

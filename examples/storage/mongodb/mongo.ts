@@ -1,5 +1,5 @@
-import { SimpleMongoReader } from "@llamaindex/mongodb";
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
+import { SimpleMongoReader } from "@vectorstores/mongodb";
 import { MongoClient } from "mongodb";
 
 import { stdin as input, stdout as output } from "node:process";
@@ -43,8 +43,8 @@ async function main() {
   //
 
   const index = await VectorStoreIndex.fromDocuments(documents);
-  // Create query engine
-  const queryEngine = index.asQueryEngine();
+  // Create retriever
+  const retriever = index.asRetriever();
 
   const rl = readline.createInterface({ input, output });
   while (true) {
@@ -54,10 +54,10 @@ async function main() {
       break;
     }
 
-    const response = await queryEngine.query({ query });
+    const response = await retriever.retrieve({ query });
 
     // Output response
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   }
 }
 

@@ -1,4 +1,4 @@
-import { Document, FileReader } from "@llamaindex/core/schema";
+import { Document, FileReader } from "@vectorstores/core";
 import type { Opts } from "string-strip-html";
 
 /**

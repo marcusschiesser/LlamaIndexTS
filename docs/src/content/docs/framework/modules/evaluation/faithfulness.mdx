@@ -13,7 +13,7 @@ This is useful for measuring if the response was hallucinated. The evaluator ret
 Firstly, you need to install the package:
 
 ```package-install
-npm i llamaindex @llamaindex/openai
+npm i llamaindex @vectorstores/openai
 ```
 
 Set the OpenAI API key:
@@ -25,13 +25,13 @@ export OPENAI_API_KEY=your-api-key
 Import the required modules:
 
 ```ts
-import { OpenAI } from "@llamaindex/openai";
+import { OpenAI } from "@vectorstores/openai";
 import {
   Document,
   FaithfulnessEvaluator,
   Settings,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
 ```
 
 Let's setup gpt-4 for better results:

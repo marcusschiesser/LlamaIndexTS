@@ -1,7 +1,10 @@
-import { PDFReader } from "@llamaindex/readers/pdf";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { PDFReader } from "@vectorstores/readers/pdf";
+
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 async function main() {
+  useOpenAIEmbedding();
   // Load PDF
   const reader = new PDFReader();
   const documents = await reader.loadData("../data/brk-2022.pdf");
@@ -9,14 +12,14 @@ async function main() {
   // Split text and create embeddings. Store them in a VectorStoreIndex
   const index = await VectorStoreIndex.fromDocuments(documents);
 
-  // Query the index
-  const queryEngine = index.asQueryEngine();
-  const response = await queryEngine.query({
+  // Retrieve from the index
+  const retriever = index.asRetriever();
+  const response = await retriever.retrieve({
     query: "What mistakes did Warren E. Buffett make?",
   });
 
   // Output response
-  console.log(response.toString());
+  console.log(JSON.stringify(response));
 }
 
 main().catch(console.error);

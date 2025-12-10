@@ -1,21 +1,21 @@
 ---
 title: Serverless Functions
-description: Deploy LlamaIndex.TS in serverless environments like Vercel, Netlify, AWS Lambda, and Cloudflare Workers.
+description: Deploy vectorstores in serverless environments like Vercel, Netlify, AWS Lambda, and Cloudflare Workers.
 ---
 
-This guide covers adding LlamaIndex.TS agents to serverless environments where you have execution time and memory constraints.
+This guide covers adding vectorstores agents to serverless environments where you have execution time and memory constraints.
 
 ## Cloudflare Workers
 
 ```typescript
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const { setEnvs } = await import("@llamaindex/env");
+    const { setEnvs } = await import("@vectorstores/env");
     setEnvs(env);
     
-    const { agent } = await import("@llamaindex/workflow");
-    const { openai } = await import("@llamaindex/openai");
-    const { tool } = await import("llamaindex");
+    const { agent } = await import("@vectorstores/workflow");
+    const { openai } = await import("@vectorstores/openai");
+    const { tool } = await import("@vectorstores/core");
     const { z } = await import("zod");
 
     const timeTool = tool({
@@ -55,9 +55,9 @@ export default {
 
 ```typescript
 // pages/api/chat.ts or app/api/chat/route.ts
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 
 export default async function handler(req, res) {
@@ -99,16 +99,16 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
-  const { setEnvs } = await import("@llamaindex/env");
+  const { setEnvs } = await import("@vectorstores/env");
   setEnvs(process.env);
   
   const { message } = await request.json();
   
   try {
     // Use simpler tools for edge runtime
-    const { agent } = await import("@llamaindex/workflow");
-    const { tool } = await import("llamaindex");
-    const { openai } = await import("@llamaindex/openai");
+    const { agent } = await import("@vectorstores/workflow");
+    const { tool } = await import("@vectorstores/core");
+    const { openai } = await import("@vectorstores/openai");
     const { z } = await import("zod");
 
     const timeTool = tool({
@@ -135,9 +135,9 @@ export async function POST(request: NextRequest) {
 
 ```typescript
 import { APIGatewayProxyHandler } from "aws-lambda";
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 
 export const handler: APIGatewayProxyHandler = async (event, context) => {
@@ -189,9 +189,9 @@ export const handler: APIGatewayProxyHandler = async (event, context) => {
 ```typescript
 // netlify/functions/chat.ts
 import { Handler } from "@netlify/functions";
-import { agent } from "@llamaindex/workflow";
-import { tool } from "llamaindex";
-import { openai } from "@llamaindex/openai";
+import { agent } from "@vectorstores/workflow";
+import { tool } from "@vectorstores/core";
+import { openai } from "@vectorstores/openai";
 import { z } from "zod";
 
 export const handler: Handler = async (event, context) => {

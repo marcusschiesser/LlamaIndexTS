@@ -5,14 +5,14 @@ description: Integrate LlamaIndex with Vercel's AI SDK
 
 LlamaIndex provides integration with Vercel's AI SDK, allowing you to create powerful search and retrieval applications. You can:
 - Use any of Vercel AI's [model providers](https://sdk.vercel.ai/docs/foundations/providers-and-models) as LLMs in LlamaIndex
-- Use indexes (e.g. VectorStoreIndex, LlamaCloudIndex) from LlamaIndexTS in your Vercel AI applications
+- Use indexes (e.g. VectorStoreIndex, LlamaCloudIndex) from vectorstores in your Vercel AI applications
 
 ## Setup
 
 First, install the required dependencies:
 
 ```package-install
-npm i @llamaindex/vercel ai
+npm i @vectorstores/vercel ai
 ```
 
 ## Using Vercel AI's Model Providers 
@@ -36,9 +36,9 @@ Here's how to create a simple vector store index and query it using Vercel's AI 
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { llamaindex } from "@llamaindex/vercel";
+import { llamaindex } from "@vectorstores/vercel";
 import { streamText } from "ai";
-import { Document } from "llamaindex";
+import { Document } from "@vectorstores/core";
 import { LlamaCloudIndex } from "llama-cloud-services";
 
 // Create an index from your documents

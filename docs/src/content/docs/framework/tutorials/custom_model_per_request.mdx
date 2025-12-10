@@ -8,7 +8,7 @@ In such a scenario, modifying the `Settings` object directly as follows is not r
 
 ```typescript
 import { Settings } from 'llamaindex';
-import { OpenAIEmbedding } from '@llamaindex/embeddings-openai';
+import { OpenAIEmbedding } from '@vectorstores/embeddings-openai';
 
 Settings.embedModel = new OpenAIEmbedding({ apiKey: 'CLIENT_API_KEY' });
 Settings.llm = openai({ apiKey: key,  model: 'gpt-4o' })
@@ -44,4 +44,4 @@ const llmResponse = await Settings.withEmbedModel(embedModel, async () => {
 });
 ```
 
-The full example can be found [here](https://github.com/run-llama/LlamaIndexTS/tree/main/examples/local-settings).
+The full example can be found [here](https://github.com/run-llama/vectorstores/tree/main/examples/local-settings).

@@ -1,5 +1,5 @@
-import { MilvusVectorStore } from "@llamaindex/milvus";
-import { VectorStoreIndex } from "llamaindex";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { MilvusVectorStore } from "@vectorstores/milvus";
 
 const collectionName = "movie_reviews";
 
@@ -9,15 +9,13 @@ async function main() {
 
     const index = await VectorStoreIndex.fromVectorStore(milvus);
 
-    const retriever = await index.asRetriever({ similarityTopK: 20 });
+    const retriever = index.asRetriever({ similarityTopK: 20 });
 
-    const queryEngine = await index.asQueryEngine({ retriever });
-
-    const results = await queryEngine.query({
+    const results = await retriever.retrieve({
       query: "What is the best reviewed movie?",
     });
 
-    console.log(results.response);
+    console.log(JSON.stringify(results));
   } catch (e) {
     console.error(e);
   }

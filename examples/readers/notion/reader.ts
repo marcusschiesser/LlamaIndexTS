@@ -1,7 +1,7 @@
-import { NotionReader } from "@llamaindex/notion";
 import { Client } from "@notionhq/client";
+import { VectorStoreIndex } from "@vectorstores/core";
+import { NotionReader } from "@vectorstores/notion";
 import { program } from "commander";
-import { VectorStoreIndex } from "llamaindex";
 import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 
@@ -64,7 +64,7 @@ program
 
     const index = await VectorStoreIndex.fromDocuments(documents);
 
-    const queryEngine = index.asQueryEngine();
+    const retriever = index.asRetriever();
 
     const rl = createInterface({ input, output });
     while (true) {
@@ -74,9 +74,9 @@ program
         break;
       }
 
-      const response = await queryEngine.query({ query });
+      const response = await retriever.retrieve({ query });
 
-      console.log(response.toString());
+      console.log(JSON.stringify(response));
     }
   });
 

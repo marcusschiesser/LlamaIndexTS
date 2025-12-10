@@ -7,7 +7,7 @@ LlamaParse `json` mode supports extracting any images found in a page object by 
 ## Installation
 
 ```package-install
-npm i llamaindex llama-cloud-services @llamaindex/openai
+npm i llamaindex llama-cloud-services @vectorstores/openai
 ```
 
 ## Usage
@@ -25,10 +25,10 @@ const imageDicts = await reader.getImages(jsonObjs, "images");
 You can create an index across both text and image nodes by requesting alternative text for the image from a multimodal LLM.
 
 ```ts
-import { Document, ImageNode, VectorStoreIndex } from "llamaindex";
+import { Document, ImageNode, VectorStoreIndex } from "@vectorstores/core";
 import { LlamaParseReader } from "llama-cloud-services";
-import { OpenAI } from "@llamaindex/openai";
-import { createMessageContent } from "llamaindex";
+import { OpenAI } from "@vectorstores/openai";
+import { createMessageContent } from "@vectorstores/core";
 
 const reader = new LlamaParseReader();
 async function main() {
@@ -110,5 +110,5 @@ async function getImageTextDocs(
 
 The returned `imageDocs` have the alt text assigned as text and the image path as metadata.
 
-You can see the full example file [here](https://github.com/run-llama/LlamaIndexTS/blob/main/examples/readers/src/llamaparse-json.ts).
+You can see the full example file [here](https://github.com/run-llama/vectorstores/blob/main/examples/readers/src/llamaparse-json.ts).
 

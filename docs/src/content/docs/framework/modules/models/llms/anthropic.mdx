@@ -5,14 +5,14 @@ title: Anthropic
 ## Installation
 
 ```shell tab="npm"
-npm i llamaindex @llamaindex/anthropic
+npm i llamaindex @vectorstores/anthropic
 ```
 
 ## Usage
 
 ```ts
-import { Settings } from "llamaindex";
-import { Anthropic } from "@llamaindex/anthropic";
+import { Settings } from "@vectorstores/core";
+import { Anthropic } from "@vectorstores/anthropic";
 
 Settings.llm = new Anthropic({
   apiKey: "<YOUR_API_KEY>",
@@ -44,8 +44,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
-import { Anthropic } from "@llamaindex/anthropic";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
+import { Anthropic } from "@vectorstores/anthropic";
 
 Settings.llm = new Anthropic({
   apiKey: "<YOUR_API_KEY>",

@@ -21,22 +21,7 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/providers/aws/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/clip/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/huggingface/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/anthropic/tsconfig.json"
-    },
-    {
       "path": "./packages/providers/assemblyai/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/deepinfra/tsconfig.json"
     },
     {
       "path": "./packages/providers/discord/tsconfig.json"
@@ -45,31 +30,13 @@
       "path": "./packages/providers/notion/tsconfig.json"
     },
     {
-      "path": "./packages/providers/portkey-ai/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/openai/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/groq/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/replicate/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/ollama/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/vllm/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/vercel/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/xai/tsconfig.json"
-    },
-    {
       "path": "./packages/providers/excel/tsconfig.json"
+    },
+    {
+      "path": "./packages/providers/cohere/tsconfig.json"
+    },
+    {
+      "path": "./packages/providers/retriever/bm25/tsconfig.json"
     },
     {
       "path": "./packages/core/tsconfig.json"
@@ -77,68 +44,18 @@
     {
       "path": "./packages/core/tests/tsconfig.json"
     },
-    {
-      "path": "./packages/llamaindex/tsconfig.json"
-    },
-    {
-      "path": "./e2e/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/cloudflare-worker-agent/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/cloudflare-hono/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/nextjs-agent/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/nextjs-edge-runtime/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/nextjs-node-runtime/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/waku-query-engine/tsconfig.json"
-    },
-    {
-      "path": "./e2e/examples/vite-import-llamaindex/tsconfig.json"
-    },
-    {
-      "path": "./packages/llamaindex/tests/tsconfig.json"
-    },
-    {
-      "path": "./packages/autotool/tsconfig.json"
-    },
-    {
-      "path": "./packages/autotool/examples/01_node/tsconfig.json"
-    },
+
     {
       "path": "./packages/env/tsconfig.json"
     },
     {
-      "path": "./packages/workflow/tsconfig.json"
-    },
-    {
       "path": "./packages/env/tests/tsconfig.json"
-    },
-    {
-      "path": "./examples"
-    },
-    {
-      "path": "./examples/readers"
-    },
-    {
-      "path": "./examples/storage/pg/tsconfig.json"
     },
     {
       "path": "./packages/readers/tsconfig.json"
     },
     {
       "path": "./packages/node-parser/tsconfig.json"
-    },
-    {
-      "path": "./packages/experimental/tsconfig.json"
     },
     {
       "path": "./packages/providers/storage/postgres/tsconfig.json"
@@ -178,51 +95,6 @@
     },
     {
       "path": "./packages/providers/storage/firestore/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/google/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/mistral/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/mixedbread/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/cohere/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/voyage-ai/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/deepseek/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/fireworks/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/together/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/jinaai/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/perplexity/tsconfig.json"
-    },
-    {
-      "path": "./packages/tools/tsconfig.json"
-    },
-    {
-      "path": "./resolution-tests/tsconfig.json"
-    },
-    {
-      "path": "./packages/providers/retriever/bm25/tsconfig.json"
-    },
-    {
-      "path": "./packages/community/tsconfig.json"
-    },
-    {
-      "path": "./examples/local-settings/tsconfig.json"
     }
   ]
 }

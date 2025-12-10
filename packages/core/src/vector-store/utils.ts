@@ -85,7 +85,7 @@ export function metadataDictToNode(
 
   // Note: we're using the name of the class stored in `_node_type`
   // and not the type attribute to reconstruct
-  // the node. This way we're compatible with LlamaIndex Python
+  // the node. This way we're compatible with Python implementations
   switch (nodeType) {
     case "IndexNode":
       return jsonToNode(nodeObj, ObjectType.INDEX);

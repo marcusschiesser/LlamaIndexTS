@@ -1,5 +1,4 @@
-import { NodeParser } from "@llamaindex/core/node-parser";
-import { TextNode } from "@llamaindex/core/schema";
+import { NodeParser, TextNode } from "@vectorstores/core";
 import { describe, expect, test } from "vitest";
 
 describe("NodeParser", () => {

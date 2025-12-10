@@ -5,13 +5,13 @@ title: Bedrock
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/aws
+npm i llamaindex @vectorstores/aws
 ```
 
 ## Usage
 
 ```ts
-import { BEDROCK_MODELS, Bedrock } from "@llamaindex/aws";
+import { BEDROCK_MODELS, Bedrock } from "@vectorstores/aws";
 
 Settings.llm = new Bedrock({
   model: BEDROCK_MODELS.ANTHROPIC_CLAUDE_3_HAIKU,
@@ -135,7 +135,7 @@ Sonnet, Haiku and Opus are multimodal, image_url only supports base64 data url f
 ## Full Example
 
 ```ts
-import { INFERENCE_BEDROCK_MODELS, Bedrock } from "@llamaindex/aws";
+import { INFERENCE_BEDROCK_MODELS, Bedrock } from "@vectorstores/aws";
 
 Settings.llm = new Bedrock({
   model: INFERENCE_BEDROCK_MODELS.US_ANTHROPIC_CLAUDE_3_SONNET,
@@ -168,9 +168,9 @@ async function main() {
 ## Agent Example
 
 ```ts
-import { BEDROCK_MODELS, Bedrock } from "@llamaindex/aws";
-import { tool } from "llamaindex";
-import { agent } from "@llamaindex/workflow";
+import { BEDROCK_MODELS, Bedrock } from "@vectorstores/aws";
+import { tool } from "@vectorstores/core";
+import { agent } from "@vectorstores/workflow";
 import { z } from "zod";
 
 const sumNumbers = tool(

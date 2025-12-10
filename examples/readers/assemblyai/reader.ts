@@ -1,9 +1,9 @@
 import {
   AudioTranscriptReader,
-  TranscribeParams,
-} from "@llamaindex/assemblyai";
+  type TranscribeParams,
+} from "@vectorstores/assemblyai";
+import { VectorStoreIndex } from "@vectorstores/core";
 import { program } from "commander";
-import { VectorStoreIndex } from "llamaindex";
 import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 
@@ -35,8 +35,8 @@ program
     // Split text and create embeddings. Store them in a VectorStoreIndex
     const index = await VectorStoreIndex.fromDocuments(documents);
 
-    // Create query engine
-    const queryEngine = index.asQueryEngine();
+    // Create retriever
+    const retriever = index.asRetriever();
 
     const rl = createInterface({ input, output });
     while (true) {
@@ -46,9 +46,9 @@ program
         break;
       }
 
-      const response = await queryEngine.query({ query });
+      const response = await retriever.retrieve({ query });
 
-      console.log(response.toString());
+      console.log(JSON.stringify(response));
     }
   });
 

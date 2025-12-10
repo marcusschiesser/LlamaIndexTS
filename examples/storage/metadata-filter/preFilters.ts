@@ -5,7 +5,7 @@ import {
   SimpleDocumentStore,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
 
 async function getDataSource() {
   const docs = [
@@ -38,14 +38,10 @@ async function main() {
   };
 
   const retriever = index.asRetriever({ similarityTopK: 3, filters });
-  const queryEngine = index.asQueryEngine({
-    similarityTopK: 3,
-    preFilters: filters,
-  });
 
-  console.log("Retriever and query engine should only retrieve 1 node:");
-  await retriever.retrieve({ query: "Retriever: get dog" });
-  await queryEngine.query({ query: "QueryEngine: get dog" });
+  console.log("Retriever should only retrieve 1 node:");
+  const response = await retriever.retrieve({ query: "Retriever: get dog" });
+  console.log(JSON.stringify(response));
 }
 
 void main();

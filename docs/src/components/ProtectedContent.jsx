@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const SELF_HOSTING_PASSWORD = "llamacloud-self-host-2025";
-const STORAGE_KEY = "llamacloud-self-hosting-auth";
+const SELF_HOSTING_PASSWORD = "vectorstores-self-host-2025";
+const STORAGE_KEY = "vectorstores-self-hosting-auth";
 
 export default function ProtectedContent({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -60,7 +60,7 @@ export default function ProtectedContent({ children }) {
         >
           This section requires a password to access. Interested in
           self-hosting?{" "}
-          <a href="https://www.llamaindex.ai/contact">Contact sales</a> to learn
+          <a href="mailto:contact@vectorstores.dev">Contact sales</a> to learn
           more.
         </p>
         <form onSubmit={handleSubmit}>

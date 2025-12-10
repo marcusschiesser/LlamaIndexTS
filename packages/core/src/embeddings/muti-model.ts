@@ -1,18 +1,14 @@
 import type { MessageContentDetail } from "../llms";
 import {
-  ImageNode,
+  type BaseNode,
+  type ImageNode,
+  type ImageType,
   MetadataMode,
   ModalityType,
   splitNodesByType,
-  type BaseNode,
-  type ImageType,
 } from "../schema";
 import { extractImage, extractSingleText } from "../utils";
-import {
-  BaseEmbedding,
-  batchEmbeddings,
-  type BaseEmbeddingOptions,
-} from "./base";
+import { BaseEmbedding, batchEmbeddings } from "./base";
 
 /*
  * Base class for Multi Modal embeddings.
@@ -21,38 +17,31 @@ export abstract class MultiModalEmbedding extends BaseEmbedding {
   abstract getImageEmbedding(images: ImageType): Promise<number[]>;
 
   protected constructor() {
-    super(
-      async (
-        nodes: BaseNode[],
-        options?: BaseEmbeddingOptions,
-      ): Promise<BaseNode[]> => {
-        const nodeMap = splitNodesByType(nodes);
-        const imageNodes = nodeMap[ModalityType.IMAGE] ?? [];
-        const textNodes = nodeMap[ModalityType.TEXT] ?? [];
+    super(async (nodes: BaseNode[]): Promise<BaseNode[]> => {
+      const nodeMap = splitNodesByType(nodes);
+      const imageNodes = nodeMap[ModalityType.IMAGE] ?? [];
+      const textNodes = nodeMap[ModalityType.TEXT] ?? [];
 
-        const embeddings = await batchEmbeddings(
-          textNodes.map((node) => node.getContent(MetadataMode.EMBED)),
-          this.getTextEmbeddings.bind(this),
-          this.embedBatchSize,
-          options,
-        );
-        for (let i = 0; i < textNodes.length; i++) {
-          textNodes[i]!.embedding = embeddings[i];
-        }
+      const embeddings = await batchEmbeddings(
+        textNodes.map((node) => node.getContent(MetadataMode.EMBED)),
+        this.getTextEmbeddings.bind(this),
+        this.embedBatchSize,
+      );
+      for (let i = 0; i < textNodes.length; i++) {
+        textNodes[i]!.embedding = embeddings[i];
+      }
 
-        const imageEmbeddings = await batchEmbeddings(
-          imageNodes.map((n) => (n as ImageNode).image),
-          this.getImageEmbeddings.bind(this),
-          this.embedBatchSize,
-          options,
-        );
-        for (let i = 0; i < imageNodes.length; i++) {
-          imageNodes[i]!.embedding = imageEmbeddings[i];
-        }
+      const imageEmbeddings = await batchEmbeddings(
+        imageNodes.map((n) => (n as ImageNode).image),
+        this.getImageEmbeddings.bind(this),
+        this.embedBatchSize,
+      );
+      for (let i = 0; i < imageNodes.length; i++) {
+        imageNodes[i]!.embedding = imageEmbeddings[i];
+      }
 
-        return nodes;
-      },
-    );
+      return nodes;
+    });
   }
 
   /**

@@ -2,7 +2,7 @@
 title: Ollama
 ---
 
-To use Ollama embeddings, you need to import `OllamaEmbedding` from `@llamaindex/ollama`.
+To use Ollama embeddings, you need to import `OllamaEmbedding` from `@vectorstores/ollama`.
 
 Note that you need to pull the embedding model first before using it.
 
@@ -15,12 +15,12 @@ ollama pull nomic-embed-text
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/ollama
+npm i llamaindex @vectorstores/ollama
 ```
 
 ```ts
-import { OllamaEmbedding } from "@llamaindex/ollama";
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
+import { OllamaEmbedding } from "@vectorstores/ollama";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
 Settings.embedModel = new OllamaEmbedding({ model: "nomic-embed-text" });
 

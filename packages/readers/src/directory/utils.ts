@@ -1,4 +1,4 @@
-import { fs } from "@llamaindex/env";
+import { fs } from "@vectorstores/env";
 
 /**
  * Recursively traverses a directory and yields all the paths to the files in it.

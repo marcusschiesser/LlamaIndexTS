@@ -1,17 +1,19 @@
 import type { ChannelOptions } from "@grpc/grpc-js";
-import { BaseNode, MetadataMode, type Metadata } from "@llamaindex/core/schema";
 import {
+  BaseNode,
   BaseVectorStore,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
   parseArrayValue,
   parsePrimitiveValue,
+  type Metadata,
   type MetadataFilters,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import {
   DataType,
   MilvusClient,

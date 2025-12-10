@@ -1,4 +1,4 @@
-import type { BaseNode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@vectorstores/core";
 import type { MilvusClient } from "@zilliz/milvus2-sdk-node";
 import { type Mocked } from "vitest";
 import { MilvusVectorStore } from "../src/MilvusVectorStore";

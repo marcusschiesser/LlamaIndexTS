@@ -1,13 +1,13 @@
-import { QdrantVectorStore } from "@llamaindex/qdrant";
-import * as dotenv from "dotenv";
 import {
   Document,
   MetadataMode,
-  NodeWithScore,
+  type NodeWithScore,
   Settings,
-  VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
+import * as dotenv from "dotenv";
 
 // Update callback manager
 Settings.callbackManager.on("retrieve-end", (event) => {
@@ -58,14 +58,14 @@ async function main() {
     console.log(
       "Querying index with no filters: Expected output: Brown probably",
     );
-    const queryEngineNoFilters = index.asQueryEngine();
-    const noFilterResponse = await queryEngineNoFilters.query({
+    const retrieverNoFilters = index.asRetriever();
+    const noFilterResponse = await retrieverNoFilters.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log("No filter response:", noFilterResponse.toString());
+    console.log("No filter response:", JSON.stringify(noFilterResponse));
     console.log("Querying index with dogId 2: Expected output: Red");
-    const queryEngineDogId2 = index.asQueryEngine({
-      preFilters: {
+    const retrieverDogId2 = index.asRetriever({
+      filters: {
         filters: [
           {
             key: "dogId",
@@ -75,14 +75,14 @@ async function main() {
         ],
       },
     });
-    const response = await queryEngineDogId2.query({
+    const response = await retrieverDogId2.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log("Filter with dogId 2 response:", response.toString());
+    console.log("Filter with dogId 2 response:", JSON.stringify(response));
 
     console.log("Querying index with dogId !=2: Expected output: Not red");
-    const queryEngineNotDogId2 = index.asQueryEngine({
-      preFilters: {
+    const retrieverNotDogId2 = index.asRetriever({
+      filters: {
         filters: [
           {
             key: "dogId",
@@ -92,16 +92,16 @@ async function main() {
         ],
       },
     });
-    const responseNotDogId2 = await queryEngineNotDogId2.query({
+    const responseNotDogId2 = await retrieverNotDogId2.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log(responseNotDogId2.toString());
+    console.log(JSON.stringify(responseNotDogId2));
 
     console.log(
       "Querying index with dogId 2 or 3: Expected output: Red, Black",
     );
-    const queryEngineIn = index.asQueryEngine({
-      preFilters: {
+    const retrieverIn = index.asRetriever({
+      filters: {
         filters: [
           {
             key: "dogId",
@@ -111,10 +111,10 @@ async function main() {
         ],
       },
     });
-    const responseIn = await queryEngineIn.query({
+    const responseIn = await retrieverIn.retrieve({
       query: "List all dogs",
     });
-    console.log(responseIn.toString());
+    console.log(JSON.stringify(responseIn));
   } catch (e) {
     console.error(e);
   }

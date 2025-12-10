@@ -1,6 +1,6 @@
 import { REST, type RESTOptions } from "@discordjs/rest";
-import { Document, type BaseReader } from "@llamaindex/core/schema";
-import { getEnv } from "@llamaindex/env";
+import { Document, type BaseReader } from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import { Routes, type APIEmbed, type APIMessage } from "discord-api-types/v10";
 
 /**

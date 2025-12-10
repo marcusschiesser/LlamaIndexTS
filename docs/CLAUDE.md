@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with the LlamaIndex.TS documentation site.
+This file provides guidance to Claude Code (claude.ai/code) when working with the vectorstores documentation site.
 
 ## Application Overview
 
-This is a Next.js documentation site (`@llamaindex/doc`) that serves as the official documentation for LlamaIndex.TS. It's built using Fumadocs, a modern documentation framework, and includes interactive features, API documentation generation, and AI-powered chat functionality.
+This is a Next.js documentation site (`@vectorstores/doc`) that serves as the official documentation for vectorstores. It's built using Fumadocs, a modern documentation framework, and includes interactive features, API documentation generation, and AI-powered chat functionality.
 
 ## Development Commands
 
@@ -104,14 +104,14 @@ Key build process:
 
 **Documentation Structure:**
 
-- `/docs/llamaindex/` - Core LlamaIndex.TS documentation
+- `/docs/llamaindex/` - Core vectorstores documentation
 - `/docs/cloud/` - LlamaCloud integration guides
 - `/docs/api/` - Auto-generated TypeScript API reference
 
 **Content Sources:**
 
 - Local MDX files in `src/content/docs/`
-- External docs from `@llamaindex/workflow-docs` package
+- External docs from `@vectorstores/workflow-docs` package
 - Generated API docs from TypeScript source
 
 ### Development Notes
@@ -128,7 +128,7 @@ Key build process:
 The documentation includes an AI chat feature that:
 
 - Uses React Server Components for server-side AI processing
-- Integrates with LlamaIndex.TS packages for demonstrations
+- Integrates with vectorstores packages for demonstrations
 - Provides interactive examples and code generation
 - Streams responses for better user experience
 

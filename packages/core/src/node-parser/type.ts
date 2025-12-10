@@ -1,7 +1,7 @@
-import type { Tokenizer } from "@llamaindex/env/tokenizers";
+import type { TokenSizer } from "../global/settings/tokenizer";
 
 export type SplitterParams = {
-  tokenizer?: Tokenizer;
+  tokenSizer?: TokenSizer | undefined;
 };
 
 export type PartialWithUndefined<T> = {

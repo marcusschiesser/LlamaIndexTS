@@ -1,0 +1,14 @@
+{
+  "name": "@vectorstores/readers-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*",
+    "@vectorstores/readers": "workspace:*",
+    "vitest": "^2.1.5"
+  }
+}

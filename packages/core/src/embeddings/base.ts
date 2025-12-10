@@ -1,61 +1,55 @@
-import { consoleLogger, emptyLogger, type Logger } from "@llamaindex/env";
-import type { Tokenizers } from "@llamaindex/env/tokenizers";
+import { Settings } from "../global";
 import type { MessageContentDetail } from "../llms";
-import { BaseNode, MetadataMode, TransformComponent } from "../schema";
+import { type BaseNode, MetadataMode, TransformComponent } from "../schema";
 import { extractSingleText } from "../utils";
-import { truncateMaxTokens } from "./tokenizer.js";
 import { SimilarityType, similarity } from "./utils.js";
 
+// move to settings
 const DEFAULT_EMBED_BATCH_SIZE = 10;
-
 type EmbedFunc<T> = (values: T[]) => Promise<Array<number[]>>;
+export type TextEmbedFunc = EmbedFunc<string>;
 
-export type EmbeddingInfo = {
-  dimensions?: number;
-  maxTokens?: number;
-  tokenizer?: Tokenizers;
-};
-
-export type BaseEmbeddingOptions = {
-  logProgress?: boolean;
-  progressCallback?: (current: number, total: number) => void;
-  logger?: Logger;
-};
-
-export abstract class BaseEmbedding extends TransformComponent<
-  Promise<BaseNode[]>
-> {
+export class BaseEmbedding extends TransformComponent<Promise<BaseNode[]>> {
   embedBatchSize = DEFAULT_EMBED_BATCH_SIZE;
-  embedInfo?: EmbeddingInfo;
+  private _embedFunc: TextEmbedFunc | undefined;
 
-  protected constructor(
-    transformFn?: (
-      nodes: BaseNode[],
-      options?: BaseEmbeddingOptions,
-    ) => Promise<BaseNode[]>,
+  public constructor(
+    optionsOrTransformFn?:
+      | {
+          transformFn?: (nodes: BaseNode[]) => Promise<BaseNode[]>;
+          embedFunc?: TextEmbedFunc;
+        }
+      | ((nodes: BaseNode[]) => Promise<BaseNode[]>),
   ) {
+    // Support both old signature (transformFn) and new signature (options object)
+    let transformFn: ((nodes: BaseNode[]) => Promise<BaseNode[]>) | undefined;
+    let embedFunc: TextEmbedFunc | undefined;
+
+    if (typeof optionsOrTransformFn === "function") {
+      // Old signature: constructor(transformFn)
+      transformFn = optionsOrTransformFn;
+    } else if (optionsOrTransformFn) {
+      // New signature: constructor({ transformFn?, embedFunc? })
+      transformFn = optionsOrTransformFn.transformFn;
+      embedFunc = optionsOrTransformFn.embedFunc;
+    }
+
     if (transformFn) {
       super(transformFn);
     } else {
-      super(
-        async (
-          nodes: BaseNode[],
-          options?: BaseEmbeddingOptions,
-        ): Promise<BaseNode[]> => {
-          const texts = nodes.map((node) =>
-            node.getContent(MetadataMode.EMBED),
-          );
+      super(async (nodes: BaseNode[]): Promise<BaseNode[]> => {
+        const texts = nodes.map((node) => node.getContent(MetadataMode.EMBED));
 
-          const embeddings = await this.getTextEmbeddingsBatch(texts, options);
+        const embeddings = await this.getTextEmbeddingsBatch(texts);
 
-          for (let i = 0; i < nodes.length; i++) {
-            nodes[i]!.embedding = embeddings[i];
-          }
+        for (let i = 0; i < nodes.length; i++) {
+          nodes[i]!.embedding = embeddings[i];
+        }
 
-          return nodes;
-        },
-      );
+        return nodes;
+      });
     }
+    this._embedFunc = embedFunc;
   }
 
   similarity(
@@ -66,7 +60,13 @@ export abstract class BaseEmbedding extends TransformComponent<
     return similarity(embedding1, embedding2, mode);
   }
 
-  abstract getTextEmbedding(text: string): Promise<number[]>;
+  async getTextEmbedding(text: string): Promise<number[]> {
+    const embeddings = await this.getTextEmbeddings([text]);
+    if (!embeddings[0]) {
+      throw new Error("No embedding returned by embeddings function");
+    }
+    return embeddings[0];
+  }
 
   async getQueryEmbedding(
     query: MessageContentDetail,
@@ -79,18 +79,16 @@ export abstract class BaseEmbedding extends TransformComponent<
   }
 
   /**
-   * Optionally override this method to retrieve multiple embeddings in a single request
    * @param texts
    */
   getTextEmbeddings = async (texts: string[]): Promise<Array<number[]>> => {
-    const embeddings: number[][] = [];
-
-    for (const text of texts) {
-      const embedding = await this.getTextEmbedding(text);
-      embeddings.push(embedding);
+    const embedFunc = this._embedFunc ?? Settings.embedFunc;
+    if (!embedFunc) {
+      throw new Error(
+        "Can't run embeddings without specifying an embed function. Either pass embedFunc to BaseEmbedding constructor or set Settings.embedFunc",
+      );
     }
-
-    return embeddings;
+    return await embedFunc(texts);
   };
 
   /**
@@ -98,28 +96,12 @@ export abstract class BaseEmbedding extends TransformComponent<
    * @param texts
    * @param options
    */
-  async getTextEmbeddingsBatch(
-    texts: string[],
-    options?: BaseEmbeddingOptions,
-  ): Promise<Array<number[]>> {
+  async getTextEmbeddingsBatch(texts: string[]): Promise<Array<number[]>> {
     return await batchEmbeddings(
       texts,
       this.getTextEmbeddings,
       this.embedBatchSize,
-      options,
     );
-  }
-
-  truncateMaxTokens(input: string[]): string[] {
-    return input.map((s) => {
-      // truncate to max tokens
-      if (!(this.embedInfo?.tokenizer && this.embedInfo?.maxTokens)) return s;
-      return truncateMaxTokens(
-        this.embedInfo.tokenizer,
-        s,
-        this.embedInfo.maxTokens,
-      );
-    });
   }
 }
 
@@ -127,7 +109,6 @@ export async function batchEmbeddings<T>(
   values: T[],
   embedFunc: EmbedFunc<T>,
   chunkSize: number,
-  options?: BaseEmbeddingOptions,
 ): Promise<Array<number[]>> {
   const resultEmbeddings: Array<number[]> = [];
 
@@ -135,21 +116,12 @@ export async function batchEmbeddings<T>(
 
   const curBatch: T[] = [];
 
-  const logger =
-    options?.logger ?? (options?.logProgress ? consoleLogger : emptyLogger);
-
   for (let i = 0; i < queue.length; i++) {
     curBatch.push(queue[i]!);
-    if (i == queue.length - 1 || curBatch.length == chunkSize) {
+    if (i === queue.length - 1 || curBatch.length === chunkSize) {
       const embeddings = await embedFunc(curBatch);
 
       resultEmbeddings.push(...embeddings);
-      if (options?.progressCallback) {
-        options?.progressCallback?.(i + 1, queue.length);
-      }
-      if (options?.logProgress) {
-        logger.log(`getting embedding progress: ${i + 1} / ${queue.length}`);
-      }
 
       curBatch.length = 0;
     }

@@ -1,6 +1,6 @@
-# LlamaIndexTS Examples
+# vectorstores Examples
 
-This package contains several examples of how to use LlamaIndexTS.
+This package contains several examples of how to use vectorstores.
 
 Most examples will use OpenAI by default, so be sure to set your API key.
 

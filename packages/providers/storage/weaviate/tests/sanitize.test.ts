@@ -1,4 +1,4 @@
-import { Document } from "@llamaindex/core/schema";
+import { Document } from "@vectorstores/core";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { WeaviateVectorStore } from "../src/WeaviateVectorStore";
 import {
@@ -37,7 +37,7 @@ describe("sanitize", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    // Set up embedding model for tests
+    // Set up embedding function for tests
     setupMockEmbedding();
   });
 

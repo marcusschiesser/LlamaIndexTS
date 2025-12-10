@@ -1,4 +1,4 @@
-import { KVDocumentStore } from "@llamaindex/core/storage/doc-store";
+import { KVDocumentStore } from "@vectorstores/core";
 import { MongoClient } from "mongodb";
 import { AzureCosmosVCoreKVStore } from "../kvStore/AzureCosmosMongovCoreKVStore.js";
 
@@ -64,7 +64,7 @@ export class AzureCosmosVCoreDocumentStore extends KVDocumentStore {
     collectionName: string = DEFAULT_COLLECTION,
   ): AzureCosmosVCoreDocumentStore {
     const mongoClient = new MongoClient(connectionString, {
-      appName: "LLAMAINDEX_JS",
+      appName: "VECTORSTORES_JS",
     });
     return new AzureCosmosVCoreDocumentStore({
       azureCosmosVCoreKVStore: new AzureCosmosVCoreKVStore({

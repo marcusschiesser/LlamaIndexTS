@@ -8,13 +8,13 @@ import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://developers.llamaindex.ai",
-	base: "/typescript/",
-	outDir: path.resolve('../dist/typescript/'),
+	site: "https://vectorstores.dev",
+	base: "/",
+	outDir: path.resolve('../dist/'),
 	integrations: [
 		starlight({
 			plugins: [starlightAutoSidebar()],
-			title: 'LlamaIndex Documentation',
+			title: 'vectorstores Documentation',
 			head: [
 				{
 					tag: 'script',
@@ -42,7 +42,7 @@ export default defineConfig({
 							script.setAttribute("version", "stable");
 							script.setAttribute("crossorigin", "true");
 							script.setAttribute("runllm-keyboard-shortcut", "Mod+j");
-							script.setAttribute("runllm-name", "LlamaIndex");
+							script.setAttribute("runllm-name", "vectorstores");
 							script.setAttribute("runllm-position", "BOTTOM_RIGHT");
 							script.setAttribute("runllm-assistant-id", "1450");
 							script.setAttribute("runllm-disable-ask-a-person", true);
@@ -58,24 +58,9 @@ export default defineConfig({
 			],
 			social: [
 				{
-					icon: 'twitter',
-					label: 'Twitter',
-					href: 'https://x.com/llama_index'
-				},
-				{
-					icon: 'linkedin',
-					label: 'LinkedIn',
-					href: 'https://www.linkedin.com/company/llamaindex'
-				},
-				{
-					icon: 'blueSky',
-					label: 'Bluesky',
-					href: 'https://bsky.app/profile/llamaindex.bsky.social'
-				},
-				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/run-llama/LlamaIndexTS'
+					href: 'https://github.com/schiesser/vectorstores'
 				}
 			],
 			logo: {

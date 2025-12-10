@@ -1,5 +1,2 @@
-export {
-  PromptHelper,
-  getBiggestPrompt,
-  type PromptHelperOptions,
-} from "./prompt-helper";
+export * from "./BaseIndex.js";
+export * from "./vectorStore/index.js";

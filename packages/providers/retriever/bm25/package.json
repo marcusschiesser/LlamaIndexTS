@@ -1,7 +1,7 @@
 {
-  "name": "@llamaindex/bm25-retriever",
-  "description": "BM25 Retriever for LlamaIndex",
-  "version": "0.0.11",
+  "name": "@vectorstores/bm25-retriever",
+  "description": "BM25 Retriever for vectorstores",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -30,21 +30,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/run-llama/LlamaIndexTS.git",
+    "url": "git+https://github.com/schiesser/vectorstores.git",
     "directory": "packages/providers/retriever/bm25"
   },
   "scripts": {
     "build": "bunchee",
     "dev": "bunchee --watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*"
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*"
   },
   "peerDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*"
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*"
   },
   "dependencies": {
     "okapibm25": "^1.4.1"

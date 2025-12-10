@@ -1,5 +1,3 @@
-import { QdrantVectorStore } from "@llamaindex/qdrant";
-import * as dotenv from "dotenv";
 import {
   Document,
   MetadataMode,
@@ -7,7 +5,9 @@ import {
   Settings,
   VectorStoreIndex,
   storageContextFromDefaults,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
+import * as dotenv from "dotenv";
 
 // Update callback manager
 Settings.callbackManager.on("retrieve-end", (event) => {
@@ -41,17 +41,11 @@ async function main() {
       storageContext: ctx,
     });
 
-    const queryEngine = index.asQueryEngine({
-      customParams: {
-        hnsw_ef: 10,
-        exact: true,
-        indexed_only: true,
-      },
-    });
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   } catch (error) {
     console.error(error);
   }

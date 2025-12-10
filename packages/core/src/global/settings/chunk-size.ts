@@ -1,4 +1,4 @@
-import { AsyncLocalStorage } from "@llamaindex/env";
+import { AsyncLocalStorage } from "@vectorstores/env";
 
 const chunkSizeAsyncLocalStorage = new AsyncLocalStorage<number | undefined>();
 let globalChunkSize: number = 1024;

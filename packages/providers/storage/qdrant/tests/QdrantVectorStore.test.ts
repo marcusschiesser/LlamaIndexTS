@@ -1,16 +1,12 @@
-import type { BaseNode } from "@llamaindex/core/schema";
-import { TextNode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@vectorstores/core";
+import { TextNode } from "@vectorstores/core";
 import type { Mocked } from "vitest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { VectorStoreQueryMode } from "@llamaindex/core/vector-store";
 import { QdrantClient } from "@qdrant/js-client-rest";
+import { VectorStoreQueryMode } from "@vectorstores/core";
 import { TestableQdrantVectorStore } from "../mocks/TestableQdrantVectorStore.js";
 
-import { Settings } from "@llamaindex/core/global";
-import { OpenAIEmbedding } from "@llamaindex/openai";
-
-Settings.embedModel = new OpenAIEmbedding();
 vi.mock("@qdrant/js-client-rest");
 
 describe("QdrantVectorStore", () => {

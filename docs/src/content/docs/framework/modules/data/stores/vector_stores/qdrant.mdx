@@ -14,15 +14,15 @@ docker run -p 6333:6333 qdrant/qdrant
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/qdrant
+npm i llamaindex @vectorstores/qdrant
 ```
 
 ## Importing the modules
 
 ```ts
 import fs from "node:fs/promises";
-import { Document, VectorStoreIndex } from "llamaindex";
-import { QdrantVectorStore } from "@llamaindex/qdrant";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
 ```
 
 ## Load the documents
@@ -67,8 +67,8 @@ console.log(response.toString());
 
 ```ts
 import fs from "node:fs/promises";
-import { Document, VectorStoreIndex } from "llamaindex";
-import { QdrantVectorStore } from "@llamaindex/qdrant";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
+import { QdrantVectorStore } from "@vectorstores/qdrant";
 
 async function main() {
   const path = "node_modules/llamaindex/examples/abramov.txt";

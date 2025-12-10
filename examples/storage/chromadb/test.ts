@@ -1,6 +1,9 @@
-import { ChromaVectorStore } from "@llamaindex/chroma";
-import { CSVReader } from "@llamaindex/readers/csv";
-import { storageContextFromDefaults, VectorStoreIndex } from "llamaindex";
+import { ChromaVectorStore } from "@vectorstores/chroma";
+import {
+  storageContextFromDefaults,
+  VectorStoreIndex,
+} from "@vectorstores/core";
+import { CSVReader } from "@vectorstores/readers/csv";
 
 const collectionName = "movie_reviews";
 
@@ -22,11 +25,11 @@ async function main() {
     });
 
     console.log("Querying index");
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "Tell me about Godfrey Cheshire's rating of La Sapienza.",
     });
-    console.log(response.toString());
+    console.log(JSON.stringify(response));
   } catch (e) {
     console.error(e);
   }

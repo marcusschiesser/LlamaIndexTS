@@ -1,15 +1,16 @@
-import { MetadataMode, type BaseNode } from "@llamaindex/core/schema";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import {
   BaseVectorStore,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
+  type BaseNode,
   type MetadataFilters,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
-import { getEnv } from "@llamaindex/env";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 
 export interface SupabaseVectorStoreInit extends VectorStoreBaseParams {
   client?: SupabaseClient;

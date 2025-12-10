@@ -5,14 +5,14 @@ title: Ollama
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/ollama
+npm i llamaindex @vectorstores/ollama
 ```
 
 ## Usage
 
 ```ts
-import { Ollama } from "@llamaindex/ollama";
-import { Settings } from "llamaindex";
+import { Ollama } from "@vectorstores/ollama";
+import { Settings } from "@vectorstores/core";
 
 Settings.llm = ollamaLLM;
 Settings.embedModel = ollamaLLM;
@@ -23,7 +23,7 @@ Settings.embedModel = ollamaLLM;
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 
@@ -47,7 +47,7 @@ const results = await queryEngine.query({
 You can configure Ollama to return responses in JSON format:
 
 ```ts
-import { Ollama } from "@llamaindex/llms/ollama";
+import { Ollama } from "@vectorstores/llms/ollama";
 import { z } from "zod";
 
 // Simple JSON format
@@ -74,8 +74,8 @@ const llm = new Ollama({
 ## Full Example
 
 ```ts
-import { Ollama } from "@llamaindex/ollama";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { Ollama } from "@vectorstores/ollama";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 import fs from "fs/promises";
 

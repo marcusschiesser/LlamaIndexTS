@@ -1,10 +1,22 @@
 import {
+  Document,
   SentenceSplitter,
   splitBySentenceTokenizer,
-} from "@llamaindex/core/node-parser";
-import { Document } from "@llamaindex/core/schema";
-import { Tokenizers, tokenizers } from "@llamaindex/env/tokenizers";
+} from "@vectorstores/core";
+import { getEncoding } from "js-tiktoken";
 import { describe, expect, test } from "vitest";
+
+// Create tokenizer from js-tiktoken for tests
+const encoding = getEncoding("cl100k_base");
+const tokenizer = {
+  encode: (text: string) => new Uint32Array(encoding.encode(text)),
+  decode: (tokens: Uint32Array) => {
+    const numberArray = Array.from(tokens);
+    const text = encoding.decode(numberArray);
+    const uint8Array = new TextEncoder().encode(text);
+    return new TextDecoder().decode(uint8Array);
+  },
+};
 
 describe("sentence splitter", () => {
   test("initializes", () => {
@@ -16,7 +28,7 @@ describe("sentence splitter", () => {
 
   test("splits paragraphs w/o effective chunk size", () => {
     const sentenceSplitter = new SentenceSplitter({
-      chunkSize: 9,
+      chunkSize: 30, // Large enough to fit sentences (default is character-based)
       chunkOverlap: 0,
     });
     // generate the same line as above but correct syntax errors
@@ -44,7 +56,7 @@ describe("sentence splitter", () => {
 
   test("splits sentences", () => {
     const sentenceSplitter = new SentenceSplitter({
-      chunkSize: 9,
+      chunkSize: 30, // Large enough to fit sentences (default is character-based)
       chunkOverlap: 0,
     });
     const splits = sentenceSplitter.splitText(
@@ -58,7 +70,7 @@ describe("sentence splitter", () => {
 
   test("overall split text", () => {
     let sentenceSplitter = new SentenceSplitter({
-      chunkSize: 5,
+      chunkSize: 30, // Large enough to fit sentences (default is character-based)
       chunkOverlap: 0,
     });
     let splits = sentenceSplitter.splitText(
@@ -87,11 +99,11 @@ describe("sentence splitter", () => {
   });
 
   test("split at tokenizer limit", () => {
-    const tokenizer = tokenizers.tokenizer(Tokenizers.CL100K_BASE);
     const text = "The short sentence. The long long long long sentence.";
+    const tokenCount = tokenizer.encode(text).length;
     const sentenceSplitter = new SentenceSplitter({
-      tokenizer,
-      chunkSize: tokenizer.encode(text).length,
+      tokenSizer: (text) => tokenizer.encode(text).length,
+      chunkSize: tokenCount, // Exactly the size of one text
       chunkOverlap: 0,
     });
     const splits = sentenceSplitter.splitText(text + " " + text);
@@ -100,28 +112,28 @@ describe("sentence splitter", () => {
 
   test("doesn't split decimals", () => {
     const sentenceSplitter = new SentenceSplitter({
-      chunkSize: 5,
+      chunkSize: 30, // Large enough to fit sentences (default is character-based)
       chunkOverlap: 0,
     });
     const splits = sentenceSplitter.splitText(
       "This is a sentence. This is another sentence. 1.0",
     );
 
+    // "1.0" doesn't have sentence-ending punctuation, so it's merged with previous sentence
     expect(splits).toEqual([
       "This is a sentence.",
-      "This is another sentence.",
-      "1.0",
+      "This is another sentence. 1.0",
     ]);
   });
 
   test("doesn't split basic abbreviations", () => {
+    const text =
+      "This is a sentence of Broda Noel. This is the sentence of Sr. Broda Noel. This is a sentence of somebody else";
     const sentenceSplitter = new SentenceSplitter({
-      chunkSize: 15,
+      chunkSize: 50, // Large enough to fit sentences (default is character-based)
       chunkOverlap: 0,
     });
-    const splits = sentenceSplitter.splitText(
-      "This is a sentence of Broda Noel. This is the sentence of Sr. Broda Noel. This is a sentence of somebody else",
-    );
+    const splits = sentenceSplitter.splitText(text);
 
     expect(splits).toEqual([
       "This is a sentence of Broda Noel.",
@@ -131,14 +143,14 @@ describe("sentence splitter", () => {
   });
 
   test("doesn't split extra abbreviations", () => {
+    const text =
+      "This is a sentence. The S.A. Broda Company. This is another sentence";
     const sentenceSplitter = new SentenceSplitter({
-      chunkSize: 10,
+      chunkSize: 40, // Large enough to fit sentences (default is character-based)
       chunkOverlap: 0,
       extraAbbreviations: ["S.A."],
     });
-    const splits = sentenceSplitter.splitText(
-      "This is a sentence. The S.A. Broda Company. This is another sentence",
-    );
+    const splits = sentenceSplitter.splitText(text);
 
     expect(splits).toEqual([
       "This is a sentence.",

@@ -1,22 +1,23 @@
-import { AsyncLocalStorage } from "@llamaindex/env";
-import { type Tokenizer, tokenizers } from "@llamaindex/env/tokenizers";
+import { AsyncLocalStorage } from "@vectorstores/env";
 
-const chunkSizeAsyncLocalStorage = new AsyncLocalStorage<Tokenizer>();
-let globalTokenizer: Tokenizer = tokenizers.tokenizer();
+export type TokenSizer = (text: string) => number;
 
-export function getTokenizer(): Tokenizer {
-  return chunkSizeAsyncLocalStorage.getStore() ?? globalTokenizer;
+const tokenSizerAsyncLocalStorage = new AsyncLocalStorage<TokenSizer>();
+let globalTokenSizer: TokenSizer | null = null;
+
+export function getTokenSizer(): TokenSizer | null {
+  return tokenSizerAsyncLocalStorage.getStore() ?? globalTokenSizer;
 }
 
-export function setTokenizer(tokenizer: Tokenizer | undefined) {
-  if (tokenizer !== undefined) {
-    globalTokenizer = tokenizer;
+export function setTokenSizer(tokenSizer: TokenSizer | undefined) {
+  if (tokenSizer !== undefined) {
+    globalTokenSizer = tokenSizer;
   }
 }
 
-export function withTokenizer<Result>(
-  tokenizer: Tokenizer,
+export function withTokenSizer<Result>(
+  tokenSizer: TokenSizer,
   fn: () => Result,
 ): Result {
-  return chunkSizeAsyncLocalStorage.run(tokenizer, fn);
+  return tokenSizerAsyncLocalStorage.run(tokenSizer, fn);
 }

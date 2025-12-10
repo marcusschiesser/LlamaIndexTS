@@ -1,4 +1,4 @@
-import { XMLReader } from "@llamaindex/readers/xml";
+import { XMLReader } from "@vectorstores/readers/xml";
 
 async function main() {
   // Load PDF

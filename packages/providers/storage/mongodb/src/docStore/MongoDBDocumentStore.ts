@@ -1,4 +1,4 @@
-import { KVDocumentStore } from "@llamaindex/core/storage/doc-store";
+import { KVDocumentStore } from "@vectorstores/core";
 import { MongoClient } from "mongodb";
 import pkg from "../../package.json";
 import { MongoKVStore } from "../kvStore/MongoKVStore";
@@ -38,7 +38,7 @@ export class MongoDocumentStore extends KVDocumentStore {
       dbName,
     });
     mongoClient.appendMetadata({
-      name: "LLAMAINDEX_MONGODB_DOC_STORE",
+      name: "VECTORSTORES_MONGODB_DOC_STORE",
       version: pkg.version,
     });
 
@@ -65,7 +65,7 @@ export class MongoDocumentStore extends KVDocumentStore {
     collectionName: string = DEFAULT_COLLECTION,
   ): MongoDocumentStore {
     const mongoClient = new MongoClient(connectionString, {
-      appName: "LLAMAINDEX_JS",
+      appName: "VECTORSTORES_JS",
     });
 
     const mongoKVStore = new MongoKVStore({

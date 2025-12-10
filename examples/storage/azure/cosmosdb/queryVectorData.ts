@@ -1,16 +1,13 @@
 import { CosmosClient } from "@azure/cosmos";
 import { DefaultAzureCredential } from "@azure/identity";
+import { AzureCosmosDBNoSQLConfig } from "@vectorstores/azure";
 import {
-  AzureCosmosDBNoSQLConfig,
-  AzureOpenAI,
-  AzureOpenAIEmbedding,
-} from "@llamaindex/azure";
-import * as dotenv from "dotenv";
-import {
-  Settings,
   storageContextFromDefaults,
   VectorStoreIndex,
-} from "llamaindex";
+} from "@vectorstores/core";
+import * as dotenv from "dotenv";
+
+import { useOpenAIEmbedding } from "../../../utils/embedding";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,
@@ -26,21 +23,6 @@ const databaseName =
   process.env.AZURE_COSMOSDB_DATABASE_NAME || "shortStoriesDatabase";
 const containerName =
   process.env.AZURE_COSMOSDB_VECTOR_CONTAINER_NAME || "vectorContainer";
-
-const llmInit = {
-  apiVersion: process.env.AZURE_OPENAI_LLM_API_VERSION,
-  endpoint: process.env.AZURE_OPENAI_LLM_ENDPOINT,
-  apiKey: process.env.AZURE_OPENAI_LLM_API_KEY,
-};
-
-const embedModelInit = {
-  apiVersion: process.env.AZURE_OPENAI_EMBEDDING_API_VERSION,
-  endpoint: process.env.AZURE_OPENAI_EMBEDDING_ENDPOINT,
-  apiKey: process.env.AZURE_OPENAI_EMBEDDING_API_KEY,
-};
-
-Settings.llm = new AzureOpenAI(llmInit);
-Settings.embedModel = new AzureOpenAIEmbedding(embedModelInit);
 
 async function initializeStores() {
   // Create a configuration object for the Azure CosmosDB NoSQL Vector Store
@@ -64,6 +46,9 @@ async function initializeStores() {
 }
 
 async function query() {
+  // Use OpenAI embeddings
+  useOpenAIEmbedding();
+
   if (!cosmosConnectionString && !cosmosEndpoint) {
     throw new Error(
       "Azure CosmosDB connection string or endpoint must be set.",
@@ -94,14 +79,13 @@ async function query() {
   // create an index from the Azure CosmosDB NoSQL Vector Store
   const index = await VectorStoreIndex.init({ storageContext });
 
-  // create a retriever and a query engine from the index
+  // create a retriever from the index
   const retriever = index.asRetriever({ similarityTopK: 20 });
-  const queryEngine = index.asQueryEngine({ retriever });
 
-  const result = await queryEngine.query({
+  const result = await retriever.retrieve({
     query: "Who all jog?", // Cosmo, Ludo, Maud, Hale, Constance, Garrison, Fergus, Rafe, Waverly, Rex, Loveday
   });
-  console.log(result.message);
+  console.log(JSON.stringify(result));
 }
 
 void query();

@@ -8,12 +8,12 @@ Check out available embedding models [here](https://deepinfra.com/models/embeddi
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/deepinfra
+npm i llamaindex @vectorstores/deepinfra
 ```
 
 ```ts
-import { Document, Settings, VectorStoreIndex } from "llamaindex";
-import { DeepInfraEmbedding } from "@llamaindex/deepinfra";
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
+import { DeepInfraEmbedding } from "@vectorstores/deepinfra";
 
 // Update Embed Model
 Settings.embedModel = new DeepInfraEmbedding();
@@ -35,7 +35,7 @@ By default, DeepInfraEmbedding is using the sentence-transformers/clip-ViT-B-32 
 For example:
 
 ```ts
-import { DeepInfraEmbedding } from "@llamaindex/deepinfra";
+import { DeepInfraEmbedding } from "@vectorstores/deepinfra";
 
 const model = "intfloat/e5-large-v2";
 Settings.embedModel = new DeepInfraEmbedding({
@@ -48,8 +48,8 @@ You can also set the `maxRetries` and `timeout` parameters when initializing `De
 For example:
 
 ```ts
-import { Settings } from "llamaindex";
-import { DeepInfraEmbedding } from "@llamaindex/deepinfra";
+import { Settings } from "@vectorstores/core";
+import { DeepInfraEmbedding } from "@vectorstores/deepinfra";
 
 const model = "intfloat/e5-large-v2";
 const maxRetries = 5;
@@ -65,7 +65,7 @@ Settings.embedModel = new DeepInfraEmbedding({
 Standalone usage:
 
 ```ts
-import { DeepInfraEmbedding } from "@llamaindex/deepinfra";
+import { DeepInfraEmbedding } from "@vectorstores/deepinfra";
 import { config } from "dotenv";
 // For standalone usage, you need to configure DEEPINFRA_API_TOKEN in .env file
 config();

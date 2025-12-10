@@ -1,14 +1,14 @@
-import type { BaseNode } from "@llamaindex/core/schema";
-import { MetadataMode } from "@llamaindex/core/schema";
+import type { BaseNode } from "@vectorstores/core";
 import {
   BaseVectorStore,
   metadataDictToNode,
+  MetadataMode,
   nodeToMetadata,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
-} from "@llamaindex/core/vector-store";
-import { getEnv } from "@llamaindex/env";
+} from "@vectorstores/core";
+import { getEnv } from "@vectorstores/env";
 import { Collection, Db, MongoClient } from "mongodb";
 import pkg from "../../package.json";
 
@@ -122,11 +122,11 @@ export class AzureCosmosDBMongoDBVectorStore extends BaseVectorStore {
         );
       }
       this.mongodbClient = new MongoClient(mongoUri, {
-        appName: "LLAMAINDEX_JS",
+        appName: "VECTORSTORES_JS",
       });
     }
     this.mongodbClient.appendMetadata({
-      name: "LLAMAINDEX_AZURE_COSMOS_VCORE_VECTOR_STORE",
+      name: "VECTORSTORES_AZURE_COSMOS_VCORE_VECTOR_STORE",
       version: pkg.version,
     });
 

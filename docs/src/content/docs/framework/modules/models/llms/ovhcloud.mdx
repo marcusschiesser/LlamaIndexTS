@@ -11,7 +11,7 @@ You can find the full list of models in the [OVHcloud AI Endpoints catalog](http
 ## Installation
 
 ```package-install
-npm i llamaindex @llamaindex/ovhcloud
+npm i llamaindex @vectorstores/ovhcloud
 ```
 
 ## Authentication
@@ -24,8 +24,8 @@ OVHcloud AI Endpoints can be used in two ways:
 ## Basic Usage
 
 ```ts
-import { OVHcloudLLM } from "@llamaindex/ovhcloud";
-import { Settings } from "llamaindex";
+import { OVHcloudLLM } from "@vectorstores/ovhcloud";
+import { Settings } from "@vectorstores/core";
 
 // Using without API key (free tier with rate limits)
 Settings.llm = new OVHcloudLLM({
@@ -58,7 +58,7 @@ export OVHCLOUD_API_KEY="<YOUR_API_KEY>"
 For this example, we will use a single document. In a real-world scenario, you would have multiple documents to index.
 
 ```ts
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 const document = new Document({ text: essay, id_: "essay" });
 
@@ -80,8 +80,8 @@ const results = await queryEngine.query({
 ## Full Example
 
 ```ts
-import { OVHcloudLLM } from "@llamaindex/ovhcloud";
-import { Document, VectorStoreIndex, Settings } from "llamaindex";
+import { OVHcloudLLM } from "@vectorstores/ovhcloud";
+import { Document, VectorStoreIndex, Settings } from "@vectorstores/core";
 
 // Use custom LLM
 const model = "gpt-oss-120b";
@@ -118,7 +118,7 @@ async function main() {
 OVHcloud AI Endpoints supports streaming responses:
 
 ```ts
-import { OVHcloudLLM } from "@llamaindex/ovhcloud";
+import { OVHcloudLLM } from "@vectorstores/ovhcloud";
 
 const llm = new OVHcloudLLM({
   model: "gpt-oss-120b",

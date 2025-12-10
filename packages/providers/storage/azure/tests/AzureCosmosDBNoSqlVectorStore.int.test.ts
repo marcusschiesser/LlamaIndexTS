@@ -5,19 +5,20 @@ import {
   VectorIndexType,
 } from "@azure/cosmos";
 import { DefaultAzureCredential } from "@azure/identity";
-import * as dotenv from "dotenv";
 import {
+  type AzureCosmosDBNoSQLConfig,
   AzureCosmosDBNoSqlVectorStore,
+  type AzureCosmosQueryOptions,
+} from "@vectorstores/azure";
+import {
   Document,
-  OpenAI,
-  OpenAIEmbedding,
   Settings,
   VectorStoreQueryMode,
-  type AzureCosmosDBNoSQLConfig,
-  type AzureCosmosQueryOptions,
   type VectorStoreQueryResult,
-} from "llamaindex";
+} from "@vectorstores/core";
+import * as dotenv from "dotenv";
 import { beforeAll, describe, expect, it } from "vitest";
+
 dotenv.config();
 /*
  * To run this test, you need have an Azure Cosmos DB for NoSQL instance
@@ -31,38 +32,18 @@ dotenv.config();
  * Once you have the instance running, you need to set the following environment
  * variables before running the test:
  * - AZURE_COSMOSDB_NOSQL_CONNECTION_STRING or AZURE_COSMOSDB_NOSQL_ENDPOINT
- * - AZURE_OPENAI_LLM_API_VERSION
- * - AZURE_OPENAI_LLM_ENDPOINT
- * - AZURE_OPENAI_LLM_API_KEY
- * - AZURE_OPENAI_EMBEDDING_API_VERSION
- * - AZURE_OPENAI_EMBEDDING_ENDPOINT
- * - AZURE_OPENAI_EMBEDDING_API_KEY
- *
- * To use regular OpenAI instead of Azure OpenAI, configure the Settings.llm and Settings.embedModel accordingly.
  */
 
-const DATABASE_NAME = "llamaIndexTestDatabase";
+const DATABASE_NAME = "vectorstoresTestDatabase";
 const CONTAINER_NAME = "testContainer";
 let client: CosmosClient;
 
-const llmInit = {
-  azure: {
-    apiVersion: process.env.AZURE_OPENAI_LLM_API_VERSION,
-    endpoint: process.env.AZURE_OPENAI_LLM_ENDPOINT,
-    apiKey: process.env.AZURE_OPENAI_LLM_API_KEY,
-  },
+// Setup mock embedding function for tests
+Settings.embedFunc = async (texts: string[]) => {
+  // Return one embedding vector per input text
+  // Using a 1000-dimensional vector to match the test configuration
+  return texts.map(() => new Array(1000).fill(0).map(() => Math.random()));
 };
-
-const embedModelInit = {
-  azure: {
-    apiVersion: process.env.AZURE_OPENAI_EMBEDDING_API_VERSION,
-    endpoint: process.env.AZURE_OPENAI_EMBEDDING_ENDPOINT,
-    apiKey: process.env.AZURE_OPENAI_EMBEDDING_API_KEY,
-  },
-};
-
-Settings.llm = new OpenAI(llmInit);
-Settings.embedModel = new OpenAIEmbedding(embedModelInit);
 // This test is skipped because it requires an Azure Cosmos DB instance and OpenAI API keys
 describe.skip("AzureCosmosDBNoSQLVectorStore", () => {
   let vectorStore: AzureCosmosDBNoSqlVectorStore;
@@ -137,7 +118,10 @@ describe.skip("AzureCosmosDBNoSQLVectorStore", () => {
 
     vectorStore = new AzureCosmosDBNoSqlVectorStore(config);
 
-    embeddings = await Settings.embedModel.getTextEmbeddings([
+    if (!Settings.embedFunc) {
+      throw new Error("Settings.embedFunc is not set");
+    }
+    embeddings = await Settings.embedFunc([
       "This book is about politics",
       "Cats sleeps a lot.",
       "Sandwiches taste good.",

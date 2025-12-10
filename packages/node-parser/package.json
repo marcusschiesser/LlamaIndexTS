@@ -1,7 +1,7 @@
 {
-  "name": "@llamaindex/node-parser",
-  "version": "2.0.22",
-  "description": "Node parser for LlamaIndex",
+  "name": "@vectorstores/node-parser",
+  "version": "0.1.0",
+  "description": "Node parser for vectorstores",
   "type": "module",
   "exports": {
     "./html": {
@@ -31,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/run-llama/LlamaIndexTS.git",
+    "url": "git+https://github.com/schiesser/vectorstores.git",
     "directory": "packages/node-parser"
   },
   "scripts": {
@@ -39,16 +39,16 @@
     "dev": "bunchee --watch"
   },
   "devDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*",
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*",
     "@types/html-to-text": "^9.0.4",
     "@types/node": "^24.0.13",
     "tree-sitter": "^0.22.1",
     "web-tree-sitter": "^0.24.4"
   },
   "peerDependencies": {
-    "@llamaindex/core": "workspace:*",
-    "@llamaindex/env": "workspace:*",
+    "@vectorstores/core": "workspace:*",
+    "@vectorstores/env": "workspace:*",
     "tree-sitter": "^0.22.0",
     "web-tree-sitter": "^0.24.3"
   },

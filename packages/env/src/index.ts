@@ -6,7 +6,7 @@
  *
  * For example:
  * ```shell
- * node -e "const env = require('@llamaindex/env');"
+ * node -e "const env = require('@vectorstores/env');"
  * ```
  *
  * @module

@@ -1,13 +1,12 @@
-import { randomUUID } from "@llamaindex/env";
+import { randomUUID } from "@vectorstores/env";
 import {
   buildNodeFromSplits,
   Document,
-  sentenceWindowNodeParserSchema,
+  parseSentenceWindowNodeParserParams,
   TextNode,
-  type SentenceWindowNodeParserParams,
+  type SentenceWindowNodeParserInput,
 } from "../schema";
 import { NodeParser } from "./base";
-import type { PartialWithUndefined } from "./type";
 import { splitBySentenceTokenizer, type TextSplitterFn } from "./utils";
 
 export class SentenceWindowNodeParser extends NodeParser<TextNode[]> {
@@ -21,20 +20,12 @@ export class SentenceWindowNodeParser extends NodeParser<TextNode[]> {
   sentenceSplitter: TextSplitterFn = splitBySentenceTokenizer([], true);
   idGenerator: () => string = () => randomUUID();
 
-  constructor(params?: PartialWithUndefined<SentenceWindowNodeParserParams>) {
+  constructor(params?: SentenceWindowNodeParserInput) {
     super();
-    if (params) {
-      const parsedParams = sentenceWindowNodeParserSchema.parse(params);
-      this.windowSize = parsedParams.windowSize;
-      this.windowMetadataKey = parsedParams.windowMetadataKey;
-      this.originalTextMetadataKey = parsedParams.originalTextMetadataKey;
-    } else {
-      this.windowSize = SentenceWindowNodeParser.DEFAULT_WINDOW_SIZE;
-      this.windowMetadataKey =
-        SentenceWindowNodeParser.DEFAULT_WINDOW_METADATA_KEY;
-      this.originalTextMetadataKey =
-        SentenceWindowNodeParser.DEFAULT_ORIGINAL_TEXT_METADATA_KEY;
-    }
+    const parsedParams = parseSentenceWindowNodeParserParams(params);
+    this.windowSize = parsedParams.windowSize;
+    this.windowMetadataKey = parsedParams.windowMetadataKey;
+    this.originalTextMetadataKey = parsedParams.originalTextMetadataKey;
   }
 
   override parseNodes(nodes: TextNode[], showProgress?: boolean): TextNode[] {

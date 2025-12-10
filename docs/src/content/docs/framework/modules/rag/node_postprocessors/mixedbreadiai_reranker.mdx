@@ -18,7 +18,7 @@ To find out more about the latest features and updates, visit the [mixedbread.ai
 First, you will need to install the `llamaindex` package.
 
 ```package-install
-npm i llamaindex @llamaindex/openai @llamaindex/mixedbread
+npm i llamaindex @vectorstores/openai @vectorstores/mixedbread
 ```
 
 Next, sign up for an API key at [mixedbread.ai](https://mixedbread.ai/). Once you have your API key, you can import the necessary modules and create a new instance of the `MixedbreadAIReranker` class.
@@ -28,9 +28,9 @@ import {
   Document,
   VectorStoreIndex,
   Settings,
-} from "llamaindex";
-import { OpenAI } from "@llamaindex/openai";
-import { MixedbreadAIReranker } from "@llamaindex/mixedbread";
+} from "@vectorstores/core";
+import { OpenAI } from "@vectorstores/openai";
+import { MixedbreadAIReranker } from "@vectorstores/mixedbread";
 ```
 
 ## Usage with LlamaIndex

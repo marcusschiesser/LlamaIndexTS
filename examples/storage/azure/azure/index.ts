@@ -1,22 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  DefaultAzureCredential,
-  getBearerTokenProvider,
-} from "@azure/identity";
+import { DefaultAzureCredential } from "@azure/identity";
 import {
   KnownAnalyzerNames,
   KnownVectorSearchAlgorithmKind,
 } from "@azure/search-documents";
 import {
   AzureAISearchVectorStore,
-  AzureOpenAI,
-  AzureOpenAIEmbedding,
   type FilterableMetadataFieldKeysType,
   IndexManagement,
   MetadataIndexFieldType,
-} from "@llamaindex/azure";
-import { SimpleDirectoryReader } from "@llamaindex/readers/directory";
-import dotenv from "dotenv";
+} from "@vectorstores/azure";
 import {
   DocStoreStrategy,
   Document,
@@ -24,12 +16,15 @@ import {
   FilterOperator,
   type Metadata,
   type NodeWithScore,
-  Settings,
   storageContextFromDefaults,
-  TextNode,
+  type TextNode,
   VectorStoreIndex,
   VectorStoreQueryMode,
-} from "llamaindex";
+} from "@vectorstores/core";
+import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
+import dotenv from "dotenv";
+
+import { useOpenAIEmbedding } from "../../../utils/embedding";
 
 dotenv.config();
 
@@ -58,37 +53,21 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   });
 }
 
-// Based on https://docs.llamaindex.ai/en/stable/examples/vector_stores/AzureAISearchIndexDemo/
+// Based on Azure AI Search Index Demo example
 (async () => {
   // ---------------------------------------------------------
-  // 1- Setup Azure OpenAI
-  const credential = new DefaultAzureCredential();
-  const azureADTokenProvider = getBearerTokenProvider(
-    credential,
-    "https://cognitiveservices.azure.com/.default",
-  );
-  // You need to deploy your own embedding model as well as your own chat completion model
-  Settings.llm = new AzureOpenAI({
-    azureADTokenProvider,
-    deployment: process.env.AZURE_DEPLOYMENT_NAME,
-  });
-  Settings.embedModel = new AzureOpenAIEmbedding({
-    azureADTokenProvider,
-    deployment: process.env.EMBEDDING_MODEL,
-  });
+  // 1- Setup OpenAI Embeddings
+  useOpenAIEmbedding();
 
   // ---------------------------------------------------------
   // 2- Setup Azure AI Search
   // Define env variables in .env file
   // AZURE_AI_SEARCH_ENDPOINT=
   // AZURE_AI_SEARCH_KEY=
-  // AZURE_OPENAI_ENDPOINT=
-  // EMBEDDING_MODEL=text-embedding-ada-002
-  // AZURE_DEPLOYMENT_NAME=gpt-4
-  // AZURE_API_VERSION=2024-09-01-preview
+  // OPENAI_API_KEY=
 
   // Define index name
-  const indexName = "llamaindex-vector-store-example";
+  const indexName = "vectorstores-vector-store-example";
 
   // ---------------------------------------------------------
   // 3a- Create Index (if it does not exist)
@@ -174,12 +153,11 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   });
 
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever({ similarityTopK: 3 });
+    const response = await retriever.retrieve({
       query: "What did the author do growing up?",
-      similarityTopK: 3,
-    } as any);
-    console.log({ response });
+    });
+    console.log({ response: JSON.stringify(response) });
     // The author focused on writing and programming outside of school,
     // writing short stories and experimenting with programming on an IBM 1401 in 9th grade.
     // Later, the author continued programming on microcomputers and eventually
@@ -190,11 +168,11 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
   // ---------------------------------------------------------
   // 4- Insert documents into the index
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What colour is the sky?",
     });
-    console.log({ response });
+    console.log({ response: JSON.stringify(response) });
   }
   // The color of the sky varies depending on factors such as the time of day, weather conditions, and location.
   // The text does not provide information about the color of the sky.
@@ -206,11 +184,11 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
       }),
     );
 
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.query({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What colour is the sky?",
     });
-    console.log({ response });
+    console.log({ response: JSON.stringify(response) });
     // The color of the sky is indigo.
   }
 
@@ -271,31 +249,28 @@ function processResults(response: NodeWithScore[], mode: VectorStoreQueryMode) {
 
   // 6a- Perform a Vector Search (default mode)
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.retrieve({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is the meaning of life?",
-      mode: VectorStoreQueryMode.DEFAULT,
-    } as any);
+    });
     processResults(response, VectorStoreQueryMode.DEFAULT);
   }
 
   // 6b- Perform a Hybrid Search
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.retrieve({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is the meaning of life?",
-      mode: VectorStoreQueryMode.HYBRID,
-    } as any);
+    });
     processResults(response, VectorStoreQueryMode.HYBRID);
   }
 
   // 6c- Perform a Hybrid Search with Semantic Reranking
   {
-    const queryEngine = index.asQueryEngine();
-    const response = await queryEngine.retrieve({
+    const retriever = index.asRetriever();
+    const response = await retriever.retrieve({
       query: "What is inception about?",
-      mode: VectorStoreQueryMode.SEMANTIC_HYBRID,
-    } as any);
+    });
     processResults(response, VectorStoreQueryMode.SEMANTIC_HYBRID);
   }
 })();

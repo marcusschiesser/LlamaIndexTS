@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { BaseKVStore } from "@llamaindex/core/storage/kv-store";
+import { BaseKVStore } from "@vectorstores/core";
 import type { Collection } from "mongodb";
 import { MongoClient } from "mongodb";
 import pkg from "../../package.json";
@@ -40,7 +40,7 @@ export class AzureCosmosVCoreKVStore extends BaseKVStore {
       );
     }
     mongoClient.appendMetadata({
-      name: "LLAMAINDEX_AZURE_COSMOS_VCORE_KV_STORE",
+      name: "VECTORSTORES_AZURE_COSMOS_VCORE_KV_STORE",
       version: pkg.version,
     });
     this.mongoClient = mongoClient;

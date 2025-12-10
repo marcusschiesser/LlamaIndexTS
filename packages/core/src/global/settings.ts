@@ -1,7 +1,6 @@
-import { getEnv } from "@llamaindex/env";
-import type { Tokenizer } from "@llamaindex/env/tokenizers";
-import type { BaseEmbedding } from "../embeddings";
-import type { LLM } from "../llms";
+import { AsyncLocalStorage, getEnv } from "@vectorstores/env";
+import type { TextEmbedFunc } from "../embeddings/base";
+import type { NodeParser } from "../node-parser";
 import {
   type CallbackManager,
   getCallbackManager,
@@ -14,44 +13,28 @@ import {
   withChunkSize,
 } from "./settings/chunk-size";
 import {
-  getEmbeddedModel,
-  setEmbeddedModel,
-  withEmbeddedModel,
-} from "./settings/embedModel";
-import { getLLM, setLLM, withLLM } from "./settings/llm";
-import {
-  getTokenizer,
-  setTokenizer,
-  withTokenizer,
+  getTokenSizer,
+  setTokenSizer,
+  type TokenSizer,
+  withTokenSizer,
 } from "./settings/tokenizer";
 
+let _nodeParser: NodeParser | null = null;
+const _nodeParserAsyncLocalStorage = new AsyncLocalStorage<NodeParser>();
+let _chunkOverlap: number;
+const _chunkOverlapAsyncLocalStorage = new AsyncLocalStorage<number>();
+let _embedFunc: TextEmbedFunc | null = null;
+const _embedFuncAsyncLocalStorage = new AsyncLocalStorage<TextEmbedFunc>();
+
 export const Settings = {
-  get llm() {
-    return getLLM();
+  get tokenSizer() {
+    return getTokenSizer();
   },
-  set llm(llm) {
-    setLLM(llm);
+  set tokenSizer(tokenSizer) {
+    setTokenSizer(tokenSizer ?? undefined);
   },
-  withLLM<Result>(llm: LLM, fn: () => Result): Result {
-    return withLLM(llm, fn);
-  },
-  get embedModel() {
-    return getEmbeddedModel();
-  },
-  set embedModel(embedModel) {
-    setEmbeddedModel(embedModel);
-  },
-  withEmbedModel<Result>(embedModel: BaseEmbedding, fn: () => Result): Result {
-    return withEmbeddedModel(embedModel, fn);
-  },
-  get tokenizer() {
-    return getTokenizer();
-  },
-  set tokenizer(tokenizer) {
-    setTokenizer(tokenizer);
-  },
-  withTokenizer<Result>(tokenizer: Tokenizer, fn: () => Result): Result {
-    return withTokenizer(tokenizer, fn);
+  withTokenSizer<Result>(tokenSizer: TokenSizer, fn: () => Result): Result {
+    return withTokenSizer(tokenSizer, fn);
   },
   get chunkSize(): number | undefined {
     return getChunkSize();
@@ -78,13 +61,47 @@ export const Settings = {
     return withCallbackManager(callbackManager, fn);
   },
 
+  get nodeParser(): NodeParser | null {
+    return _nodeParserAsyncLocalStorage.getStore() ?? _nodeParser;
+  },
+
+  set nodeParser(nodeParser: NodeParser) {
+    _nodeParser = nodeParser;
+  },
+
+  get chunkOverlap(): number | undefined {
+    return _chunkOverlapAsyncLocalStorage.getStore() ?? _chunkOverlap;
+  },
+
+  set chunkOverlap(chunkOverlap: number | undefined) {
+    if (typeof chunkOverlap === "number") {
+      _chunkOverlap = chunkOverlap;
+    }
+  },
+
+  withChunkOverlap<Result>(chunkOverlap: number, fn: () => Result): Result {
+    return _chunkOverlapAsyncLocalStorage.run(chunkOverlap, fn);
+  },
+
+  get embedFunc(): TextEmbedFunc | null {
+    return _embedFuncAsyncLocalStorage.getStore() ?? _embedFunc;
+  },
+
+  set embedFunc(embedFunc: TextEmbedFunc) {
+    _embedFunc = embedFunc;
+  },
+
+  withEmbedFunc<Result>(embedFunc: TextEmbedFunc, fn: () => Result): Result {
+    return _embedFuncAsyncLocalStorage.run(embedFunc, fn);
+  },
+
   get debug() {
     let debug = getEnv("DEBUG");
     if (typeof window !== "undefined") {
       debug ||= window.localStorage.debug;
     }
     return (
-      (Boolean(debug) && debug?.includes("llamaindex")) ||
+      (Boolean(debug) && debug?.includes("vectorstores")) ||
       debug === "*" ||
       debug === "true"
     );

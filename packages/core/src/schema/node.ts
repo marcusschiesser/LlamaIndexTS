@@ -1,4 +1,4 @@
-import { createSHA256, path, randomUUID } from "@llamaindex/env";
+import { createSHA256, path, randomUUID } from "@vectorstores/env";
 import { lazyInitHash } from "../decorator";
 import { chunkSizeCheck } from "./utils/chunk-size-check";
 
@@ -212,7 +212,7 @@ export type TextNodeParams<T extends Metadata = Metadata> =
   };
 
 /**
- * TextNode is the default node type for text. Most common node type in LlamaIndex.TS
+ * TextNode is the default node type for text. Most common node type in vectorstores
  */
 export class TextNode<T extends Metadata = Metadata> extends BaseNode<T> {
   text: string;
