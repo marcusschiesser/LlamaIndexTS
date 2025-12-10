@@ -1,13 +1,11 @@
 <h1 align="center">vectorstores</h1>
 <h3 align="center">
-  Data framework for your LLM application.
+  Vector database framework for your AI application.
 </h3>
 
-Use your own data with large language models (LLMs, OpenAI ChatGPT and others) in JS runtime environments with TypeScript support.
+Vectorstores provides a unified interface for connecting a vector data base to your AI application. It supports ingestion of data from various sources, and retrieval of data from the vector database.
 
-## What is vectorstores?
-
-vectorstores aims to be a lightweight, easy to use set of libraries to help you integrate large language models into your applications with your own data.
+It's a based on a fork of [LLamaIndexTS](https://github.com/run-llama/LlamaIndexTS), so you can use it as a drop-in replacement for LLamaIndexTS in your existing projects. Compared to LLamaIndexTS, vectorstores is more lightweight as it just focuses on vector databases and provides a unified interface for working with them.
 
 ## Compatibility
 
@@ -21,23 +19,6 @@ vectorstores supports multiple JS environments, including:
 - Nitro ✅
 - Vercel Edge Runtime ✅ (with some limitations)
 - Cloudflare Workers ✅ (with some limitations)
-
-For now, browser support is limited due to the lack of support for [AsyncLocalStorage-like APIs](https://github.com/tc39/proposal-async-context)
-
-### Supported LLMs:
-
-- OpenAI LLms
-- Anthropic LLms
-- Groq LLMs
-- Llama2, Llama3, Llama3.1 LLMs
-- MistralAI LLMs
-- Fireworks LLMs
-- DeepSeek LLMs
-- ReplicateAI LLMs
-- TogetherAI LLMs
-- HuggingFace LLms
-- DeepInfra LLMs
-- Gemini LLMs
 
 ## Getting started
 
@@ -53,14 +34,14 @@ See the documentation and examples in this repository.
 
 ### Adding provider packages
 
-In most cases, you'll also need to install provider packages to use vectorstores. These are for adding AI models, file readers for ingestion or storing documents, e.g. in vector databases.
+In most cases, you'll also need to install provider packages to use vectorstores. These are for adding file readers for ingestion or for storing documents in vector databases.
 
-For example, to use the OpenAI LLM, you would install the following package:
+For example, to use the Weaviate vector database, you would install the following package:
 
 ```shell
-npm install @vectorstores/openai
-pnpm install @vectorstores/openai
-yarn add @vectorstores/openai
+npm install @vectorstores/weaviate
+pnpm install @vectorstores/weaviate
+yarn add @vectorstores/weaviate
 ```
 
 ## Contributing
