@@ -1,7 +1,7 @@
 import {
-  Collection,
+  type Collection,
   DataAPIClient,
-  Db,
+  type Db,
   type Filter,
   type FindOptions,
   type SomeDoc,
@@ -12,11 +12,11 @@ import {
   FilterCondition,
   FilterOperator,
   metadataDictToNode,
+  type MetadataFilter,
+  type MetadataFilters,
   MetadataMode,
   nodeToMetadata,
   parseArrayValue,
-  type MetadataFilter,
-  type MetadataFilters,
   type VectorStoreBaseParams,
   type VectorStoreQuery,
   type VectorStoreQueryResult,
@@ -60,7 +60,7 @@ export class AstraDBVectorStore extends BaseVectorStore {
       getEnv("ASTRA_DB_NAMESPACE") ??
       "default_keyspace";
     this.astraClient = new DataAPIClient(token, {
-      caller: ["LlamaIndexTS"],
+      caller: ["vectorstores"],
     });
     this.astraDB = this.astraClient.db(endpoint, { namespace });
 

@@ -64,12 +64,12 @@ export default defineConfig({
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/schiesser/vectorstores'
+					href: 'https://github.com/marcusschiesser/vectorstores'
 				}
 			],
 			logo: {
-				light: './src/assets/llamaindex-dark.svg',
-				dark: './src/assets/llamaindex-light.svg',
+				light: './src/assets/vectorstores-dark.svg',
+				dark: './src/assets/vectorstores-light.svg',
 				replacesTitle: true,
 			},
 			favicon: '/logo-dark.png',
