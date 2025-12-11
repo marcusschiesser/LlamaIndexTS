@@ -1,23 +1,23 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { MarkdownReader } from "@vectorstores/readers/markdown";
 
-async function main() {
-  // Load Markdown file
-  const reader = new MarkdownReader();
-  const documents = await reader.loadData("../README.md");
+const FILE_PATH = "../data/planets.md";
+const SAMPLE_QUERY = "List all planets";
 
-  // Split text and create embeddings. Store them in a VectorStoreIndex
+async function main() {
+  // Load markdown file
+  console.log("Loading data...");
+  const reader = new MarkdownReader();
+  const documents = await reader.loadData(FILE_PATH);
+
+  // Create embeddings
+  console.log("Creating embeddings...");
   const index = await VectorStoreIndex.fromDocuments(documents);
 
-  // Retrieve from the index
+  // Test retrieval
   const retriever = index.asRetriever();
-
-  const response = await retriever.retrieve({
-    query: "What does the example code do?",
-  });
-
-  // Output response
-  console.log(JSON.stringify(response));
+  const response = await retriever.retrieve({ query: SAMPLE_QUERY });
+  console.log(`Test query > ${SAMPLE_QUERY}:\n`, JSON.stringify(response));
 }
 
-main().catch(console.error);
+void main();

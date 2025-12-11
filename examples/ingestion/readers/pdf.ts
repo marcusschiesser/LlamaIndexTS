@@ -1,7 +1,7 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { PDFReader } from "@vectorstores/readers/pdf";
 
-import { useOpenAIEmbedding } from "../../../utils/embedding";
+import { useOpenAIEmbedding } from "../../utils/embedding";
 
 async function main() {
   useOpenAIEmbedding();

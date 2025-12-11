@@ -10,32 +10,32 @@ For example:
 
 ```shell
 # Directory reader
-npx tsx ingestion/readers/src/simple-directory-reader.ts
+npx tsx ingestion/readers/simple-directory-reader.ts
 
 # CSV reader
-npx tsx ingestion/readers/src/csv.ts
+npx tsx ingestion/readers/csv.ts
 
 # PDF reader
-npx tsx ingestion/readers/src/pdf.ts
+npx tsx ingestion/readers/pdf.ts
 
 # Markdown reader
-npx tsx ingestion/readers/src/markdown.ts
+npx tsx ingestion/readers/markdown.ts
 
 # HTML reader
-npx tsx ingestion/readers/src/html.ts
+npx tsx ingestion/readers/html.ts
 
 # DOCX reader
-npx tsx ingestion/readers/src/docx.ts
+npx tsx ingestion/readers/docx.ts
 
 # JSON reader
-npx tsx ingestion/readers/src/json.ts
+npx tsx ingestion/readers/json.ts
 
 # XML reader
-npx tsx ingestion/readers/src/xml.ts
+npx tsx ingestion/readers/xml.ts
 
 # Excel reader
-npx tsx ingestion/readers/src/excel.ts
+npx tsx ingestion/readers/excel.ts
 
 # Obsidian reader
-npx tsx ingestion/readers/src/obsidian.ts
+npx tsx ingestion/readers/obsidian.ts
 ```
