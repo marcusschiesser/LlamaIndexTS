@@ -46,4 +46,3 @@ if (changed > 0) {
     `ℹ️  No workspace:* dependencies found in ${pkgPath} - already using npm versions`,
   );
 }
-

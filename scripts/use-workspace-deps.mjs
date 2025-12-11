@@ -49,4 +49,3 @@ if (changed > 0) {
     `ℹ️  All @vectorstores/* dependencies already use workspace:* in ${pkgPath}`,
   );
 }
-

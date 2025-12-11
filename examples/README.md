@@ -16,38 +16,39 @@ npm install
 # export your API key
 export OPENAI_API_KEY="sk-..."
 
-npx tsx ./rag/chatEngine.ts
+# Run a basic ingestion example
+npx tsx ./ingestion/llamaindex.ts
+
+# Or try the interactive retrieval example
+npx tsx ./retrieval/starter.ts
 ```
 
 ## Recommended Starter Examples
 
-Agents:
+### Ingestion & Indexing:
 
-- [Basic OpenAI Agent with Tools](./agents/agent/openai.ts)
-- [Agent with MCP Tools](./agents/agent/mcp-tools.ts)
-- [Customizing Memory](./agents/memory/agent-memory.ts)
+- [Basic Vector Indexing](./ingestion/llamaindex.ts) - Create a vector index from documents and retrieve
+- [Ingestion Pipeline](./ingestion/pipeline.ts) - Use IngestionPipeline for custom transformations
+- [Vercel Vector Store](./vercel/vector-store.ts) - Vector store integration with Vercel AI SDK
 
-Workflows:
+### Retrieval:
 
-- [Workflow basics](./agents/workflow/joke.ts)
-- [Find more workflow examples in the `workflows-ts` repo!](https://github.com/run-llama/workflows-ts)
+- [Basic Retrieval](./retrieval/starter.ts) - Interactive retrieval example
+- [Text Splitting](./retrieval/split.ts) - How to split text into chunks
+- [Sentence Window Retrieval](./retrieval/sentenceWindow.ts) - Advanced retrieval with sentence windows
+- [Markdown Node Parser](./retrieval/nodeParser/MarkdownNodeParser.ts) - Parse markdown documents
+- [Cohere Reranker](./retrieval/rerankers/CohereReranker.ts) - Improve retrieval with reranking
 
-Indexing, Retrieval, and Querying:
+### Multimodal:
 
-- [Basic Vector Indexing + Query Engine](./index/vectorIndex.ts)
-- [Agent + Query Engine Tool](./agents/agent/query-tool.ts)
+- [Multimodal Load](./retrieval/multimodal/load.ts) - Load multimodal documents
+- [Multimodal Retrieve](./retrieval/multimodal/retrieve.ts) - Retrieve images and text
+- [Multimodal Storage](./retrieval/multimodal/storage.ts) - Set up storage for multimodal data
 
-Multimodal:
+### Vector Stores:
 
-- [Multimodal Load](./rag/multimodal/load.ts)
-- [Multimodal Retrieve](./rag/multimodal/retrieve.ts)
-- [Multimodal Storage](./rag/multimodal/storage.ts)
-
-Some more general folders that might be useful to explore:
-
-- [vectorstores](./vectorstores/): Examples with various vector stores
-- [readers](./ingestion/readers/): Examples of how to use the various readers
-- [models](./models/): Examples of how to use the various LLMs and embedding models from many providers
+- [vectorstores](./vectorstores/): Examples with various vector stores (AstraDB, ChromaDB, MongoDB, Pinecone, Qdrant, Weaviate, and more)
+- [readers](./ingestion/readers/): Examples of how to use the various readers (CSV, PDF, Markdown, Notion, Discord, and more)
 
 ## Contributing
 
