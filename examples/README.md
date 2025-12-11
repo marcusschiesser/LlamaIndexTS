@@ -39,8 +39,9 @@ Indexing, Retrieval, and Querying:
 
 Multimodal:
 
-- [Multimodal RAG](./multimodal/rag.ts)
-- [Multimodal Chat](./multimodal/context.ts)
+- [Multimodal Load](./rag/multimodal/load.ts)
+- [Multimodal Retrieve](./rag/multimodal/retrieve.ts)
+- [Multimodal Storage](./rag/multimodal/storage.ts)
 
 Some more general folders that might be useful to explore:
 
