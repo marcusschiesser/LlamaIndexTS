@@ -11,7 +11,7 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 /**
  * This example demonstrates how to use Azure CosmosDB with vectorstores.

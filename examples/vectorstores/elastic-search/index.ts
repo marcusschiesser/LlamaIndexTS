@@ -5,7 +5,7 @@ import {
 } from "@vectorstores/core";
 import { ElasticSearchVectorStore } from "@vectorstores/elastic-search";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 useOpenAIEmbedding();
 

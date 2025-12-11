@@ -2,7 +2,7 @@ import { JSONReader } from "@vectorstores/readers/json";
 
 async function main() {
   // Data
-  const file = "../data/tinytweets.json";
+  const file = "../shared/data/tinytweets.json";
   const nonAsciiContent = '{"message": "こんにちは世界"}';
   const jsonlContent = '{"tweet": "Hello world"}\n{"tweet": "こんにちは世界"}';
 

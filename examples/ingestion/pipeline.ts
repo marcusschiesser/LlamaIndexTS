@@ -8,7 +8,7 @@ import {
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { getOpenAIEmbedding } from "../utils/embedding";
+import { getOpenAIEmbedding } from "../shared/utils/embedding";
 
 // Update embed model
 const embedFunc = getOpenAIEmbedding("text-embedding-3-small");
@@ -16,7 +16,7 @@ const embedFunc = getOpenAIEmbedding("text-embedding-3-small");
 async function main() {
   // Load essay from abramov.txt in Node
   const filePath = fileURLToPath(
-    new URL("../data/abramov.txt", import.meta.url),
+    new URL("../shared/data/abramov.txt", import.meta.url),
   );
   const essay = await fs.readFile(filePath, "utf-8");
 

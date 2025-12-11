@@ -17,7 +17,7 @@ async function main() {
   }
 
   const filePath = fileURLToPath(
-    new URL("../data/abramov.txt", import.meta.url),
+    new URL("../shared/data/abramov.txt", import.meta.url),
   );
   const essay = await fs.readFile(filePath, "utf-8");
   const document = new Document({ text: essay, id_: filePath });

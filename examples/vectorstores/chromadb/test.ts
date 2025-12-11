@@ -8,7 +8,7 @@ import { CSVReader } from "@vectorstores/readers/csv";
 const collectionName = "movie_reviews";
 
 async function main() {
-  const sourceFile: string = "../data/movie_reviews.csv";
+  const sourceFile: string = "../shared/data/movie_reviews.csv";
 
   try {
     console.log(`Loading data from ${sourceFile}`);

@@ -5,7 +5,7 @@ import { VectorStoreIndex } from "@vectorstores/core";
 import { CollectionReference } from "@google-cloud/firestore";
 import { FirestoreVectorStore } from "@vectorstores/firestore";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 const indexName = "MovieReviews";
 

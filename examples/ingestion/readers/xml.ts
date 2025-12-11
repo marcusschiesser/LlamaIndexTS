@@ -5,7 +5,7 @@ async function main() {
   const reader = new XMLReader({
     splitLevel: 2,
   });
-  const documents = await reader.loadData("../data/company.xml");
+  const documents = await reader.loadData("../shared/data/company.xml");
 
   for (const doc of documents) {
     console.log(doc.text);

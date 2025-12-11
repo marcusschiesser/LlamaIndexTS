@@ -1,7 +1,7 @@
 import { CohereRerank } from "@vectorstores/cohere";
 import { Document, VectorStoreIndex } from "@vectorstores/core";
 
-import essay from "../data/essay";
+import essay from "../shared/data/essay";
 
 async function main() {
   const document = new Document({ text: essay, id_: "essay" });

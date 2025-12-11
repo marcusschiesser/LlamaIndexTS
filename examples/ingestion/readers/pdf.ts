@@ -1,13 +1,13 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { PDFReader } from "@vectorstores/readers/pdf";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 async function main() {
   useOpenAIEmbedding();
   // Load PDF
   const reader = new PDFReader();
-  const documents = await reader.loadData("../data/brk-2022.pdf");
+  const documents = await reader.loadData("../shared/data/brk-2022.pdf");
 
   // Split text and create embeddings. Store them in a VectorStoreIndex
   const index = await VectorStoreIndex.fromDocuments(documents);

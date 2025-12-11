@@ -5,7 +5,7 @@ import {
 } from "@vectorstores/core";
 import { SupabaseVectorStore } from "@vectorstores/supabase";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 async function main() {
   useOpenAIEmbedding();

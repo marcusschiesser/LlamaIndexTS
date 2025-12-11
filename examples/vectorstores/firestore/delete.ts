@@ -3,7 +3,7 @@ import "dotenv/config";
 
 import { FirestoreVectorStore } from "@vectorstores/firestore";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 const indexName = "MovieReviews";
 

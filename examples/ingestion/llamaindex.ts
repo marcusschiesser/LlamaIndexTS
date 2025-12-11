@@ -2,7 +2,7 @@ import { Document, VectorStoreIndex } from "@vectorstores/core";
 import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-import { useOpenAIEmbedding } from "../utils/embedding";
+import { useOpenAIEmbedding } from "../shared/utils/embedding";
 
 // Use OpenAI embeddings
 useOpenAIEmbedding("text-embedding-3-small");
@@ -10,7 +10,7 @@ useOpenAIEmbedding("text-embedding-3-small");
 async function main() {
   // Load essay from abramov.txt in Node
   const filePath = fileURLToPath(
-    new URL("../data/abramov.txt", import.meta.url),
+    new URL("../shared/data/abramov.txt", import.meta.url),
   );
   const essay = await fs.readFile(filePath, "utf-8");
 

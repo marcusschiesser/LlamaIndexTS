@@ -15,7 +15,7 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 
-import essay from "../data/essay";
+import essay from "../shared/data/essay";
 
 // Initialize the embedding pipeline using @huggingface/transformers
 let embedder: FeatureExtractionPipeline | null = null;

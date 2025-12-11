@@ -9,7 +9,9 @@ async function main() {
     keyValueSeparator: ":",
   });
 
-  const documents = await reader.loadData("../data/sample_excel_sheet.xls");
+  const documents = await reader.loadData(
+    "../shared/data/sample_excel_sheet.xls",
+  );
 
   for (const doc of documents) {
     console.log(doc.text);

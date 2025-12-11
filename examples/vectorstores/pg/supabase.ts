@@ -11,7 +11,7 @@ dotenv.config();
 // Get direct connection string from Supabase and set it as POSTGRES_URL environment variable
 // https://supabase.com/docs/guides/database/connecting-to-postgres#direct-connection
 
-const sourceDir = "../data";
+const sourceDir = "../shared/data";
 const connectionString = process.env.POSTGRES_URL;
 
 const rdr = new SimpleDirectoryReader();

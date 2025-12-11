@@ -3,7 +3,7 @@ import {
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
-import essay from "../data/essay";
+import essay from "../shared/data/essay";
 
 async function main() {
   // Create Document object with essay

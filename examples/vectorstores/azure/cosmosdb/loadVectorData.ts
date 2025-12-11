@@ -11,7 +11,7 @@ import {
 } from "@vectorstores/core";
 import * as dotenv from "dotenv";
 
-import { useOpenAIEmbedding } from "../../../utils/embedding";
+import { useOpenAIEmbedding } from "../../../shared/utils/embedding";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,

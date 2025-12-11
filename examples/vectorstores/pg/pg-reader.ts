@@ -1,7 +1,7 @@
 import { Document } from "@vectorstores/core";
 import { PGVectorStore, SimplePostgresReader } from "@vectorstores/postgres";
 
-import { useOpenAIEmbedding } from "../../utils/embedding";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 
 const containerName = "vectorstores-postgres-example";
 const dbConfig = {

@@ -5,13 +5,13 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 
-import { useOpenAIEmbedding } from "../utils/embedding";
+import { useOpenAIEmbedding } from "../shared/utils/embedding";
 
 async function main() {
   useOpenAIEmbedding();
 
   const filePath = fileURLToPath(
-    new URL("../data/abramov.txt", import.meta.url),
+    new URL("../shared/data/abramov.txt", import.meta.url),
   );
   const essay = await fs.readFile(filePath, "utf-8");
   const document = new Document({ text: essay, id_: filePath });

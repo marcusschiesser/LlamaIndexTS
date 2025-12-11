@@ -1,7 +1,7 @@
 import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 
 const reader = new SimpleDirectoryReader();
-const documents = await reader.loadData("../data");
+const documents = await reader.loadData("../shared/data");
 
 documents.forEach((doc) => {
   console.log(`document (${doc.id_}):`, doc.getText());

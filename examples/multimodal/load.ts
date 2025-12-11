@@ -20,7 +20,7 @@ async function generateDatasource() {
   // Split documents, create embeddings and store them in the storage context
   const ms = await getRuntime(async () => {
     const documents = await new SimpleDirectoryReader().loadData({
-      directoryPath: path.join("multimodal", "data"),
+      directoryPath: path.join("shared", "data", "multimodal"),
     });
     const storageContext = await getStorageContext();
     await VectorStoreIndex.fromDocuments(documents, {

@@ -14,7 +14,7 @@ class ZipReader extends FileReader {
 
 const reader = new SimpleDirectoryReader();
 const documents = await reader.loadData({
-  directoryPath: "../data",
+  directoryPath: "../shared/data",
   defaultReader: new TextFileReader(),
   fileExtToReader: {
     ...FILE_EXT_TO_READER,

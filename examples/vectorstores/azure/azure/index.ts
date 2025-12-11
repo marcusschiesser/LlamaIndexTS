@@ -24,7 +24,7 @@ import {
 import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import dotenv from "dotenv";
 
-import { useOpenAIEmbedding } from "../../../utils/embedding";
+import { useOpenAIEmbedding } from "../../../shared/utils/embedding";
 
 dotenv.config();
 

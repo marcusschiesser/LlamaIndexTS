@@ -1,7 +1,7 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { MarkdownReader } from "@vectorstores/readers/markdown";
 
-const FILE_PATH = "../data/planets.md";
+const FILE_PATH = "../shared/data/planets.md";
 const SAMPLE_QUERY = "List all planets";
 
 async function main() {

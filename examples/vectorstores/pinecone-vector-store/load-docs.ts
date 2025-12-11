@@ -25,7 +25,7 @@ function callback(
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function main(args: any) {
-  const sourceDir: string = args.length > 2 ? args[2] : "../data";
+  const sourceDir: string = args.length > 2 ? args[2] : "../shared/data";
 
   console.log(`Finding documents in ${sourceDir}`);
   const fileList = await getSourceFilenames(sourceDir);

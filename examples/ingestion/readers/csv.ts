@@ -4,7 +4,7 @@ import { CSVReader } from "@vectorstores/readers/csv";
 async function main() {
   // Load CSV
   const reader = new CSVReader();
-  const path = "../data/titanic_train.csv";
+  const path = "../shared/data/titanic_train.csv";
   const documents = await reader.loadData(path);
 
   // Split text and create embeddings. Store them in a VectorStoreIndex
