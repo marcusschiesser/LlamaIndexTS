@@ -4,6 +4,12 @@ This package contains several examples of how to use vectorstores.
 
 Most examples will use OpenAI by default, so be sure to set your API key.
 
+## Installation
+
+```shell
+npm install
+```
+
 ## Running Examples
 
 ```shell
@@ -41,3 +47,21 @@ Some more general folders that might be useful to explore:
 - [storage](./storage/): Examples with various vector stores
 - [readers](./readers/): Examples of how to use the various readers
 - [models](./models/): Examples of how to use the various LLMs and embedding models from many providers
+
+## Contributing
+
+If you're contributing to vectorstores and want to make the examples work in the monorepo:
+
+```shell
+# From the repository root
+pnpm install
+pnpm build
+
+# Switch examples to use workspace packages
+cd examples
+pnpm run use-workspace
+pnpm install
+
+# When done, switch back to npm versions before committing
+pnpm run use-npm
+```
