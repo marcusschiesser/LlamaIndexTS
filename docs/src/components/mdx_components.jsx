@@ -1,5 +1,3 @@
-import TabItem from "@theme/TabItem";
-import Tabs from "@theme/Tabs";
 import { Children, cloneElement } from "react";
 
 export const StyledTitle = ({ title, subtitle }) => {
@@ -12,19 +10,20 @@ export const StyledTitle = ({ title, subtitle }) => {
     </div>
   );
 };
-export const StyledTab = ({ children }) => {
-  return (
-    <Tabs>
-      {Children.map(children, (child) => {
-        if (child.type !== TabItem) return child;
 
+export const StyledTab = ({ children }) => {
+  // Note: Starlight uses different tab components than Docusaurus
+  // This component wraps children for styled display
+  return (
+    <div className="styled-tabs">
+      {Children.map(children, (child) => {
         return cloneElement(child, {
           children: (
             <div style={{ fontSize: "0.875rem" }}>{child.props.children}</div>
           ),
         });
       })}
-    </Tabs>
+    </div>
   );
 };
 

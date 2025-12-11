@@ -5,12 +5,16 @@ import react from '@astrojs/react';
 import AutoImport from 'astro-auto-import';
 import starlightAutoSidebar from 'starlight-auto-sidebar'
 import path from 'path';
+import remarkPackageInstall from './src/plugins/remark-package-install.mjs';
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://vectorstores.dev",
 	base: "/",
 	outDir: path.resolve('../dist/'),
+	markdown: {
+		remarkPlugins: [remarkPackageInstall],
+	},
 	integrations: [
 		starlight({
 			plugins: [starlightAutoSidebar()],
