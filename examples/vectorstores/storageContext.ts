@@ -4,6 +4,7 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 import essay from "../shared/data/essay";
+import { formatRetrieverResponse } from "../shared/utils/format-response";
 
 async function main() {
   // Create Document object with essay
@@ -25,7 +26,7 @@ async function main() {
   });
 
   // Output response
-  console.log(JSON.stringify(response));
+  console.log(formatRetrieverResponse(response));
 
   // load the index
   const secondStorageContext = await storageContextFromDefaults({
@@ -38,7 +39,7 @@ async function main() {
   const loadedResponse = await loadedRetriever.retrieve({
     query: "What did the author do growing up?",
   });
-  console.log(JSON.stringify(loadedResponse));
+  console.log(formatRetrieverResponse(loadedResponse));
 }
 
 main().catch(console.error);

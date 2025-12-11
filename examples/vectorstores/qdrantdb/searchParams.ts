@@ -1,13 +1,14 @@
 import {
   Document,
   MetadataMode,
-  NodeWithScore,
+  type NodeWithScore,
   Settings,
-  VectorStoreIndex,
   storageContextFromDefaults,
+  VectorStoreIndex,
 } from "@vectorstores/core";
 import { QdrantVectorStore } from "@vectorstores/qdrant";
 import * as dotenv from "dotenv";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 // Update callback manager
 Settings.callbackManager.on("retrieve-end", (event) => {
@@ -45,7 +46,7 @@ async function main() {
     const response = await retriever.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log(JSON.stringify(response));
+    console.log(formatRetrieverResponse(response));
   } catch (error) {
     console.error(error);
   }

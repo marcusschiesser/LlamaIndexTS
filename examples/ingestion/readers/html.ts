@@ -1,6 +1,8 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { HTMLReader } from "@vectorstores/readers/html";
 
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
+
 async function main() {
   // Load page
   const reader = new HTMLReader();
@@ -16,7 +18,7 @@ async function main() {
   });
 
   // Output response
-  console.log(JSON.stringify(response));
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);

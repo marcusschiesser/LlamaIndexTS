@@ -5,6 +5,7 @@ import {
 import { PGVectorStore } from "@vectorstores/postgres";
 import { SimpleDirectoryReader } from "@vectorstores/readers/directory";
 import dotenv from "dotenv";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 dotenv.config();
 
@@ -31,4 +32,4 @@ const results = await retriever.retrieve({
   query: "Information about the planet",
 });
 
-console.log(JSON.stringify(results));
+console.log(formatRetrieverResponse(results));

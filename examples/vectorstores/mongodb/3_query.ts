@@ -2,6 +2,7 @@ import { VectorStoreIndex } from "@vectorstores/core";
 import { MongoDBAtlasVectorSearch } from "@vectorstores/mongodb";
 import * as dotenv from "dotenv";
 import { MongoClient } from "mongodb";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 // Load environment variables from local .env file
 dotenv.config();
@@ -34,7 +35,7 @@ async function query() {
   const result = await retriever.retrieve({
     query: "What does author receive when he was 11 years old?", // Isaac Asimov's "Foundation" for Christmas
   });
-  console.log(JSON.stringify(result));
+  console.log(formatRetrieverResponse(result));
   await client.close();
 }
 

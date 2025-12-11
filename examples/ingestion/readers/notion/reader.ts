@@ -5,6 +5,8 @@ import { program } from "commander";
 import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 
+import { formatRetrieverResponse } from "../../../shared/utils/format-response";
+
 program
   .argument("[page]", "Notion page id (must be provided)")
   .action(async (page, _options) => {
@@ -76,7 +78,7 @@ program
 
       const response = await retriever.retrieve({ query });
 
-      console.log(JSON.stringify(response));
+      console.log(formatRetrieverResponse(response));
     }
   });
 

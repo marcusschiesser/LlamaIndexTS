@@ -1,5 +1,6 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { PineconeVectorStore } from "@vectorstores/pinecone";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 async function main() {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -27,7 +28,7 @@ async function main() {
 
       try {
         const response = await retriever.retrieve({ query: question });
-        console.log(JSON.stringify(response));
+        console.log(formatRetrieverResponse(response));
       } catch (error) {
         console.error("Error:", error);
       }

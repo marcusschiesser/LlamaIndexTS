@@ -8,8 +8,8 @@
  */
 
 import {
-  pipeline,
   type FeatureExtractionPipeline,
+  pipeline,
 } from "@huggingface/transformers";
 import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
 
@@ -19,9 +19,14 @@ let embedder: FeatureExtractionPipeline | null = null;
 async function getEmbedder(): Promise<FeatureExtractionPipeline> {
   if (!embedder) {
     console.log("Loading embedding model...");
-    embedder = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2", {
-      dtype: "fp32",
-    });
+    const result = await pipeline(
+      "feature-extraction",
+      "Xenova/all-MiniLM-L6-v2",
+      {
+        dtype: "fp32",
+      },
+    );
+    embedder = result as FeatureExtractionPipeline;
     console.log("Embedding model loaded!");
   }
   return embedder;

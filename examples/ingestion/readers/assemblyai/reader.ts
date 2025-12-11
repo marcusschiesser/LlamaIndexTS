@@ -7,6 +7,8 @@ import { program } from "commander";
 import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 
+import { formatRetrieverResponse } from "../../../shared/utils/format-response";
+
 program
   .option("-a, --audio [string]", "URL or path of the audio file to transcribe")
   .option("-i, --transcript-id [string]", "ID of the AssemblyAI transcript")
@@ -48,7 +50,7 @@ program
 
       const response = await retriever.retrieve({ query });
 
-      console.log(JSON.stringify(response));
+      console.log(formatRetrieverResponse(response));
     }
   });
 

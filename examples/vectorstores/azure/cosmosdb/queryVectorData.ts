@@ -8,6 +8,7 @@ import {
 import * as dotenv from "dotenv";
 
 import { useOpenAIEmbedding } from "../../../shared/utils/embedding";
+import { formatRetrieverResponse } from "../../../shared/utils/format-response";
 import {
   createStoresFromConnectionString,
   createStoresFromManagedIdentity,
@@ -85,7 +86,7 @@ async function query() {
   const result = await retriever.retrieve({
     query: "Who all jog?", // Cosmo, Ludo, Maud, Hale, Constance, Garrison, Fergus, Rafe, Waverly, Rex, Loveday
   });
-  console.log(JSON.stringify(result));
+  console.log(formatRetrieverResponse(result));
 }
 
 void query();

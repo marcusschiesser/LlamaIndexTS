@@ -5,6 +5,7 @@ import {
   VectorStoreIndex,
   storageContextFromDefaults,
 } from "@vectorstores/core";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 Settings.callbackManager.on("retrieve-end", (event) => {
   const { nodes } = event.detail;
@@ -63,7 +64,8 @@ async function main() {
   const noFilterResponse = await retrieverNoFilters.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log("No filter response:", JSON.stringify(noFilterResponse));
+  console.log("No filter response:");
+  console.log(formatRetrieverResponse(noFilterResponse));
 
   console.log(
     "\n=============\nQuerying index with dogId 2 and private false. The output always should be red.",
@@ -88,7 +90,8 @@ async function main() {
   const responseEQ = await retrieverEQ.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log("Filter with dogId 2 response:", JSON.stringify(responseEQ));
+  console.log("Filter with dogId 2 response:");
+  console.log(formatRetrieverResponse(responseEQ));
 
   console.log(
     "\n=============\nQuerying index with dogId IN (1, 3). The output should be brown and red.",
@@ -108,10 +111,8 @@ async function main() {
   const responseIN = await retrieverIN.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log(
-    "Filter with dogId IN (1, 3) response:",
-    JSON.stringify(responseIN),
-  );
+  console.log("Filter with dogId IN (1, 3) response:");
+  console.log(formatRetrieverResponse(responseIN));
 
   console.log(
     "\n=============\nQuerying index with dogId IN (1, 3). The output should be any.",
@@ -137,10 +138,8 @@ async function main() {
   const responseOR = await retrieverOR.retrieve({
     query: "What is the color of the dog?",
   });
-  console.log(
-    "Filter with dogId with OR operator response:",
-    JSON.stringify(responseOR),
-  );
+  console.log("Filter with dogId with OR operator response:");
+  console.log(formatRetrieverResponse(responseOR));
 }
 
 void main();

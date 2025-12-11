@@ -1,5 +1,6 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { MilvusVectorStore } from "@vectorstores/milvus";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 const collectionName = "movie_reviews";
 
@@ -15,7 +16,7 @@ async function main() {
       query: "What is the best reviewed movie?",
     });
 
-    console.log(JSON.stringify(results));
+    console.log(formatRetrieverResponse(results));
   } catch (e) {
     console.error(e);
   }

@@ -9,6 +9,7 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 import { getOpenAIEmbedding } from "../shared/utils/embedding";
+import { formatRetrieverResponse } from "../shared/utils/format-response";
 
 // Update embed model
 const embedFunc = getOpenAIEmbedding("text-embedding-3-small");
@@ -45,7 +46,7 @@ async function main() {
   });
 
   // Output response
-  console.log(JSON.stringify(response));
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);

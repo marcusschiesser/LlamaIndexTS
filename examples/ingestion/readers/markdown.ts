@@ -1,6 +1,8 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { MarkdownReader } from "@vectorstores/readers/markdown";
 
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
+
 const FILE_PATH = "../shared/data/planets.md";
 const SAMPLE_QUERY = "List all planets";
 
@@ -17,7 +19,8 @@ async function main() {
   // Test retrieval
   const retriever = index.asRetriever();
   const response = await retriever.retrieve({ query: SAMPLE_QUERY });
-  console.log(`Test query > ${SAMPLE_QUERY}:\n`, JSON.stringify(response));
+  console.log(`Test query > ${SAMPLE_QUERY}:`);
+  console.log(formatRetrieverResponse(response));
 }
 
 void main();

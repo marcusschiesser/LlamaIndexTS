@@ -4,6 +4,7 @@ import { MongoClient } from "mongodb";
 
 import { stdin as input, stdout as output } from "node:process";
 import readline from "node:readline/promises";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 async function main() {
   //Dummy test code
@@ -57,7 +58,7 @@ async function main() {
     const response = await retriever.retrieve({ query });
 
     // Output response
-    console.log(JSON.stringify(response));
+    console.log(formatRetrieverResponse(response));
   }
 }
 

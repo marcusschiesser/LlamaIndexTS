@@ -2,6 +2,7 @@ import { VectorStoreIndex } from "@vectorstores/core";
 import { PDFReader } from "@vectorstores/readers/pdf";
 
 import { useOpenAIEmbedding } from "../../shared/utils/embedding";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 async function main() {
   useOpenAIEmbedding();
@@ -19,7 +20,7 @@ async function main() {
   });
 
   // Output response
-  console.log(JSON.stringify(response));
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);

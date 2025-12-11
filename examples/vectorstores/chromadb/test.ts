@@ -4,6 +4,7 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 import { CSVReader } from "@vectorstores/readers/csv";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 const collectionName = "movie_reviews";
 
@@ -29,7 +30,7 @@ async function main() {
     const response = await retriever.retrieve({
       query: "Tell me about Godfrey Cheshire's rating of La Sapienza.",
     });
-    console.log(JSON.stringify(response));
+    console.log(formatRetrieverResponse(response));
   } catch (e) {
     console.error(e);
   }

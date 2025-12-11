@@ -6,6 +6,7 @@ import {
   VectorStoreIndex,
   storageContextFromDefaults,
 } from "@vectorstores/core";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 async function getDataSource() {
   const docs = [
@@ -41,7 +42,7 @@ async function main() {
 
   console.log("Retriever should only retrieve 1 node:");
   const response = await retriever.retrieve({ query: "Retriever: get dog" });
-  console.log(JSON.stringify(response));
+  console.log(formatRetrieverResponse(response));
 }
 
 void main();

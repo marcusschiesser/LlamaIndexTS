@@ -8,6 +8,7 @@ import {
 } from "@vectorstores/core";
 import { QdrantVectorStore } from "@vectorstores/qdrant";
 import * as dotenv from "dotenv";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 // Update callback manager
 Settings.callbackManager.on("retrieve-end", (event) => {
@@ -62,7 +63,8 @@ async function main() {
     const noFilterResponse = await retrieverNoFilters.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log("No filter response:", JSON.stringify(noFilterResponse));
+    console.log("No filter response:");
+    console.log(formatRetrieverResponse(noFilterResponse));
     console.log("Querying index with dogId 2: Expected output: Red");
     const retrieverDogId2 = index.asRetriever({
       filters: {
@@ -78,7 +80,8 @@ async function main() {
     const response = await retrieverDogId2.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log("Filter with dogId 2 response:", JSON.stringify(response));
+    console.log("Filter with dogId 2 response:");
+    console.log(formatRetrieverResponse(response));
 
     console.log("Querying index with dogId !=2: Expected output: Not red");
     const retrieverNotDogId2 = index.asRetriever({
@@ -95,7 +98,7 @@ async function main() {
     const responseNotDogId2 = await retrieverNotDogId2.retrieve({
       query: "What is the color of the dog?",
     });
-    console.log(JSON.stringify(responseNotDogId2));
+    console.log(formatRetrieverResponse(responseNotDogId2));
 
     console.log(
       "Querying index with dogId 2 or 3: Expected output: Red, Black",
@@ -114,7 +117,7 @@ async function main() {
     const responseIn = await retrieverIn.retrieve({
       query: "List all dogs",
     });
-    console.log(JSON.stringify(responseIn));
+    console.log(formatRetrieverResponse(responseIn));
   } catch (e) {
     console.error(e);
   }

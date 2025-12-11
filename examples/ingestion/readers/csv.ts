@@ -1,6 +1,8 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { CSVReader } from "@vectorstores/readers/csv";
 
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
+
 async function main() {
   // Load CSV
   const reader = new CSVReader();
@@ -18,7 +20,7 @@ async function main() {
   });
 
   // Output response
-  console.log(JSON.stringify(response));
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);

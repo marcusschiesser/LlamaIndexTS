@@ -2,6 +2,7 @@ import { CohereRerank } from "@vectorstores/cohere";
 import { Document, VectorStoreIndex } from "@vectorstores/core";
 
 import essay from "../../shared/data/essay";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 async function main() {
   const document = new Document({ text: essay, id_: "essay" });
@@ -26,10 +27,12 @@ async function main() {
   const rerankedNodes = await cohereRerank.postprocessNodes(nodes, query);
 
   // cohere response
-  console.log("With Cohere reranking:", JSON.stringify(rerankedNodes));
+  console.log("With Cohere reranking:");
+  console.log(formatRetrieverResponse(rerankedNodes));
 
   // response without cohere
-  console.log("Without Cohere reranking:", JSON.stringify(nodes));
+  console.log("Without Cohere reranking:");
+  console.log(formatRetrieverResponse(nodes));
 }
 
 main().catch(console.error);

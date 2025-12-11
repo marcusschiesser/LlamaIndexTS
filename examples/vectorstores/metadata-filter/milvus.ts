@@ -1,5 +1,6 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { MilvusVectorStore } from "@vectorstores/milvus";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 const collectionName = "movie_reviews";
 
@@ -31,7 +32,7 @@ async function main() {
       query: "Get all movie titles.",
     });
     console.log(`Retrieved ${resultAfterFilter.length} nodes`);
-    console.log(JSON.stringify(resultAfterFilter));
+    console.log(formatRetrieverResponse(resultAfterFilter));
   } catch (e) {
     console.error(e);
   }

@@ -6,6 +6,7 @@ import {
 import { ElasticSearchVectorStore } from "@vectorstores/elastic-search";
 
 import { useOpenAIEmbedding } from "../../shared/utils/embedding";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 useOpenAIEmbedding();
 
@@ -59,7 +60,8 @@ async function main() {
   const response = await retriever.retrieve({
     query: "What is vector search?",
   });
-  console.log("Basic Retrieval Response:", JSON.stringify(response));
+  console.log("Basic Retrieval Response:");
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);

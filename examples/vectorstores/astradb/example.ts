@@ -5,6 +5,7 @@ import {
   storageContextFromDefaults,
   VectorStoreIndex,
 } from "@vectorstores/core";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 const collectionName = "test_collection";
 
@@ -51,7 +52,7 @@ async function main() {
       query: "Describe AstraDB.",
     });
 
-    console.log(JSON.stringify(response));
+    console.log(formatRetrieverResponse(response));
   } catch (e) {
     console.error(e);
   }

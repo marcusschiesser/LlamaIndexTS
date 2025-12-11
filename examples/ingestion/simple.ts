@@ -3,11 +3,11 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 import { useOpenAIEmbedding } from "../shared/utils/embedding";
-
-// Use OpenAI embeddings
-useOpenAIEmbedding("text-embedding-3-small");
+import { formatRetrieverResponse } from "../shared/utils/format-response";
 
 async function main() {
+  // Use OpenAI embeddings
+  useOpenAIEmbedding("text-embedding-3-small");
   // Load essay from abramov.txt in Node
   const filePath = fileURLToPath(
     new URL("../shared/data/abramov.txt", import.meta.url),
@@ -26,8 +26,8 @@ async function main() {
     query: "What did the author do in college?",
   });
 
-  // Output response
-  console.log(JSON.stringify(response));
+  // Output response as a formatted table
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);

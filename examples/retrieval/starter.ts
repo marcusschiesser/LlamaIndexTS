@@ -3,6 +3,8 @@ import fs from "node:fs/promises";
 import { createInterface } from "node:readline/promises";
 import { fileURLToPath } from "node:url";
 
+import { formatRetrieverResponse } from "../shared/utils/format-response";
+
 async function main() {
   const rl = createInterface({ input: process.stdin, output: process.stdout });
 
@@ -35,7 +37,7 @@ async function main() {
     const response = await retriever.retrieve({
       query,
     });
-    console.log(JSON.stringify(response));
+    console.log(formatRetrieverResponse(response));
   }
 }
 

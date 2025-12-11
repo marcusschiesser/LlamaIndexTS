@@ -5,6 +5,7 @@ import {
   VectorStoreIndex,
   storageContextFromDefaults,
 } from "@vectorstores/core";
+import { formatRetrieverResponse } from "../../shared/utils/format-response";
 
 const collectionName = "dogs_with_color";
 
@@ -21,7 +22,7 @@ async function main() {
         similarityTopK: 3,
       });
       const response = await retriever.retrieve({ query });
-      console.log(JSON.stringify(response));
+      console.log(formatRetrieverResponse(response));
     };
 
     await queryFn(); // red, brown, yellow

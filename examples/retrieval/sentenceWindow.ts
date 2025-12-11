@@ -16,16 +16,21 @@ import {
 } from "@vectorstores/core";
 
 import essay from "../shared/data/essay";
+import { formatRetrieverResponse } from "../shared/utils/format-response";
 
 // Initialize the embedding pipeline using @huggingface/transformers
 let embedder: FeatureExtractionPipeline | null = null;
 
 async function getEmbedder(): Promise<FeatureExtractionPipeline> {
   if (!embedder) {
-    // @ts-expect-error - pipeline returns a complex union type
-    embedder = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2", {
-      dtype: "fp32",
-    });
+    const result = await pipeline(
+      "feature-extraction",
+      "Xenova/all-MiniLM-L6-v2",
+      {
+        dtype: "fp32",
+      },
+    );
+    embedder = result as FeatureExtractionPipeline;
   }
   return embedder;
 }
@@ -70,7 +75,7 @@ async function main() {
   const processedNodes = await postProcessor.postprocessNodes(nodes);
 
   // Output response
-  console.log(JSON.stringify(processedNodes));
+  console.log(formatRetrieverResponse(processedNodes));
 }
 
 main().catch(console.error);
