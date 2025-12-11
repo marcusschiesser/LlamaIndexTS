@@ -1,5 +1,5 @@
 import { Document, MetadataMode } from "@vectorstores/core";
-import { MongoClient, type DriverInfo } from "mongodb";
+import type { DriverInfo, MongoClient } from "mongodb";
 import {
   afterAll,
   beforeAll,
@@ -7,8 +7,8 @@ import {
   describe,
   expect,
   it,
-  vi,
   type MockInstance,
+  vi,
 } from "vitest";
 import pkg from "../../package.json";
 import { MongoDocumentStore } from "../docStore/MongoDBDocumentStore";
@@ -31,8 +31,10 @@ describe("MongoDocumentStore", () => {
   }, 120000);
 
   afterAll(async () => {
-    await cleanup();
-  });
+    if (cleanup) {
+      await cleanup();
+    }
+  }, 120000);
 
   describe("constructor", () => {
     it("should create instance with mongoClient", () => {

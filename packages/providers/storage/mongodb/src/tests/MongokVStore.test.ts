@@ -32,8 +32,10 @@ describe("MongoKVStore", () => {
   }, 120000);
 
   afterAll(async () => {
-    await cleanUp();
-  });
+    if (cleanUp) {
+      await cleanUp();
+    }
+  }, 120000);
 
   describe("Mongod KV store constructor", () => {
     it("should create instance with mongoClient", () => {
