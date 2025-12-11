@@ -6,7 +6,9 @@ import { PDFReader } from "@vectorstores/readers/pdf";
 describe("pdf reader", () => {
   const reader = new PDFReader();
   test("basic.pdf", async () => {
-    const documents = await reader.loadData("../../../examples/data/basic.pdf");
+    const documents = await reader.loadData(
+      "../../../examples/shared/data/basic.pdf",
+    );
     expect(documents.length).toBe(1);
     expect(documents[0]!.metadata).toMatchObject({
       file_path: expect.any(String),
@@ -20,12 +22,14 @@ describe("pdf reader", () => {
   });
   test("brk-2022.pdf", async () => {
     const documents = await reader.loadData(
-      "../../../examples/data/brk-2022.pdf",
+      "../../../examples/shared/data/brk-2022.pdf",
     );
     expect(documents.length).toBe(144);
   });
   test("manga.pdf", async () => {
-    const documents = await reader.loadData("../../../examples/data/manga.pdf");
+    const documents = await reader.loadData(
+      "../../../examples/shared/data/manga.pdf",
+    );
     expect(documents.length).toBe(4);
   });
 });
