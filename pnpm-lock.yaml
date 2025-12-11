@@ -96,73 +96,73 @@ importers:
         specifier: ^4.0.0
         version: 4.1.0
       '@vectorstores/assemblyai':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/assemblyai
       '@vectorstores/astra':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/astra
       '@vectorstores/azure':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/azure
       '@vectorstores/bm25-retriever':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/retriever/bm25
       '@vectorstores/chroma':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/chroma
       '@vectorstores/cohere':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/cohere
       '@vectorstores/core':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/core
       '@vectorstores/discord':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/discord
       '@vectorstores/elastic-search':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/elastic-search
       '@vectorstores/env':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/env
       '@vectorstores/excel':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/excel
       '@vectorstores/firestore':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/firestore
       '@vectorstores/milvus':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/milvus
       '@vectorstores/mongodb':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/mongodb
       '@vectorstores/node-parser':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/node-parser
       '@vectorstores/notion':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/notion
       '@vectorstores/pinecone':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/pinecone
       '@vectorstores/postgres':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/postgres
       '@vectorstores/qdrant':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/qdrant
       '@vectorstores/readers':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/readers
       '@vectorstores/supabase':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/supabase
       '@vectorstores/upstash':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/upstash
       '@vectorstores/weaviate':
-        specifier: workspace:*
+        specifier: latest
         version: link:../packages/providers/storage/weaviate
       '@vercel/postgres':
         specifier: ^0.10.0
