@@ -62,7 +62,7 @@ Provider-specific LLM and embedding examples:
 - **`ollama/`**, **`groq/`**, **`mistral/`** - Alternative LLM providers
 - **`rerankers/`** - Result reranking implementations
 
-### Storage (`storage/`)
+### Storage (`vectorstores/`)
 
 Vector store and database integrations:
 

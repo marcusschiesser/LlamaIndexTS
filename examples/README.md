@@ -44,7 +44,7 @@ Multimodal:
 
 Some more general folders that might be useful to explore:
 
-- [storage](./storage/): Examples with various vector stores
+- [vectorstores](./vectorstores/): Examples with various vector stores
 - [readers](./readers/): Examples of how to use the various readers
 - [models](./models/): Examples of how to use the various LLMs and embedding models from many providers
 
