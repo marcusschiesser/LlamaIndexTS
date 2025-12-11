@@ -8,42 +8,21 @@ description: How to install and set up vectorstores for your project.
 Install the core package:
 
 ```package-install
-npm i llamaindex
+npm i @vectorstores/core
 ```
 
-In most cases, you'll also need an LLM provider and the Workflow package:
+And then the package for the vector database you want to use:
+```package-install
+npm i @vectorstores/pinecone
+```
 
 ```package-install
-npm i @vectorstores/openai @vectorstores/workflow
+npm i @vectorstores/qdrant
 ```
 
-## Environment Setup
-
-### API Keys
-
-Most LLM providers require API keys. Set your OpenAI key (or other provider):
-
-```bash
-export OPENAI_API_KEY=your-api-key
+```package-install
+npm i @vectorstores/weaviate
 ```
-
-Or use a `.env` file:
-
-```bash
-echo "OPENAI_API_KEY=your-api-key" > .env
-```
-
-<Aside type="caution">Never commit API keys to your repository.</Aside>
-
-### Loading Environment Variables
-
-For Node.js applications:
-
-```bash
-node --env-file .env your-script.js
-```
-
-For other environments, see the deployment-specific guides below.
 
 ## TypeScript Configuration
 
