@@ -1,0 +1,43 @@
+---
+title: OpenAI
+---
+
+To use OpenAI embeddings, you can use the `openai` package directly with `Settings.embedFunc`.
+
+## Installation
+
+```package-install
+npm i openai
+```
+
+## Basic Setup
+
+```ts
+import { Settings, TextEmbedFunc } from "@vectorstores/core";
+import { OpenAI } from "openai";
+
+const openai = new OpenAI();
+
+function getOpenAIEmbedding(
+  model: string = "text-embedding-3-small",
+): TextEmbedFunc {
+  return async (input) => {
+    const { data } = await openai.embeddings.create({
+      model,
+      input,
+    });
+    return data.map((d) => d.embedding);
+  };
+}
+
+// Configure the global embedding function
+Settings.embedFunc = getOpenAIEmbedding("text-embedding-3-small");
+```
+
+## Available Models
+
+OpenAI offers several embedding models:
+
+- `text-embedding-3-small` - Smaller, faster, and more cost-effective
+- `text-embedding-3-large` - Higher quality embeddings for more complex tasks
+- `text-embedding-ada-002` - Legacy model

@@ -1,0 +1,51 @@
+---
+title: HuggingFace
+---
+
+To use HuggingFace embeddings locally, you can use the `@xenova/transformers` package with `Settings.embedFunc`.
+
+## Installation
+
+```package-install
+pnpm i @xenova/transformers
+```
+
+## Basic Setup
+
+```ts
+import { Settings, TextEmbedFunc } from "@vectorstores/core";
+import { pipeline } from "@xenova/transformers";
+
+// Create embedding function using HuggingFace transformers
+async function createHuggingFaceEmbedding(
+  modelType: string = "Xenova/all-MiniLM-L6-v2",
+): Promise<TextEmbedFunc> {
+  const extractor = await pipeline("feature-extraction", modelType);
+
+  return async (input) => {
+    const texts = Array.isArray(input) ? input : [input];
+    const embeddings: number[][] = [];
+
+    for (const text of texts) {
+      const output = await extractor(text, { pooling: "mean", normalize: true });
+      embeddings.push(Array.from(output.data));
+    }
+
+    return embeddings;
+  };
+}
+
+// Usage
+Settings.embedFunc = await createHuggingFaceEmbedding();
+```
+
+
+## Available Models
+
+By default, `Xenova/all-MiniLM-L6-v2` is used. Other popular models include:
+
+- `Xenova/all-MiniLM-L6-v2` - Fast and lightweight, good general purpose
+- `Xenova/bge-small-en-v1.5` - Higher quality for English text
+- `Xenova/all-mpnet-base-v2` - Better quality, slightly slower
+
+These models run entirely locally in your JavaScript runtime, making them ideal for privacy-sensitive applications or offline use.

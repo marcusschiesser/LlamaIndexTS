@@ -6,6 +6,32 @@
 import { visit } from "unist-util-visit";
 
 /**
+ * Normalizes any package manager command to npm format.
+ * This allows authors to write in any package manager syntax.
+ */
+function normalizeToNpm(command) {
+  return command
+    // pnpm to npm
+    .replace(/^pnpm (?:add|i(?:nstall)?)\s+-D\s+/gm, "npm i -D ")
+    .replace(/^pnpm (?:add|i(?:nstall)?)\s+/gm, "npm i ")
+    .replace(/^pnpm init\b/gm, "npm init")
+    .replace(/^pnpm dlx\s+/gm, "npx ")
+    .replace(/^pnpm\s+(?!add|i(?:nstall)?|init|dlx)/gm, "npm run ")
+    // yarn to npm
+    .replace(/^yarn add\s+-D\s+/gm, "npm i -D ")
+    .replace(/^yarn add\s+/gm, "npm i ")
+    .replace(/^yarn init\b/gm, "npm init")
+    .replace(/^yarn dlx\s+/gm, "npx ")
+    .replace(/^yarn\s+(?!add|init|dlx)/gm, "npm run ")
+    // bun to npm
+    .replace(/^bun add\s+-D\s+/gm, "npm i -D ")
+    .replace(/^bun add\s+/gm, "npm i ")
+    .replace(/^bun init\b/gm, "npm init")
+    .replace(/^bunx\s+/gm, "npx ")
+    .replace(/^bun run\s+/gm, "npm run ");
+}
+
+/**
  * Converts npm commands to pnpm equivalents
  */
 function convertNpmToPnpm(command) {
@@ -45,7 +71,8 @@ export default function remarkPackageInstall() {
         return;
       }
 
-      const npmCode = node.value;
+      // First normalize the input to npm format (supports any package manager syntax)
+      const npmCode = normalizeToNpm(node.value);
       const pnpmCode = convertNpmToPnpm(npmCode);
       const yarnCode = convertNpmToYarn(npmCode);
       const bunCode = convertNpmToBun(npmCode);

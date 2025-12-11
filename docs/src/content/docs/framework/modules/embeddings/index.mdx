@@ -1,0 +1,31 @@
+---
+title: Introduction
+---
+
+The embedding function in VectorStores is responsible for creating numerical representations of text. This can be configured through `Settings.embedFunc`.
+
+## Using `Settings.embedFunc`
+
+The `embedFunc` is a simple async function that takes text input and returns embedding vectors. You can configure it globally via `Settings`:
+
+```typescript
+import { Settings, TextEmbedFunc } from "@vectorstores/core";
+
+// Define your embedding function
+const myEmbedFunc: TextEmbedFunc = async (input) => {
+  // Your embedding logic here
+  // Returns Promise<number[][]> - an array of embeddings
+};
+
+// Set it globally
+Settings.embedFunc = myEmbedFunc;
+```
+
+## OpenAI Embeddings
+
+For OpenAI embeddings, you can use the [OpenAI](/framework/modules/embeddings/openai) instructions.
+
+
+## Local Embedding
+
+For local embeddings, you can use the [HuggingFace](/framework/modules/embeddings/huggingface) instructions.
