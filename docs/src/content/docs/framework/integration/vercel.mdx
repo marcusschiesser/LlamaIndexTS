@@ -1,103 +1,220 @@
 ---
 title: Vercel
-description: Integrate LlamaIndex with Vercel's AI SDK
+description: Integrate vectorstores with Vercel's AI SDK
 ---
 
-LlamaIndex provides integration with Vercel's AI SDK, allowing you to create powerful search and retrieval applications. You can:
-- Use any of Vercel AI's [model providers](https://sdk.vercel.ai/docs/foundations/providers-and-models) as LLMs in LlamaIndex
-- Use indexes (e.g. VectorStoreIndex, LlamaCloudIndex) from vectorstores in your Vercel AI applications
+This guide demonstrates how to build an agentic RAG (Retrieval-Augmented Generation) application using vectorstores with Vercel's AI SDK. The example shows how to create a vector store index from documents and use it as a tool within Vercel's streaming text generation.
 
-## Setup
+## Overview
 
-First, install the required dependencies:
+The agentic RAG example combines:
+- **vectorstores** for document indexing and retrieval
+- **Vercel AI SDK** for streaming text generation with tool calling
+- **OpenAI** as the LLM provider
 
-```package-install
-npm i @vectorstores/vercel ai
-```
+The application allows the LLM to autonomously query your knowledge base by providing it with a retrieval tool, enabling multi-step reasoning and information gathering.
 
-## Using Vercel AI's Model Providers 
+## Complete Example
 
-Using the `VercelLLM` adapter, it's easy to use any of Vercel AI's [model providers](https://sdk.vercel.ai/docs/foundations/providers-and-models) as LLMs in LlamaIndex. Here's an example of how to use OpenAI's GPT-4o model:
-
-```typescript
-const llm = new VercelLLM({ model: openai("gpt-4o") });
-const result = await llm.complete({
-  prompt: "What is the capital of France?",
-  stream: false, // Set to true if you want streaming responses
-});
-console.log(result.text);
-```
-
-## Use Indexes
-
-### Using VectorStoreIndex
-
-Here's how to create a simple vector store index and query it using Vercel's AI SDK:
+Here's the full example code:
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { llamaindex } from "@vectorstores/vercel";
-import { streamText } from "ai";
-import { Document } from "@vectorstores/core";
-import { LlamaCloudIndex } from "llama-cloud-services";
+import { Document, formatLLM, Settings, VectorStoreIndex } from "@vectorstores/core";
+import { stepCountIs, streamText, tool } from "ai";
+import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { OpenAI } from "openai";
+import { z } from "zod";
 
-// Create an index from your documents
-const document = new Document({ text: yourText, id_: "unique-id" });
-const index = await VectorStoreIndex.fromDocuments([document]);
+async function main() {
+  // Ensure OpenAI API key is available
+  if (!process.env.OPENAI_API_KEY) {
+    console.error('Error: OpenAI API key not found in environment variables.');
+    return;
+  }
 
-// Create a query tool
-const queryTool = llamaindex({
-  model: openai("gpt-4"),
-  index,
-  description: "Search through the documents", // optional
-});
+  // Configure OpenAI embeddings with vectorstores
+   const openaiClient = new OpenAI();
+  Settings.embedFunc = async (input) => {
+    const { data } = await openaiClient.embeddings.create({
+      model: "text-embedding-3-small",
+      input,
+    });
+    return data.map((d) => d.embedding);
+  };
 
-// Use the tool with Vercel's AI SDK
-streamText({
-  model: openai("gpt-4"),
-  prompt: "Your question here",
-  tools: { queryTool },
-  onFinish({ response }) {
-    console.log("Response:", response.messages); // log the response
-  },
-}).toDataStream();
+  const filePath = fileURLToPath(
+    new URL("../shared/data/abramov.txt", import.meta.url),
+  );
+  const essay = await fs.readFile(filePath, "utf-8");
+  const document = new Document({ text: essay, id_: filePath });
+
+  const index = await VectorStoreIndex.fromDocuments([document]);
+  console.log("Successfully created index");
+
+  const retriever = index.asRetriever();
+  const result = streamText({
+    model: openai("gpt-5.1-mini"),
+    prompt: "Cost of moving cat from Russia to UK?",
+    tools: {
+      queryTool: tool({
+        description:
+          "get information from your knowledge base to answer questions.",
+        inputSchema: z.object({
+          query: z
+            .string()
+            .describe("The query to get information about your documents."),
+        }),
+        execute: async ({ query }) => {
+          return (
+            formatLLM(await retriever.retrieve({ query })) ||
+            "No result found in documents"
+          );
+        },
+      }),
+    },
+    stopWhen: stepCountIs(5),
+  });
+
+  for await (const textPart of result.textStream) {
+    process.stdout.write(textPart);
+  }
+}
+
+main().catch(console.error);
 ```
 
-> Note: the Vercel AI model referenced in the `llamaindex` function is used by the response synthesizer to generate a response for the tool call.
+## Step-by-Step Explanation
 
-### Using LlamaCloud
+### 1. Setup and Configuration
 
-For production deployments, you can use LlamaCloud to store and manage your documents:
+The example starts by ensuring the OpenAI API key is available and configuring the [embedding model](/framework/modules/embeddings/openai/):
 
 ```typescript
-import { LlamaCloudIndex } from "llama-cloud-services";
+// Ensure OpenAI API key is available
+if (!process.env.OPENAI_API_KEY) {
+  console.error("OpenAI API key not found in environment variables.");
+  return;
+}
 
-// Create a LlamaCloud index
-const index = await LlamaCloudIndex.fromDocuments({
-  documents: [document],
-  name: "your-index-name",
-  projectName: "your-project",
-  apiKey: process.env.LLAMA_CLOUD_API_KEY,
-});
-
-// Use it the same way as VectorStoreIndex
-const queryTool = llamaindex({
-  model: openai("gpt-4"),
-  index,
-  description: "Search through the documents",
-  options: { fields: ["sourceNodes", "messages"]}
-});
-
-// Use the tool with Vercel's AI SDK
-streamText({
-  model: openai("gpt-4"),
-  prompt: "Your question here",
-  tools: { queryTool },
-}).toDataStream();
+// Configure OpenAI embeddings
+const openaiClient = new OpenAI();
+Settings.embedFunc = async (input) => {
+  const { data } = await openaiClient.embeddings.create({
+    model: "text-embedding-3-small",
+    input,
+  });
+  return data.map((d) => d.embedding);
+};
 ```
+
+### 2. Loading and Indexing Documents
+
+A document is loaded from a file and indexed:
+
+```typescript
+const filePath = fileURLToPath(
+  new URL("../shared/data/abramov.txt", import.meta.url),
+);
+const essay = await fs.readFile(filePath, "utf-8");
+const document = new Document({ text: essay, id_: filePath });
+
+const index = await VectorStoreIndex.fromDocuments([document]);
+```
+
+- The document is read from the filesystem
+- A `Document` object is created with the text content and a unique ID
+- `VectorStoreIndex.fromDocuments()` creates a searchable vector index from the document
+
+### 3. Creating a Retriever
+
+A retriever is created from the index to enable querying:
+
+```typescript
+const retriever = index.asRetriever();
+```
+
+The retriever can search the indexed documents and return relevant chunks based on semantic similarity.
+
+### 4. Defining the Query Tool
+
+A tool is defined that allows the LLM to query the knowledge base:
+
+```typescript
+queryTool: tool({
+  description: "get information from your knowledge base to answer questions.",
+  inputSchema: z.object({
+    query: z
+      .string()
+      .describe("The query to get information about your documents."),
+  }),
+  execute: async ({ query }) => {
+    return (
+      formatLLM(await retriever.retrieve({ query })) ||
+      "No result found in documents"
+    );
+  },
+}),
+```
+
+Key components:
+- **`description`**: Tells the LLM when and how to use this tool
+- **`inputSchema`**: Defines the tool's input parameters using Zod
+- **`execute`**: The function that runs when the tool is called
+  - Retrieves relevant document chunks using the retriever
+  - Formats the results using `formatLLM()` for LLM consumption
+  - Returns a fallback message if no results are found
+
+### 5. Streaming Text Generation
+
+The `streamText` function generates responses with tool calling capabilities:
+
+```typescript
+const result = streamText({
+  model: openai("gpt-4o"),
+  prompt: "Cost of moving cat from Russia to UK?",
+  tools: { queryTool },
+  stopWhen: stepCountIs(5),
+});
+```
+
+- **`model`**: Uses OpenAI's GPT-4o model via Vercel's AI SDK
+- **`prompt`**: The user's question
+- **`tools`**: Makes the query tool available to the LLM
+- **`stopWhen: stepCountIs(5)`**: Limits the agent to 5 reasoning steps to prevent infinite loops
+
+### 6. Streaming the Response
+
+The response is streamed to the console:
+
+```typescript
+for await (const textPart of result.textStream) {
+  process.stdout.write(textPart);
+}
+```
+
+This allows the user to see the response as it's generated, providing a better user experience.
+
+## How It Works
+
+1. The LLM receives the user's question
+2. It decides whether to use the `queryTool` to search the knowledge base
+3. If it calls the tool, the retriever searches the indexed documents
+4. The retrieved information is formatted and returned to the LLM
+5. The LLM uses this information to generate a response
+6. The process can repeat for multi-step reasoning (up to 5 steps)
+7. The final response is streamed to the user
+
+## Key Benefits
+
+- **Autonomous Information Retrieval**: The LLM decides when to query the knowledge base
+- **Multi-step Reasoning**: Can perform multiple queries to gather comprehensive information
+- **Streaming Responses**: Provides real-time feedback to users
+- **Flexible Tool Usage**: The LLM uses tools only when needed
 
 ## Next Steps
 
-1. Explore [LlamaCloud](https://cloud.llamaindex.ai/) for managed document storage and retrieval
-2. Join our [Discord community](https://discord.gg/dGcwcsnxhU) for support and discussions
+1. Experiment with different retrieval strategies and tool configurations to improve the agent's performance
+2. Try using different Vercel AI [model providers](https://sdk.vercel.ai/docs/foundations/providers-and-models)
 
