@@ -1,4 +1,6 @@
 import type { JSONValue } from "../global";
+import type { NodeWithScore } from "../schema";
+import { MetadataMode } from "../schema";
 
 export const isPromise = <T>(obj: unknown): obj is Promise<T> => {
   return obj != null && typeof obj === "object" && "then" in obj;
@@ -93,6 +95,22 @@ export function assertIsJSONValue(value: unknown): asserts value is JSONValue {
   }
 
   throw new Error(`Value is not a valid JSONValue: ${String(value)}`);
+}
+
+/**
+ * Formats an array of NodeWithScore objects into a string suitable for LLM consumption.
+ * Extracts content from each node using MetadataMode.LLM and joins them with newlines.
+ *
+ * @param nodes - Array of nodes with scores from a retriever
+ * @returns Joined content string, or empty string if no nodes
+ */
+export function formatLLM(nodes: NodeWithScore[]): string {
+  if (nodes.length === 0) {
+    return "";
+  }
+  return nodes
+    .map((result) => result.node.getContent(MetadataMode.LLM))
+    .join("\n");
 }
 
 export * from "./encoding";
