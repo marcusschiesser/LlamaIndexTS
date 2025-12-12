@@ -88,7 +88,7 @@ export function base64ToBlob(base64: string, mimeType?: string): Blob {
   const bytes = base64ToUint8Array(base64Data);
 
   // Create Blob
-  return new Blob([bytes], { type: extractedMimeType });
+  return new Blob([bytes as BlobPart], { type: extractedMimeType });
 }
 
 export async function blobToDataUrl(input: Blob) {

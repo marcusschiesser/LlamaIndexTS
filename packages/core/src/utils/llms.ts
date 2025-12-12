@@ -99,12 +99,12 @@ export async function imageToDataUrl(
     const dataBuffer = await fs.readFile(
       input instanceof URL ? input.pathname : input,
     );
-    input = new Blob([dataBuffer]);
+    input = new Blob([dataBuffer as BlobPart]);
   } else if (!(input instanceof Blob)) {
     if (input instanceof URL) {
       throw new Error(`Unsupported URL with protocol: ${input.protocol}`);
     } else if (input instanceof Uint8Array) {
-      input = new Blob([input]); // convert Uint8Array to Blob
+      input = new Blob([input as BlobPart]); // convert Uint8Array to Blob
     } else {
       throw new Error(`Unsupported input type: ${typeof input}`);
     }

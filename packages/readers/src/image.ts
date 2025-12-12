@@ -11,7 +11,7 @@ export class ImageReader extends FileReader<ImageDocument> {
    * @returns `Promise<Document[]>` A Promise object, eventually yielding zero or one ImageDocument of the specified file.
    */
   async loadDataAsContent(fileContent: Uint8Array): Promise<ImageDocument[]> {
-    const blob = new Blob([fileContent]);
+    const blob = new Blob([fileContent as BlobPart]);
     return [new ImageDocument({ image: blob })];
   }
 }
