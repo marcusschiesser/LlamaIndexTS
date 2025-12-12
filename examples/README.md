@@ -17,7 +17,7 @@ npm install
 export OPENAI_API_KEY="sk-..."
 
 # Run a basic ingestion example
-npx tsx ./ingestion/llamaindex.ts
+npx tsx ./ingestion/simple.ts
 
 # Or try the interactive retrieval example
 npx tsx ./retrieval/starter.ts
