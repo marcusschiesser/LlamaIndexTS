@@ -1,0 +1,70 @@
+---
+title: Migrating from LlamaIndex to vectorstores
+---
+
+vectorstores is a fork of LlamaIndexTS and is designed to be a drop-in replacement for many vector-store-centric use cases.
+
+## 1) Update packages
+
+Remove LlamaIndex and install vectorstores:
+
+```package-install
+pnpm remove llamaindex
+pnpm add @vectorstores/core
+```
+
+If you use a specific vector database, also install its provider package (example: Qdrant):
+
+```package-install
+pnpm add @vectorstores/qdrant
+```
+
+## 2) Update imports in your code
+
+In most cases, this is a direct rename from `llamaindex` to `@vectorstores/core`.
+
+Before:
+
+```ts
+import { Document, Settings, VectorStoreIndex } from "llamaindex";
+```
+
+After:
+
+```ts
+import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
+```
+
+If you import integrations (vector stores, readers, etc.), those may come from provider packages under `@vectorstores/*` instead of `@vectorstores/core`.
+
+## 3) Use `Settings.embedFunc` instead of `Settings.embedModel`
+
+If your project configured embeddings via `Settings.embedModel`, switch to `Settings.embedFunc`.
+
+Before (LlamaIndex-style embedding model):
+
+```ts
+import { Settings, OpenAIEmbedding } from "llamaindex";
+
+Settings.embedModel = new OpenAIEmbedding({
+  model: "text-embedding-3-small",
+});
+```
+
+After (vectorstores embedding function):
+
+```ts
+import { Settings } from "@vectorstores/core";
+import OpenAI from "openai";
+
+const openai = new OpenAI();
+Settings.embedFunc = async (input: string[]): Promise<number[][]> => {
+  const { data } = await openai.embeddings.create({
+    model: "text-embedding-3-small",
+    input,
+  });
+  return data.map((d) => d.embedding);
+};
+```
+
+
