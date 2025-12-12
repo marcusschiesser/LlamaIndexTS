@@ -4,8 +4,17 @@ import { createInterface } from "node:readline/promises";
 import { fileURLToPath } from "node:url";
 
 import { formatRetrieverResponse } from "../shared/utils/format-response";
+import { isInteractive } from "../shared/utils/runtime";
 
 async function main() {
+  if (!isInteractive()) {
+    console.log(
+      "This example is interactive. Run it in a TTY:\n" +
+        "npx tsx ./retrieval/starter.ts",
+    );
+    return;
+  }
+
   const rl = createInterface({ input: process.stdin, output: process.stdout });
 
   if (!process.env.OPENAI_API_KEY) {
@@ -34,11 +43,14 @@ async function main() {
   );
   while (true) {
     const query = await rl.question("Query: ");
+    if (!query) break;
     const response = await retriever.retrieve({
       query,
     });
     console.log(formatRetrieverResponse(response));
   }
+
+  rl.close();
 }
 
 main().catch(console.error);

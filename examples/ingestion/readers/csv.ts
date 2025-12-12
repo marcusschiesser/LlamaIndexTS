@@ -1,12 +1,19 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { CSVReader } from "@vectorstores/readers/csv";
+import { fileURLToPath } from "node:url";
 
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 import { formatRetrieverResponse } from "../../shared/utils/format-response";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
 async function main() {
+  if (!ensureOpenAIKey()) return;
+  useOpenAIEmbedding();
   // Load CSV
   const reader = new CSVReader();
-  const path = "../shared/data/titanic_train.csv";
+  const path = fileURLToPath(
+    new URL("../../shared/data/titanic_train.csv", import.meta.url),
+  );
   const documents = await reader.loadData(path);
 
   // Split text and create embeddings. Store them in a VectorStoreIndex

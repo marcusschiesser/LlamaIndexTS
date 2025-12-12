@@ -23,6 +23,7 @@
     "node_modules",
     "dist",
     "lib",
+    "vectorstores",
     "readers/dist",
     "models/openai/live/browser/open-ai-realtime",
     "**/browser/**"

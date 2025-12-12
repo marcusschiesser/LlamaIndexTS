@@ -1,8 +1,11 @@
 import { JSONReader } from "@vectorstores/readers/json";
+import { fileURLToPath } from "node:url";
 
 async function main() {
   // Data
-  const file = "../shared/data/tinytweets.json";
+  const file = fileURLToPath(
+    new URL("../../shared/data/tinytweets.json", import.meta.url),
+  );
   const nonAsciiContent = '{"message": "こんにちは世界"}';
   const jsonlContent = '{"tweet": "Hello world"}\n{"tweet": "こんにちは世界"}';
 

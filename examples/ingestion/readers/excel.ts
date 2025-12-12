@@ -1,4 +1,5 @@
 import { ExcelReader } from "@vectorstores/excel";
+import { fileURLToPath } from "node:url";
 
 async function main() {
   // Load PDF
@@ -9,9 +10,10 @@ async function main() {
     keyValueSeparator: ":",
   });
 
-  const documents = await reader.loadData(
-    "../shared/data/sample_excel_sheet.xls",
+  const filePath = fileURLToPath(
+    new URL("../../shared/data/sample_excel_sheet.xls", import.meta.url),
   );
+  const documents = await reader.loadData(filePath);
 
   for (const doc of documents) {
     console.log(doc.text);

@@ -4,8 +4,10 @@ import { fileURLToPath } from "node:url";
 
 import { useOpenAIEmbedding } from "../shared/utils/embedding";
 import { formatRetrieverResponse } from "../shared/utils/format-response";
+import { ensureOpenAIKey } from "../shared/utils/runtime";
 
 async function main() {
+  if (!ensureOpenAIKey()) return;
   // Use OpenAI embeddings
   useOpenAIEmbedding("text-embedding-3-small");
   // Load essay from abramov.txt in Node

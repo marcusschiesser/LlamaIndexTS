@@ -5,17 +5,30 @@ import { program } from "commander";
 import { stdin as input, stdout as output } from "node:process";
 import { createInterface } from "node:readline/promises";
 
+import { useOpenAIEmbedding } from "../../../shared/utils/embedding";
 import { formatRetrieverResponse } from "../../../shared/utils/format-response";
+import { ensureOpenAIKey, isInteractive } from "../../../shared/utils/runtime";
 
 program
   .argument("[page]", "Notion page id (must be provided)")
   .action(async (page, _options) => {
+    if (!isInteractive()) {
+      console.log(
+        "This example is interactive. Run it in a TTY:\n" +
+          "npx tsx ./ingestion/readers/notion/reader.ts <page-id>",
+      );
+      return;
+    }
+
     if (!process.env.NOTION_TOKEN) {
       console.log(
         "No NOTION_TOKEN found in environment variables. You will need to register an integration https://www.notion.com/my-integrations and put it in your NOTION_TOKEN environment variable.",
       );
       return;
     }
+
+    if (!ensureOpenAIKey()) return;
+    useOpenAIEmbedding();
 
     const notion = new Client({
       auth: process.env.NOTION_TOKEN,

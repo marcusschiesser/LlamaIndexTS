@@ -1,12 +1,19 @@
 import { VectorStoreIndex } from "@vectorstores/core";
 import { DocxReader } from "@vectorstores/readers/docx";
+import { fileURLToPath } from "node:url";
 
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 import { formatRetrieverResponse } from "../../shared/utils/format-response";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
-const FILE_PATH = "../shared/data/stars.docx";
+const FILE_PATH = fileURLToPath(
+  new URL("../../shared/data/stars.docx", import.meta.url),
+);
 const SAMPLE_QUERY = "Information about Zodiac";
 
 async function main() {
+  if (!ensureOpenAIKey()) return;
+  useOpenAIEmbedding();
   // Load docx file
   console.log("Loading data...");
   const reader = new DocxReader();

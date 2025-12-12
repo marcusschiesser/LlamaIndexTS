@@ -6,8 +6,10 @@ import { fileURLToPath } from "node:url";
 import { z } from "zod";
 
 import { useOpenAIEmbedding } from "../shared/utils/embedding";
+import { ensureOpenAIKey } from "../shared/utils/runtime";
 
 async function main() {
+  if (!ensureOpenAIKey()) return;
   useOpenAIEmbedding();
 
   const filePath = fileURLToPath(
