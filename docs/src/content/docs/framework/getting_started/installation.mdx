@@ -11,17 +11,9 @@ Install the core package:
 npm i @vectorstores/core
 ```
 
-And then the package for the vector database you want to use:
-```package-install
-npm i @vectorstores/pinecone
-```
-
+And then the package for the vector database you want to use, e.g. for Qdrant use:
 ```package-install
 npm i @vectorstores/qdrant
-```
-
-```package-install
-npm i @vectorstores/weaviate
 ```
 
 ## TypeScript Configuration
@@ -44,7 +36,7 @@ vectorstores is built with TypeScript and provides excellent type safety. Add th
 }
 ```
 
-## Running your first agent
+## Your first ingestion example
 
 ### Set up
 
@@ -52,21 +44,81 @@ If you don't already have a project, you can create a new one in a new folder:
 
 ```package-install
 npm init
-npm i -D typescript @types/node
-npm i @vectorstores/openai @vectorstores/workflow llamaindex zod
+npm i -D typescript @types/node tsx
+npm i @vectorstores/core openai
 ```
 
-### Run the agent
+You'll also need to set your OpenAI API key:
+
+```bash
+export OPENAI_API_KEY=your-api-key-here
+```
+
+### Create the example
 
 Create the file `example.ts`. This code will:
 
-- Create two tools for use by the agent:
-  - A `sumNumbers` tool that adds two numbers
-  - A `divideNumbers` tool that divides numbers
-- Give an example of the data structure we wish to generate
-- Prompt the LLM with instructions and the example, plus a sample transcript
+- Configure OpenAI embeddings for generating vector representations
+- Load a text file from your filesystem
+- Create a `Document` object from the text
+- Build a `VectorStoreIndex` that automatically splits the text and generates embeddings
+- Create a retriever to search the indexed content
+- Query the index and display results in a formatted table
 
-<include cwd>../../examples/agents/agent/openai.ts</include>
+```typescript
+import { Document, VectorStoreIndex, Settings, type TextEmbedFunc } from "@vectorstores/core";
+import { OpenAI } from "openai";
+import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+
+// Configure OpenAI embeddings
+const openai = new OpenAI();
+Settings.embedFunc = async (input: string[]): Promise<number[][]> => {
+  const { data } = await openai.embeddings.create({
+    model: "text-embedding-3-small",
+    input,
+  });
+  return data.map((d) => d.embedding);
+};
+
+async function main() {
+  // Load a text file (create a sample.txt file with some text content)
+  const filePath = fileURLToPath(new URL("./sample.txt", import.meta.url));
+  const text = await fs.readFile(filePath, "utf-8");
+
+  // Create Document object with the text
+  const document = new Document({ text, id_: filePath });
+
+  // Split text and create embeddings. Store them in a VectorStoreIndex
+  const index = await VectorStoreIndex.fromDocuments([document]);
+
+  // Create a retriever from the index
+  const retriever = index.asRetriever();
+
+  // Query the index
+  const response = await retriever.retrieve({
+    query: "What is the main topic?",
+  });
+
+  // Display results
+  console.log(`Found ${response.length} result(s):\n`);
+  response.forEach((result, index) => {
+    console.log(`${index + 1}. Score: ${(result.score! * 100).toFixed(2)}%`);
+    console.log(`   Text: ${result.node.text?.substring(0, 100)}...\n`);
+  });
+}
+
+main().catch(console.error);
+```
+
+Create a sample text file `sample.txt` in the same directory:
+
+```
+Machine learning is a subset of artificial intelligence that focuses on algorithms 
+that can learn from data. These algorithms build mathematical models based on 
+training data to make predictions or decisions without being explicitly programmed 
+to perform the task.
+```
 
 To run the code:
 
@@ -77,68 +129,17 @@ npx tsx example.ts
 You should expect output something like:
 
 ```
-{
-  result: '5 + 5 is 10. Then, 10 divided by 2 is 5.',
-  state: {
-    memory: Memory {
-      messages: [Array],
-      tokenLimit: 30000,
-      shortTermTokenLimitRatio: 0.7,
-      memoryBlocks: [],
-      memoryCursor: 0,
-      adapters: [Object]
-    },
-    scratchpad: [],
-    currentAgentName: 'Agent',
-    agents: [ 'Agent' ],
-    nextAgentName: null
-  }
-}
-Done
+Found 1 result(s):
+
+1. Score: 85.32%
+   Text: Machine learning is a subset of artificial intelligence that focuses on algorithms 
+that can learn from data. These algorithms build mathemat...
 ```
 
-## Performance Optimization
-
-### Tokenization Speed
-
-Install `gpt-tokenizer` for 60x faster tokenization (Node.js environments only):
-
-```package-install
-npm i gpt-tokenizer
-```
-
-LlamaIndex will automatically use this when available.
-
-## Deployment Guides
-
-Choose your deployment target:
-
-<CardGrid>
-  <Card 
-    title="Server APIs & Backends" 
-    description="Express, Fastify, Koa, standalone Node.js servers"
-    href="/framework/getting_started/installation/server-apis" 
-  />
-  <Card 
-    title="Serverless Functions" 
-    description="Vercel, Netlify, AWS Lambda, Cloudflare Workers"
-    href="/framework/getting_started/installation/serverless" 
-  />
-  <Card 
-    title="Next.js Applications" 
-    description="API routes, server components, edge runtime"
-    href="/framework/getting_started/installation/nextjs" 
-  />
-  <Card 
-    title="Troubleshooting" 
-    description="Common issues, bundle optimization, compatibility"
-    href="/framework/getting_started/installation/troubleshooting" 
-  />
-</CardGrid>
-
-## LLM/Embedding Providers
-
-Go to [LLM APIs](/framework/modules/models/llms) and [Embedding APIs](/framework/modules/models/embeddings) to find out how to use different LLM and embedding providers beyond OpenAI.
+This example demonstrates the core workflow of vectorstores:
+1. **Ingestion**: Converting your text into `Document` objects
+2. **Indexing**: Automatically splitting text into chunks and generating embeddings
+3. **Retrieval**: Querying the index to find semantically similar content
 
 ## What's Next?
 

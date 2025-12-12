@@ -82,10 +82,7 @@ export default defineConfig({
 					label: 'Framework',
 					autogenerate: { directory: 'framework', collapsed: true },
 				},
-				{
-					label: 'Framework API Reference 🔗',
-					link: '/framework-api-reference/'
-				},
+				
 			],
 		}),
 		AutoImport({
