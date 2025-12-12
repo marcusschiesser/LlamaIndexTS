@@ -1,6 +1,7 @@
-import { CollectionReference } from "@google-cloud/firestore";
+import type { CollectionReference } from "@google-cloud/firestore";
 import { CSVReader } from "@vectorstores/readers/csv";
 import "dotenv/config";
+import { fileURLToPath } from "node:url";
 
 import {
   storageContextFromDefaults,
@@ -10,15 +11,20 @@ import {
 import { FirestoreVectorStore } from "@vectorstores/firestore";
 
 import { useOpenAIEmbedding } from "../../shared/utils/embedding";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
 const indexName = "MovieReviews";
 
-useOpenAIEmbedding();
-
 async function main() {
   try {
+    if (!ensureOpenAIKey()) return;
+    useOpenAIEmbedding();
     const reader = new CSVReader(false);
-    const docs = await reader.loadData("./data/movie_reviews.csv");
+    const docs = await reader.loadData(
+      fileURLToPath(
+        new URL("../../shared/data/movie_reviews.csv", import.meta.url),
+      ),
+    );
 
     const vectorStore = new FirestoreVectorStore({
       clientOptions: {
@@ -32,9 +38,7 @@ async function main() {
         return rootCollection.doc("accountId-123").collection("vectors");
       },
     });
-
     const storageContext = await storageContextFromDefaults({ vectorStore });
-
     await VectorStoreIndex.fromDocuments(docs, { storageContext });
   } catch (e) {
     console.error(e);

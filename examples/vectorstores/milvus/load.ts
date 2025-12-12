@@ -4,20 +4,27 @@ import {
 } from "@vectorstores/core";
 import { MilvusVectorStore } from "@vectorstores/milvus";
 import { CSVReader } from "@vectorstores/readers/csv";
+import { fileURLToPath } from "node:url";
+
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
 const collectionName = "movie_reviews";
 
 async function main() {
   try {
+    if (!ensureOpenAIKey()) return;
+    useOpenAIEmbedding();
     const reader = new CSVReader(false);
-    const docs = await reader.loadData("./data/movie_reviews.csv");
+    const docs = await reader.loadData(
+      fileURLToPath(
+        new URL("../../shared/data/movie_reviews.csv", import.meta.url),
+      ),
+    );
 
     const vectorStore = new MilvusVectorStore({ collection: collectionName });
-
     const ctx = await storageContextFromDefaults({ vectorStore });
-    const index = await VectorStoreIndex.fromDocuments(docs, {
-      storageContext: ctx,
-    });
+    await VectorStoreIndex.fromDocuments(docs, { storageContext: ctx });
   } catch (e) {
     console.error(e);
   }

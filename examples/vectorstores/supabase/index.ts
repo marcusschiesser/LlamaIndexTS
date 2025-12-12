@@ -4,11 +4,12 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 import { SupabaseVectorStore } from "@vectorstores/supabase";
-
 import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 import { formatRetrieverResponse } from "../../shared/utils/format-response";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
 async function main() {
+  if (!ensureOpenAIKey()) return;
   useOpenAIEmbedding();
   // Create sample documents
   const documents = [

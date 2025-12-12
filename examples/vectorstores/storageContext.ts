@@ -4,9 +4,13 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 import essay from "../shared/data/essay";
+import { useOpenAIEmbedding } from "../shared/utils/embedding";
 import { formatRetrieverResponse } from "../shared/utils/format-response";
+import { ensureOpenAIKey } from "../shared/utils/runtime";
 
 async function main() {
+  if (!ensureOpenAIKey()) return;
+  useOpenAIEmbedding();
   // Create Document object with essay
   const document = new Document({ text: essay, id_: "essay" });
 

@@ -4,12 +4,20 @@ import {
   VectorStoreIndex,
 } from "@vectorstores/core";
 import { CSVReader } from "@vectorstores/readers/csv";
+import { fileURLToPath } from "node:url";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 import { formatRetrieverResponse } from "../../shared/utils/format-response";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
 const collectionName = "movie_reviews";
 
 async function main() {
-  const sourceFile: string = "../shared/data/movie_reviews.csv";
+  if (!ensureOpenAIKey()) return;
+  useOpenAIEmbedding();
+
+  const sourceFile: string = fileURLToPath(
+    new URL("../../shared/data/movie_reviews.csv", import.meta.url),
+  );
 
   try {
     console.log(`Loading data from ${sourceFile}`);

@@ -1,11 +1,16 @@
 import { AstraDBVectorStore } from "@vectorstores/astra";
 import { VectorStoreIndex } from "@vectorstores/core";
+import { useOpenAIEmbedding } from "../../shared/utils/embedding";
 import { formatRetrieverResponse } from "../../shared/utils/format-response";
+import { ensureOpenAIKey } from "../../shared/utils/runtime";
 
 const collectionName = "movie_reviews";
 
 async function main() {
   try {
+    if (!ensureOpenAIKey()) return;
+    useOpenAIEmbedding();
+
     const astraVS = new AstraDBVectorStore({ contentKey: "reviewtext" });
     await astraVS.connect(collectionName);
 
