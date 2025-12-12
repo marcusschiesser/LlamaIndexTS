@@ -12,6 +12,7 @@ import {
   pipeline,
 } from "@huggingface/transformers";
 import { Document, Settings, VectorStoreIndex } from "@vectorstores/core";
+import { formatRetrieverResponse } from "../shared/utils/format-response";
 
 // Initialize the embedding pipeline lazily
 let embedder: FeatureExtractionPipeline | null = null;
@@ -78,12 +79,7 @@ async function main() {
     query: "What is machine learning?",
   });
 
-  console.log("\nResponse:", JSON.stringify(response));
-
-  // You can also use the embedding function directly
-  console.log("\nDirect embedding example:");
-  const embeddings = await Settings.embedFunc!(["Hello, world!"]);
-  console.log(`Embedding dimension: ${embeddings[0]?.length}`);
+  console.log(formatRetrieverResponse(response));
 }
 
 main().catch(console.error);
